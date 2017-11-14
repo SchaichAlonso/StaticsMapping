@@ -13,6 +13,7 @@ The goal of this project is to generate a standartized XPlane-10.50/XPlane-11 ai
 
 <br/>
 <br/>
+
 # Usage
 
 ### Generating airport metadata
@@ -22,7 +23,7 @@ This tool tracks airline regional presence by storing airports that serve as hub
 For licencing reasons, the airport data from xplane cannot be distributed with this package. An application called <i>AptDatExtract</i> can be used to extract the information from an xplane installation instead. It receives the path to the XPlane global airport definitions file as a command line argument, and generates the airport metadata file to be later processed. From the XPlane installation prefix, the default airports definitions are installed in <pre>Resources/default scenery/default apt dat/Earth nav data/apt.dat</pre>.
 
 ![Unix](https://github.com/xibo/StaticsMapping/raw/master/doc//AptDatExtract-Unix.jpeg)
-In the example setup, XPlane is installed in <i>/compat/linux/XP10</i>, and the path above is appended. Care needs to be taken about the space characters.
+In the example setup, XPlane is installed in <i>/compat/linux/XP10</i>, and the path above is appended. Care needs to be taken about the space characters, in the screenshot they are escaped using backslashes.
 TODO windows image
 
 <i>AptDatExtract</i> can extract metadata only for Airports in XPlane-10.50 format, so older airports might fail to have their metadata extracted despite being present in the XPlane installation. No means are provided within the scope of this project to edit the airport metadata. Either update the airport on the scenery gateway, or edit <i>Data/airports.json</i> by hand.
@@ -43,13 +44,16 @@ The output path specifies where to generate objects in. Once again, it is not re
 
 Each known object found while recursing the input path will be loaded, fixed to conform the XPlane-10.50 static aircraft object requirements, and stored in the output path. The input itself will not be modified, all required transformations are done in memory and then written to the output path. The objects stored in the output path do not have any dependencies to anything outside the output path.
 
-The Workers tunable controls how many threads will be used by the scanner. It serves mostly debugging purposes and the default value should work well enough on most systems.
+The <i>Workers</i> tunable controls how many threads will be used by the scanner. It serves mostly debugging purposes and the default value should work well enough on most systems.
 
-The Texture resolution limit can be used to restrict the size of textures used by aircraft statics. Limiting it will compromize visual quality of the produced statics, but will preserve system and graphics memory as well as reduce load times of XPlane.
+The <i>Texture Resolution Limit</i> can be used to restrict the size of textures used by aircraft statics. Limiting it will compromize visual quality of the produced statics, but will reduce resource consumption by XPlane on runtime.
 
 Press scan to have the object files be scanned. On unix, a diagnostic is emited on the command line for each found object. The resulting objects are created directly within the output directory and are named
 <pre>a-b-c.obj</pre>
 where a is the corresponding aircraft's ICAO code, b is the ICAO code of the airline associated with the paintjob, and c is a counter that is used to distinguish multiple statics of the same aircraft and airline.
+
+![Screenshot](https://github.com/xibo/StaticsMapping/raw/master/doc/Output.jpeg)
+In the screenshot, the output path contains various Boeing 767-300 and 767-400 statics. Two different statics exist for the UPS livery.
 
 The Scanner application also generates a file called <i>found.json</i>, which contains metadata for the files in the output path.
 
@@ -105,10 +109,10 @@ Object files can be loaded either by passing them as command line parameters, us
 If this is undesired, a second application, called <i>ObjPreview</i>, can be used in the same way, however it cannot view, edit, or store metadata. To load unknown objects in order to find out what they contain, use <i>ObjPreview</i> (or WED) instead.
 
 ![ObjPreview Lod=0m](https://github.com/xibo/StaticsMapping/raw/master/doc/ObjPreview1.jpeg)
-As XPlane does not deploy a geometry simplification technology, all LOD data needs to be precomputed offline (or &quot;baked&quot; in LR-speak). The slider on the right of the preview of either <i>ObjPreview</i> or <i>TagTool</i> can be used to configure the &quot;camera distance&quot; of the preview.
+As XPlane does not deploy any geometry simplification technology, all LOD data needs to be precomputed offline (or &quot;baked&quot; in LR-speak). If the object file defines multiple LOD settings, the slider on the right of the preview of either <i>ObjPreview</i> or <i>TagTool</i> can be used to configure the &quot;camera distance&quot; of the preview.
 
 ![ObjPreview Lod=1200m](https://github.com/xibo/StaticsMapping/raw/master/doc/ObjPreview2.jpeg)
-Moving up the slider shows that RuScenery's mig29 will look rather ugly from more than a kilometer away, and unrecognizably poor from more than 4km away.
+Moving up the slider shows that RuScenery's mig29 will look rather ugly from more than a kilometer away (1.2km in the screenshot), and unrecognize from more than 4km away.
 
 In <i>TagTool</i>, a newly loaded object will not be displayed automatically. It needs to manually be selected using the &quot;displayed&quot; combobox. Selecting an object will cause it to be rendered in the secondary window, and all metadata editables will switch to display the metadata associated with this object file. <b>Please make sure the metadata is correct</b>.
 
