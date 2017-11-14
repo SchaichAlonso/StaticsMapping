@@ -31,7 +31,6 @@ set (data_files
   earthmap1k.jpg
 #  earthmap10k.jpg
   data.json
-  airports.json
 )
 
 foreach (f IN LISTS data_files)
