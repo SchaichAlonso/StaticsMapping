@@ -7,6 +7,7 @@
 #include <QtCore/QJsonObject>
 
 #include <Common/Classification/Airport.hpp>
+#include <Common/Classification/Definitions.hpp>
 
 int
 main (int argsc, char **argsv)
@@ -63,7 +64,7 @@ main (int argsc, char **argsv)
   QJsonObject obj;
   obj.insert ("airports", array);
   
-  QFile file ("airports.json");
+  QFile file (Classification::Definitions::dataPath("airports.json"));
   ok = file.open (QFile::WriteOnly | QFile::Truncate);
   
   if (ok) {
