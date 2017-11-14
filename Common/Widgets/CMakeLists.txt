@@ -1,0 +1,76 @@
+find_package (Qt5 5.6 COMPONENTS REQUIRED Core Gui Widgets OpenGL)
+find_package (OpenGL REQUIRED)
+
+include_directories (${OPENGL_INCLUDE_DIR})
+
+set (Widgets_SOURCES
+  AircraftDelegate.cpp
+  AircraftTableDialog.cpp
+  AirlineDelegate.cpp
+  
+  AirlinePicker.cpp
+  AirlineTableDialog.cpp
+  EnumPicker.cpp
+  GlobalDistributionDialog.cpp
+  LibraryTableDialog.cpp
+  ListDelegate.cpp
+  ObjectTableDialog.cpp
+  ObjScreen.cpp
+  ObjView.cpp
+  OpenGLWidget.cpp
+  TableDialog.cpp
+  TextEdit.cpp
+  VisualModel.cpp
+  VisualObject.cpp
+)
+
+set (Widgets_LIBS
+  Classification
+  DDSImageFormat
+  Obj8
+  
+  Qt5::Widgets
+  Qt5::Gui
+  Qt5::OpenGL
+  ${OPENGL_LIBRARIES}
+)
+
+if (WIN32)
+    set (graphviz_INCLUDE_DIRS "C:/Program Files (x86)/Graphviz2.38/include")
+    set (graphviz_LIBRARY_DIRS "C:/Program Files (x86)/Graphviz2.38/lib/debug/lib")
+endif ()
+find_package (GraphViz)
+
+if (GraphViz_FOUND)
+  include_directories (${graphviz_INCLUDE_DIRECTORIES})
+  set (Widgets_SOURCES
+    ${Widgets_SOURCES}
+    AirlineMap.cpp
+    AirlineGraphWidget.cpp
+    AirlineScreen.cpp
+    GraphBackend.cpp
+    GraphWidget.cpp
+  )
+  set (Widgets_LIBS
+    ${Widgets_LIBS}
+    ${graphviz_LIBRARIES}
+  )
+endif (GraphViz_FOUND)
+
+add_library (Widgets STATIC
+  ${Widgets_SOURCES}
+)
+
+target_link_libraries (Widgets
+  ${Widgets_LIBS}
+)
+
+if (GraphViz_FOUND)
+  set_property (
+    TARGET
+      Widgets
+    PROPERTY
+      INTERFACE_COMPILE_DEFINITIONS
+        HAVE_GRAPHS=1
+  )
+endif (GraphViz_FOUND)

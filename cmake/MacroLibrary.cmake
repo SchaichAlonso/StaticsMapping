@@ -1,0 +1,3 @@
+include (MacroOptionalFindPackage)
+include (MacroLogFeature)
+
