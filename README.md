@@ -53,7 +53,7 @@ Press scan to have the object files be scanned. On unix, a diagnostic is emited 
 where a is the corresponding aircraft's ICAO code, b is the ICAO code of the airline associated with the paintjob, and c is a counter that is used to distinguish multiple statics of the same aircraft and airline.
 
 ![Screenshot](https://github.com/xibo/StaticsMapping/raw/master/doc/Output.jpeg)
-In the screenshot, the output path contains various Boeing 767-300 and 767-400 statics. Two different statics exist for the UPS livery.
+In the screenshot, the output path was populated with various Boeing 767-300 and 767-400 objects. Two different objects associated with the UPS livery painted Boeing 767-300s were found.
 
 The Scanner application also generates a file called <i>found.json</i>, which contains metadata for the files in the output path.
 
