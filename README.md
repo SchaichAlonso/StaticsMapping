@@ -20,12 +20,15 @@ The goal of this project is to generate a standartized XPlane-10.50/XPlane-11 ai
 
 This tool tracks airline regional presence by storing airports that serve as hubs to airlines. In regional fallback mode (not interfaced at this time), the &quot;distance&quot; between two airlines is defined between the closest two airports assigned to them.
 
-For licencing reasons, the airport data from xplane cannot be distributed with this package. An application called <i>AptDatExtract</i> can be used to extract the information from an xplane installation instead.
+For licencing reasons, the airport data from XPlane cannot be distributed with this package. An application called <i>AptDatExtract</i> can be used to extract the information from an xplane installation instead.
 
 ![Windows](https://github.com/xibo/StaticsMapping/raw/master/doc/AptDatExtract.jpeg)
 
-In the example setup, XPlane is installed in <i>c:\XPlane10</i>. Hitting the "go" button will cause <i>AptDatExtract</i> to generate it's airport metadata. If it is being run from the command line, progress diagnostics
-will be emited to standard output. On completion or failure, <i>AptDatExtract</i> will open a Dialog to report to the user.
+In the screenshot, it is instructed to use the airport data of the XPlane installation in <i>c:\XPlane10</i>.
+
+Hitting the "go" button will cause <i>AptDatExtract</i> to generate it's airport metadata. If it is being run from the command line, progress diagnostics will be emited to standard output (the GUI freezes during the progress). On completion or failure, <i>AptDatExtract</i> will open a Dialog to report to the user.
+
+![Windows](https://github.com/xibo/StaticsMapping/raw/master/doc/AptDatExtract-Success.jpeg)
 
 <i>AptDatExtract</i> can extract metadata only for Airports in XPlane-10.50 format, so older airports might fail to have their metadata extracted despite being present in the XPlane installation. No means are provided within the scope of this project to edit the airport metadata. Either update the airport on the scenery gateway, or edit <i>Data/airports.json</i> by hand.
 
