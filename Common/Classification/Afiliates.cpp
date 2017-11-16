@@ -9,9 +9,9 @@
 Classification::Afiliations::Afiliations (DefinitionsPointer defs)
 : m_definitions (defs)
 , m_hub_distances (hubDistances())
-, m_tree (tree ())
 , m_walk_up (5)
 , m_walk_down (1)
+, m_tree (tree ())
 , m_max_plane_age (0)
 , m_year (0)
 {

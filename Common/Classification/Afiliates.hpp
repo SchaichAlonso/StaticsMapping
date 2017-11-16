@@ -55,9 +55,10 @@ namespace Classification
   protected:
     DefinitionsPointer m_definitions;
     HubDistances       m_hub_distances;
-    Tree               m_tree;
+    
     Fee                m_walk_up;
     Fee                m_walk_down;
+    Tree               m_tree;
     
     int                m_max_plane_age;
     int                m_year;
