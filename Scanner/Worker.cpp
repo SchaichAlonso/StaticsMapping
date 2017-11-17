@@ -92,7 +92,7 @@ Worker::content () const
     qFatal ("%s: Failed to read file.", qUtf8Printable(file.fileName()));
   }
   
-  content = file.readAll ();
+  content = Obj8::File::read (file);
   
   return (content);
 }

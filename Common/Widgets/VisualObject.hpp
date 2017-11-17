@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QtCore/QFile>
+#include <QtCore/QString>
 #include <QtCore/QSharedPointer>
 
 #include <Common/Obj8/File.hpp>
@@ -11,7 +11,7 @@
 
 struct VisualObject
 {
-  VisualObject (Classification::DefinitionsPointer, QFile &);
+  VisualObject (Classification::DefinitionsPointer, QString);
   ~VisualObject ();
   
   QSharedPointer<Obj8::File>   file;

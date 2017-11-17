@@ -5,9 +5,10 @@
 #include "VisualObject.hpp"
 
 
-VisualObject::VisualObject (Classification::DefinitionsPointer definitions, QFile &f)
-  : file (new Obj8::File (f, true))
-  , model (new VisualModel (f.fileName ()))
+
+VisualObject::VisualObject (Classification::DefinitionsPointer definitions, QString path)
+  : file (new Obj8::File (path, true))
+  , model (new VisualModel (path))
   , data ()
 {
   data = definitions->match (file->size(), file->fileHash(), file->textureHash());

@@ -75,13 +75,8 @@ MainWindow::~MainWindow()
 void
 MainWindow::loadObjFile (QString path)
 {
-  QFile f(path);
-  if (not f.open (QFile::ReadOnly)) {
-    return;
-  }
-  
   try {
-    QSharedPointer<VisualObject> obj (new VisualObject (m_definitions, f));
+    QSharedPointer<VisualObject> obj (new VisualObject (m_definitions, path));
     
     m_objects.append (obj);
     

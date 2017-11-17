@@ -21,8 +21,22 @@ Obj8::File::File ()
 
 
 
+Obj8::File::File (QString path, bool __parse)
+  : m_raw (read(path))
+  , m_hash_file (CryptoHash::hash(m_raw))
+  , m_hash_texture ()
+  , m_path (path)
+  , m_header ()
+  , m_content ()
+{
+  if (__parse)
+    parse ();
+}
+
+
+
 Obj8::File::File (QFile &file, bool __parse)
-  : m_raw (file.readAll ())
+  : m_raw (read(file))
   , m_hash_file (CryptoHash::hash(m_raw))
   , m_hash_texture ()
   , m_path (file.fileName())
@@ -134,4 +148,29 @@ QString
 Obj8::File::basename () const
 {
   return (QFileInfo(m_path).fileName());
+}
+
+
+
+QByteArray
+Obj8::File::read (QFile &f)
+{
+  uchar *ptr = f.map(0, f.size());
+  
+  QByteArray ba((const char *)ptr, f.size());
+  
+  f.unmap(ptr);
+  
+  return (ba);
+}
+
+
+QByteArray
+Obj8::File::read (QString path)
+{
+  QFile f(path);
+  if (f.open(QFile::ReadOnly)) {
+    return (read(f));
+  }
+  return (QByteArray());
 }

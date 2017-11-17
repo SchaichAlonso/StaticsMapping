@@ -12,6 +12,7 @@ namespace Obj8
   struct File
   {
     File ();
+    File (QString, bool);
     File (QFile &, bool);
     File (QString, QByteArray, bool);
     ~File ();
@@ -25,6 +26,9 @@ namespace Obj8
     int        size () const;
     
     QString    basename () const;
+    
+    static QByteArray read (QFile &file);
+    static QByteArray read (QString path);
     
   protected:
     QByteArray     m_raw;
