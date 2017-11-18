@@ -13,6 +13,7 @@ namespace Classification
     XPLibrary (DefinitionsPointer);
    ~XPLibrary ();
     
+    void add (XPClass, ObjectPointer, QString =QString());
     void add (ObjectsByXPClass, QString =QString());
     
     QString toString (bool) const;

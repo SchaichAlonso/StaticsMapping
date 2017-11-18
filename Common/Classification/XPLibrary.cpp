@@ -17,12 +17,21 @@ Classification::XPLibrary::~XPLibrary ()
 
 
 void
+Classification::XPLibrary::add (XPClass xp_class, ObjectPointer obj, QString airline)
+{
+  QString vpath = xp_class.libraryVPath (airline);
+  QString rpath = obj->fileName ();
+  m_map.insert (vpath, rpath);
+}
+
+
+
+
+void
 Classification::XPLibrary::add (ObjectsByXPClass objs, QString airline)
 {
   for (ObjectsByXPClass::ConstIterator i=objs.constBegin(); i!=objs.constEnd(); ++i) {
-    QString vpath = i.key().libraryVPath (airline);
-    QString rpath = i.value()->fileName ();
-    m_map.insert (vpath, rpath);
+    add (i.key(), i.value(), airline);
   }
 }
 
