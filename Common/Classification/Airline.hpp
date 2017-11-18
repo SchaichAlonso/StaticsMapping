@@ -38,6 +38,7 @@ namespace Classification
     virtual bool verifyPrimaryKey (PrimaryKey) const Q_DECL_OVERRIDE;
    
     static bool isFictiveIcaoCode (QString);
+    bool isFictiveIcaoCode() const;
         
     QString hubs () const;
     void setHubs (QString);

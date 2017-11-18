@@ -106,6 +106,15 @@ Classification::Airline::isFictiveIcaoCode (QString str)
 }
 
 
+
+bool
+Classification::Airline::isFictiveIcaoCode () const
+{
+  return (isFictiveIcaoCode(icao()));
+}
+
+
+
 QString
 Classification::Airline::hubs () const
 {
