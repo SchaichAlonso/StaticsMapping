@@ -1,5 +1,7 @@
 #include <QtTest>
 
+#include <Classification/WeightedObject.hpp>
+
 #include "DefinitionsHelper.hpp"
 
 namespace Classification
@@ -9,6 +11,9 @@ namespace Classification
     struct Afiliates : DefinitionsHelper
     {
       Q_OBJECT
+    protected:
+      static WeightedObject::Weight weight(QList<WeightedObject> list, ObjectPointer object);
+    
     private slots:
       virtual void init () Q_DECL_OVERRIDE;
       

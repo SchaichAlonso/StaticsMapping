@@ -8,6 +8,7 @@
 #include "Airline.hpp"
 #include "Airport.hpp"
 #include "Definitions.hpp"
+#include "WeightedObject.hpp"
 #include "XPClass.hpp"
 #include "XPLibrary.hpp"
 
@@ -15,7 +16,7 @@ namespace Classification
 {
   struct Afiliations
   {
-    typedef int Fee;
+    typedef WeightedObject::Weight Fee;
     typedef QPair<Airline::PrimaryKey, Airline::PrimaryKey> AirlinePair;
     typedef QPair<Airport::PrimaryKey, Airport::PrimaryKey> AirportPair;
     typedef QMap<AirportPair, Airport::DistanceInKM> AirportDistanceCache;
@@ -32,8 +33,9 @@ namespace Classification
     HubDistances hubDistances () const;
     Tree tree () const;
     Fees fees (QString) const;
-    ObjectsByXPClass objectsAvailableToAirline (QString) const;
-    ObjectsByXPClass objectsAvailable () const;
+    
+    WeightedObjectsByXPClass objectsAvailable (QString) const;
+    WeightedObjectsByXPClass objectsAvailable (AirlinePointer) const;
     
     XPLibrary library () const;
     
@@ -49,8 +51,8 @@ namespace Classification
     
     Airport::DistanceInKM shortestDistance (AirportDistanceCache &, QStringList, QStringList) const;
     
-    void mergeObject  (ObjectsByXPClass &, CheapestByXPClass &, ObjectPointer, XPClass, Fee) const;
-    void mergeObjects (ObjectsByXPClass &, CheapestByXPClass &, ObjectPointer, Fee) const;
+    void mergeObject (WeightedObjectsByXPClass &, XPClass, WeightedObject) const;
+    void mergeObjects (WeightedObjectsByXPClass &, ObjectPointer, Fee) const;
     
   protected:
     DefinitionsPointer m_definitions;

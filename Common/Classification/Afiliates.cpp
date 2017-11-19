@@ -270,48 +270,42 @@ Classification::Afiliations::outdated (ObjectPointer obj, Airline::PrimaryKey us
 
 void
 Classification::Afiliations::mergeObject (
-    ObjectsByXPClass &objects,
-    CheapestByXPClass &prices,
-    ObjectPointer obj,
-    XPClass data,
-    Fee fee
+    WeightedObjectsByXPClass &objects,
+    XPClass xpclass,
+    WeightedObject object
 ) const
 {
-  if (prices.contains (data)) {
-    Fee current_cheapest = prices.value (data);
-    if (current_cheapest < fee) {
-      return;
-    }
-    if (fee < current_cheapest) {
-      objects.remove (data);
-      prices.insert (data, fee);
+  if (objects.contains(xpclass)) {
+    Fee current_cheapest = objects.value(xpclass).weight;
+    Fee candidate_price = object.weight;
+    
+    if (candidate_price <= current_cheapest) {
+      if (candidate_price < current_cheapest) {
+        objects.remove(xpclass);
+      }
+      objects.insert (xpclass, object);
     }
   } else {
-    prices.insert (data, fee);
+    objects.insert (xpclass, object);
   }
-  
-  objects.insert (data, obj);
 }
 
 
 
 void
 Classification::Afiliations::mergeObjects (
-    ObjectsByXPClass &objects,
-    CheapestByXPClass &prices,
-    ObjectPointer obj,
-    Fee fee
-) const
+    WeightedObjectsByXPClass &objects,
+    ObjectPointer object,
+    Fee initial) const
 {
+  QList<XPClass> xp_classes = 
+      XPClass::create (m_definitions->aircraft(object->aircraft()), object);
   
-  QList<XPClass> object_by_xp_classes = 
-      XPClass::create (m_definitions->aircraft(obj->aircraft()), obj);
-  
-  Q_FOREACH (XPClass data, object_by_xp_classes) {
+  Q_FOREACH (XPClass xp_class, xp_classes) {
     for (int resized=0; ; ++resized) {
-      mergeObject (objects, prices, obj, data, resizedFee (fee, resized));
-      if (data.couldBeLarger())
-        data=data.nextLarger();
+      mergeObject (objects, xp_class, WeightedObject(object, resizedFee(initial, resized)));
+      if (xp_class.couldBeLarger())
+        xp_class=xp_class.nextLarger();
       else
         break;
     }
@@ -320,39 +314,36 @@ Classification::Afiliations::mergeObjects (
 
 
 
-Classification::ObjectsByXPClass
-Classification::Afiliations::objectsAvailableToAirline (QString airline) const
+Classification::WeightedObjectsByXPClass
+Classification::Afiliations::objectsAvailable (QString airline) const
 {
-  CheapestByXPClass prices;
-  ObjectsByXPClass result;
-  Fees fees;
-  
-  fees = this->fees (airline);
-  
-  Q_FOREACH (ObjectPointer obj, m_definitions->objects()) {
-    if (outdated(obj, airline)) {
-      continue;
-    }
-    
-    QString owner = obj->livery ();
-    if (fees.contains (owner)) {
-      mergeObjects (result, prices, obj, fees.value (owner));
-    }
-  }
-  
-  return (result);
+  return (objectsAvailable(m_definitions->airline(airline)));
 }
 
 
 
-Classification::ObjectsByXPClass
-Classification::Afiliations::objectsAvailable () const
+Classification::WeightedObjectsByXPClass
+Classification::Afiliations::objectsAvailable (AirlinePointer airline) const
 {
-  CheapestByXPClass prices;
-  ObjectsByXPClass result;
+  WeightedObjectsByXPClass result;
   
-  Q_FOREACH (ObjectPointer obj, m_definitions->objects()) {
-    mergeObjects (result, prices, obj, 0);
+  if (airline) {
+    Fees fees = this->fees(airline->primaryKey());
+  
+    Q_FOREACH (ObjectPointer obj, m_definitions->objects()) {
+      if (outdated(obj, airline->primaryKey())) {
+        continue;
+      }
+    
+      QString owner = obj->livery();
+      if (fees.contains(owner)) {
+        mergeObjects (result, obj, fees.value(owner));
+      }
+    }
+  } else {
+    Q_FOREACH (ObjectPointer obj, m_definitions->objects()) {
+      mergeObjects (result, obj, 0);
+    }
   }
   
   return (result);
@@ -367,12 +358,13 @@ Classification::Afiliations::library () const
   
   Q_FOREACH (AirlinePointer airline, m_definitions->airlines()) {
     QString icao = airline->icao ();
-    if (not airline->isFictiveIcaoCode(icao)) {
-      retval.add (objectsAvailableToAirline(icao), icao);
+    
+    if (not airline->isFictiveIcaoCode()) {
+      retval.add (objectsAvailable(airline));
     }
   }
 
-  retval.add (objectsAvailable());
+  retval.add (objectsAvailable(AirlinePointer()));
   
   return (retval);
 }

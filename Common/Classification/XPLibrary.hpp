@@ -3,6 +3,7 @@
 #include <QtCore/QString>
 
 #include "Classification.hpp"
+#include "WeightedObject.hpp"
 #include "XPClass.hpp"
 
 
@@ -14,7 +15,7 @@ namespace Classification
    ~XPLibrary ();
     
     void add (XPClass, ObjectPointer, QString =QString());
-    void add (ObjectsByXPClass, QString =QString());
+    void add (WeightedObjectsByXPClass, QString =QString());
     
     QString toString (bool) const;
     

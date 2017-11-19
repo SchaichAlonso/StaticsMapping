@@ -7,6 +7,19 @@
 #include "Afiliates.hpp"
 
 
+Classification::WeightedObject::Weight
+Classification::Test::Afiliates::weight (QList<WeightedObject> list, ObjectPointer object)
+{
+  Q_FOREACH (const Classification::WeightedObject &candidate, list) {
+    if (candidate.object == object) {
+      return (candidate.weight);
+    }
+  }
+  
+  return (-1);
+}
+
+
 void
 Classification::Test::Afiliates::init ()
 {
@@ -52,15 +65,15 @@ Classification::Test::Afiliates::basic ()
   addObject ("FFM", "AT75", "x", 1, false);
   
   Classification::Afiliations a (m_definitions);
-  ObjectsByXPClass afl = a.objectsAvailableToAirline("AFL");
-  ObjectsByXPClass ffm = a.objectsAvailableToAirline("FFM");
-  ObjectsByXPClass mas = a.objectsAvailableToAirline("MAS");
+  WeightedObjectsByXPClass afl = a.objectsAvailable("AFL");
+  WeightedObjectsByXPClass ffm = a.objectsAvailable("FFM");
+  WeightedObjectsByXPClass mas = a.objectsAvailable("MAS");
   
   XPClass at75 (Object::Airliner, Aircraft::Turboprop, Aircraft::SizeC);
   
   QVERIFY (afl.isEmpty());
   QVERIFY (ffm.contains(at75));
-  QVERIFY (ffm == mas);
+  QVERIFY (mas.contains(at75));
 }
 
 
@@ -81,8 +94,8 @@ Classification::Test::Afiliates::sizing ()
   
   
   Classification::Afiliations a (m_definitions);
-  ObjectsByXPClass ffm = a.objectsAvailableToAirline("FFM");
-  ObjectsByXPClass mas = a.objectsAvailableToAirline("MAS");
+  WeightedObjectsByXPClass ffm = a.objectsAvailable("FFM");
+  WeightedObjectsByXPClass mas = a.objectsAvailable("MAS");
   
   
   QVERIFY (ffm.values(XPClass(Object::Airliner, Aircraft::Turboprop, Aircraft::SizeA)).size() == 0);
@@ -92,10 +105,10 @@ Classification::Test::Afiliates::sizing ()
   QVERIFY (ffm.values(XPClass(Object::Airliner, Aircraft::Turboprop, Aircraft::SizeE)).size() == 1);
   QVERIFY (ffm.values(XPClass(Object::Airliner, Aircraft::Turboprop, Aircraft::SizeF)).size() == 1);
   
-  QVERIFY (ffm.values(XPClass(Object::Airliner, Aircraft::Turboprop, Aircraft::SizeC)).contains(at75));
-  QVERIFY (ffm.values(XPClass(Object::Airliner, Aircraft::Turboprop, Aircraft::SizeD)).contains(at75));
-  QVERIFY (ffm.values(XPClass(Object::Airliner, Aircraft::Turboprop, Aircraft::SizeE)).contains(at75));
-  QVERIFY (ffm.values(XPClass(Object::Airliner, Aircraft::Turboprop, Aircraft::SizeF)).contains(at75));
+  QVERIFY (weight(ffm.values(XPClass(Object::Airliner, Aircraft::Turboprop, Aircraft::SizeC)), at75) >= 0);
+  QVERIFY (weight(ffm.values(XPClass(Object::Airliner, Aircraft::Turboprop, Aircraft::SizeD)), at75) > 0);
+  QVERIFY (weight(ffm.values(XPClass(Object::Airliner, Aircraft::Turboprop, Aircraft::SizeE)), at75) > 0);
+  QVERIFY (weight(ffm.values(XPClass(Object::Airliner, Aircraft::Turboprop, Aircraft::SizeF)), at75) > 0);
   
   QVERIFY (ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeA)).size() == 0);
   QVERIFY (ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeB)).size() == 1);
@@ -104,20 +117,20 @@ Classification::Test::Afiliates::sizing ()
   QVERIFY (ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeE)).size() == 2);
   QVERIFY (ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeF)).size() == 2);
   
-  QVERIFY (ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeB)).contains(e135));
-  QVERIFY (ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeC)).contains(e75l));
-  QVERIFY (ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeC)).contains(su95));
-  QVERIFY (ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeD)).contains(e75l));
-  QVERIFY (ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeD)).contains(su95));
-  QVERIFY (ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeE)).contains(e75l));
-  QVERIFY (ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeE)).contains(su95));
-  QVERIFY (ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeF)).contains(e75l));
-  QVERIFY (ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeF)).contains(su95));
+  QVERIFY (weight(ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeB)), e135) >= 0);
+  QVERIFY (weight(ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeC)), e75l) >= 0);
+  QVERIFY (weight(ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeC)), su95) >= 0);
+  QVERIFY (weight(ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeD)), e75l) > 0);
+  QVERIFY (weight(ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeD)), su95) > 0);
+  QVERIFY (weight(ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeE)), e75l) > 0);
+  QVERIFY (weight(ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeE)), su95) > 0);
+  QVERIFY (weight(ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeF)), e75l) > 0);
+  QVERIFY (weight(ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeF)), su95) > 0);
   
   QVERIFY (mas.size() == ffm.size());
-  for (ObjectsByXPClass::ConstIterator i = ffm.constBegin(); i!=ffm.constEnd(); ++i) {
+  for (WeightedObjectsByXPClass::ConstIterator i = ffm.constBegin(); i!=ffm.constEnd(); ++i) {
     QVERIFY (mas.contains (i.key()));
-    QVERIFY (mas.values(i.key()).contains(i.value()));
+    QVERIFY (weight(mas.values(i.key()), i.value().object) > i.value().weight);
   }
 }
 
@@ -143,9 +156,9 @@ Classification::Test::Afiliates::explicitAge ()
   
   a.setYear (1995);
   
-  ObjectsByXPClass ffm = a.objectsAvailableToAirline("FFM");
+  WeightedObjectsByXPClass ffm = a.objectsAvailable("FFM");
   QVERIFY (ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeF)).size() == 1);
-  QVERIFY (ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeF)).contains(object(2)));
+  QVERIFY (weight(ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeF)), object(2)) >= 0);
 }
 
 
@@ -162,22 +175,22 @@ Classification::Test::Afiliates::implicitAge ()
   
   a.setYear (2005);
   
-  ObjectsByXPClass ffm, mas;
+  WeightedObjectsByXPClass ffm, mas;
   
-  ffm = a.objectsAvailableToAirline("FFM");
+  ffm = a.objectsAvailable("FFM");
   QVERIFY (ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeF)).size() == 1);
-  QVERIFY (ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeF)).contains(object(1)));
+  QVERIFY (weight(ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeF)), object(1)) >= 0);
   
   m_definitions->airline("FFM")->setFounded (2007);
   m_definitions->airline("MAS")->setFounded (1947);
   
-  ffm = a.objectsAvailableToAirline("FFM");
+  ffm = a.objectsAvailable("FFM");
   QVERIFY (ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeF)).size() == 0);
   
   /*
    * it's FFM's object, so MAS doesn't get it even though MAS is old enough.
    */
-  mas = a.objectsAvailableToAirline("MAS");
+  mas = a.objectsAvailable("FFM");
   QVERIFY (mas.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeF)).size() == 0);
   
   
@@ -186,12 +199,12 @@ Classification::Test::Afiliates::implicitAge ()
   m_definitions->airline("MAS")->setCeased (2010);
   
   a.setYear (2011);
-  ffm = a.objectsAvailableToAirline("FFM");
-  mas = a.objectsAvailableToAirline("MAS");
+  ffm = a.objectsAvailable("FFM");
+  mas = a.objectsAvailable("MAS");
   
   QVERIFY (ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeF)).size() == 2);
-  QVERIFY (ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeF)).contains(object(1)));
-  QVERIFY (ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeF)).contains(object(2)));
+  QVERIFY (weight(ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeF)), object(1)) >= 0);
+  QVERIFY (weight(ffm.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeF)), object(2)) >= 0);
   QVERIFY (mas.values(XPClass(Object::Airliner, Aircraft::Turbofan, Aircraft::SizeF)).size() == 0);
 }
 

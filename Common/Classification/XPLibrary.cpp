@@ -28,10 +28,10 @@ Classification::XPLibrary::add (XPClass xp_class, ObjectPointer obj, QString air
 
 
 void
-Classification::XPLibrary::add (ObjectsByXPClass objs, QString airline)
+Classification::XPLibrary::add (WeightedObjectsByXPClass objs, QString airline)
 {
-  for (ObjectsByXPClass::ConstIterator i=objs.constBegin(); i!=objs.constEnd(); ++i) {
-    add (i.key(), i.value(), airline);
+  for (WeightedObjectsByXPClass::ConstIterator i=objs.constBegin(), e=objs.constEnd(); i!=e; ++i) {
+    add (i.key(), i.value().object, airline);
   }
 }
 
