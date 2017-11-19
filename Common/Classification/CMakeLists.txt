@@ -15,6 +15,7 @@ add_library (Classification STATIC
   Object.cpp
   ObjectModel.cpp
   Record.cpp
+  WeightedObject.cpp
   XPClass.cpp
   XPLibrary.cpp
 )
