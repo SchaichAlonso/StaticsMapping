@@ -14,6 +14,8 @@ namespace Classification
     WeightedObject (ObjectPointer =ObjectPointer(), Weight =0);
    ~WeightedObject ();
     
+    bool operator== (const WeightedObject &other) const;
+   
     ObjectPointer object;
     Weight weight;
   };
