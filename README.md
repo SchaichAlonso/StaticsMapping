@@ -70,7 +70,7 @@ Having generated the library, or having been provided an previous run's *found.j
 
 ![LibraryWizard Intro](https://github.com/xibo/StaticsMapping/raw/master/doc/LibraryWizard-Afiliates.jpeg)
 
-In the *Preview* group that covers bottom half of the page, an airline can be selected to have it's available objects be listed.
+In the *Preview* group that covers bottom half of the page, an airline can be selected with the ComboBox next to the *Operator* label, to have it's available objects be listed.
 In the object listing itself, *Object* is the filename within the *Output Path*, *Weight* is a metric that describes how difficult it is for the selected airline to access that object, and *VPath* is the XPlane LIBRARY format &lt;vpath&gt; prefix that will be used.
 
 The *Preview Selected* button can be used to look inside any of the airline's objects, after having selected it.
