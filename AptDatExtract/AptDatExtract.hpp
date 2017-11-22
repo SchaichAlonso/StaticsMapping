@@ -1,5 +1,6 @@
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QLineEdit>
+
+#include <Common/Widgets/FilenameLineEdit.hpp>
 
 struct AptDatExtractDialog : QDialog
 {
@@ -11,5 +12,5 @@ struct AptDatExtractDialog : QDialog
 protected:
   void createGui();
   
-  QLineEdit *m_xp_path;
+  FilenameLineEdit *m_xp_path;
 };

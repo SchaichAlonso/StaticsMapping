@@ -11,6 +11,7 @@ set (Widgets_SOURCES
   AirlinePicker.cpp
   AirlineTableDialog.cpp
   EnumPicker.cpp
+  FilenameLineEdit.cpp
   GlobalDistributionDialog.cpp
   LibraryTableDialog.cpp
   ListDelegate.cpp

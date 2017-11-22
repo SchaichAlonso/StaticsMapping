@@ -1,3 +1,4 @@
+#include <QtCore/QDir>
 #include <QtCore/QFile>
 #include <QtCore/QRegExp>
 
@@ -13,12 +14,10 @@
 
 
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QFileDialog>
 
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMessageBox>
-#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QVBoxLayout>
 
@@ -41,13 +40,11 @@ AptDatExtractDialog::createGui ()
   QVBoxLayout *vbox   = new QVBoxLayout;
   QHBoxLayout *layout = new QHBoxLayout;
   QHBoxLayout *bottom = new QHBoxLayout;
-  m_xp_path           = new QLineEdit;
-  QPushButton *browse = new QPushButton ("select");
+  m_xp_path           = new FilenameLineEdit(true);
   QPushButton *go     = new QPushButton ("go");
   
   layout->addWidget (new QLabel("XPlane Path:"));
   layout->addWidget (m_xp_path);
-  layout->addWidget (browse);
   
   bottom->addStretch();
   bottom->addWidget (go);
@@ -56,16 +53,6 @@ AptDatExtractDialog::createGui ()
   vbox->addLayout(bottom);
 
   setLayout (vbox);
-  
-  connect (browse, &QPushButton::released,
-    [&]()
-    {
-      QString s = QFileDialog::getExistingDirectory ();
-      if (not s.isNull()) {
-        m_xp_path->setText (s);
-      }
-    }
-  );
   
   connect (go, &QPushButton::released,
     [&]()
