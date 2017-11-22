@@ -6,10 +6,10 @@
 #include <Obj8/Parser/Number.hpp>
 #include <Classification/Object.hpp>
 
-struct ObjectFileInstaller : Obj8::AbstractVisitor
+struct ObjFileInstaller : Obj8::AbstractVisitor
 {
-  ObjectFileInstaller ();
-  virtual ~ObjectFileInstaller ();
+  ObjFileInstaller ();
+  virtual ~ObjFileInstaller ();
   
   void            setMaxTextureResolution (int);
   void            setTranslation (const Obj8::Parser::Number &, const Obj8::Parser::Number &, const Obj8::Parser::Number &);

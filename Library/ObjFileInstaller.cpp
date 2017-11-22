@@ -21,7 +21,7 @@
 
 
 #include "Common.hpp"
-#include "ObjectFileInstaller.hpp"
+#include "ObjFileInstaller.hpp"
 
 
 #include <QtPlugin>
@@ -29,7 +29,7 @@ Q_IMPORT_PLUGIN (QDDSPlugin);
 
 
 
-ObjectFileInstaller::ObjectFileInstaller ()
+ObjFileInstaller::ObjFileInstaller ()
   : AbstractVisitor ()
   , m_rotate (Classification::Object::RotateNull)
   , m_target_filename ()
@@ -40,13 +40,13 @@ ObjectFileInstaller::ObjectFileInstaller ()
 
 
 
-ObjectFileInstaller::~ObjectFileInstaller ()
+ObjFileInstaller::~ObjFileInstaller ()
 {
 }
 
 
 void
-ObjectFileInstaller::reset ()
+ObjFileInstaller::reset ()
 {
   m_translation[0] = m_translation[1] = m_translation[2] = Obj8::Parser::Number();
   m_rotate = Classification::Object::RotateNull;
@@ -55,7 +55,7 @@ ObjectFileInstaller::reset ()
 
 
 bool
-ObjectFileInstaller::satisfied (Obj8::StringRef)
+ObjFileInstaller::satisfied (Obj8::StringRef)
 {
   /*
    * we don't care.
@@ -66,14 +66,14 @@ ObjectFileInstaller::satisfied (Obj8::StringRef)
 
 
 void
-ObjectFileInstaller::setMaxTextureResolution (int limit)
+ObjFileInstaller::setMaxTextureResolution (int limit)
 {
   m_texture_limit = limit;
 }
 
 
 void
-ObjectFileInstaller::setRotation (Classification::Object::Rotate rotate)
+ObjFileInstaller::setRotation (Classification::Object::Rotate rotate)
 {
   m_rotate = rotate;
 }
@@ -81,9 +81,11 @@ ObjectFileInstaller::setRotation (Classification::Object::Rotate rotate)
 
 
 void
-ObjectFileInstaller::setTranslation (const Obj8::Parser::Number &x,
-                                    const Obj8::Parser::Number &y,
-                                    const Obj8::Parser::Number &z)
+ObjFileInstaller::setTranslation (
+  const Obj8::Parser::Number &x,
+  const Obj8::Parser::Number &y,
+  const Obj8::Parser::Number &z
+)
 {
   m_translation[0] = x;
   m_translation[1] = y;
@@ -93,7 +95,7 @@ ObjectFileInstaller::setTranslation (const Obj8::Parser::Number &x,
 
 
 void
-ObjectFileInstaller::setTargetFilename (Obj8::StringRef filename)
+ObjFileInstaller::setTargetFilename (Obj8::StringRef filename)
 {
   m_target_filename = filename;
 }
@@ -101,7 +103,7 @@ ObjectFileInstaller::setTargetFilename (Obj8::StringRef filename)
 
 
 Obj8::StringRef
-ObjectFileInstaller::targetFilename () const
+ObjFileInstaller::targetFilename () const
 {
   return (m_target_filename);
 }
@@ -109,7 +111,7 @@ ObjectFileInstaller::targetFilename () const
 
 
 void
-ObjectFileInstaller::visit (Obj8::Command::Action::SmokeBlack *s)
+ObjFileInstaller::visit (Obj8::Command::Action::SmokeBlack *s)
 {
   applyTransformation (&s->m_x, &s->m_y, &s->m_z);
 }
@@ -117,7 +119,7 @@ ObjectFileInstaller::visit (Obj8::Command::Action::SmokeBlack *s)
 
 
 void
-ObjectFileInstaller::visit (Obj8::Command::Action::SmokeWhite *s)
+ObjFileInstaller::visit (Obj8::Command::Action::SmokeWhite *s)
 {
   applyTransformation (&s->m_x, &s->m_y, &s->m_z);
 }
@@ -125,7 +127,7 @@ ObjectFileInstaller::visit (Obj8::Command::Action::SmokeWhite *s)
 
 
 void
-ObjectFileInstaller::visit (Obj8::Command::Geometry::LightCustom *v)
+ObjFileInstaller::visit (Obj8::Command::Geometry::LightCustom *v)
 {
   applyTransformation (&v->m_x, &v->m_y, &v->m_z);
 }
@@ -133,7 +135,7 @@ ObjectFileInstaller::visit (Obj8::Command::Geometry::LightCustom *v)
 
 
 void
-ObjectFileInstaller::visit (Obj8::Command::Geometry::LightNamed *v)
+ObjFileInstaller::visit (Obj8::Command::Geometry::LightNamed *v)
 {
   applyTransformation (&v->m_x, &v->m_y, &v->m_z);
 }
@@ -141,7 +143,7 @@ ObjectFileInstaller::visit (Obj8::Command::Geometry::LightNamed *v)
 
 
 void
-ObjectFileInstaller::visit (Obj8::Command::Geometry::LightParam *v)
+ObjFileInstaller::visit (Obj8::Command::Geometry::LightParam *v)
 {
   applyTransformation (&v->m_x, &v->m_y, &v->m_z);
 }
@@ -149,7 +151,7 @@ ObjectFileInstaller::visit (Obj8::Command::Geometry::LightParam *v)
 
 
 void
-ObjectFileInstaller::visit (Obj8::Command::Geometry::LightSpillCustom *v)
+ObjFileInstaller::visit (Obj8::Command::Geometry::LightSpillCustom *v)
 {
   applyTransformation (&v->m_x, &v->m_y, &v->m_z);
 }
@@ -157,7 +159,7 @@ ObjectFileInstaller::visit (Obj8::Command::Geometry::LightSpillCustom *v)
 
 
 void
-ObjectFileInstaller::visit (Obj8::Data::LightVertex *v)
+ObjFileInstaller::visit (Obj8::Data::LightVertex *v)
 {
   applyTransformation (&v->x, &v->y, &v->z);
 }
@@ -165,7 +167,7 @@ ObjectFileInstaller::visit (Obj8::Data::LightVertex *v)
 
 
 void
-ObjectFileInstaller::visit (Obj8::Data::LineVertex *v)
+ObjFileInstaller::visit (Obj8::Data::LineVertex *v)
 {
   applyTransformation (&v->x, &v->y, &v->z);
 }
@@ -173,7 +175,7 @@ ObjectFileInstaller::visit (Obj8::Data::LineVertex *v)
 
 
 void
-ObjectFileInstaller::visit (Obj8::Data::Vertex *v)
+ObjFileInstaller::visit (Obj8::Data::Vertex *v)
 {
   applyTransformation (&v->x, &v->y, &v->z);
 }
@@ -181,7 +183,7 @@ ObjectFileInstaller::visit (Obj8::Data::Vertex *v)
 
 
 void
-ObjectFileInstaller::visit (Obj8::Global::Texture *t)
+ObjFileInstaller::visit (Obj8::Global::Texture *t)
 {
   installTexture ("-texture", t);
 }
@@ -189,7 +191,7 @@ ObjectFileInstaller::visit (Obj8::Global::Texture *t)
 
 
 void
-ObjectFileInstaller::visit (Obj8::Global::TextureDraped *t)
+ObjFileInstaller::visit (Obj8::Global::TextureDraped *t)
 {
   installTexture ("-draped", t);
 }
@@ -197,7 +199,7 @@ ObjectFileInstaller::visit (Obj8::Global::TextureDraped *t)
 
 
 void
-ObjectFileInstaller::visit (Obj8::Global::TextureLit *t)
+ObjFileInstaller::visit (Obj8::Global::TextureLit *t)
 {
   installTexture ("-lit", t);
 }
@@ -205,7 +207,7 @@ ObjectFileInstaller::visit (Obj8::Global::TextureLit *t)
 
 
 void
-ObjectFileInstaller::visit (Obj8::Global::TextureNormal *t)
+ObjFileInstaller::visit (Obj8::Global::TextureNormal *t)
 {
   installTexture ("-normal", t);
 }
@@ -213,7 +215,7 @@ ObjectFileInstaller::visit (Obj8::Global::TextureNormal *t)
 
 
 void
-ObjectFileInstaller::applyTransformation (
+ObjFileInstaller::applyTransformation (
     Obj8::Parser::Number *x0,
     Obj8::Parser::Number *x1,
     Obj8::Parser::Number *x2
@@ -251,7 +253,7 @@ ObjectFileInstaller::applyTransformation (
 
 
 void
-ObjectFileInstaller::installTexture (Obj8::String suffix, Obj8::AbstractTexture *t)
+ObjFileInstaller::installTexture (Obj8::String suffix, Obj8::AbstractTexture *t)
 {
   Obj8::String prefix;
   
@@ -271,7 +273,7 @@ ObjectFileInstaller::installTexture (Obj8::String suffix, Obj8::AbstractTexture 
 
 
 bool
-ObjectFileInstaller::installTextureImpl (
+ObjFileInstaller::installTextureImpl (
     Obj8::AbstractTexture *t,
     Obj8::String dst_prefix,
     Obj8::String src)

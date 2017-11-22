@@ -13,8 +13,11 @@ struct Worker : QRunnable
   virtual ~Worker ();
   
   void run () Q_DECL_OVERRIDE;
+  QString src() const;
   
 protected:
+  void runImpl ();
+  
   QByteArray content () const;
   
   Classification::DefinitionsPointer m_definitions;
