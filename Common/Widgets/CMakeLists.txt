@@ -36,10 +36,6 @@ set (Widgets_LIBS
   ${OPENGL_LIBRARIES}
 )
 
-if (WIN32)
-    set (graphviz_INCLUDE_DIRS "C:/Program Files (x86)/Graphviz2.38/include")
-    set (graphviz_LIBRARY_DIRS "C:/Program Files (x86)/Graphviz2.38/lib/debug/lib")
-endif ()
 find_package (GraphViz)
 
 if (GraphViz_FOUND)
