@@ -1,3 +1,5 @@
+#include <stdexcept>
+
 #include "Definitions.hpp"
 #include "Model.hpp"
 
@@ -34,7 +36,7 @@ Classification::Model::column (const char *property) const
     }
   }
   
-  throw ("no such property");
+  throw (std::runtime_error("no such property"));
 }
 
 

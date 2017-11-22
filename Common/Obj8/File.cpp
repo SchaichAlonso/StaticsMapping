@@ -1,3 +1,5 @@
+#include <stdexcept>
+
 #include <QtCore/QFileInfo>
 
 #include <Common/CryptoHash.hpp>
@@ -96,7 +98,7 @@ Obj8::File::parse ()
   accept (&visitor, true);
   
   if (visitor.texturesHashed() == 0) {
-    throw ("Failed to load textures.");
+    throw (std::runtime_error("Failed to load textures."));
   }
   m_hash_texture = visitor.result ();
 }

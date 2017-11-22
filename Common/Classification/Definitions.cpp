@@ -1,3 +1,5 @@
+#include <stdexcept>
+
 #include <QtCore/QCoreApplication>
 #include <QtCore/QCryptographicHash>
 #include <QtCore/QDir>
@@ -876,10 +878,10 @@ Classification::Definitions::readJson (QString filename)
     file.close ();
     
     if (error.error != QJsonParseError::NoError) {
-      qCritical ("%s", qUtf8Printable (error.errorString()));
+      throw (std::runtime_error(error.errorString().toStdString()));
     }
   } else {
-    qCritical ("Cannot open file: \'%s\'", qUtf8Printable(filename));
+    throw (std::runtime_error(QString("Cannot open \'%1\'").arg(filename).toStdString()));
   }
   
   return (doc.object ());

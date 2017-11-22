@@ -1,3 +1,5 @@
+#include <stdexcept>
+
 #include <QtCore/QUrl>
 
 #include "Library.hpp"
@@ -116,7 +118,7 @@ Classification::Library::setUrl (QString url)
 {
   QUrl u (url);
   if (not u.isValid()) {
-    throw ("broken url");
+    throw (std::runtime_error("broken url"));
   }
   
   m_url = url;

@@ -1,3 +1,5 @@
+#include <stdexcept>
+
 #include <QRegExp>
 
 #include "Airline.hpp"
@@ -244,7 +246,7 @@ Classification::Airline::setParent (QString parent)
 {
   if (m_q) {
     if (not (parent.isEmpty() or m_q->airline(parent))) {
-      throw ("Poor parent airline picked");
+      throw (std::runtime_error("Poor parent airline picked"));
     }
   }
   m_parent = parent;

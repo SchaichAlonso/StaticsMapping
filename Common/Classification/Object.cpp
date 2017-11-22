@@ -183,7 +183,7 @@ void
 Classification::Object::setAircraft (QString a)
 {
   if (m_q and not m_q->aircraft(a)) {
-    throw ("Invalid Aircraft");
+    throw (std::runtime_error("Invalid Aircraft"));
   }
   
   m_aircraft = a;
@@ -203,7 +203,7 @@ void
 Classification::Object::setLivery (QString o)
 {
   if (m_q and not m_q->airline(o)) {
-    throw ("Invalid livery");
+    throw (std::runtime_error("Invalid livery"));
   }
   
   m_livery = o;
@@ -223,7 +223,7 @@ void
 Classification::Object::setLibrary (QString o)
 {
   if (m_q and not m_q->library(o)) {
-    throw ("Invalid library");
+    throw (std::runtime_error("Invalid library"));
   }
   
   m_library = o;
@@ -282,7 +282,7 @@ Classification::Object::setFileHash (Hash s)
       return;
     }
   }
-  throw ("poor hash");
+  throw (std::runtime_error("poor hash"));
 }
 
 
@@ -305,7 +305,7 @@ Classification::Object::setTextureHash (Hash s)
       return;
     }
   }
-  throw ("poor hash");
+  throw (std::runtime_error("poor hash"));
 }
 
 
@@ -345,7 +345,7 @@ Classification::Object::setFileSize (Size s)
 {
   bool acceptable = (s >= 1);
   if (not acceptable) {
-    throw ("poor size");
+    throw (std::runtime_error("poor size"));
   }
   
   m_size = s;
