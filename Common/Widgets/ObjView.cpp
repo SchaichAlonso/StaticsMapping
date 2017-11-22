@@ -57,6 +57,8 @@ ObjView::setModel (Classification::ObjectPointer object, QSharedPointer<VisualMo
     QOpenGLTexture::Filter min = QOpenGLTexture::LinearMipMapLinear;
     QOpenGLTexture::Filter mag = QOpenGLTexture::Linear;
     
+    makeCurrent();
+    
     if (m_mdl->m_draped.isNull()) {
       m_draped.reset ();
     } else {
