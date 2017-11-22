@@ -9,9 +9,10 @@
 Classification::Afiliations::Afiliations (DefinitionsPointer defs)
 : m_definitions (defs)
 , m_hub_distances (hubDistances())
-, m_walk_up (5)
-, m_walk_down (1)
-, m_tree (tree ())
+, m_edges (edges ())
+, m_edge_traverse_weight {1, 5}
+, m_resize_linear_weight (1)
+, m_resize_quadratic_weight (0)
 , m_max_plane_age (0)
 , m_year (0)
 {
@@ -27,9 +28,9 @@ Classification::Afiliations::~Afiliations ()
 
 Classification::Airport::DistanceInKM
 Classification::Afiliations::shortestDistance (
-    AirportDistanceCache &cache,
-    QStringList hubsa,
-    QStringList hubsb
+  AirportDistanceCache &cache,
+  QStringList hubsa,
+  QStringList hubsb
 ) const
 {
   Airport::DistanceInKM closest = 1000000, current;
@@ -54,9 +55,9 @@ Classification::Afiliations::shortestDistance (
           cache.insert (a_to_b, current);
         } else {
           qCritical (
-              "Lack of airport(s) %s/%s",
-              qUtf8Printable(a),
-              qUtf8Printable(b)
+            "Lack of airport(s) %s/%s",
+            qUtf8Printable(a),
+            qUtf8Printable(b)
           );
           continue;
         }
@@ -103,95 +104,116 @@ Classification::Afiliations::hubDistances () const
 
 
 
-Classification::Afiliations::Tree
-Classification::Afiliations::tree () const
+Classification::Afiliations::EdgesInGraph
+Classification::Afiliations::edges () const
 {
-  Tree retval;
+  EdgesInGraph edges;
   
-  Q_FOREACH (AirlinePointer airline, m_definitions->airlines()) {
+  Definitions::Airlines all = m_definitions->airlines();
+  Q_FOREACH (AirlinePointer airline, all) {
     if (airline->parent().isEmpty())
       continue;
     if (airline->parent() == airline->icao()) {
       continue;
     }
     
-    AirlinePair subsidy_to_owner (airline->icao(), airline->parent());
-    AirlinePair owner_to_subsidy (airline->parent(), airline->icao());
-    
-    Q_ASSERT (not retval.contains (subsidy_to_owner));
-    Q_ASSERT (not retval.contains (owner_to_subsidy));
-    
-    retval.insert (subsidy_to_owner, m_walk_up);
-    retval.insert (owner_to_subsidy, m_walk_down);
+    Q_ASSERT (all.contains(airline->parent()));
+    edges[all[airline->parent()]][airline] = ParentToChild;
+    edges[airline][all[airline->parent()]] = ChildToParent;
   }
   
-  return (retval);
+  return (edges);
 }
 
 
 
-Classification::Afiliations::Fees
-Classification::Afiliations::fees (QString icao) const
+Classification::Afiliations::Weights
+Classification::Afiliations::weights (AirlinePointer airline) const
 {
-  QList<QString> pending;
-  Fees fees;
+  QList<AirlinePointer> pending;
+  Weights weights;
   
-  fees.insert (icao, 0);
-  pending.append (icao);
+  weights.insert (airline, 0);
+  pending.append (airline);
   
   while (not pending.isEmpty()) {
     
-    QString current_icao  = pending.takeFirst ();
+    AirlinePointer n = pending.takeFirst();
+    Weight n_w = weights[n];
     
-    Tree::ConstIterator i = m_tree.constBegin ();
-    Tree::ConstIterator e = m_tree.constEnd ();
-    
-    for ( ; (i != e); ++i) {
-      if (i.key().first == current_icao) {
-        break;
-      }
-    }
-    
-    Fee current_fee = fees.value (current_icao);
-    for ( ; (i != e) and (i.key().first == current_icao); ++i) {
-      QString afiliate_icao = i.key().second;
-      
-      if (fees.contains (afiliate_icao)) {
+    EdgesAtNode n_edges = m_edges[n];
+    for (EdgesAtNode::ConstIterator i=n_edges.constBegin(); i!=n_edges.constEnd(); ++i) {
+      if (weights.contains(i.key())) {
         continue;
       }
       
-      Fee afiliate_fee = current_fee + i.value ();
+      Weight i_fee = n_w + weight(i.value());
+      weights.insert (i.key(), i_fee);
       
-      fees.insert (afiliate_icao, afiliate_fee);
-      pending.append (afiliate_icao);
+      pending.append (i.key());
     }
   }
   
-  return (fees);
+  return (weights);
 }
 
 
 
-Classification::Afiliations::Fee
-Classification::Afiliations::resizedFee (Fee basic, int sized) const
+Classification::Afiliations::Weight
+Classification::Afiliations::weight (EdgeType e) const
 {
-  return (basic + sized);
+  return (m_edge_traverse_weight[e]);
 }
 
 
 
-Classification::Afiliations::Fee
-Classification::Afiliations::traverseDownFee () const
+void
+Classification::Afiliations::setWeight (EdgeType e, Weight w)
 {
-  return (m_walk_down);
+  m_edge_traverse_weight[e] = w;
 }
 
 
 
-Classification::Afiliations::Fee
-Classification::Afiliations::traverseUpFee () const
+Classification::Afiliations::Weight
+Classification::Afiliations::resizingWeight (int x) const
 {
-  return (m_walk_up);
+  Weight linear    = x * resizingLinearWeight();
+  Weight quadratic = x * x * resizingQuadraticWeight();
+  
+  return (linear + quadratic);
+}
+
+
+
+Classification::Afiliations::Weight
+Classification::Afiliations::resizingLinearWeight () const
+{
+  return (m_resize_linear_weight);
+}
+
+
+
+Classification::Afiliations::Weight
+Classification::Afiliations::resizingQuadraticWeight () const
+{
+  return (m_resize_quadratic_weight);
+}
+
+
+
+void
+Classification::Afiliations::setResizingLinearWeight (Weight w)
+{
+  m_resize_linear_weight = w;
+}
+
+
+
+void
+Classification::Afiliations::setResizingQuadraticWeight (Weight w)
+{
+  m_resize_quadratic_weight = w;
 }
 
 
@@ -270,14 +292,14 @@ Classification::Afiliations::outdated (ObjectPointer obj, Airline::PrimaryKey us
 
 void
 Classification::Afiliations::mergeObject (
-    WeightedObjectsByXPClass &objects,
-    XPClass xpclass,
-    WeightedObject object
+  WeightedObjectsByXPClass &objects,
+  XPClass xpclass,
+  WeightedObject object
 ) const
 {
   if (objects.contains(xpclass)) {
-    Fee current_cheapest = objects.value(xpclass).weight;
-    Fee candidate_price = object.weight;
+    Weight current_cheapest = objects.value(xpclass).weight;
+    Weight candidate_price = object.weight;
     
     if (candidate_price <= current_cheapest) {
       if (candidate_price < current_cheapest) {
@@ -294,16 +316,18 @@ Classification::Afiliations::mergeObject (
 
 void
 Classification::Afiliations::mergeObjects (
-    WeightedObjectsByXPClass &objects,
-    ObjectPointer object,
-    Fee initial) const
+  WeightedObjectsByXPClass &objects,
+  ObjectPointer object,
+  Weight initial
+) const
 {
   QList<XPClass> xp_classes = 
       XPClass::create (m_definitions->aircraft(object->aircraft()), object);
   
   Q_FOREACH (XPClass xp_class, xp_classes) {
     for (int resized=0; ; ++resized) {
-      mergeObject (objects, xp_class, WeightedObject(object, resizedFee(initial, resized)));
+      Weight w = initial + resizingWeight(resized);
+      mergeObject (objects, xp_class, WeightedObject(object, w));
       if (xp_class.couldBeLarger())
         xp_class=xp_class.nextLarger();
       else
@@ -328,16 +352,16 @@ Classification::Afiliations::objectsAvailable (AirlinePointer airline) const
   WeightedObjectsByXPClass result;
   
   if (airline) {
-    Fees fees = this->fees(airline->primaryKey());
+    Weights w = weights(airline);
   
     Q_FOREACH (ObjectPointer obj, m_definitions->objects()) {
       if (outdated(obj, airline->primaryKey())) {
         continue;
       }
     
-      QString owner = obj->livery();
-      if (fees.contains(owner)) {
-        mergeObjects (result, obj, fees.value(owner));
+      AirlinePointer owner = m_definitions->airline(obj->livery());
+      if (w.contains(owner)) {
+        mergeObjects (result, obj, w.value(owner));
       }
     }
   } else {
