@@ -1,6 +1,8 @@
 #include <iostream>
 
-#include <QCoreApplication>
+#include <QtCore/QCoreApplication>
+#include <QtCore/QCommandLineParser>
+#include <QtCore/QCommandLineOption>
 
 #include <Classification/Definitions.hpp>
 #include <Classification/Object.hpp>
@@ -10,15 +12,19 @@ int
 main (int argscnt, char **args)
 {
   QCoreApplication app (argscnt, args);
+  QCommandLineParser parser;
+  parser.addOption(QCommandLineOption("verbose"));
+  parser.addHelpOption();
+  parser.process(app);
   
   Classification::DefinitionsPointer definitions(
       Classification::Definitions::fromFile ()
   );
   
-  for (int i=1; i<argscnt; ++i) {
-    QFile qf (args[i]);
+  Q_FOREACH (QString filename, parser.positionalArguments()) {
+    QFile qf (filename);
     if (not qf.open (QFile::ReadOnly)) {
-      qCritical ("Failed to open %s", args[i]);
+      qCritical ("Failed to open %s", qUtf8Printable(filename));
       continue;
     }
     
@@ -30,12 +36,32 @@ main (int argscnt, char **args)
           Classification::ObjectPointer obj;
           obj = definitions->match (file.size(), file.fileHash(), file.textureHash());
           
-          if (obj) {
-            std::cout << args[i] << std::endl;
+          if (parser.isSet("verbose")) {
+            if (obj) {
+              std::cout << "Known ";
+            } else {
+              std::cout << "Unknown ";
+            }
+            std::cout
+              << "<"
+              << qUtf8Printable(filename)
+              << "> hash <"
+              << qUtf8Printable (
+                  Classification::Object (
+                    file.size(), file.fileHash(), file.textureHash()
+                  )
+                  .primaryKey()
+                )
+              << ">"
+              << std::endl;
+          } else {
+            if (obj) {
+              std::cout << qUtf8Printable(filename) << std::endl;
+            }
           }
           
         } catch (...) {
-          qCritical ("size and primary hash match for %s.", args[i]);
+          qCritical ("size and primary hash match for %s.", qUtf8Printable(filename));
         }
       }
     }
