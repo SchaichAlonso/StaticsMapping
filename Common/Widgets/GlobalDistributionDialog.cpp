@@ -104,12 +104,12 @@ GlobalDistributionDialog::createFiltersGui ()
 void
 GlobalDistributionDialog::updatePreview ()
 {
-  Classification::ObjectsByXPClass selection =
-      m_afilia.objectsAvailableToAirline (m_selected_airline);
+  Classification::WeightedObjectsByXPClass selection =
+    m_afilia.objectsAvailable (m_selected_airline);
   
   GlobalDistributionWidget::ObjectList list;
-  Q_FOREACH (Classification::ObjectPointer obj, selection) {
-    list.append (obj);
+  Q_FOREACH (const Classification::WeightedObject &o, selection) {
+    list.append (o.object);
   }
   
   m_globe->setSelectedObjects (list);
