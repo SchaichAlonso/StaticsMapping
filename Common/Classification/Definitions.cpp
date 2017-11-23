@@ -783,7 +783,12 @@ Classification::Definitions::fromFile (QString filename, QString airports)
   if (airports.isNull())
     airports = dataPath ("airports.json");
   
-  apts = readJson (airports);
+  try {
+    apts = readJson (airports);
+  } catch (const std::exception &e) {
+    qCritical("Cannot load airport data: %s", e.what());
+  }
+  
   defs = readJson (filename);
   
   if (defs.size() != 0) {
