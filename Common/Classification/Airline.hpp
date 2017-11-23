@@ -39,7 +39,10 @@ namespace Classification
    
     static bool isFictiveIcaoCode (QString);
     bool isFictiveIcaoCode() const;
-        
+    
+    QString allHubs () const;
+    QStringList allHubsList () const;
+    
     QString hubs () const;
     void setHubs (QString);
     

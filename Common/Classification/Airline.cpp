@@ -62,9 +62,7 @@ Classification::Airline::toJson () const
 {
   QJsonObject obj = IcaoRecord::toJson ();
   
-  QStringList hubs = unique (m_hubs + m_hubs_missing);
-  
-  obj.insert ("hubs", hubs.join(" "));
+  obj.insert ("hubs", allHubs());
   obj.insert ("comment", m_comment);
   obj.insert ("founded", m_founded);
   obj.insert ("ceased", m_ceased);
@@ -114,6 +112,23 @@ Classification::Airline::isFictiveIcaoCode () const
 {
   return (isFictiveIcaoCode(icao()));
 }
+
+
+
+QString
+Classification::Airline::allHubs() const
+{
+  return (allHubsList().join(" "));
+}
+
+
+
+QStringList
+Classification::Airline::allHubsList() const
+{
+  return (unique(m_hubs + m_hubs_missing));
+}
+
 
 
 
