@@ -1,37 +1,38 @@
 ﻿# Introduction
-Before version 10.50, the only way for an XPlane airport to contain static scenery aircraft was by the airport authors manually placing these static objects during the airport implementation. For this purpose, several XPlane scenery library packages containing static aircraft objects that can be used exist at the point of this writing. However, the many libraries use different standards (or no standards at all) in terms of how to name, position, align, ... aircraft objects. As these objects are manually placed by airport authors, it becomes the airport author's responsibility to adapt object attributes to fit the author's requirements.
+Before version 10.50, the only way for an XPlane airport to contain static scenery aircraft was by having the airport authors manually place these static objects during the airport's implementation. At the point of this writing, several XPlane scenery library packages containing static aircraft objects that can be used for this purpose exist. However, the many scenery libraries use different standards (or no standards at all) in terms of how to name, position, align, ... the static aircraft objects they contain. When these static aircraft objects are manually placed by airport authors, it becomes the airport author's responsibility to adapt integration attributes to fit the author's requirements.
 
-This system had significant limitations. Referencing the static aircraft library in the airport scenery effectively makes the static library a dependency of that airport. This dependency, or rather these dependencies (as multiple aircraft objects are picked from different object libraries), needs to be taken care of by the end user. However, as time passes new versions of the object libraries are released, and compatibility is often not preserved. Further, while XPlane lacks collision detection technology, estitiques demand for the user not to &quot;use&quot; a gate already occupied by a static aircraft object, which means that either are the airports only populated very densely, or a massive number of parking positions is lost. Even if only dense population is around, the static airliners can be occupying a parking position interesting to the end user.
+This system has significant limitations. Referencing a scenery library's content in the airport effectively makes that scenery library a dependency of that airport. This dependency has to be resolved by the end user, and usually is not a single dependency either, because multiple references to different scenery libraries were introduced to the airport. As time passes new versions of the scenery libraries are released, compatibility is often not preserved and it's breakage is usually not documented. Likewise, most airport designers do not document what exact library elements an airport is referencing. Further, while XPlane has no collision detection, esthetique demands for the user not to &quot;use&quot; a gate already occupied by a static aircraft object, which means that either airports are only populated very densely, or a massive number of parking positions is lost to static population at airport implementation time. Even if only dense population is around, the static aircraft objects can be occupying parking positions interesting to the user.
 
-XPlane 10.50 overhauled this system, introducing airport *start* usage identifiers. Using WED-1.5 or newer, each *start* can be configured a list of airline identifiers in addition to the startup equipment available at that *start*. When XPlane initializes an airport scenery, for each *start* not occupied by the user, it has some chance to pick a random aircraft type supported by the *start* 's equipment. These randomly picked aircrafts are assigned airline identifiers according to the *start* specifications. If a usable aircraft object is provided by any scenery library, XPlane will use it to populate the corresponding *start*. Otherwise XPlane drops the airline identifier and searches the library for a compatible object for the aircraft type independend of the object's livery.
+XPlane 10.50 introduced an automated population system, by adding several airport *start* attributes. Using WED-1.5 or newer, each *start* can be configured a list of operator identifiers in addition to the startup equipment available at that *start*. When XPlane initializes an airport scenery, for each *start* not occupied by the user, it has some chance to pick a random aircraft type supported by the *start*'s equipment. These randomly picked aircrafts are assigned operator identifiers according to the *start* specifications. If an usable aircraft object is provided by any scenery library, XPlane will use it to populate the corresponding *start*. Otherwise XPlane drops the operator identifier and searches the library for a compatible object of the aircraft type independent of the object's operator.
 
-In the real world, airport gates and parking positions are leased to operators. These operators are rarely independend but usually somehow related with other operators (subsidies, aliances, ...) and offer their gates to their relatives at a discounted rate or for free. Also, if a large gate is available to an operator, rather than leasing a new smaller gate, operators often opt to use the large gate for a &quot;small&quot; plane: Gates designed to service Jumbos can regularily be seen to service Regional Jets instead.
+In the real world, airport gates and parking positions are leased to operators. These operators are rarely independent but usually somehow related with other operators (subsidies, alliances, ...) and offer their gates to their relatives at discounts or for free. Also, if a large gate is available to an operator, rather than leasing a second, smaller gate, operators often opt to use the large gate for a &quot;small&quot; plane: All over the world regional jets can be boarded at gates that were servicing jumbos a few hours ago.
 
-An operator giving a gate to a &quot;random&quot; competitor, however, is quite rare.
+An operator giving a gate to a &quot;random&quot; competitor, however, is rare.
 
-<br/>
-<br/>
+<hr/>
 
-The goal of this project is to generate a standartized XPlane-10.50/XPlane-11 aircraft objects library. It does so by locating user-installed aircraft objects, transforming them to conform to XPlane-10.50's requirements, and exposing each object to all XPlane identifiers that it is the &quot;best fit&quot; for.
+The goal of this project is to generate a XPlane-10.50/XPlane-11 aircraft objects library. It does so by locating user-installed aircraft objects, transforming them to conform to XPlane-10.50's requirements, and exposing each object to all XPlane identifiers that it is the &quot;best fit&quot; for.
+
+For the remains of this document, the term airline and aircraft operator are used interchangeable. Military operators work like Airlines in all demands.
 
 
 # Usage
 
 ### Generating airport metadata
 
-This project tracks airline regional presence by storing airports that serve as hubs to airlines. The regional distance weight (not interfaced at this time) to traverse from one airline to another is the distance, in commenced 100km invervals, of the closest two airports assigned to them.
+This project tracks airline regional presence by storing airports that serve as hubs to airlines. The regional distance weight (not interfaced at this time) to traverse from one airline to another is the distance, ceiled to multiples of 100km, of the closest two airports assigned to them.
 
-For licencing reasons, the airport data from XPlane cannot be distributed with this package. An application called **AptDatExtract** can be used to extract the information from an xplane installation instead.
+For licensing reasons, the airport data from XPlane cannot be distributed with this package. An application called **AptDatExtract** can be used to extract the information from an XPlane installation instead.
 
 ![Windows](https://github.com/xibo/StaticsMapping/raw/master/doc/AptDatExtract.jpeg)
 
-In the screenshot, it is instructed to use the airport data of the XPlane installation in **c:\XPlane10**.
+In the image above, it is instructed to use the airport data of the XPlane installation in **c:\XPlane10**.
 
 Hitting the *go* button will cause **AptDatExtract** to generate it's airport metadata. If it is being run from the command line, progress diagnostics will be emited to standard output (the GUI freezes during the progress). On completion or failure, **AptDatExtract** will open a Dialog to report termination.
 
 ![Windows](https://github.com/xibo/StaticsMapping/raw/master/doc/AptDatExtract-Success.jpeg)
 
-**AptDatExtract** can extract metadata only for Airports in XPlane-10.50 format. Older airports will fail to have their metadata extracted, despite being present in the XPlane installation, and only contents of the global default scenery, as in gateway scenery, will be processed. No means are provided within the scope of this project to modify the airport metadata. Either update the airport on the scenery gateway, or edit *Data/airports.json* by hand.
+**AptDatExtract** extracts metadata only for Airports in XPlane-10.50 format. Older airports will fail to have their metadata extracted, despite being present in the XPlane installation, and only contents of the global default scenery (as in gateway scenery) will be processed. No means are provided within the scope of this project to modify the airport metadata. If it proves to be insufficient, either the airport will have to be updated on the scenery gateway, or *Data/airports.json* has to be edited manually.
 
 This airport data needs to be extracted only once, though it might be advantageous to re-extract it after new default airports were introduced by an XPlane update.
 
@@ -43,15 +44,15 @@ The **LibraryWizard** application is used to search for known statics on the fil
 
 ![LibraryWizard Intro](https://github.com/xibo/StaticsMapping/raw/master/doc/LibraryWizard-Intro.jpeg)
 
-It analyzes all files within the user provided *Scan Path*, recursing into any subdirectories. The input path is not required to be part of an XPlane installation.
+It analyzes all files within the user provided ***Scan Path***, recursing into any sub-directories. The input path is not required to be part of an XPlane installation.
 
-The *Output Path* specifies where to generate objects in. Once again, it is not required to be within an XPlane installation.
+The ***Output Path*** specifies where to generate objects in. Again, it is not required to be within an XPlane installation.
 
-Each known object file discovered while recursing the *Scan Path* will be loaded, fixed to conform the XPlane-10.50 static aircraft object requirements, and stored in the *Output Path*. The discovered objects files themselves will not be modified, all required transformations are done in memory and then written to the *Output Path*, which needs to have been created manually (use the *browse* button to open a dialog that provides the option to create a new directory). The objects stored in the *Output path* will not have any dependencies to anything outside the *Output Path*.
+Each known object file discovered while recursing the *Scan Path* will be loaded, transformed in-memory to conform the XPlane-10.50 static aircraft object requirements, and stored in the *Output Path*. *Output Path* has to be an empty directory manually created (the dialog that can be accessed by clicking the *browse* button provides the option to create a new directory). The objects stored in the *Output path* will not have any dependencies to anything outside the *Output Path*.
 
-The *Worker Threads* tunable controls how many objects will be worked on concurrently. It serves mostly debugging purposes and the default value should work well enough on most systems.
+The **Worker Threads** tunable controls how many objects will be worked on concurrently. It serves mostly debugging purposes and the default value should work well enough on most systems.
 
-The *Texture Resolution Limit* can be used to restrict the size of textures used by aircraft statics. Limiting it will compromize visual quality of the produced statics, but will reduce resource consumption by XPlane on runtime.
+The ***Texture Resolution Limit*** can be used to restrict the size of textures used by aircraft statics. Limiting it will compromize visual quality of the produced statics, but will reduce resource consumption by XPlane at runtime.
 
 Press *Next* to have the object files be scanned. The following page will emit the scan progress.
 
@@ -61,50 +62,61 @@ On completion, a file named *found.json* will be generated in the output path. I
 
 <hr/>
 
-If the **LibraryWizard** application had already been used to populate an *Output Path*, that output can be reused, i.e. to regenerate the XPlane library without having to do the time-exhaustive object file scan/transform/write. Select the *Reuse Old* Radio Button and find the *found.json* file stored in the *Output Path*.
+If the **LibraryWizard** application has already been used to populate an *Output Path* in the past, that output can be reused in order to regenerate the XPlane library without having to do the time-exhaustive object file scan/transform/write. This can be done in the *Welcome Page* by enabling the ***Reuse Old*** Radio Option and providing the path to the *found.json* file stored in the *Output Path* of the previous run.
 
 
 ### Generating the XPlane library
 
-Having generated the library, or having been provided an previous run's *found.json* file, the **LibraryWizard** application can be continued to the XPlane Library Options page.
+Having created or provided the populated *Output Path*, the **LibraryWizard** application can be continued to the *Generate XPlane Library* page.
 
 ![LibraryWizard Intro](https://github.com/xibo/StaticsMapping/raw/master/doc/LibraryWizard-Afiliates.jpeg)
 
-In the *Preview* group that covers bottom half of the page, an airline can be selected with the ComboBox next to the *Operator* label, to have it's available objects be listed.
-In the object listing itself, *Object* is the filename within the *Output Path*, *Weight* is a metric that describes how difficult it is for the selected airline to access that object, and *VPath* is the XPlane LIBRARY format &lt;vpath&gt; prefix that will be used.
+In the ***Preview*** group that covers bottom half of the page, an airline can be selected with the ComboBox next to the ***Operator*** label, to have it's available objects be listed.
 
-The *Preview Selected* button can be used to look inside any of the airline's objects, after having selected it.
+In the object listing itself, ***Object*** is the filename within the *Output Path*, ***Weight*** is a computed metric that describes how difficult it is for the selected airline to access that object at the current settings, and ***VPath*** is the XPlane LIBRARY format &lt;vpath&gt; prefix that will be used.
 
-<hr/>
-Press the &quot;write library&quot; button below the *Preview* group to have the XPlane library be written with the current settings.
+The ***Preview Selected*** button can be used to look inside any of the airline's objects. Draging the mouse in the preview window rotates the preview.
 
 <hr/>
-In the *Options* group that covers the upper half of the page, a number of settings can be configured to tune how the *Weights* are computed. If multiple objects are available, always the object with the lowest *weight* will be used. If multiple objects share the lowest *weight*, each of them will be used.
 
-When walking in the operator-subsidy hierarchy, the *weight* is the sum of the traversed relations, each weighted with either *Parent-&gt;Child* or *Parent&lt;-Child* according to the relationship.
+Pressing the ***Write Library*** button below the *Preview* group will have a XPlane library file be written to *Output Path* that exposes the objects to XPlane, using the current settings.
 
-Using a smaller aircraft for a large *start* is weighted by
-<pre>d*d*q + d*l</pre>
-where *d* is the size difference, *q* is *Size-up quadratic weight* and *l* is *Size-up linear weight*.
+<hr/>
 
-*Current Year* imposes a filter that disqualifies objects that are associated with a different age. A setting of 0 enables objects independend of their lifetime.
+In the ***Options*** group that covers the upper half of the *Generate XPlane Library* page, a number of settings can be configured to tune how the object *weight* values are computed. If multiple objects are available for an XPlane export, the object with the lowest *weight* will be used. If multiple objects share this lowest *weight*, all objects sharing this *weight* will be used.
+
+#### Weight Options
+
+An object is usable by it's operator for it's &quot;obvious&quot; XPlane classification at a *weight* of 0.
+
+As it is provided to related operators, this *weight* is increased by ***Parent-&gt;Child*** for every step taken upwards in the hierarchy, and by ***Parent&lt;-Child*** for every step taken downwards in the hierarchy to reach the respective relative.
+
+Aircraft objects are allowed to be placed on parking positions designed to also support larger aircraft. Every time an object is provided to a classification for larger aircraft, a size difference *d* is computed. The weight to provide an object as a larger one is the sum of the product of *d* and ***Size-up linear weight***, and the product of the square of *d* and ***Size-up quadratic weight***, or
+
+d^2 * *(Size-up quadratic weight)* + d * *(Size-up linear weight)*
+
+#### Filter Options
+
+***Current Year*** disqualifies objects that are associated with a different age. A setting of 0 enables objects independent of their lifetime.
 ![AFL-1987](https://github.com/xibo/StaticsMapping/raw/master/doc/AFL-1987.jpeg)
 ![AFL-2017](https://github.com/xibo/StaticsMapping/raw/master/doc/AFL-2017.jpeg)
-In the first image above, the *Current Year* setting is used to enable &quot;history mode&quot; and limit Aeroflot Russian Airlines (AFL) to the fleet and paintjobs it used in 1987, while AFL was restricted to the limits of it's current fleet and paints in the second image. If the year was 0, AFL would be allowed to use both it's old and it's new objects.
+In the first image above, the *Current Year* setting is used to limit airline fleets and paint-jobs to those used in 1987, while in the second image it was used to restrict to the limits of current fleets and paints.
 
-*Max. Plane Age* only has an effect if *Current Year* is also set. It removes objects not introduced later than *Current Year* - *Max Plane Age*. Note that some objects have introduction dates that are far more recent than the object: A 1935-built DC-3 painted in American Airline's 2013 livery is handled like an aircraft built in 2013.
+***Max. Plane Age*** only has an effect if *Current Year* is also set. It removes objects not introduced later than *Current Year* - *Max Plane Age*. Note that some objects have introduction dates that are far more recent than the object: A 1935-built DC-3 painted in American Airlines' 2013 livery is handled like an object introduced in 2013.
 
-*First Uses* specifies what LIBRARY instruction will be used for the first object of each name. The default of EXPORT_EXTEND should &quot;just work&quot; on most installations. If EXPORT is selected instead, previous objects of the same name will not be used by XPlane, however the word &quot;previous&quot; comes at the &quot;usual&quot; implications.
+***First Uses*** specifies what XPlane LIBRARY language instruction will be used for the first object of each name. The default of EXPORT_EXTEND should &quot;just work&quot; on most installations. If EXPORT is selected instead, previous objects of the same name will not be used by XPlane, however the word &quot;previous&quot; comes at the &quot;usual&quot; implications.
 
 
 
 ### Installing the XPlane library
 
-After having generated an XPlane library, the *Output Path* has to be copied to XPlane's
+After having generated an XPlane library, the *Output Path* has to be copied or moved to XPlane's
 <pre>Custom Scenery</pre>
 subdirectory, unless it is already there.
 
 If *First Uses* was set to EXPORT, *scenery_packs.ini* will likely have to be adapted.
+
+<hr/>
 
 # Modifying the Dataset
 
@@ -248,14 +260,14 @@ Gliders, electric planes, Baloons, and so on, are not supported at this time.
 <br/>
 <br/>
 <h3>Compiling</h3>
-<p>To compile the application from sources, a C++-11 compiler, Qt-5.6 and cmake are needed.</p>
-<p>If found, libgvc is also used. On unix, in an empty directory type
+<p>To compile the application from sources, a C++-11 compiler, Qt-5.6 and cmake are needed. Qt-5.9 has a regression fixed in Qt-5.9.2 that affects this project, so Qt-5.9.1 and 5.9.0 cannot be used.</p>
+<p>If found, libgvc of graphviz is also used. On unix, in an empty directory type
 <pre>
 cmake ${source_dir}
 make
 </pre>
 to build everything. Replace ${source_dir} by the root of the source tree.</p>
-<p>On win32, using visual c++, use
+<p>On win32, using a visual c++ developer command line prompt, use
 <pre>
 cmake -G"NMake Makefiles" ${source_dir}
 nmake
