@@ -7,8 +7,6 @@ set (Widgets_SOURCES
   AircraftDelegate.cpp
   AircraftTableDialog.cpp
   AirlineDelegate.cpp
-  
-  AirlinePicker.cpp
   AirlineTableDialog.cpp
   EnumPicker.cpp
   FilenameLineEdit.cpp
