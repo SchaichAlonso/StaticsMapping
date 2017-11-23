@@ -364,6 +364,23 @@ Classification::Definitions::toJson () const
 
 
 
+Classification::Definitions::AirlinesAtAirports
+Classification::Definitions::airlinesAtAirports () const
+{
+  AirlinesAtAirports retval;
+  
+  Q_FOREACH (AirlinePointer airline, airlines()) {
+    Q_FOREACH (QString airport_icao, airline->allHubsList()) {
+      retval.insert(airport_icao, airline);
+    }
+  }
+  
+  return (retval);
+}
+
+
+
+
 Classification::Definitions::AirportPopulation
 Classification::Definitions::airportPopulation () const
 {

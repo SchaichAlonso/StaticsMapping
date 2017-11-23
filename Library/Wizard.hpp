@@ -1,5 +1,6 @@
 #pragma once
 
+#include <QtCore/QStringList>
 #include <QtWidgets/QWizard>
 
 #include <Classification/Definitions.hpp>
@@ -19,4 +20,9 @@ struct Wizard : QWizard
   
   void setDefinitions(QString prefix, Classification::DefinitionsPointer);
   void setScanSettings(QString dst, QString src, int threads, int texlimit);
+  
+protected:
+  static QStringList airportsByAirlinePresence(Classification::DefinitionsPointer defs, bool present);
+  static QStringList airlinesByObjectAvailablility(Classification::DefinitionsPointer defs);
+  void showStatistics(Classification::DefinitionsPointer);
 };

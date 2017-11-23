@@ -67,6 +67,7 @@ namespace Classification
     typedef QMap<QString, ObjectPointer>   Objects;
     
     typedef QMultiMap<QString, ObjectPointer> AirportPopulation;
+    typedef QMultiMap<QString, AirlinePointer> AirlinesAtAirports;
     
     Definitions ();
     Definitions (const Definitions &);
@@ -118,6 +119,7 @@ namespace Classification
     
     void airportsFromJson (QJsonObject);
     void airportsFromFile (QString);
+    AirlinesAtAirports airlinesAtAirports () const;
     AirportPopulation airportPopulation () const;
     
     bool              toFile (QString =QString()) const;
