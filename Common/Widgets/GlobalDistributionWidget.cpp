@@ -8,7 +8,7 @@
 #include <Common/Classification/Definitions.hpp>
 #include <Common/Classification/Object.hpp>
 
-#include "AirlineMap.hpp"
+#include "GlobalDistributionWidget.hpp"
 
 
 GlobalDistributionWidget::Vertex::Vertex ()

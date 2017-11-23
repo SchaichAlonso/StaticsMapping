@@ -5,7 +5,7 @@
 #include <Classification/Afiliates.hpp>
 #include <Classification/Definitions.hpp>
 
-#include "AirlineMap.hpp"
+#include "GlobalDistributionWidget.hpp"
 
 struct GlobalDistributionDialog : QDialog
 {

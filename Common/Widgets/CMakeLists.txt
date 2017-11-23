@@ -11,6 +11,7 @@ set (Widgets_SOURCES
   EnumPicker.cpp
   FilenameLineEdit.cpp
   GlobalDistributionDialog.cpp
+  GlobalDistributionWidget.cpp
   LibraryTableDialog.cpp
   ListDelegate.cpp
   ObjectTableDialog.cpp
@@ -40,7 +41,6 @@ if (GraphViz_FOUND)
   include_directories (${graphviz_INCLUDE_DIRECTORIES})
   set (Widgets_SOURCES
     ${Widgets_SOURCES}
-    AirlineMap.cpp
     AirlineGraphWidget.cpp
     AirlineScreen.cpp
     GraphBackend.cpp

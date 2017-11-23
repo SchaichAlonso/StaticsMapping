@@ -7,7 +7,6 @@
 
 #include <Classification/AirlineModel.hpp>
 
-#include "AirlineMap.hpp"
 #include "GlobalDistributionDialog.hpp"
 
 GlobalDistributionDialog::GlobalDistributionDialog (
