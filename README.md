@@ -87,14 +87,16 @@ Using a smaller aircraft for a large *start* is weighted by
 <pre>d*d*q + d*l</pre>
 where *d* is the size difference, *q* is *Size-up quadratic weight* and *l* is *Size-up linear weight*.
 
-*Current Year* removes - rather than adding weight - objects that are assiciated with a different age.
+*Current Year* imposes a filter that disqualifies objects that are associated with a different age. A setting of 0 enables objects independend of their lifetime.
+![AFL-1987](https://github.com/xibo/StaticsMapping/raw/master/doc/AFL-1987.jpeg)
+![AFL-2017](https://github.com/xibo/StaticsMapping/raw/master/doc/AFL-2017.jpeg)
+In the first image above, the *Current Year* setting is used to enable &quot;history mode&quot; and limit Aeroflot Russian Airlines (AFL) to the fleet and paintjobs it used in 1987, while AFL was restricted to the limits of it's current fleet and paints in the second image. If the year was 0, AFL would be allowed to use both it's old and it's new objects.
 
-*Max. Plane Age* can only be used if *Current Year* is also set. It removes objects not introduced within the interval specified by those two bounds (including both ends). Note that some objects have introduction dates that are recent even if the object itself is historic. A DC-3 painted in American Airline's 2013 livery should be handled like an aircraft introduced in 2013 for that purposes.
+*Max. Plane Age* only has an effect if *Current Year* is also set. It removes objects not introduced later than *Current Year* - *Max Plane Age*. Note that some objects have introduction dates that are far more recent than the object: A 1935-built DC-3 painted in American Airline's 2013 livery is handled like an aircraft built in 2013.
 
 *First Uses* specifies what LIBRARY instruction will be used for the first object of each name. The default of EXPORT_EXTEND should &quot;just work&quot; on most installations. If EXPORT is selected instead, previous objects of the same name will not be used by XPlane, however the word &quot;previous&quot; comes at the &quot;usual&quot; implications.
 
-![AFL-1987](https://github.com/xibo/StaticsMapping/raw/master/doc/AFL-2017.jpeg)
-![AFL-1987](https://github.com/xibo/StaticsMapping/raw/master/doc/AFL-1987.jpeg)
+
 
 ### Installing the XPlane library
 
