@@ -12,12 +12,12 @@ namespace Classification
   {
     Q_OBJECT
     
-    Q_PROPERTY (Engine engine       MEMBER m_engine);
-    Q_PROPERTY (int    mtow         MEMBER m_mtow);
-    Q_PROPERTY (int    length       MEMBER m_length);
-    Q_PROPERTY (int    wingspan     MEMBER m_wingspan);
-    Q_PROPERTY (int    omgws        MEMBER m_wheelspan);
-    Q_PROPERTY (int    introduction MEMBER m_introduced);
+    Q_PROPERTY (Engine engine       MEMBER m_engine)
+    Q_PROPERTY (int    mtow         MEMBER m_mtow)
+    Q_PROPERTY (int    length       MEMBER m_length)
+    Q_PROPERTY (int    wingspan     MEMBER m_wingspan)
+    Q_PROPERTY (int    omgws        MEMBER m_wheelspan)
+    Q_PROPERTY (int    introduction MEMBER m_introduced)
   
   public:
     enum PropertyName {

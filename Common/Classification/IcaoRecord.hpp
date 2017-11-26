@@ -11,8 +11,8 @@ namespace Classification
   {
     Q_OBJECT
     
-    Q_PROPERTY (QString icao READ icao);
-    Q_PROPERTY (QString name MEMBER m_name);
+    Q_PROPERTY (QString icao READ icao)
+    Q_PROPERTY (QString name MEMBER m_name)
     
   public:
     IcaoRecord (const IcaoRecord &);

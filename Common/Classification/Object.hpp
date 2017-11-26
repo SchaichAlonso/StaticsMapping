@@ -14,7 +14,7 @@ namespace Classification
 {
   struct Object : Record
   {
-    Q_OBJECT;
+    Q_OBJECT
     
   public:
     enum PurposeBits {
@@ -55,9 +55,9 @@ namespace Classification
       MultiPurpose      = Airliner | Freighter
     };
     
-    Q_ENUM(Purpose);
-    Q_DECLARE_FLAGS(Purposes, Purpose);
-    Q_FLAG(Purposes);
+    Q_ENUM(Purpose)
+    Q_DECLARE_FLAGS(Purposes, Purpose)
+    Q_FLAG(Purposes)
     
     enum Rotate {
       RotateNull,
@@ -65,25 +65,25 @@ namespace Classification
       RotateCCW180,
       RotateCCW270
     };
-    Q_ENUM(Rotate);
+    Q_ENUM(Rotate)
     
-    Q_PROPERTY (QString  aircraft      MEMBER m_aircraft WRITE setAircraft);
-    Q_PROPERTY (QString  livery        MEMBER m_livery WRITE setLivery);
-    Q_PROPERTY (QString  library       MEMBER m_library WRITE setLibrary);
-    Q_PROPERTY (QString  comment       MEMBER m_comment);
-    Q_PROPERTY (QString  compositehash READ compositeHash);
-    Q_PROPERTY (QString  filename      READ fileName WRITE setFileName);
-    Q_PROPERTY (QString  filehash      READ fileHash);
-    Q_PROPERTY (int      filesize      READ fileSize);
-    Q_PROPERTY (QString  texturehash   READ textureHash);
-    Q_PROPERTY (Purposes purpose       READ purpose WRITE setPurpose);
-    Q_PROPERTY (bool     fictive       MEMBER m_fictive);
-    Q_PROPERTY (int      introduction  MEMBER m_introduced);
-    Q_PROPERTY (int      retirement    MEMBER m_retired);
-    Q_PROPERTY (Rotate   rotate        READ rotate WRITE setRotate);
-    Q_PROPERTY (QString  translateX    READ translateX WRITE setTranslateX);
-    Q_PROPERTY (QString  translateY    READ translateY WRITE setTranslateY);
-    Q_PROPERTY (QString  translateZ    READ translateZ WRITE setTranslateZ);
+    Q_PROPERTY (QString  aircraft      MEMBER m_aircraft WRITE setAircraft)
+    Q_PROPERTY (QString  livery        MEMBER m_livery WRITE setLivery)
+    Q_PROPERTY (QString  library       MEMBER m_library WRITE setLibrary)
+    Q_PROPERTY (QString  comment       MEMBER m_comment)
+    Q_PROPERTY (QString  compositehash READ compositeHash)
+    Q_PROPERTY (QString  filename      READ fileName WRITE setFileName)
+    Q_PROPERTY (QString  filehash      READ fileHash)
+    Q_PROPERTY (int      filesize      READ fileSize)
+    Q_PROPERTY (QString  texturehash   READ textureHash)
+    Q_PROPERTY (Purposes purpose       READ purpose WRITE setPurpose)
+    Q_PROPERTY (bool     fictive       MEMBER m_fictive)
+    Q_PROPERTY (int      introduction  MEMBER m_introduced)
+    Q_PROPERTY (int      retirement    MEMBER m_retired)
+    Q_PROPERTY (Rotate   rotate        READ rotate WRITE setRotate)
+    Q_PROPERTY (QString  translateX    READ translateX WRITE setTranslateX)
+    Q_PROPERTY (QString  translateY    READ translateY WRITE setTranslateY)
+    Q_PROPERTY (QString  translateZ    READ translateZ WRITE setTranslateZ)
     
     enum PropertyName {
       AircraftProperty,

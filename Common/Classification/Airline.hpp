@@ -11,12 +11,12 @@ namespace Classification
   struct Airline : IcaoRecord
   {
     Q_OBJECT
-    Q_PROPERTY (QString hubs    READ hubs     WRITE setHubs);
-    Q_PROPERTY (QString hubsMissing READ hubsMissing WRITE setHubsMissing);
-    Q_PROPERTY (QString comment READ comment  WRITE setComment);
-    Q_PROPERTY (int     ceased  READ ceased   WRITE setCeased);
-    Q_PROPERTY (int     founded READ founded  WRITE setFounded);
-    Q_PROPERTY (QString parent  READ parent   WRITE setParent);
+    Q_PROPERTY (QString hubs    READ hubs     WRITE setHubs)
+    Q_PROPERTY (QString hubsMissing READ hubsMissing WRITE setHubsMissing)
+    Q_PROPERTY (QString comment READ comment  WRITE setComment)
+    Q_PROPERTY (int     ceased  READ ceased   WRITE setCeased)
+    Q_PROPERTY (int     founded READ founded  WRITE setFounded)
+    Q_PROPERTY (QString parent  READ parent   WRITE setParent)
   public:
     enum PropertyName {
       IcaoProperty,
