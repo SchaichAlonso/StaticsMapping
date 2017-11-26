@@ -24,6 +24,7 @@ namespace Classification
     DistanceInKM      distanceInKM (const Airport &) const;
     
     static DistanceInKM earthRadiusInKM ();
+    static DistanceInKM longestPossibleDistanceInKM ();
     
     Degrees latitude () const;
     Degrees longitude () const;

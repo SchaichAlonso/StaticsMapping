@@ -71,6 +71,14 @@ Classification::Airport::earthRadiusInKM ()
 
 
 
+Classification::Airport::DistanceInKM
+Classification::Airport::longestPossibleDistanceInKM ()
+{
+  return (M_PI * earthRadiusInKM() + 1);
+}
+
+
+
 Classification::Airport::Degrees
 Classification::Airport::latitude () const
 {
