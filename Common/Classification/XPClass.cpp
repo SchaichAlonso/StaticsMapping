@@ -141,7 +141,7 @@ Classification::XPClass::engine (
   switch (purpose) {
     case Object::GeneralAviation:
     case Object::Airliner:
-    case Object::Cargo:
+    case Object::Freighter:
       break;
     
     case Object::Bomber:
@@ -175,7 +175,7 @@ Classification::XPClass::purpose (Object::Purposes p, Aircraft::Engine, Aircraft
   switch (p) {
     case Object::GeneralAviation:   return (GeneralAviation);
     case Object::Airliner:          return (Airliner);
-    case Object::Cargo:             return (Cargo);
+    case Object::Freighter:         return (Cargo);
     
     case Object::Attack:            return (Military);
     case Object::Bomber:            return (Military);

@@ -5445,7 +5445,7 @@
         },
         {
             "aircraft": "C208",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "1d0fa4f039317d80770e76030b1a4d6df9512fb05ebb87c114c1322fc029baf4",
@@ -5461,7 +5461,7 @@
         },
         {
             "aircraft": "C208",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "bb6fe5b728e4aa5820e51974b3b71648373e2cdde840cd3fc3d9e01f8a71fe95",
@@ -5541,7 +5541,7 @@
         },
         {
             "aircraft": "E145",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": true,
             "filehash": "c66875e6cefc2b6d316a62a4895058e5e816dcd4e3e7d6a41feb9cf00c6d0920",
@@ -5557,7 +5557,7 @@
         },
         {
             "aircraft": "E145",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": true,
             "filehash": "c66875e6cefc2b6d316a62a4895058e5e816dcd4e3e7d6a41feb9cf00c6d0920",
@@ -6405,7 +6405,7 @@
         },
         {
             "aircraft": "E120",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": true,
             "filehash": "2449a9a6b1c29054e0f820f816cc6da88bb1414281dcb78fbbcd6e523e2ad006",
@@ -6421,7 +6421,7 @@
         },
         {
             "aircraft": "E120",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": true,
             "filehash": "2449a9a6b1c29054e0f820f816cc6da88bb1414281dcb78fbbcd6e523e2ad006",
@@ -7077,7 +7077,7 @@
         },
         {
             "aircraft": "SR34",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": true,
             "filehash": "e6d5693cead0b0101c04adde3357e3f59e5822d75e7c9799e991a68472871cf8",
@@ -7093,7 +7093,7 @@
         },
         {
             "aircraft": "SR34",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": true,
             "filehash": "e6d5693cead0b0101c04adde3357e3f59e5822d75e7c9799e991a68472871cf8",
@@ -7461,7 +7461,7 @@
         },
         {
             "aircraft": "AN74",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "223b7909550e748aeb41bab42672ed5467bce043a79a949727116d77582ce358",
@@ -7477,7 +7477,7 @@
         },
         {
             "aircraft": "AN74",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "29f3573f55c2b91e9e390dc17c948bf4be752f76911abb042527c2e6334dfd3d",
@@ -7493,7 +7493,7 @@
         },
         {
             "aircraft": "AN74",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "84adc545972ca1e4bc3a5f7f59bf652127103e010d1d6eb96b51b4f7fe0a944c",
@@ -7509,7 +7509,7 @@
         },
         {
             "aircraft": "AN74",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "8d356f60fac679590249ef22a709a6844c84a69e5f117edf528d746f794763ee",
@@ -7525,7 +7525,7 @@
         },
         {
             "aircraft": "AN74",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "a7062adc91130ab49a63ecfeb79e01b5c47c3cc595f6985f588bbd29ee3678cc",
@@ -7557,7 +7557,7 @@
         },
         {
             "aircraft": "AN74",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "b51d39f9d86deded9039868c0d4779a5b61dbb804f62e0b3b2871a290561d23b",
@@ -7573,7 +7573,7 @@
         },
         {
             "aircraft": "AN74",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "cac65bcb23bca55741788be31487974b443700dbc5d6be51d851ea76ce16878c",
@@ -7637,7 +7637,7 @@
         },
         {
             "aircraft": "AN8",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "5117a3ee5bb1783a4c9f3743b36d7be084fab228436ff78714305487e305efaf",
@@ -7653,7 +7653,7 @@
         },
         {
             "aircraft": "AN8",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "b973d90df1f0cc112afbfb8b4cf398c454a8a59502966d1cc596bafbcd1713b0",
@@ -7717,7 +7717,7 @@
         },
         {
             "aircraft": "D328",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": true,
             "filehash": "fcd18d823df2293f15e487d1f3a556df61994f2fd7dad8ee8288e47a8c390859",
@@ -7733,7 +7733,7 @@
         },
         {
             "aircraft": "D328",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": true,
             "filehash": "fcd18d823df2293f15e487d1f3a556df61994f2fd7dad8ee8288e47a8c390859",
@@ -7765,7 +7765,7 @@
         },
         {
             "aircraft": "MD11",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "f6cab320896bfa5be958a9807188632e578ad45cfd217f5a7ecfafa6e3ea5153",
@@ -7781,7 +7781,7 @@
         },
         {
             "aircraft": "MD11",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "f6cab320896bfa5be958a9807188632e578ad45cfd217f5a7ecfafa6e3ea5153",
@@ -7861,7 +7861,7 @@
         },
         {
             "aircraft": "AT45",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "This plane is an ATR-42-500 (count propeller blades), which is not operated by FedEx. If it was, it was FedEx Feeder rather than FedEx Express",
             "fictive": true,
             "filehash": "0af71c79c6af82686f24cdba84424c8e2f73eb3077516c9768b5bec7f327ad18",
@@ -7877,7 +7877,7 @@
         },
         {
             "aircraft": "AT45",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": true,
             "filehash": "0af71c79c6af82686f24cdba84424c8e2f73eb3077516c9768b5bec7f327ad18",
@@ -8053,7 +8053,7 @@
         },
         {
             "aircraft": "A320",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": true,
             "filehash": "5fd846723a91b83b2f67cb1f54fe1fa6aef794a49ffdfcf3e90aaad7f6288b42",
@@ -8149,7 +8149,7 @@
         },
         {
             "aircraft": "B733",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": true,
             "filehash": "bc14ecc4ea0f8185d60ce5f4359147e56af330c1d2ec9f989eb8faecfc77effb",
@@ -8165,7 +8165,7 @@
         },
         {
             "aircraft": "B733",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": true,
             "filehash": "bc14ecc4ea0f8185d60ce5f4359147e56af330c1d2ec9f989eb8faecfc77effb",
@@ -8245,7 +8245,7 @@
         },
         {
             "aircraft": "MD90",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": true,
             "filehash": "fb51d4a368bc66adffc78fa97f6b47a752f44cd14238516afb235da86f67cf2b",
@@ -8309,7 +8309,7 @@
         },
         {
             "aircraft": "IL76",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "22c627314bded2b4f82f900ea53cb85b9c83dac2483f3ffd8642429503672cb6",
@@ -8325,7 +8325,7 @@
         },
         {
             "aircraft": "AN12",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "00921fc5a65440f7e34132173b6221919683f3f98d2eda16585c6f6e22f111e8",
@@ -8341,7 +8341,7 @@
         },
         {
             "aircraft": "AN12",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "0ddaa5237c7305722fa830b281cb306b59fdd0feafb23209cf42c760265b002c",
@@ -8373,7 +8373,7 @@
         },
         {
             "aircraft": "AN12",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "1b56232b90cd6966fc0526e5f7475f516f0e513f702e1706b49a57c6bff8f445",
@@ -8389,7 +8389,7 @@
         },
         {
             "aircraft": "AN12",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "22f5ca5198bfca6cf8c7d2d6caa3f2dafb90a955a05f1e128a9966ab79ab4cb9",
@@ -8405,7 +8405,7 @@
         },
         {
             "aircraft": "AN12",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "47ad5080fa9074cd68869cb167aa89084ef20532c1e6b29ded19d9bba2818c23",
@@ -8421,7 +8421,7 @@
         },
         {
             "aircraft": "AN12",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "51d011bc0f6efb0b17826a6436c95952fe49f6167daf46082428470ecb7a9dde",
@@ -8437,7 +8437,7 @@
         },
         {
             "aircraft": "AN12",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "545b70c997a14c509bcafce1a1d7afdedb1a8e4b0a076dc8df6212deec1899f4",
@@ -8453,7 +8453,7 @@
         },
         {
             "aircraft": "AN12",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "67e88c6c93446e877c74b1074f4d3f38d5d09d4aa87551842e1a040e1996ca60",
@@ -8469,7 +8469,7 @@
         },
         {
             "aircraft": "AN12",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "824e78eca944eb6cc30454d5f510752d2f1b452a56388343deb4533993adb2d3",
@@ -8485,7 +8485,7 @@
         },
         {
             "aircraft": "AN12",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "94fe9a1cd6a602e170945c153beba308bdaa7b7edd8d332b49032e73802f8b6d",
@@ -8533,7 +8533,7 @@
         },
         {
             "aircraft": "AN12",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "c3bf34655e67acbc16e88ad8f2891a352ccb7f68e4c462cb8e6016dc14e96f8d",
@@ -8549,7 +8549,7 @@
         },
         {
             "aircraft": "AN12",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "f7021acf7effd2fa400afd04958463e4da2cac38f7df66b70f836d6b72dac005",
@@ -8597,7 +8597,7 @@
         },
         {
             "aircraft": "RJ70",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": true,
             "filehash": "bb501db404087d1c053215c856b9c956e1542b0871cefb8de11a302c2ca6bc66",
@@ -8613,7 +8613,7 @@
         },
         {
             "aircraft": "RJ70",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": true,
             "filehash": "bb501db404087d1c053215c856b9c956e1542b0871cefb8de11a302c2ca6bc66",
@@ -9013,7 +9013,7 @@
         },
         {
             "aircraft": "B763",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "open",
             "fictive": false,
             "filehash": "5b61934c5ebf12aec9e161c522becf9c341f7a412e865d5bdeaa30bbf9e53b83",
@@ -9029,7 +9029,7 @@
         },
         {
             "aircraft": "B763",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "open",
             "fictive": false,
             "filehash": "837c2d3b4707e31a910e568a2a4a03a31699d9b8e4b44231757e3c64eea8c66b",
@@ -9077,7 +9077,7 @@
         },
         {
             "aircraft": "MD11",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "cf1688b8f1d5969b84bd1cb4691b71b898681a18a338075f45c092537b5830bd",
@@ -9109,7 +9109,7 @@
         },
         {
             "aircraft": "MD11",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "cf1688b8f1d5969b84bd1cb4691b71b898681a18a338075f45c092537b5830bd",
@@ -9157,7 +9157,7 @@
         },
         {
             "aircraft": "MD11",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "6172dd3a169cf72b0811d5a3f55439da4e085596935280f7515d370ae1834328",
@@ -9253,7 +9253,7 @@
         },
         {
             "aircraft": "B763",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "00725625744b996979086f4a862341f9bbf9b396b99a21a9f030d772a9e9a08e",
@@ -9285,7 +9285,7 @@
         },
         {
             "aircraft": "B763",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "e1733af957dadc25ee25b54a3c26b797e2e210ab5a092ad402eacc469e1fe634",
@@ -9573,7 +9573,7 @@
         },
         {
             "aircraft": "B744",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "9fd7fc1d42dd566aa0c21d10f987baa648166d900ce77473fa1bfb9dada8baaf",
@@ -9717,7 +9717,7 @@
         },
         {
             "aircraft": "B752",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "3fcf59c48096a8d026c9f0bf78ac867d9c12d1d9e4122ac558b926ce27091377",
@@ -12133,7 +12133,7 @@
         },
         {
             "aircraft": "A225",
-            "category": "Cargo",
+            "category": "Freighter",
             "comment": "",
             "fictive": false,
             "filehash": "8e64ae0e959e6845515a2b5787630491a188d858e173c7a4be9df27d30287b45",

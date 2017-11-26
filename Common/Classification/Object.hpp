@@ -20,7 +20,7 @@ namespace Classification
     enum PurposeBits {
       GeneralAviationBit,
       AirlinerBit,
-      CargoBit,
+      FreighterBit,
       
       AttackBit,
       BomberBit,
@@ -38,7 +38,7 @@ namespace Classification
     enum Purpose {
       GeneralAviation   = 1 << GeneralAviationBit,
       Airliner          = 1 << AirlinerBit,
-      Cargo             = 1 << CargoBit,
+      Freighter         = 1 << FreighterBit,
       
       Attack            = 1 << AttackBit,
       Bomber            = 1 << BomberBit,
@@ -52,7 +52,7 @@ namespace Classification
       Trainer           = 1 << TrainerBit,
       MilitaryTransport = 1 << TransportBit,
       
-      MultiPurpose      = Airliner | Cargo
+      MultiPurpose      = Airliner | Freighter
     };
     
     Q_ENUM(Purpose);
