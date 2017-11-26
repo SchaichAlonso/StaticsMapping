@@ -63,7 +63,7 @@ Classification::Aircraft::Aircraft (Definitions *q, QJsonObject o)
   , m_wingspan (o.value("wingspan").toInt())
   , m_mtow (o.value("mtow").toInt())
   , m_introduced (o.value("introduced").toInt())
-  , m_engine (stringToEnum<Engine>(o.value("engine")))
+  , m_engine (stringToEnum<Engine>(o.value("engine"), Piston))
 {
 }
 
