@@ -61,7 +61,7 @@ Wizard::airlinesByObjectAvailablility (Classification::DefinitionsPointer defs)
   
   QMap<QString, int> counts;
   Q_FOREACH (Classification::ObjectPointer obj, defs->objects()) {
-    if (not defs->airline(obj->livery())->isFictiveIcaoCode()) {
+    if (not defs->airline(obj->livery())->hasFictiveIcaoCode()) {
       counts[obj->livery()]++;
     }
   }
