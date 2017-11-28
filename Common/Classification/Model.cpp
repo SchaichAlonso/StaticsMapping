@@ -118,16 +118,20 @@ Classification::Model::data (const QModelIndex &index, int role) const
     Q_CHECK_PTR (property);
     
     int db_index = index.internalId ();
-    RecordPointer rec = record (db_index);
-    if (rec) {
+    QObjectPointer ptr = record (db_index);
+    RecordPointer rec;
+    if (ptr) {
       switch (role) {
         case Qt::UserRole:
-          retval = rec->primaryKey ();
+          rec = ptr.dynamicCast<Record>();
+          if (rec) {
+            retval = rec->primaryKey ();
+          }
           break;
             
         case Qt::DisplayRole:
         case Qt::EditRole:
-          retval = data (rec, property);
+          retval = data (ptr, property);
           break;
       }
     } else {
@@ -141,7 +145,7 @@ Classification::Model::data (const QModelIndex &index, int role) const
 
 
 QVariant
-Classification::Model::data (RecordPointer ptr, const char *property) const
+Classification::Model::data (QObjectPointer ptr, const char *property) const
 {
   return (ptr->property (property));
 }
@@ -159,7 +163,7 @@ Classification::Model::setData (const QModelIndex &i, const QVariant &v, int r)
       Q_CHECK_PTR (property);
       
       int db_index = i.internalId ();
-      RecordPointer rec = record (db_index);
+      QObjectPointer rec = record (db_index);
       if (rec) {
         try {
           ok = setData (rec, property, v);
@@ -178,7 +182,7 @@ Classification::Model::setData (const QModelIndex &i, const QVariant &v, int r)
 
 
 bool
-Classification::Model::setData (RecordPointer ptr, const char *property, const QVariant &value)
+Classification::Model::setData (QObjectPointer ptr, const char *property, const QVariant &value)
 {
   return (ptr->setProperty (property, value));
 }
@@ -225,8 +229,7 @@ Classification::Model::sort ()
   QMultiMap<QVariant,int> map;
   const char *property = m_properties[m_sort_column];
   for (int i=0, r=rowCount(); i!=r; ++i) {
-    RecordPointer ptr = record(i);
-    map.insert (data (ptr, property), i);
+    map.insert (data(record(i), property), i);
   }
   
   QList<int> p = map.values ();

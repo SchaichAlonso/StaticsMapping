@@ -28,7 +28,7 @@ Classification::LibraryModel::column (int name) const
 
 
 
-Classification::RecordPointer
+Classification::QObjectPointer
 Classification::LibraryModel::record (int row) const
 {
   return (m_definitions->library (row));
@@ -48,7 +48,7 @@ Classification::LibraryModel::rowCount (const QModelIndex &) const
 
 
 bool
-Classification::LibraryModel::setData (RecordPointer ptr, const char *property, const QVariant &value)
+Classification::LibraryModel::setData (QObjectPointer ptr, const char *property, const QVariant &value)
 {
   LibraryPointer p = qSharedPointerDynamicCast<Library>(ptr);
   Q_ASSERT (p);

@@ -11,9 +11,9 @@ namespace Classification
     Model (Definitions *, const Record &);
     virtual ~Model ();
     
-    virtual RecordPointer record (int) const = 0;
-    virtual QVariant data (RecordPointer, const char *) const;
-    virtual bool setData (RecordPointer, const char *, const QVariant &);
+    virtual QObjectPointer record (int) const = 0;
+    virtual QVariant data (QObjectPointer, const char *) const;
+    virtual bool setData (QObjectPointer, const char *, const QVariant &);
     
     virtual int column (const char *) const;
     virtual int column (int) const = 0;

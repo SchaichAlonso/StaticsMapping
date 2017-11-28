@@ -29,7 +29,7 @@ Classification::ObjectModel::column (int name) const
 
 
 
-Classification::RecordPointer
+Classification::QObjectPointer
 Classification::ObjectModel::record (int row) const
 {
   return (m_definitions->object (row));
@@ -54,7 +54,7 @@ Classification::ObjectModel::rowCount (const QModelIndex &) const
 
 
 QVariant
-Classification::ObjectModel::data (RecordPointer ptr, const char *property) const
+Classification::ObjectModel::data (QObjectPointer ptr, const char *property) const
 {
   if (0 == qstrcmp (property, PROPERTY(Object,Purpose))) {
     return (enumToString<Object::Purpose>(ptr->property(property).toInt()));
@@ -70,7 +70,7 @@ Classification::ObjectModel::data (RecordPointer ptr, const char *property) cons
 
 
 bool
-Classification::ObjectModel::setData (RecordPointer ptr, const char *property, const QVariant &value)
+Classification::ObjectModel::setData (QObjectPointer ptr, const char *property, const QVariant &value)
 {
   ObjectPointer obj = qSharedPointerDynamicCast<Object>(ptr);
   

@@ -28,7 +28,7 @@ Classification::AircraftModel::column (int name) const
 
 
 
-Classification::RecordPointer
+Classification::QObjectPointer
 Classification::AircraftModel::record (int row) const
 {
   return (m_definitions->aircraft (row));
@@ -48,7 +48,7 @@ Classification::AircraftModel::rowCount (const QModelIndex &) const
 
 
 QVariant
-Classification::AircraftModel::data (RecordPointer ptr, const char *property) const
+Classification::AircraftModel::data (QObjectPointer ptr, const char *property) const
 {
   if (0 == qstrcmp (property, PROPERTY(Aircraft,Engine))) {
     return (enumToString<Aircraft::Engine>(ptr->property(property).toInt()));
@@ -76,7 +76,7 @@ Classification::AircraftModel::data (RecordPointer ptr, const char *property) co
 
 
 bool
-Classification::AircraftModel::setData (RecordPointer p, const char *property, const QVariant &value)
+Classification::AircraftModel::setData (QObjectPointer p, const char *property, const QVariant &value)
 {
   AircraftPointer ptr = qSharedPointerDynamicCast<Aircraft>(p);
   bool mtow, ok;

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <QtCore/QObject>
 #include <QtCore/QSharedPointer>
 
 #include <Common/Common.hpp>
@@ -25,6 +26,8 @@ namespace Classification
   DECLARE_STRUCT (LibraryModel);
   DECLARE_STRUCT (Model);
   DECLARE_STRUCT (ObjectModel);
+  
+  typedef QSharedPointer<QObject> QObjectPointer;
   
 #undef DECLARE_STRUCT
 }

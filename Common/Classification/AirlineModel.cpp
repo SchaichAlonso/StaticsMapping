@@ -38,7 +38,7 @@ Classification::AirlineModel::column (int name) const
 
 
 
-Classification::RecordPointer
+Classification::QObjectPointer
 Classification::AirlineModel::record (int row) const
 {
   return (m_definitions->airline (row));
@@ -59,7 +59,7 @@ Classification::AirlineModel::rowCount (const QModelIndex &) const
 
 
 bool
-Classification::AirlineModel::setData (RecordPointer p, const char *property, const QVariant &value)
+Classification::AirlineModel::setData (QObjectPointer p, const char *property, const QVariant &value)
 {
   AirlinePointer ptr = qSharedPointerDynamicCast<Airline>(p);
   bool commited, structural_change = false;
