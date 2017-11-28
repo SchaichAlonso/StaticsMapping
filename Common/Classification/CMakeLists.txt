@@ -14,6 +14,7 @@ add_library (Classification STATIC
   Model.cpp
   Object.cpp
   ObjectModel.cpp
+  QObjectListModel.cpp
   Record.cpp
   WeightedObject.cpp
   XPClass.cpp
