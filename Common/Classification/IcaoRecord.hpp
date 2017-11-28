@@ -23,6 +23,7 @@ namespace Classification
     virtual const char *primaryKeyProperty () const Q_DECL_OVERRIDE;
     
     bool verifyIcaoCode (QString) const;
+    bool hasFictiveIcaoCode() const;
     
     QString icao () const;
     void setIcao (QString);

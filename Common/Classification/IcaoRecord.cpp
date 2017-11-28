@@ -42,6 +42,14 @@ Classification::IcaoRecord::verifyIcaoCode (QString icao) const
 
 
 
+bool
+Classification::IcaoRecord::hasFictiveIcaoCode () const
+{
+  return (not verifyIcaoCode(icao()));
+}
+
+
+
 QString
 Classification::IcaoRecord::icao () const
 {

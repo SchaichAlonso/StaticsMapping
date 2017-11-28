@@ -381,7 +381,7 @@ Classification::Afiliations::library () const
   XPLibrary retval (m_definitions);
   
   Q_FOREACH (AirlinePointer airline, m_definitions->airlines()) {
-    if (not airline->isFictiveIcaoCode()) {
+    if (not airline->hasFictiveIcaoCode()) {
       retval.add (objectsAvailable(airline), airline->icao());
     }
   }
