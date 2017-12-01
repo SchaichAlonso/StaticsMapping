@@ -303,20 +303,11 @@ Classification::Afiliations::retirementDate (
 {
   int date = obj->retired();
   
+  int ceased = retirementDate (owner, user);
   
-  {
-    int ret_own = owner->ceased ();
-    int ret_usr = user->ceased ();
-    
-    int ceased = (ret_own < ret_usr)? ret_own : ret_usr;
-    if (ceased <= 0) {
-      ceased =   (ret_own < ret_usr)? ret_usr : ret_own;
-    }
-    
-    if (0 < ceased) {
-      if ((date <= 0) || (ceased < date)) {
-        date = ceased;
-      }
+  if (ceased > 0) {
+    if ((date <= 0) || (ceased < date)) {
+      date = ceased;
     }
   }
   
@@ -331,6 +322,26 @@ Classification::Afiliations::retirementDate (
   
   return (date);
 }
+
+
+
+int
+Classification::Afiliations::retirementDate (
+  AirlinePointer owner,
+  AirlinePointer user
+) const
+{
+  int ret_own = owner->ceased ();
+  int ret_usr = user->ceased ();
+    
+  int ceased = (ret_own < ret_usr)? ret_own : ret_usr;
+  if (ceased <= 0) {
+    ceased =   (ret_own < ret_usr)? ret_usr : ret_own;
+  }
+  
+  return (ceased);
+}
+
 
 
 

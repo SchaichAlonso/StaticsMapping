@@ -77,6 +77,7 @@ namespace Classification
     bool    introduced(ObjectPointer o, AirlinePointer owner, AirlinePointer user) const;
     int     introductionDate(ObjectPointer o, AirlinePointer owner, AirlinePointer user) const;
     int     retirementDate(ObjectPointer o, AirlinePointer owner, AirlinePointer user) const;
+    int     retirementDate(AirlinePointer owner, AirlinePointer user) const;
     void    setRetireAge(int);
     int     retireAge() const;
     void    setRetireWeight(Weight);
