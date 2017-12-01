@@ -179,6 +179,9 @@ namespace Classification
         if (rec) {
           try {
             ok = setData (rec, property, v);
+            if (ok) {
+              emit dataChanged (i, i);
+            }
           } catch (...) {
             ok = false;
           }
