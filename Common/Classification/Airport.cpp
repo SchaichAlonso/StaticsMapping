@@ -72,7 +72,7 @@ Classification::Airport::earthRadiusInKM ()
 
 
 Classification::Airport::DistanceInKM
-Classification::Airport::longestPossibleDistanceInKM ()
+Classification::Airport::largestPossibleDistanceInKM ()
 {
   return (M_PI * earthRadiusInKM() + 1);
 }
