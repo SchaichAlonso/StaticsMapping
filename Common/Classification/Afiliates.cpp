@@ -6,16 +6,57 @@
 
 
 
-Classification::Afiliations::Afiliations (DefinitionsPointer defs)
-: m_definitions (defs)
-, m_hub_distances (hubDistances())
-, m_edges (edges ())
-, m_edge_traverse_weight {1, 5}
-, m_resize_linear_weight (1)
-, m_resize_quadratic_weight (0)
-, m_max_plane_age (0)
-, m_year (0)
+const char *
+Classification::Afiliations::propertyByName (PropertyName name)
 {
+  switch (name)
+  {
+    case CurrentYearProperty: return ("currentYear");
+    case RetireAgeProperty: return ("retireAge");
+    case RetireWeightProperty: return ("retireWeight");
+    
+    case RelativeDownProperty: return ("relativeDownWeight");
+    case RelativeUpProperty: return ("relativeUpWeight");
+    case ResizeProperty: return ("resizeWeight");
+    case RegionSizeProperty: return ("regionSize");
+  }
+}
+
+
+
+QList<const char *>
+Classification::Afiliations::properties () const
+{
+  QList<const char *> retval;
+  const QMetaObject *obj = metaObject ();
+  
+  for (int i=0, k=obj->propertyCount(); i!=k; ++i) {
+    QMetaProperty mp = obj->property(i);
+    const char *name = mp.name();
+    if (qstrcmp("objectName", name)) {
+      retval.append (name);
+    }
+  }
+  
+  return (retval);
+}
+
+
+
+Classification::Afiliations::Afiliations (DefinitionsPointer defs)
+: QObject ()
+, m_definitions (defs)
+, m_regional_distances (distances())
+, m_edges (edges())
+, m_edge_traverse_weight {0, 0}
+, m_resize_weight (100)
+, m_region_size (100)
+, m_retired_weight (100)
+, m_retired_age (30)
+, m_current_year (0)
+{
+  setRelativeDownWeight(1);
+  setRelativeUpWeight(1);
 }
 
 
@@ -26,80 +67,86 @@ Classification::Afiliations::~Afiliations ()
 
 
 
-Classification::Airport::DistanceInKM
-Classification::Afiliations::shortestDistance (
-  AirportDistanceCache &cache,
-  QStringList hubsa,
-  QStringList hubsb
-) const
+Classification::Afiliations::DistancesToAirlines
+Classification::Afiliations::distances () const
 {
-  Airport::DistanceInKM closest = 1000000, current;
-  AirportDistanceCache::ConstIterator i;
+    DistancesToAirlines retval;
   
-  Q_FOREACH (QString a, hubsa) {
-    Q_FOREACH (QString b, hubsb) {
+  Q_FOREACH (AirlinePointer a, m_definitions->airlines()) {
+    QStringList a_hub_icaos = a->hubsList();
+    Q_FOREACH (AirlinePointer b, m_definitions->airlines()) {
+      QStringList b_hub_icaos = b->hubsList();
+      Airport::DistanceInKM d;
       
-      AirportPair a_to_b (a, b);
-      
-      i = cache.constFind (a_to_b);
-      if (i != cache.constEnd ()) {
-        current = i.value ();
-      } else {
-        AirportPointer apta = m_definitions->airport (a);
-        AirportPointer aptb = m_definitions->airport (b);
-        
-        if (apta and aptb) {
-          AirportPair b_to_a (b, a);
-          current = apta->distanceInKM (*aptb);
-          cache.insert (b_to_a, current);
-          cache.insert (a_to_b, current);
+      if (a != b) {
+        if (a_hub_icaos.isEmpty() or b_hub_icaos.isEmpty()) {
+          d = Airport::largestPossibleDistanceInKM();
         } else {
-          qCritical (
-            "Lack of airport(s) %s/%s",
-            qUtf8Printable(a),
-            qUtf8Printable(b)
-          );
-          continue;
+          Airport a_pivot = midpoint(a);
+          Airport b_pivot = midpoint(b);
+          d = a_pivot.distanceInKM(b_pivot);
         }
+      } else {
+        d = 0;
       }
-      
-      closest = qMin(closest, current);
-      if (closest <= 0) {
-        return (0);
-      }
+      retval[a][b] = d;
     }
   }
   
-  return (closest);
+  return (retval);
 }
 
 
-Classification::Afiliations::HubDistances
-Classification::Afiliations::hubDistances () const
+
+void
+Classification::Afiliations::setRegionSize (Airport::DistanceInKM size)
 {
-  HubDistances result;
+  m_region_size = size;
+}
+
+
+
+Classification::Airport::DistanceInKM
+Classification::Afiliations::regionSize () const
+{
+  return (m_region_size);
+}
+
+
+
+Classification::Afiliations::Weight
+Classification::Afiliations::regional (AirlinePointer a, AirlinePointer b) const
+{
+  Airport::DistanceInKM distance = m_regional_distances[a][b];
   
-  AirportDistanceCache cache;
+  Weight buckets = distance / qMax(m_region_size, 1);
   
-  Definitions::Airlines airlines = m_definitions->airlines();
+  return (m_region_size * (buckets+1));
+}
+
+
+
+Classification::Airport
+Classification::Afiliations::midpoint (AirlinePointer airline) const
+{
+  Airport::Degrees lat=0, lon=0;
   
-  Q_FOREACH (AirlinePointer a, airlines) {
-    Q_FOREACH (AirlinePointer b, airlines) {
-      
-      AirlinePair a_to_b (a->icao(), b->icao());
-      AirlinePair b_to_a (b->icao(), a->icao());
-      
-      if (result.contains(a_to_b))
-        continue;
-      
-      Airport::DistanceInKM distance = shortestDistance (cache, a->hubsList(), b->hubsList());
-      
-      result.insert (a_to_b, distance);
-      result.insert (b_to_a, distance);
-    }
+  QStringList icaos = airline->hubsList();
+  Q_FOREACH (QString icao, icaos) {
+    AirportPointer airport = m_definitions->airport(icao);
+    Airport::Degrees clat = airport->latitude();
+    Airport::Degrees clon = airport->longitude();
+    
+    clon = clon<0? 360-clon : clon;
+    
+    lat += clat;
+    lon += clon;
   }
   
-  return (result);
+  lat /= icaos.size();
+  lon /= icaos.size();
+  
+  return (Airport(QString(), QString(), lat, lon));
 }
 
 
@@ -127,11 +174,11 @@ Classification::Afiliations::edges () const
 
 
 
-Classification::Afiliations::Weights
-Classification::Afiliations::weights (AirlinePointer airline) const
+Classification::Afiliations::RelativeBonuses
+Classification::Afiliations::relativeBonuses (AirlinePointer airline) const
 {
   QList<AirlinePointer> pending;
-  Weights weights;
+  RelativeBonuses weights;
   
   weights.insert (airline, 0);
   pending.append (airline);
@@ -139,18 +186,18 @@ Classification::Afiliations::weights (AirlinePointer airline) const
   while (not pending.isEmpty()) {
     
     AirlinePointer n = pending.takeFirst();
-    Weight n_w = weights[n];
+    Weight n_weight = weights[n];
     
-    EdgesAtNode n_edges = m_edges[n];
-    for (EdgesAtNode::ConstIterator i=n_edges.constBegin(); i!=n_edges.constEnd(); ++i) {
-      if (weights.contains(i.key())) {
-        continue;
+    EdgesAtNode peers = m_edges[n];
+    Q_FOREACH(AirlinePointer peer, peers.keys()) {
+      
+      Weight peer_weight_old = weights.value(peer, std::numeric_limits<Weight>::max());
+      Weight peer_weight_new = n_weight + m_edge_traverse_weight[peers[peer]];
+      
+      if (peer_weight_new < peer_weight_old) {
+        weights[peer] = qMin(peer_weight_old, peer_weight_new);
+        pending.append(peer);
       }
-      
-      Weight i_fee = n_w + weight(i.value());
-      weights.insert (i.key(), i_fee);
-      
-      pending.append (i.key());
     }
   }
   
@@ -160,68 +207,225 @@ Classification::Afiliations::weights (AirlinePointer airline) const
 
 
 Classification::Afiliations::Weight
-Classification::Afiliations::weight (EdgeType e) const
+Classification::Afiliations::relative (AirlinePointer a, RelativeBonuses precomputed) const
 {
-  return (m_edge_traverse_weight[e]);
-}
-
-
-
-void
-Classification::Afiliations::setWeight (EdgeType e, Weight w)
-{
-  m_edge_traverse_weight[e] = w;
-}
-
-
-
-Classification::Afiliations::Weight
-Classification::Afiliations::resizingWeight (int x) const
-{
-  Weight linear    = x * resizingLinearWeight();
-  Weight quadratic = x * x * resizingQuadraticWeight();
+  Weight n, m;
   
-  return (linear + quadratic);
+  if (precomputed.contains(a)) {
+    n = Airport::largestPossibleDistanceInKM();
+    m = precomputed.value(a);
+    m = qMax(m, 1);
+  } else {
+    n = 0;
+    m = 1;
+  }
+  
+  return (-n/m);
 }
 
 
 
 Classification::Afiliations::Weight
-Classification::Afiliations::resizingLinearWeight () const
+Classification::Afiliations::age (
+  ObjectPointer obj,
+  AirlinePointer owner,
+  AirlinePointer user
+) const
 {
-  return (m_resize_linear_weight);
+  Weight age;
+  
+  if (0 < m_current_year) {
+    int retired = retirementDate (obj, owner, user);
+    
+    if ((retired == -1) or (m_current_year < retired)) {
+      age = 0;
+    } else {
+      age = (m_current_year - retired) * m_retired_weight;
+    }
+  } else {
+    age = 0;
+  }
+  
+  return (age);
+}
+
+
+
+bool
+Classification::Afiliations::introduced (
+  ObjectPointer o,
+  AirlinePointer owner,
+  AirlinePointer user
+) const
+{
+  bool introduced;
+  
+  if (0 < m_current_year) {
+    int date = introductionDate (o, owner, user);
+    introduced = date <= m_current_year;
+  } else {
+    introduced = true;
+  }
+  
+  return (introduced);
+}
+
+
+
+int
+Classification::Afiliations::introductionDate (
+  ObjectPointer obj,
+  AirlinePointer owner,
+  AirlinePointer user
+) const
+{
+  int date = obj->introduced();
+  
+  if (date <= 0) {
+    AircraftPointer aircraft = m_definitions->aircraft(obj->aircraft());
+    date = aircraft->introduced();
+  }
+  
+  int founded = qMax(owner->founded(), user->founded());
+  date = qMax(founded, date);
+  
+  return (date);
+}
+
+
+
+int
+Classification::Afiliations::retirementDate (
+  ObjectPointer obj,
+  AirlinePointer owner,
+  AirlinePointer user
+) const
+{
+  int date = obj->retired();
+  
+  
+  {
+    int ret_own = owner->ceased ();
+    int ret_usr = user->ceased ();
+    
+    int ceased = (ret_own < ret_usr)? ret_own : ret_usr;
+    if (ceased <= 0) {
+      ceased =   (ret_own < ret_usr)? ret_usr : ret_own;
+    }
+    
+    if (0 < ceased) {
+      if ((date <= 0) || (ceased < date)) {
+        date = ceased;
+      }
+    }
+  }
+  
+  if (date <= 0) {
+    if ((m_current_year > 0) && (m_retired_age > 0)) {
+      int introduction = introductionDate(obj, owner, user);
+      if (introduction > 0) {
+        date = introduction + m_retired_age;
+      }
+    }
+  }
+  
+  return (date);
+}
+
+
+
+void
+Classification::Afiliations::setRetireAge (int age)
+{
+  m_retired_age = age;
+}
+
+
+
+int
+Classification::Afiliations::retireAge () const
+{
+  return (m_retired_age);
+}
+
+
+
+void
+Classification::Afiliations::setRetireWeight (Weight w)
+{
+  m_retired_weight = w;
 }
 
 
 
 Classification::Afiliations::Weight
-Classification::Afiliations::resizingQuadraticWeight () const
+Classification::Afiliations::retireWeight() const
 {
-  return (m_resize_quadratic_weight);
+  return (m_retired_weight);
 }
 
 
 
 void
-Classification::Afiliations::setResizingLinearWeight (Weight w)
+Classification::Afiliations::setRelativeUpWeight (Weight w)
 {
-  m_resize_linear_weight = w;
+  if (w < 0) {
+    throw (std::runtime_error("Value out of Range."));
+  }
+  m_edge_traverse_weight[ChildToParent] = w;
 }
 
 
 
 void
-Classification::Afiliations::setResizingQuadraticWeight (Weight w)
+Classification::Afiliations::setRelativeDownWeight (Weight w)
 {
-  m_resize_quadratic_weight = w;
+  if (w < 0) {
+    throw (std::runtime_error("Value out of Range."));
+  }
+  m_edge_traverse_weight[ParentToChild] = w;
+}
+
+
+
+Classification::Afiliations::Weight
+Classification::Afiliations::relativeUpWeight() const
+{
+  return (m_edge_traverse_weight[ChildToParent]);
+}
+
+
+
+Classification::Afiliations::Weight
+Classification::Afiliations::relativeDownWeight() const
+{
+  return (m_edge_traverse_weight[ParentToChild]);
+}
+
+
+
+Classification::Afiliations::Weight
+Classification::Afiliations::resizeWeight (int x) const
+{
+  Weight retval = x * resizeWeight();
+  
+  return (retval);
+}
+
+
+
+Classification::Afiliations::Weight
+Classification::Afiliations::resizeWeight () const
+{
+  return (m_resize_weight);
 }
 
 
 
 void
-Classification::Afiliations::setMaxPlaneAge (int max)
+Classification::Afiliations::setResizeWeight (Weight w)
 {
-  m_max_plane_age = max;
+  m_resize_weight = w;
 }
 
 
@@ -229,7 +433,7 @@ Classification::Afiliations::setMaxPlaneAge (int max)
 void
 Classification::Afiliations::setYear (int year)
 {
-  m_year = year;
+  m_current_year = year;
 }
 
 
@@ -237,55 +441,23 @@ Classification::Afiliations::setYear (int year)
 int
 Classification::Afiliations::year () const
 {
-  return (m_year);
-}
-
-
-
-int
-Classification::Afiliations::maxPlaneAge () const
-{
-  return (m_max_plane_age);
+  return (m_current_year);
 }
 
 
 
 bool
-Classification::Afiliations::outdated (ObjectPointer obj, Airline::PrimaryKey user_icao) const
+Classification::Afiliations::enableByPurpose(ObjectPointer obj, AirlinePointer airline) const
 {
-  bool age_ok;
+#if 0
+  int o = (int) obj->purpose();
+  int a = (int) airline->purposes();
   
-  if (0 < m_year) {
-    int introduced = obj->introduced ();
-    int retired = obj->retired ();
+  int enabled = a & o;
   
-    AirlinePointer  owner    = m_definitions->airline(obj->livery());
-    AirlinePointer  user     = m_definitions->airline(user_icao);
-    AircraftPointer aircraft = m_definitions->aircraft(obj->aircraft());
-  
-    if (introduced <= 0) {
-      int founded = qMax (owner->founded(), user->founded());
-      introduced = qMax (founded, aircraft->introduced());
-    }
-    if (retired <= 0) {
-      int ret_own = owner->ceased ();
-      int ret_usr = user->ceased ();
-      
-      retired = (0 <= ret_own)? ret_own : ret_usr;
-      if (0 < ret_usr) {
-        retired = (retired == 0)? ret_usr : qMin (retired, ret_usr);
-      }
-    }
-    
-    if (retired <= 0) {
-      retired = (m_max_plane_age <= 0)? (m_year) : (introduced + m_max_plane_age);
-    }
-    age_ok = (introduced <= m_year) and (m_year <= retired);
-  } else {
-    age_ok = true;
-  }
-  
-  return (not age_ok);
+  return (enabled != 0);
+#endif
+  return (true);
 }
 
 
@@ -326,7 +498,7 @@ Classification::Afiliations::mergeObjects (
   
   Q_FOREACH (XPClass xp_class, xp_classes) {
     for (int resized=0; ; ++resized) {
-      Weight w = initial + resizingWeight(resized);
+      Weight w = initial + resizeWeight(resized);
       mergeObject (objects, xp_class, WeightedObject(object, w));
       if (xp_class.couldBeLarger())
         xp_class=xp_class.nextLarger();
@@ -352,17 +524,28 @@ Classification::Afiliations::objectsAvailable (AirlinePointer airline) const
   WeightedObjectsByXPClass result;
   
   if (airline) {
-    Weights w = weights(airline);
+    RelativeBonuses bonuses = relativeBonuses(airline);
   
     Q_FOREACH (ObjectPointer obj, m_definitions->objects()) {
-      if (outdated(obj, airline->primaryKey())) {
+      
+      AirlinePointer owner = m_definitions->airline(obj->livery());
+      if (owner->hasFictiveIcaoCode()) {
         continue;
       }
-    
-      AirlinePointer owner = m_definitions->airline(obj->livery());
-      if (w.contains(owner)) {
-        mergeObjects (result, obj, w.value(owner));
+      
+      if (not introduced(obj, owner, airline)) {
+        continue;
       }
+      
+      Weight w = age(obj, owner, airline);
+      
+      if (owner != airline) {
+        Weight w_regional = regional (airline, owner);
+        Weight w_relative = relative (owner, bonuses);
+        
+        w += qMax(w_regional + w_relative, 1);
+      }
+      mergeObjects (result, obj, w);
     }
   } else {
     Q_FOREACH (ObjectPointer obj, m_definitions->objects()) {

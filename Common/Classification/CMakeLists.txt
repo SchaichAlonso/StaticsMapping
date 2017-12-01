@@ -1,5 +1,6 @@
 add_library (Classification STATIC
   Afiliates.cpp
+  AfiliateModel.cpp
   Aircraft.cpp
   AircraftModel.cpp
   Airline.cpp

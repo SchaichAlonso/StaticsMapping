@@ -77,7 +77,7 @@ GlobalDistributionDialog::createFiltersGui ()
   connect (
       age, QSpinBox__valueChanged,
       this, [&](int x) {
-        m_afilia.setMaxPlaneAge (x);
+        m_afilia.setRetireAge (x);
         updatePreview ();
       }
   );

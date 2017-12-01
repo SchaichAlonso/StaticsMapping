@@ -1,6 +1,7 @@
 #include <QtCore/QDir>
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
+#include <QtWidgets/QDataWidgetMapper>
 #include <QtWidgets/QFormLayout>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QGridLayout>
@@ -12,6 +13,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTableView>
 
+#include <Common/Classification/AfiliateModel.hpp>
 #include <Common/Classification/AirlineModel.hpp>
 #include <Common/Widgets/AirlineDelegate.hpp>
 #include <Common/Widgets/GlobalDistributionDialog.hpp>
@@ -178,71 +180,40 @@ AfiliatesPage::createFiltersGui ()
   QScrollArea *area = new QScrollArea ();
   QWidget *dummy = new QWidget();
   QFormLayout *form = new QFormLayout ();
-  QSpinBox *age  = new QSpinBox ();
-  QSpinBox *year = new QSpinBox ();
-  QSpinBox *walk_up = new QSpinBox ();
-  QSpinBox *walk_dn = new QSpinBox ();
-  QSpinBox *size_linear = new QSpinBox ();
-  QSpinBox *size_quadratic = new QSpinBox ();
   QComboBox *extend = new QComboBox();
   
-  year->setRange (0, 2100);
-  void (QSpinBox::*QSpinBox__valueChanged)(int) = &QSpinBox::valueChanged;
-  connect (
-    year, QSpinBox__valueChanged,
-    [this](int x) {
-      m_afiliations.setYear (x);
-      updatePreviewables ();
-    }
-  );
+  Classification::AfiliateModel *model = new Classification::AfiliateModel(&m_afiliations);
   
   connect (
-    age, QSpinBox__valueChanged,
-    [this](int x) {
-      m_afiliations.setMaxPlaneAge (x);
-      updatePreviewables ();
-    }
+    model, &QAbstractItemModel::dataChanged,
+    this, &AfiliatesPage::updatePreviewables
   );
   
-  walk_up->setRange(0, 100);
-  walk_up->setValue(m_afiliations.weight(Classification::Afiliations::ChildToParent));
-  connect (
-    walk_up, QSpinBox__valueChanged,
-    [this](int x) {
-      m_afiliations.setWeight(Classification::Afiliations::ChildToParent, x);
-      updatePreviewables ();
-    }
-  );
+  QList<QSpinBox *> spins;
+  for (int i=0; i!=model->columnCount(); ++i) {
+    QSpinBox *sb = new QSpinBox(this);
+    sb->setRange(0, 10000);
+    spins.append(sb);
+  }
   
-  walk_dn->setRange(0, 100);
-  walk_dn->setValue(m_afiliations.weight(Classification::Afiliations::ParentToChild));
-  connect (
-    walk_dn, QSpinBox__valueChanged,
-    [this](int x) {
-      m_afiliations.setWeight(Classification::Afiliations::ParentToChild, x);
-      updatePreviewables ();
-    }
-  );
+  QDataWidgetMapper *mapper = new QDataWidgetMapper(this);
+  mapper->setModel (model);
+  for (int i=0; i!=spins.size(); ++i) {
+    mapper->addMapping (spins[i], model->column(i));
+  }
+  mapper->setCurrentIndex (0);
   
-  size_linear->setRange(0, 100);
-  size_linear->setValue(m_afiliations.resizingLinearWeight());
-  connect (
-    size_linear, QSpinBox__valueChanged,
-    [this](int x) {
-      m_afiliations.setResizingLinearWeight(x);
-      updatePreviewables ();
-    }
-  );
-  
-  size_quadratic->setRange(0, 100);
-  size_quadratic->setValue(m_afiliations.resizingQuadraticWeight());
-  connect (
-    size_quadratic, QSpinBox__valueChanged,
-    [this](int x) {
-      m_afiliations.setResizingQuadraticWeight(x);
-      updatePreviewables ();
-    }
-  );
+  for (int i=0; i!=model->columnCount(); ++i) {
+    form->addRow (
+      model->headerData(i, Qt::Horizontal, Qt::DisplayRole).toString(),
+      spins[i]
+    );
+    
+    connect (
+      spins[i], (void (QSpinBox::*)(int)) &QSpinBox::valueChanged,
+      mapper, &QDataWidgetMapper::submit
+    );
+  }
   
   extend->addItem("EXPORT_EXTEND", QVariant(true));
   extend->addItem("EXPORT", QVariant(false));
@@ -252,14 +223,7 @@ AfiliatesPage::createFiltersGui ()
       m_extend = extend->currentData().toBool();
     }
   );
-  
-  form->addRow ("Current Year", year);
-  form->addRow ("Max. Plane Age", age);
-  form->addRow ("Subsidy->Owner Weight", walk_up);
-  form->addRow ("Subsidy<-Owner Weight", walk_dn);
-  form->addRow ("Size-up linear Weight", size_linear);
-  form->addRow ("Size-up quadratic Weight", size_quadratic);
-  form->addRow ("First uses", extend);
+  form->addRow ("First Occurence", extend);
   
   dummy->setLayout (form);
   area->setWidget(dummy);

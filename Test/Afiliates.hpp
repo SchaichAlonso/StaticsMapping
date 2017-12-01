@@ -17,10 +17,17 @@ namespace Classification
     private slots:
       virtual void init () Q_DECL_OVERRIDE;
       
-      void basic ();
-      void sizing ();
+      void regional ();
+      void relatives ();
+      void resizing ();
       void explicitAge ();
       void implicitAge ();
+      
+    private:
+      AirlinePointer FFM, MAS;
+      AirlinePointer AFL, PLK, SDM;
+      
+      AircraftPointer E135, E75L, SU95, AT75;
     };
   }
 }
