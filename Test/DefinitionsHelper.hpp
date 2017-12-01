@@ -17,13 +17,16 @@ namespace Classification
       static Object::Hash hash (int i);
       static Object::PrimaryKey objkey (int i);
     
+      
+      AircraftPointer aircraft(QString) const;
+      AirlinePointer airline(QString) const;
       ObjectPointer object (int) const;
       
-      void addAircraft (QString);
-      void addAirline (QString);
-      void addAirport (QString, double, double);
-      void addLibrary (QString);
-      void addObject (QString, QString, QString, int, bool);
+      AircraftPointer addAircraft (QString);
+      AirlinePointer addAirline (QString, QStringList =QStringList());
+      AirportPointer addAirport (QString, double, double);
+      LibraryPointer addLibrary (QString);
+      ObjectPointer addObject (QString, QString, QString, int, bool);
   
     protected slots:
       virtual void init ();
