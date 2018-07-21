@@ -1033,7 +1033,7 @@
             "ceased": 0,
             "comment": "",
             "founded": 1937,
-            "hubs": "CYUL CYYC CYYZ EGLL VYVR",
+            "hubs": "CYVR CYOW CYHZ CYYC CYUL CYYZ",
             "icao": "ACA",
             "name": "Air Canada",
             "parent": "XXX-StarAlliance"
@@ -1240,7 +1240,7 @@
             "ceased": 0,
             "comment": "",
             "founded": 0,
-            "hubs": "RJOO RJTI",
+            "hubs": "RJOO",
             "icao": "ANH",
             "name": "All Nippon Helicopter",
             "parent": "ANA"
@@ -1825,7 +1825,7 @@
             "ceased": 0,
             "comment": "",
             "founded": 1947,
-            "hubs": "MTPO",
+            "hubs": "MPTO",
             "icao": "CMP",
             "name": "Copa Airlines",
             "parent": "XXX-StarAlliance"
@@ -2851,7 +2851,7 @@
             "ceased": 0,
             "comment": "",
             "founded": 2009,
-            "hubs": "VPDD",
+            "hubs": "VDPP",
             "icao": "KHV",
             "name": "Cambodia Angkor Air",
             "parent": "HVN"
@@ -3508,7 +3508,7 @@
             "ceased": 0,
             "comment": "",
             "founded": 1962,
-            "hubs": "KDCA KPHL USGS",
+            "hubs": "KCLT KPHL",
             "icao": "PDT",
             "name": "Piedmont Airlines",
             "parent": "AAL"
@@ -4039,7 +4039,7 @@
             "ceased": 0,
             "comment": "",
             "founded": 1945,
-            "hubs": "OEJN OERK OWDF",
+            "hubs": "OEJN OERK OEDF",
             "icao": "SVA",
             "name": "Saudia Airlines",
             "parent": "XXX-SkyTeam"
@@ -4426,7 +4426,7 @@
             "ceased": 0,
             "comment": "",
             "founded": 1993,
-            "hubs": "UKGG",
+            "hubs": "UKKG",
             "icao": "URG",
             "name": "Air Urga",
             "parent": "URG"
@@ -4471,7 +4471,7 @@
             "ceased": 0,
             "comment": "",
             "founded": 2008,
-            "hubs": "EKCG ENGM ESSA",
+            "hubs": "EKCH ESSA ENGM EFHK",
             "icao": "VKG",
             "name": "Thomas Cook Airlines Scandinavia",
             "parent": "TCX"
