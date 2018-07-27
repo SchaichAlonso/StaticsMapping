@@ -4075,7 +4075,7 @@
             "ceased": 0,
             "comment": "",
             "founded": 1945,
-            "hubs": "OEJN OERK OEDF",
+            "hubs": "OEDF OEJN OERK",
             "icao": "SVA",
             "name": "Saudia Airlines",
             "parent": "XXX-SkyTeam"
@@ -4516,7 +4516,7 @@
             "ceased": 0,
             "comment": "",
             "founded": 2008,
-            "hubs": "EKCH ESSA ENGM EFHK",
+            "hubs": "EFHK EKCH ENGM ESSA",
             "icao": "VKG",
             "name": "Thomas Cook Airlines Scandinavia",
             "parent": "TCX"
