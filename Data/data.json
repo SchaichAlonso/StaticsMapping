@@ -4765,6 +4765,1706 @@
             "parent": "XXX-Vanilla"
         }
     ],
+    "airports": [
+        {
+            "icao": "BGSF",
+            "lat": 67.01160478,
+            "lon": -50.71472138,
+            "name": "Kangerlussuaq"
+        },
+        {
+            "icao": "BIAR",
+            "lat": 65.65657425,
+            "lon": -18.07197484,
+            "name": "Akureyri"
+        },
+        {
+            "icao": "BIKF",
+            "lat": 63.98161213,
+            "lon": -22.61456272,
+            "name": "Keflavik"
+        },
+        {
+            "icao": "BIRK",
+            "lat": 64.12964356,
+            "lon": -21.94060887,
+            "name": "Reykjavik"
+        },
+        {
+            "icao": "CYHZ",
+            "lat": 44.88315796,
+            "lon": -63.51055355,
+            "name": "HALIFAX INTL"
+        },
+        {
+            "icao": "CYOW",
+            "lat": 45.322817,
+            "lon": -75.6714385,
+            "name": "Ottawa Macdonald Cartier Intl"
+        },
+        {
+            "icao": "CYQM",
+            "lat": 46.10957046,
+            "lon": -64.68293587,
+            "name": "GREATER MONCTON INTL"
+        },
+        {
+            "icao": "CYQX",
+            "lat": 48.94296233,
+            "lon": -54.56586383,
+            "name": "GANDER INTL"
+        },
+        {
+            "icao": "CYUL",
+            "lat": 45.4672685,
+            "lon": -73.74402783,
+            "name": "Montreal Pierre E Trudeau Intl"
+        },
+        {
+            "icao": "CYVR",
+            "lat": 49.19233125,
+            "lon": -123.187993,
+            "name": "Vancouver Intl"
+        },
+        {
+            "icao": "CYYC",
+            "lat": 51.11319727,
+            "lon": -114.02004385,
+            "name": "CALGARY INTL"
+        },
+        {
+            "icao": "CYYZ",
+            "lat": 43.676134,
+            "lon": -79.6276706,
+            "name": "Toronto Lester B Pearson Intl"
+        },
+        {
+            "icao": "DGAA",
+            "lat": 5.602578,
+            "lon": -0.16760158,
+            "name": "Accra_Kotoka_Intl"
+        },
+        {
+            "icao": "DIAP",
+            "lat": 5.261386,
+            "lon": -3.926296,
+            "name": "Abidjan Felix Houphouet Boigny Intl"
+        },
+        {
+            "icao": "DXXX",
+            "lat": 6.165736,
+            "lon": 1.2541415,
+            "name": "GNASSINGBE EYADEMA INTL"
+        },
+        {
+            "icao": "EBBR",
+            "lat": 50.89994811,
+            "lon": 4.49281432,
+            "name": "Brussels Airport"
+        },
+        {
+            "icao": "EDDF",
+            "lat": 50.032604,
+            "lon": 8.54064075,
+            "name": "Frankfurt am Main"
+        },
+        {
+            "icao": "EDDH",
+            "lat": 53.63366505,
+            "lon": 9.98523503,
+            "name": "Hamburg"
+        },
+        {
+            "icao": "EDDK",
+            "lat": 50.86580067,
+            "lon": 7.13890333,
+            "name": "Koln Bonn"
+        },
+        {
+            "icao": "EDDL",
+            "lat": 51.28941891,
+            "lon": 6.76663728,
+            "name": "Duesseldorf"
+        },
+        {
+            "icao": "EDDM",
+            "lat": 48.3537865,
+            "lon": 11.786117,
+            "name": "Muenchen Franz-Josef Strauss"
+        },
+        {
+            "icao": "EDDP",
+            "lat": 51.42263075,
+            "lon": 12.2360415,
+            "name": "Leipzig-Halle"
+        },
+        {
+            "icao": "EDDS",
+            "lat": 48.689876,
+            "lon": 9.2219615,
+            "name": "Stuttgart"
+        },
+        {
+            "icao": "EDDT",
+            "lat": 52.5591,
+            "lon": 13.2901875,
+            "name": "Berlin Tegel"
+        },
+        {
+            "icao": "EDDV",
+            "lat": 52.46209488,
+            "lon": 9.68679404,
+            "name": "Hannover"
+        },
+        {
+            "icao": "EDLW",
+            "lat": 51.519107,
+            "lon": 7.614447,
+            "name": "Dortmund-Wickede"
+        },
+        {
+            "icao": "EEPU",
+            "lat": 58.4187945,
+            "lon": 24.472822,
+            "name": "PARNU"
+        },
+        {
+            "icao": "EFHK",
+            "lat": 60.32056867,
+            "lon": 24.9526675,
+            "name": "Helsinki Vantaa"
+        },
+        {
+            "icao": "EGCC",
+            "lat": 53.34714078,
+            "lon": -2.28395386,
+            "name": "Manchester Intl"
+        },
+        {
+            "icao": "EGGW",
+            "lat": 51.87462863,
+            "lon": -0.36845026,
+            "name": "London Luton"
+        },
+        {
+            "icao": "EGKK",
+            "lat": 51.148753,
+            "lon": -0.1924725,
+            "name": "London Gatwick"
+        },
+        {
+            "icao": "EGLC",
+            "lat": 51.5052306,
+            "lon": 0.05517525,
+            "name": "London City"
+        },
+        {
+            "icao": "EGLL",
+            "lat": 51.47121788,
+            "lon": -0.46097777,
+            "name": "London Heathrow"
+        },
+        {
+            "icao": "EGNX",
+            "lat": 52.8309992,
+            "lon": -1.3281549,
+            "name": "East Midlands"
+        },
+        {
+            "icao": "EGSS",
+            "lat": 51.88509683,
+            "lon": 0.23496194,
+            "name": "London Stansted"
+        },
+        {
+            "icao": "EHAM",
+            "lat": 52.31484987,
+            "lon": 4.75812143,
+            "name": "Schiphol"
+        },
+        {
+            "icao": "EHEH",
+            "lat": 51.4501335,
+            "lon": 5.374513,
+            "name": "Eindhoven"
+        },
+        {
+            "icao": "EHRD",
+            "lat": 51.957468,
+            "lon": 4.4416615,
+            "name": "Rotterdam The Hague"
+        },
+        {
+            "icao": "EIDW",
+            "lat": 53.42826402,
+            "lon": -6.25955012,
+            "name": "Dublin"
+        },
+        {
+            "icao": "EKBI",
+            "lat": 55.73618325,
+            "lon": 9.15205559,
+            "name": "Billund"
+        },
+        {
+            "icao": "EKCH",
+            "lat": 55.61291491,
+            "lon": 12.64096126,
+            "name": "Kastrup"
+        },
+        {
+            "icao": "ENGM",
+            "lat": 60.1945072,
+            "lon": 11.09899811,
+            "name": "Oslo Gardermoen"
+        },
+        {
+            "icao": "EPWA",
+            "lat": 52.16509137,
+            "lon": 20.96692341,
+            "name": "WARSZAWA Okecie"
+        },
+        {
+            "icao": "ESSA",
+            "lat": 59.65013968,
+            "lon": 17.9436279,
+            "name": "Stockholm Arlanda"
+        },
+        {
+            "icao": "EVRA",
+            "lat": 56.9236625,
+            "lon": 23.971193,
+            "name": "Riga Intl"
+        },
+        {
+            "icao": "FAOR",
+            "lat": -26.1385425,
+            "lon": 28.246527,
+            "name": "Johannesburg OR Thambo Intl"
+        },
+        {
+            "icao": "FDMS",
+            "lat": -26.529021,
+            "lon": 31.307519,
+            "name": "MATSAPHA"
+        },
+        {
+            "icao": "FIMP",
+            "lat": -20.4302345,
+            "lon": 57.6836015,
+            "name": "SIR SEEWOOSAGUR RAMGOOLAM INTL"
+        },
+        {
+            "icao": "FMCV",
+            "lat": -12.131514,
+            "lon": 44.4303605,
+            "name": "OUANI"
+        },
+        {
+            "icao": "FMCZ",
+            "lat": -12.8094385,
+            "lon": 45.2822235,
+            "name": "Dzaoudzi Pamandzi"
+        },
+        {
+            "icao": "FMEE",
+            "lat": -20.889313,
+            "lon": 55.51775229,
+            "name": "St Denis Gillot"
+        },
+        {
+            "icao": "FMMI",
+            "lat": -18.79695,
+            "lon": 47.4788065,
+            "name": "IVATO"
+        },
+        {
+            "icao": "FSIA",
+            "lat": -4.674378,
+            "lon": 55.521829,
+            "name": "SEYCHELLES INTL"
+        },
+        {
+            "icao": "FWKI",
+            "lat": -13.7893765,
+            "lon": 33.781,
+            "name": "KAMUZU INTL"
+        },
+        {
+            "icao": "HAAB",
+            "lat": 8.97789175,
+            "lon": 38.799321,
+            "name": "BOLE INTL"
+        },
+        {
+            "icao": "HECA",
+            "lat": 30.121808,
+            "lon": 31.40609517,
+            "name": "Cairo Intl"
+        },
+        {
+            "icao": "HKJK",
+            "lat": -1.31707312,
+            "lon": 36.93075712,
+            "name": "Nairobi Jomo Kanyatta Intl"
+        },
+        {
+            "icao": "HTDA",
+            "lat": -6.87504775,
+            "lon": 39.20426475,
+            "name": "MWALIMU JULIUS K NYERERE INTL"
+        },
+        {
+            "icao": "KACK",
+            "lat": 41.25295383,
+            "lon": -70.05920033,
+            "name": "Nantucket Mem"
+        },
+        {
+            "icao": "KATL",
+            "lat": 33.63662271,
+            "lon": -84.4282067,
+            "name": "Hartsfield Jackson Atlanta Intl"
+        },
+        {
+            "icao": "KBIL",
+            "lat": 45.80770617,
+            "lon": -108.5464105,
+            "name": "Billings Logan Intl"
+        },
+        {
+            "icao": "KBOS",
+            "lat": 42.36305577,
+            "lon": -71.00696199,
+            "name": "Boston Logan Intl"
+        },
+        {
+            "icao": "KBWI",
+            "lat": 39.17601325,
+            "lon": -76.66682275,
+            "name": "Baltimore Washington Intl"
+        },
+        {
+            "icao": "KCLT",
+            "lat": 35.21397147,
+            "lon": -80.94858707,
+            "name": "Charlotte Douglas Intl"
+        },
+        {
+            "icao": "KCMH",
+            "lat": 39.99847375,
+            "lon": -82.89215825,
+            "name": "PORT COLUMBUS INTL"
+        },
+        {
+            "icao": "KCVG",
+            "lat": 39.04949613,
+            "lon": -84.66829138,
+            "name": "Cincinnati Northern Kentucky Intl"
+        },
+        {
+            "icao": "KDAL",
+            "lat": 32.84752867,
+            "lon": -96.851864,
+            "name": "Dallas Love Fld"
+        },
+        {
+            "icao": "KDCA",
+            "lat": 38.85205367,
+            "lon": -77.03769533,
+            "name": "Washington National"
+        },
+        {
+            "icao": "KDEN",
+            "lat": 39.86097967,
+            "lon": -104.67189233,
+            "name": "Denver Intl"
+        },
+        {
+            "icao": "KDFW",
+            "lat": 32.89711089,
+            "lon": -97.03654742,
+            "name": "Dallas Fort Worth Intl"
+        },
+        {
+            "icao": "KDTW",
+            "lat": 42.21220083,
+            "lon": -83.35258934,
+            "name": "Detroit Metro Wayne Co"
+        },
+        {
+            "icao": "KEWR",
+            "lat": 40.693633,
+            "lon": -74.16856467,
+            "name": "Newark Liberty Intl"
+        },
+        {
+            "icao": "KHOU",
+            "lat": 29.64553219,
+            "lon": -95.279111,
+            "name": "William P Hobby"
+        },
+        {
+            "icao": "KHYA",
+            "lat": 41.66934644,
+            "lon": -70.2804375,
+            "name": "Barnstable Muni Boardman Polando Fld"
+        },
+        {
+            "icao": "KIAD",
+            "lat": 38.94770747,
+            "lon": -77.460857,
+            "name": "Washington Dulles Intl"
+        },
+        {
+            "icao": "KIAH",
+            "lat": 29.9854403,
+            "lon": -95.34118844,
+            "name": "Houston George Bush Int"
+        },
+        {
+            "icao": "KIND",
+            "lat": 39.71809267,
+            "lon": -86.292673,
+            "name": "Indianapolis Intl"
+        },
+        {
+            "icao": "KJFK",
+            "lat": 40.6399042,
+            "lon": -73.77666109,
+            "name": "John F Kennedy Intl"
+        },
+        {
+            "icao": "KLAS",
+            "lat": 36.08097492,
+            "lon": -115.15344613,
+            "name": "Mc Carran Intl"
+        },
+        {
+            "icao": "KLAX",
+            "lat": 33.94313043,
+            "lon": -118.40891721,
+            "name": "Los Angeles Intl"
+        },
+        {
+            "icao": "KLGA",
+            "lat": 40.77723592,
+            "lon": -73.87260995,
+            "name": "La Guardia"
+        },
+        {
+            "icao": "KMCI",
+            "lat": 39.2971382,
+            "lon": -94.71339438,
+            "name": "Kansas City Intl"
+        },
+        {
+            "icao": "KMCO",
+            "lat": 28.42919875,
+            "lon": -81.30677975,
+            "name": "Orlando Intl"
+        },
+        {
+            "icao": "KMDW",
+            "lat": 41.7859427,
+            "lon": -87.7525238,
+            "name": "Chicago Midway Intl"
+        },
+        {
+            "icao": "KMEM",
+            "lat": 35.04266625,
+            "lon": -89.97662525,
+            "name": "MEMPHIS INTL"
+        },
+        {
+            "icao": "KMIA",
+            "lat": 25.79616689,
+            "lon": -80.28974235,
+            "name": "Miami Intl"
+        },
+        {
+            "icao": "KMSP",
+            "lat": 44.88195025,
+            "lon": -93.2220095,
+            "name": "Minneapolis St Paul Intl"
+        },
+        {
+            "icao": "KOAK",
+            "lat": 37.72482442,
+            "lon": -122.21951607,
+            "name": "Metro Oakland Intl"
+        },
+        {
+            "icao": "KORD",
+            "lat": 41.9827357,
+            "lon": -87.90630792,
+            "name": "CHICAGO OHARE INTL"
+        },
+        {
+            "icao": "KPDX",
+            "lat": 45.58883883,
+            "lon": -122.59725917,
+            "name": "PORTLAND INTL"
+        },
+        {
+            "icao": "KPHL",
+            "lat": 39.87386525,
+            "lon": -75.237388,
+            "name": "Philadelphia Intl"
+        },
+        {
+            "icao": "KPHX",
+            "lat": 33.43358,
+            "lon": -112.01183667,
+            "name": "Phoenix Sky Harbor Intl"
+        },
+        {
+            "icao": "KPIT",
+            "lat": 40.49135325,
+            "lon": -80.231803,
+            "name": "Pittsburgh Intl"
+        },
+        {
+            "icao": "KSAN",
+            "lat": 32.7335555,
+            "lon": -117.1896585,
+            "name": "San Diego Intl"
+        },
+        {
+            "icao": "KSDF",
+            "lat": 38.17505067,
+            "lon": -85.73569217,
+            "name": "Louisville Intl Standiford Fld"
+        },
+        {
+            "icao": "KSEA",
+            "lat": 47.45018848,
+            "lon": -122.31232036,
+            "name": "Seattle Tacoma Intl"
+        },
+        {
+            "icao": "KSFO",
+            "lat": 37.61867421,
+            "lon": -122.37500761,
+            "name": "San Francisco Intl"
+        },
+        {
+            "icao": "KSLC",
+            "lat": 40.786974,
+            "lon": -111.97542563,
+            "name": "Salt Lake City Intl"
+        },
+        {
+            "icao": "KSTL",
+            "lat": 38.74896438,
+            "lon": -90.37040975,
+            "name": "Lambert St Louis Intl"
+        },
+        {
+            "icao": "LCLK",
+            "lat": 34.8751155,
+            "lon": 33.624832,
+            "name": "Larnaca"
+        },
+        {
+            "icao": "LDZA",
+            "lat": 45.7418905,
+            "lon": 16.0672,
+            "name": "Zagreb"
+        },
+        {
+            "icao": "LEBL",
+            "lat": 41.2951081,
+            "lon": 2.08803001,
+            "name": "Barcelona - El Prat"
+        },
+        {
+            "icao": "LEMD",
+            "lat": 40.4904468,
+            "lon": -3.56061424,
+            "name": "Barajas"
+        },
+        {
+            "icao": "LEPA",
+            "lat": 39.55253577,
+            "lon": 2.73495795,
+            "name": "Palma De Mallorca"
+        },
+        {
+            "icao": "LEVC",
+            "lat": 39.48823624,
+            "lon": -0.48389158,
+            "name": "Valencia"
+        },
+        {
+            "icao": "LFKJ",
+            "lat": 41.92288575,
+            "lon": 8.79958652,
+            "name": "Napoleon Bonaparte"
+        },
+        {
+            "icao": "LFLL",
+            "lat": 45.72581219,
+            "lon": 5.09074806,
+            "name": "Lyon Saint Exupery"
+        },
+        {
+            "icao": "LFPG",
+            "lat": 49.00974216,
+            "lon": 2.56261939,
+            "name": "Paris Charles De Gaulle"
+        },
+        {
+            "icao": "LFPO",
+            "lat": 48.72636029,
+            "lon": 2.36702899,
+            "name": "Paris Orly"
+        },
+        {
+            "icao": "LFRS",
+            "lat": 47.15604,
+            "lon": -1.611186,
+            "name": "Nantes_Atlantique"
+        },
+        {
+            "icao": "LFSB",
+            "lat": 47.5958105,
+            "lon": 7.5248055,
+            "name": "Bale-Mulhouse"
+        },
+        {
+            "icao": "LGAV",
+            "lat": 37.9363575,
+            "lon": 23.94447,
+            "name": "Athens Intl Airport Elefterios Venizel"
+        },
+        {
+            "icao": "LGTS",
+            "lat": 40.5195215,
+            "lon": 22.97201675,
+            "name": "Thessalonik Makedonia"
+        },
+        {
+            "icao": "LHBP",
+            "lat": 47.43529233,
+            "lon": 19.26579167,
+            "name": "Ferihegy (Budapest)"
+        },
+        {
+            "icao": "LIML",
+            "lat": 45.45030225,
+            "lon": 9.27280075,
+            "name": "Milano Linate"
+        },
+        {
+            "icao": "LIRF",
+            "lat": 41.81080883,
+            "lon": 12.25089717,
+            "name": "Roma Fiumicino Leonardo Da Vinci"
+        },
+        {
+            "icao": "LJLJ",
+            "lat": 46.223685,
+            "lon": 14.4576085,
+            "name": "LJUBLJANA"
+        },
+        {
+            "icao": "LKPR",
+            "lat": 50.10114401,
+            "lon": 14.26296344,
+            "name": "Praha - Ruzyne"
+        },
+        {
+            "icao": "LOWG",
+            "lat": 46.99030831,
+            "lon": 15.43966543,
+            "name": "Graz Thalerhof"
+        },
+        {
+            "icao": "LOWI",
+            "lat": 47.2602258,
+            "lon": 11.343967,
+            "name": "Innsbruck Kranebitten"
+        },
+        {
+            "icao": "LOWS",
+            "lat": 47.793333,
+            "lon": 13.0043335,
+            "name": "Salzburg Maxglan"
+        },
+        {
+            "icao": "LOWW",
+            "lat": 48.1100685,
+            "lon": 16.56963724,
+            "name": "Wien Schwechat"
+        },
+        {
+            "icao": "LPPT",
+            "lat": 38.778559,
+            "lon": -9.13514625,
+            "name": "Lisboa"
+        },
+        {
+            "icao": "LROP",
+            "lat": 44.5721605,
+            "lon": 26.102177,
+            "name": "Bucarest Otopeni Intl"
+        },
+        {
+            "icao": "LSZH",
+            "lat": 47.463489,
+            "lon": 8.54996383,
+            "name": "Zurich"
+        },
+        {
+            "icao": "LTAC",
+            "lat": 40.12828475,
+            "lon": 32.99540325,
+            "name": "ESENBOGA"
+        },
+        {
+            "icao": "LTAI",
+            "lat": 36.89959817,
+            "lon": 30.79750733,
+            "name": "Antalya"
+        },
+        {
+            "icao": "LTBA",
+            "lat": 40.97913567,
+            "lon": 28.81283167,
+            "name": "Istanbul Ataturk"
+        },
+        {
+            "icao": "LTBJ",
+            "lat": 38.29221,
+            "lon": 27.1559395,
+            "name": "ADNAN MENDERES"
+        },
+        {
+            "icao": "LTFJ",
+            "lat": 40.8985515,
+            "lon": 29.309221,
+            "name": "SABIHA GOKCEN"
+        },
+        {
+            "icao": "LUKK",
+            "lat": 46.927793,
+            "lon": 28.9309235,
+            "name": "Chisinau Intl"
+        },
+        {
+            "icao": "MDPC",
+            "lat": 18.57057407,
+            "lon": -68.36613047,
+            "name": "Punta Cana Intl"
+        },
+        {
+            "icao": "MDSD",
+            "lat": 18.4296625,
+            "lon": -69.668925,
+            "name": "Las Americas Intl"
+        },
+        {
+            "icao": "MGGT",
+            "lat": 14.583272,
+            "lon": -90.5274735,
+            "name": "La Aurora"
+        },
+        {
+            "icao": "MHLM",
+            "lat": 15.451957,
+            "lon": -87.924153,
+            "name": "La Mesa Intl"
+        },
+        {
+            "icao": "MMMX",
+            "lat": 19.43630772,
+            "lon": -99.0721042,
+            "name": "Licenciado Benito Juarez Intl"
+        },
+        {
+            "icao": "MMMY",
+            "lat": 25.77865225,
+            "lon": -100.105852,
+            "name": "General Mariano Escobedo Intl"
+        },
+        {
+            "icao": "MNMG",
+            "lat": 12.141493,
+            "lon": -86.168178,
+            "name": "Managua Intl"
+        },
+        {
+            "icao": "MPTO",
+            "lat": 9.0713635,
+            "lon": -79.3834575,
+            "name": "Tocumen Intl"
+        },
+        {
+            "icao": "MROC",
+            "lat": 9.9939265,
+            "lon": -84.2088845,
+            "name": "San Jose Juan Santamaria Intl"
+        },
+        {
+            "icao": "MSLP",
+            "lat": 13.445666,
+            "lon": -89.051739,
+            "name": "El Salvador Intl"
+        },
+        {
+            "icao": "NZAA",
+            "lat": -37.010794,
+            "lon": 174.787331,
+            "name": "Auckland International"
+        },
+        {
+            "icao": "NZCH",
+            "lat": -43.48664019,
+            "lon": 172.53368221,
+            "name": "Christchurch Intl"
+        },
+        {
+            "icao": "NZHN",
+            "lat": -37.864767,
+            "lon": 175.33030613,
+            "name": "Hamilton"
+        },
+        {
+            "icao": "NZWN",
+            "lat": -41.32684332,
+            "lon": 174.80684208,
+            "name": "Wellington Intl"
+        },
+        {
+            "icao": "OBBI",
+            "lat": 26.26783675,
+            "lon": 50.63709525,
+            "name": "BAHRAIN INTL"
+        },
+        {
+            "icao": "OEDF",
+            "lat": 26.4711965,
+            "lon": 49.7979,
+            "name": "KING FAHD INTL"
+        },
+        {
+            "icao": "OEJN",
+            "lat": 21.68131883,
+            "lon": 39.15564683,
+            "name": "Jeddah King Abdulaziz Intl"
+        },
+        {
+            "icao": "OERK",
+            "lat": 24.95744925,
+            "lon": 46.69884175,
+            "name": "Riyadh King Khaled Intl"
+        },
+        {
+            "icao": "OJAI",
+            "lat": 31.72330975,
+            "lon": 35.99404575,
+            "name": "QUEEN ALIA INTL"
+        },
+        {
+            "icao": "OLBA",
+            "lat": 33.82053283,
+            "lon": 35.4877855,
+            "name": "Beyrouth Rafic Hariri Intl"
+        },
+        {
+            "icao": "OMAA",
+            "lat": 24.4330485,
+            "lon": 54.651182,
+            "name": "ABU DHABI INTL"
+        },
+        {
+            "icao": "OMDB",
+            "lat": 25.2549125,
+            "lon": 55.36426025,
+            "name": "DUBAI INTL"
+        },
+        {
+            "icao": "OMDW",
+            "lat": 24.888278,
+            "lon": 55.160378,
+            "name": "Al Maktoum Intl"
+        },
+        {
+            "icao": "OTBD",
+            "lat": 25.2610555,
+            "lon": 51.5649985,
+            "name": "DOHA INTL"
+        },
+        {
+            "icao": "OTHH",
+            "lat": 25.27456,
+            "lon": 51.60838,
+            "name": "Doha Hamad Intl"
+        },
+        {
+            "icao": "PANC",
+            "lat": 61.174111,
+            "lon": -149.99598167,
+            "name": "Ted Stevens Anchorage Intl"
+        },
+        {
+            "icao": "PHNL",
+            "lat": 21.31937638,
+            "lon": -157.92128075,
+            "name": "Honolulu Intl"
+        },
+        {
+            "icao": "PHOG",
+            "lat": 20.89897475,
+            "lon": -156.43046025,
+            "name": "Kahului"
+        },
+        {
+            "icao": "RCKH",
+            "lat": 22.577093,
+            "lon": 120.350006,
+            "name": "KAOHSIUNG INTL"
+        },
+        {
+            "icao": "RCMQ",
+            "lat": 24.26496,
+            "lon": 120.6208045,
+            "name": "CHING CHUAN KANG AB"
+        },
+        {
+            "icao": "RCSS",
+            "lat": 25.069586,
+            "lon": 121.5525695,
+            "name": "Sungshan"
+        },
+        {
+            "icao": "RCTP",
+            "lat": 25.07773125,
+            "lon": 121.2328235,
+            "name": "Taiwan Taoyuan International"
+        },
+        {
+            "icao": "RJAA",
+            "lat": 35.776552,
+            "lon": 140.38277025,
+            "name": "NARITA INTL"
+        },
+        {
+            "icao": "RJBB",
+            "lat": 34.43361925,
+            "lon": 135.2335985,
+            "name": "KANSAI INTL"
+        },
+        {
+            "icao": "RJCC",
+            "lat": 42.77520625,
+            "lon": 141.69228325,
+            "name": "NEW CHITOSE"
+        },
+        {
+            "icao": "RJCO",
+            "lat": 43.116139,
+            "lon": 141.3802055,
+            "name": "SAPPORO"
+        },
+        {
+            "icao": "RJDA",
+            "lat": 32.482501,
+            "lon": 130.158868,
+            "name": "AMAKUSA"
+        },
+        {
+            "icao": "RJFK",
+            "lat": 31.8034,
+            "lon": 130.7194055,
+            "name": "KAGOSHIMA"
+        },
+        {
+            "icao": "RJFU",
+            "lat": 32.92250475,
+            "lon": 129.923457,
+            "name": "NAGASAKI"
+        },
+        {
+            "icao": "RJGG",
+            "lat": 34.858414,
+            "lon": 136.8054085,
+            "name": "CHUBU CENTRAIR INTL"
+        },
+        {
+            "icao": "RJOO",
+            "lat": 34.78560275,
+            "lon": 135.4380195,
+            "name": "OSAKA INTL"
+        },
+        {
+            "icao": "RJTT",
+            "lat": 35.5482538,
+            "lon": 139.78855365,
+            "name": "Tokyo Haneda Intl"
+        },
+        {
+            "icao": "RKPD",
+            "lat": 33.39591925,
+            "lon": 126.712089,
+            "name": "JEONGSEOK"
+        },
+        {
+            "icao": "RKPK",
+            "lat": 35.180657,
+            "lon": 128.9379815,
+            "name": "GIMHAE INTL"
+        },
+        {
+            "icao": "RKSI",
+            "lat": 37.46908475,
+            "lon": 126.45050575,
+            "name": "Incheon Intl"
+        },
+        {
+            "icao": "RKSS",
+            "lat": 37.55831025,
+            "lon": 126.79058375,
+            "name": "Seoul Gimpo"
+        },
+        {
+            "icao": "ROAH",
+            "lat": 26.1958155,
+            "lon": 127.645868,
+            "name": "NAHA"
+        },
+        {
+            "icao": "RPLL",
+            "lat": 14.51151316,
+            "lon": 121.01271775,
+            "name": "Ninoy Aquino International Airport"
+        },
+        {
+            "icao": "SABE",
+            "lat": -34.55941433,
+            "lon": -58.41574935,
+            "name": "Aeroparque Jorge Newbery"
+        },
+        {
+            "icao": "SBBR",
+            "lat": -15.8711015,
+            "lon": -47.91862625,
+            "name": "Brasilia Presidente Juscelino Kubitsch"
+        },
+        {
+            "icao": "SBCF",
+            "lat": -19.6337585,
+            "lon": -43.968854,
+            "name": "Tancredo Neves"
+        },
+        {
+            "icao": "SBGL",
+            "lat": -22.80893825,
+            "lon": -43.2436805,
+            "name": "Galeao Antonio Carlos Jombim"
+        },
+        {
+            "icao": "SBGR",
+            "lat": -23.43233312,
+            "lon": -46.46967522,
+            "name": "Sao Paulo - Guarulhos"
+        },
+        {
+            "icao": "SBKP",
+            "lat": -23.0073835,
+            "lon": -47.134522,
+            "name": "Sao Paulo Viracopos"
+        },
+        {
+            "icao": "SBSP",
+            "lat": -23.62669325,
+            "lon": -46.655377,
+            "name": "Sao Paulo Congonhas"
+        },
+        {
+            "icao": "SCEL",
+            "lat": -33.389775,
+            "lon": -70.79436597,
+            "name": "Arturo Merino Benitez Intl"
+        },
+        {
+            "icao": "SEGU",
+            "lat": -2.157419,
+            "lon": -79.8835585,
+            "name": "Guayauqiil - Simon Bolivar Intl"
+        },
+        {
+            "icao": "SEQM",
+            "lat": -0.12408924,
+            "lon": -78.35438066,
+            "name": "Quito - Mariscal Sucre Intl"
+        },
+        {
+            "icao": "SGAS",
+            "lat": -25.23985,
+            "lon": -57.519135,
+            "name": "SILVIO PETTIROSSI INTL"
+        },
+        {
+            "icao": "SKBO",
+            "lat": 4.7015945,
+            "lon": -74.1469465,
+            "name": "Bogota - El Dorado Intl"
+        },
+        {
+            "icao": "SKRG",
+            "lat": 6.16453219,
+            "lon": -75.4231195,
+            "name": "JOSE MARIA CORDOVA"
+        },
+        {
+            "icao": "SKSJ",
+            "lat": 2.579693,
+            "lon": -72.639358,
+            "name": "JORGE E GONZALEZ TORRES"
+        },
+        {
+            "icao": "SPJC",
+            "lat": -12.021889,
+            "lon": -77.114321,
+            "name": "JORGE CHAVEZ INTL"
+        },
+        {
+            "icao": "TJSJ",
+            "lat": 18.43877675,
+            "lon": -66.00201825,
+            "name": "San Juan - Luis Munoz Marin Intl"
+        },
+        {
+            "icao": "TNCM",
+            "lat": 18.040889,
+            "lon": -63.108974,
+            "name": "St Maarten - Princess Juliana Intl"
+        },
+        {
+            "icao": "UATG",
+            "lat": 47.121939,
+            "lon": 51.821307,
+            "name": "ATYRAU"
+        },
+        {
+            "icao": "UCFM",
+            "lat": 43.061306,
+            "lon": 74.477556,
+            "name": "MANAS"
+        },
+        {
+            "icao": "UCFO",
+            "lat": 40.608889,
+            "lon": 72.793056,
+            "name": "Osh Intl"
+        },
+        {
+            "icao": "UERP",
+            "lat": 66.4004305,
+            "lon": 112.03031985,
+            "name": "POLIARNY"
+        },
+        {
+            "icao": "UERR",
+            "lat": 62.5346875,
+            "lon": 114.03894382,
+            "name": "Mirny"
+        },
+        {
+            "icao": "UHHH",
+            "lat": 48.528043,
+            "lon": 135.188359,
+            "name": "NOVY"
+        },
+        {
+            "icao": "UHPP",
+            "lat": 53.16788558,
+            "lon": 158.45366755,
+            "name": "YELIZOVO"
+        },
+        {
+            "icao": "UHWW",
+            "lat": 43.38391638,
+            "lon": 132.147375,
+            "name": "KNEVICHI"
+        },
+        {
+            "icao": "UIII",
+            "lat": 52.26643737,
+            "lon": 104.39569378,
+            "name": "Irkutsk"
+        },
+        {
+            "icao": "UKBB",
+            "lat": 50.3394722,
+            "lon": 30.89290312,
+            "name": "Boryspil"
+        },
+        {
+            "icao": "UKCC",
+            "lat": 48.07505,
+            "lon": 37.7255985,
+            "name": "DONETSK INTL"
+        },
+        {
+            "icao": "UKDD",
+            "lat": 48.357222,
+            "lon": 35.100556,
+            "name": "Dnipropetrovsk Intl"
+        },
+        {
+            "icao": "UKKG",
+            "lat": 48.5425,
+            "lon": 32.285833,
+            "name": "Kropyvnytskyi"
+        },
+        {
+            "icao": "UKKM",
+            "lat": 50.603496,
+            "lon": 30.191932,
+            "name": "ANTONOV INTL"
+        },
+        {
+            "icao": "UKLL",
+            "lat": 49.8126385,
+            "lon": 23.956111,
+            "name": "LVIV INTL"
+        },
+        {
+            "icao": "ULAA",
+            "lat": 64.600275,
+            "lon": 40.7166655,
+            "name": "TALAGI"
+        },
+        {
+            "icao": "ULLI",
+            "lat": 59.8002915,
+            "lon": 30.2625035,
+            "name": "Saint Petersburg Pulkovo"
+        },
+        {
+            "icao": "ULOO",
+            "lat": 57.78387225,
+            "lon": 28.39646825,
+            "name": "PSKOV"
+        },
+        {
+            "icao": "UMKK",
+            "lat": 54.890049,
+            "lon": 20.592635,
+            "name": "KHRABROVO"
+        },
+        {
+            "icao": "UMMS",
+            "lat": 53.8825495,
+            "lon": 28.0307855,
+            "name": "Minsk Velikiydvor"
+        },
+        {
+            "icao": "UNKL",
+            "lat": 56.172946,
+            "lon": 92.493276,
+            "name": "YEMELYANOVO"
+        },
+        {
+            "icao": "UNNT",
+            "lat": 55.0130175,
+            "lon": 82.651065,
+            "name": "Novosibirsk Tolmachevo"
+        },
+        {
+            "icao": "UNTT",
+            "lat": 56.386667,
+            "lon": 85.210556,
+            "name": "Tomsk Bogashevo"
+        },
+        {
+            "icao": "UOOO",
+            "lat": 69.311053,
+            "lon": 87.33222713,
+            "name": "Alykel"
+        },
+        {
+            "icao": "URKK",
+            "lat": 45.0346445,
+            "lon": 39.1704535,
+            "name": "PASHKOVSKIY"
+        },
+        {
+            "icao": "URML",
+            "lat": 42.816582,
+            "lon": 47.65193,
+            "name": "UYTASH"
+        },
+        {
+            "icao": "URMM",
+            "lat": 44.2250725,
+            "lon": 43.0818905,
+            "name": "MINERALNYYE VODY"
+        },
+        {
+            "icao": "URMT",
+            "lat": 45.109257,
+            "lon": 42.1128265,
+            "name": "SHPAKOVSKOYE"
+        },
+        {
+            "icao": "URRR",
+            "lat": 47.25419483,
+            "lon": 39.816074,
+            "name": "Rostov Na Donu"
+        },
+        {
+            "icao": "URWA",
+            "lat": 46.280732,
+            "lon": 48.00618575,
+            "name": "ASTRAKHAN"
+        },
+        {
+            "icao": "USPP",
+            "lat": 57.914517,
+            "lon": 56.021214,
+            "name": "BOLSHOYE SAVINO"
+        },
+        {
+            "icao": "USRR",
+            "lat": 61.343693,
+            "lon": 73.401842,
+            "name": "SURGUT"
+        },
+        {
+            "icao": "USSS",
+            "lat": 56.74310775,
+            "lon": 60.802727,
+            "name": "KOLTSOVO"
+        },
+        {
+            "icao": "USTR",
+            "lat": 57.18041616,
+            "lon": 65.31467742,
+            "name": "Roschino"
+        },
+        {
+            "icao": "UUBA",
+            "lat": 57.796667,
+            "lon": 41.02,
+            "name": "Kostroma"
+        },
+        {
+            "icao": "UUBP",
+            "lat": 53.214193,
+            "lon": 34.176447,
+            "name": "BRYANSK"
+        },
+        {
+            "icao": "UUDD",
+            "lat": 55.40919067,
+            "lon": 37.9014315,
+            "name": "Moscou Domodedovo"
+        },
+        {
+            "icao": "UUEE",
+            "lat": 55.9726425,
+            "lon": 37.414586,
+            "name": "Moscou Sheremetyevo"
+        },
+        {
+            "icao": "UUMO",
+            "lat": 55.50762615,
+            "lon": 37.50387685,
+            "name": "Ostafievo"
+        },
+        {
+            "icao": "UUOO",
+            "lat": 51.814211,
+            "lon": 39.2295875,
+            "name": "CHERTOVITSKOYE"
+        },
+        {
+            "icao": "UUWW",
+            "lat": 55.5960605,
+            "lon": 37.267664,
+            "name": "VNUKOVO"
+        },
+        {
+            "icao": "UWKB",
+            "lat": 54.64,
+            "lon": 52.801667,
+            "name": "Bugulma"
+        },
+        {
+            "icao": "UWKD",
+            "lat": 55.6065445,
+            "lon": 49.27968875,
+            "name": "KAZAN"
+        },
+        {
+            "icao": "UWKS",
+            "lat": 56.0902685,
+            "lon": 47.3472515,
+            "name": "CHEBOKSARY"
+        },
+        {
+            "icao": "UWLW",
+            "lat": 54.401014,
+            "lon": 48.802664,
+            "name": "VOSTOCHNY"
+        },
+        {
+            "icao": "UWOO",
+            "lat": 51.7957875,
+            "lon": 55.4567455,
+            "name": "ORENBURG"
+        },
+        {
+            "icao": "UWWW",
+            "lat": 53.50490475,
+            "lon": 50.164434,
+            "name": "KURUMOCH"
+        },
+        {
+            "icao": "VABB",
+            "lat": 19.0889785,
+            "lon": 72.86591375,
+            "name": "Bombay Mumbai Chhatrapati Shivaji Intl"
+        },
+        {
+            "icao": "VCBI",
+            "lat": 7.180754,
+            "lon": 79.884118,
+            "name": "BANDARANAIKE INTL COLOMBO"
+        },
+        {
+            "icao": "VDPP",
+            "lat": 11.5465415,
+            "lon": 104.8441415,
+            "name": "Phnom Penh Intl"
+        },
+        {
+            "icao": "VECC",
+            "lat": 22.65561778,
+            "lon": 88.44685614,
+            "name": "NETAJI SUBHASH CHANDRA BOSE INTL"
+        },
+        {
+            "icao": "VHHH",
+            "lat": 22.30899455,
+            "lon": 113.91461001,
+            "name": "Hong Kong Intl"
+        },
+        {
+            "icao": "VIDP",
+            "lat": 28.5664965,
+            "lon": 77.10309025,
+            "name": "INDIRA GANDHI INTL"
+        },
+        {
+            "icao": "VMMC",
+            "lat": 22.148675,
+            "lon": 113.5914115,
+            "name": "Macau Intl"
+        },
+        {
+            "icao": "VOBL",
+            "lat": 13.206944,
+            "lon": 77.704167,
+            "name": "Kempegowda Intl"
+        },
+        {
+            "icao": "VOCI",
+            "lat": 10.151996,
+            "lon": 76.4019055,
+            "name": "COCHIN INTL"
+        },
+        {
+            "icao": "VOHS",
+            "lat": 17.24,
+            "lon": 78.43,
+            "name": "Rajiv Gandhi Intl"
+        },
+        {
+            "icao": "VOMM",
+            "lat": 12.982222,
+            "lon": 80.163611,
+            "name": "Chennai Intl"
+        },
+        {
+            "icao": "VOTV",
+            "lat": 8.4821205,
+            "lon": 76.9201155,
+            "name": "THIRUVANANTHAPURAM INTL"
+        },
+        {
+            "icao": "VTBD",
+            "lat": 13.91259668,
+            "lon": 100.60679851,
+            "name": "Bangkok Don Mueang Intl"
+        },
+        {
+            "icao": "VTBS",
+            "lat": 13.68045552,
+            "lon": 100.74751202,
+            "name": "Bangkok Suvarnabhumi Intl"
+        },
+        {
+            "icao": "VVNB",
+            "lat": 21.21973875,
+            "lon": 105.80377375,
+            "name": "Hanoi Noibai Intl"
+        },
+        {
+            "icao": "VVTS",
+            "lat": 10.81874992,
+            "lon": 106.65173476,
+            "name": "TAN SON NHAT INTL"
+        },
+        {
+            "icao": "WAAA",
+            "lat": -5.0616305,
+            "lon": 119.554043,
+            "name": "Ujung Pandang Hasanuddin"
+        },
+        {
+            "icao": "WADD",
+            "lat": -8.7481695,
+            "lon": 115.1671735,
+            "name": "Denpasar Ngurah Rai Intl"
+        },
+        {
+            "icao": "WARR",
+            "lat": -7.379832,
+            "lon": 112.786858,
+            "name": "Surabaya Juanda"
+        },
+        {
+            "icao": "WBGG",
+            "lat": 1.4846975,
+            "lon": 110.346932,
+            "name": "Kuching Intl"
+        },
+        {
+            "icao": "WBGR",
+            "lat": 4.322068,
+            "lon": 113.9868055,
+            "name": "Miri"
+        },
+        {
+            "icao": "WBKK",
+            "lat": 5.9372085,
+            "lon": 116.0511805,
+            "name": "Kota Kinabalu Intl"
+        },
+        {
+            "icao": "WBSB",
+            "lat": 4.944172,
+            "lon": 114.92832652,
+            "name": "Brunei Intl"
+        },
+        {
+            "icao": "WIBB",
+            "lat": 0.4607845,
+            "lon": 101.4445375,
+            "name": "Pekanbaru Sultan Syarif Kasim II"
+        },
+        {
+            "icao": "WIHH",
+            "lat": -6.266608,
+            "lon": 106.891117,
+            "name": "Jakarta Halim Perdanakusuma Intl"
+        },
+        {
+            "icao": "WIII",
+            "lat": -6.125743,
+            "lon": 106.65640475,
+            "name": "Jakarta Sukarno-Hatta Intl"
+        },
+        {
+            "icao": "WIMM",
+            "lat": 3.558057,
+            "lon": 98.6717155,
+            "name": "Medan/Polonia"
+        },
+        {
+            "icao": "WMKK",
+            "lat": 2.745578,
+            "lon": 101.7099125,
+            "name": "Kuala Lumpur Intl - Sepang"
+        },
+        {
+            "icao": "WMKP",
+            "lat": 5.2971405,
+            "lon": 100.276865,
+            "name": "Penang Intl"
+        },
+        {
+            "icao": "WMSA",
+            "lat": 3.130583,
+            "lon": 101.5493335,
+            "name": "Kuala Lumpur S Abdul Aziz Shah"
+        },
+        {
+            "icao": "WSSS",
+            "lat": 1.35191714,
+            "lon": 103.99560304,
+            "name": "Singapore Changi Intl. Airport"
+        },
+        {
+            "icao": "YBBN",
+            "lat": -27.375714,
+            "lon": 153.12771,
+            "name": "Brisbane Intl"
+        },
+        {
+            "icao": "YBCS",
+            "lat": -16.88107939,
+            "lon": 145.75259825,
+            "name": "Cairns Intl"
+        },
+        {
+            "icao": "YMHB",
+            "lat": -42.83616725,
+            "lon": 147.51179769,
+            "name": "Hobart"
+        },
+        {
+            "icao": "YMML",
+            "lat": -37.665301,
+            "lon": 144.836668,
+            "name": "Melbourne Intl"
+        },
+        {
+            "icao": "YPAD",
+            "lat": -34.94743912,
+            "lon": 138.52985029,
+            "name": "Adelaide Intl"
+        },
+        {
+            "icao": "YPPH",
+            "lat": -31.9396725,
+            "lon": 115.966614,
+            "name": "Perth"
+        },
+        {
+            "icao": "YSSY",
+            "lat": -33.949273,
+            "lon": 151.18134683,
+            "name": "Sydney Intl"
+        },
+        {
+            "icao": "ZBAA",
+            "lat": 40.080118,
+            "lon": 116.5845625,
+            "name": "CAPITAL INTL"
+        },
+        {
+            "icao": "ZBNY",
+            "lat": 39.7825,
+            "lon": 116.387778,
+            "name": "Beijing Nanyuan"
+        }
+    ],
     "libraries": [
         {
             "key": "b787-statics",
