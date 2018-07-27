@@ -1390,6 +1390,15 @@
             "parent": "XXX-StarAlliance"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2003,
+            "hubs": "UCFM",
+            "icao": "AVJ",
+            "name": "Avia Traffic Company",
+            "parent": "AVJ"
+        },
+        {
             "ceased": 2015,
             "comment": "",
             "founded": 1939,
@@ -1523,6 +1532,15 @@
             "icao": "BHP",
             "name": "Belair",
             "parent": "BER"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2012,
+            "hubs": "UCFM",
+            "icao": "BIS",
+            "name": "Sky Bishkek",
+            "parent": "BIS"
         },
         {
             "ceased": 0,
@@ -2839,6 +2857,15 @@
             "parent": "KAW"
         },
         {
+            "ceased": 2005,
+            "comment": "Merged into LYN",
+            "founded": 1992,
+            "hubs": "UCFM",
+            "icao": "KGA",
+            "name": "Kyrgyzstan Airlines",
+            "parent": "LYN"
+        },
+        {
             "ceased": 2008,
             "comment": "",
             "founded": 1953,
@@ -3152,6 +3179,15 @@
             "icao": "LXP",
             "name": "LATAM Express",
             "parent": "LAN"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2001,
+            "hubs": "UCFM UCFO",
+            "icao": "LYN",
+            "name": "Air Kyrgyzstan",
+            "parent": "LYN"
         },
         {
             "ceased": 0,
@@ -4340,6 +4376,15 @@
             "icao": "TYR",
             "name": "Tyrolean Airways",
             "parent": "AUA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1985,
+            "hubs": "OMDB OMDW",
+            "icao": "UAE",
+            "name": "Emirates",
+            "parent": "UAE"
         },
         {
             "ceased": 0,
