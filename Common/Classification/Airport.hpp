@@ -14,7 +14,7 @@ namespace Classification
     typedef double DistanceInRadians;
     typedef int    DistanceInKM;
     
-    Airport (QString =QString(), QString =QString(), Degrees =0, Degrees =0);
+    Airport (QString icao=QString(), QString name=QString(), Degrees lat=0, Degrees lon=0);
     Airport (Definitions *, const QJsonObject &);
     virtual ~Airport ();
     
