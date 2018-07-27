@@ -26,7 +26,10 @@ namespace Classification
     static DistanceInKM earthRadiusInKM ();
     static DistanceInKM largestPossibleDistanceInKM ();
     
+    void setLatitude (Degrees lat);
     Degrees latitude () const;
+    
+    void setLongitude (Degrees lon);
     Degrees longitude () const;
     
     virtual QJsonObject toJson () const Q_DECL_OVERRIDE;

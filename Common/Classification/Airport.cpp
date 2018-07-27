@@ -79,12 +79,27 @@ Classification::Airport::largestPossibleDistanceInKM ()
 
 
 
+void
+Classification::Airport::setLatitude(Degrees lat)
+{
+  m_lat = lat;
+}
+
+
+
 Classification::Airport::Degrees
 Classification::Airport::latitude () const
 {
   return (m_lat);
 }
 
+
+
+void
+Classification::Airport::setLongitude(Degrees lon)
+{
+  m_lon = lon;
+}
 
 
 Classification::Airport::Degrees
