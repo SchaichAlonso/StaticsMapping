@@ -332,8 +332,8 @@ Classification::Definitions::Definitions (const Definitions &other)
 
 
 
-Classification::Definitions::Definitions (QJsonObject defs, QJsonObject apts)
-: m_airport_table (apts.value("airports").toArray(), this)
+Classification::Definitions::Definitions (QJsonObject defs)
+: m_airport_table (defs.value("airports").toArray(), this)
 , m_aircraft_table (defs.value("aircrafts").toArray(), this)
 , m_airline_table (defs.value("airlines").toArray(), this)
 , m_library_table (defs.value("libraries").toArray(), this)
@@ -356,6 +356,7 @@ Classification::Definitions::toJson () const
   QJsonObject obj;
   obj.insert ("aircrafts", m_aircraft_table.toJson());
   obj.insert ("airlines",  m_airline_table.toJson());
+  obj.insert ("airports", m_airport_table.toJson());
   obj.insert ("libraries", m_library_table.toJson());
   obj.insert ("objects",   m_object_table.toJson());
   
@@ -773,26 +774,17 @@ Classification::Definitions::toFile (QString filename) const
 
 
 Classification::DefinitionsPointer
-Classification::Definitions::fromFile (QString filename, QString airports)
+Classification::Definitions::fromFile (QString filename)
 {
   DefinitionsPointer retval;
-  QJsonObject apts, defs;
   
   if (filename.isNull())
     filename = dataPath ("data.json");
-  if (airports.isNull())
-    airports = dataPath ("airports.json");
   
-  try {
-    apts = readJson (airports);
-  } catch (const std::exception &e) {
-    qCritical("Cannot load airport data: %s", e.what());
-  }
-  
-  defs = readJson (filename);
+  QJsonObject defs(readJson(filename));
   
   if (defs.size() != 0) {
-    retval.reset (new Definitions (defs, apts));
+    retval.reset (new Definitions (defs));
   }
   
   return (retval);

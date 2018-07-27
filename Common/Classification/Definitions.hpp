@@ -71,7 +71,7 @@ namespace Classification
     
     Definitions ();
     Definitions (const Definitions &);
-    Definitions (QJsonObject, QJsonObject);
+    Definitions (QJsonObject);
     ~Definitions ();
     
     QJsonObject toJson () const;
@@ -123,7 +123,7 @@ namespace Classification
     AirportPopulation airportPopulation () const;
     
     bool              toFile (QString =QString()) const;
-    static DefinitionsPointer fromFile (QString =QString(), QString =QString());
+    static DefinitionsPointer fromFile (QString =QString());
     
     static QString dataPath (QString);
     
