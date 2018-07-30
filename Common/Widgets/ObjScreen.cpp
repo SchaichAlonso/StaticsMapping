@@ -8,8 +8,8 @@
 
 ObjScreen::ObjScreen (QWidget *parent, Qt::WindowFlags flags)
   : QWidget (parent, flags)
-  , m_views{nullptr, nullptr, nullptr, nullptr}
-  , m_slider(nullptr)
+  , m_views(createViews())
+  , m_slider(createSlider())
 {
   createGui();
   
@@ -34,8 +34,8 @@ ObjScreen::~ObjScreen ()
 void
 ObjScreen::setModel (Classification::ObjectPointer object, QSharedPointer<VisualModel> model)
 {
-  for (size_t i=0; i!=nitems(m_views); ++i) {
-    m_views[i]->setModel (object, model);
+  Q_FOREACH(ObjView *v, m_views) {
+    v->setModel(object, model);
   }
   if (model) {
     m_slider->setMaximum (model->maxLod());
@@ -51,8 +51,8 @@ ObjScreen::setModel (Classification::ObjectPointer object, QSharedPointer<Visual
 void
 ObjScreen::setLod (int lod)
 {
-  for (size_t i=0; i!=nitems(m_views); ++i) {
-    m_views[i]->setLod (lod);
+  Q_FOREACH(ObjView *v, m_views) {
+    v->setLod(lod);
   }
   
   m_slider->setToolTip(QString("lod=%1").arg(lod));
@@ -63,8 +63,8 @@ ObjScreen::setLod (int lod)
 void
 ObjScreen::update ()
 {
-  for (size_t i=0; i!=nitems(m_views); ++i) {
-    m_views[i]->update ();
+  Q_FOREACH(ObjView *v, m_views) {
+    v->update();
   }
   
   QWidget::update ();
@@ -77,22 +77,42 @@ ObjScreen::createGui()
 {
   QGridLayout *layout = new QGridLayout ();
   
-  for (size_t i=0; i!=nitems(m_views); ++i) {
-    m_views[i] = new ObjView ();
-    layout->addWidget (m_views[i], i/2, i%2);
+  Q_ASSERT(m_views.size() == 4);
+  for (int i=0; i!=m_views.size(); ++i) {
+    layout->addWidget(m_views[i], i/2, i%2);
   }
   
-  m_slider = new QSlider (Qt::Vertical);
-  m_slider->setMinimum (0);
-  m_slider->setMaximum (0);
-  m_slider->setSingleStep(1);
-  m_slider->setTickInterval(1000);
-  m_slider->setTickPosition(QSlider::TicksBothSides);
-  
-  QObject::connect (m_slider, SIGNAL(valueChanged(int)),
-                    this, SLOT(setLod(int)));
+  QObject::connect(
+    m_slider, SIGNAL(valueChanged(int)),
+    this, SLOT(setLod(int))
+  );
   
   layout->addWidget(m_slider, 0, 2, -1, 1);
   
   setLayout (layout);
+}
+
+
+
+QSlider *
+ObjScreen::createSlider()
+{
+  QSlider *slider(new QSlider(Qt::Vertical));
+  slider->setMinimum(0);
+  slider->setMaximum(0);
+  slider->setSingleStep(1);
+  slider->setTickInterval(1000);
+  slider->setTickPosition(QSlider::TicksBothSides);
+  return (slider);
+}
+
+
+QList<ObjView *>
+ObjScreen::createViews()
+{
+  QList<ObjView *> retval;
+  for(int i=0; i!=4; ++i) {
+    retval << new ObjView;
+  }
+  return (retval);
 }

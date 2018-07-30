@@ -1,5 +1,6 @@
 #pragma once
 
+#include <QtCore/QList>
 #include <QtCore/QSharedPointer>
 #include <QtWidgets/QSlider>
 #include <QtWidgets/QWidget>
@@ -19,9 +20,11 @@ public Q_SLOTS:
   
 protected:
   void createGui();
+  QList<ObjView *> createViews();
+  QSlider *createSlider();
   
 protected:
-  ObjView *m_views[4];
+  QList<ObjView *> m_views;
   QSlider *m_slider;
   
   Q_OBJECT;
