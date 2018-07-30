@@ -7,7 +7,9 @@
 
 
 ObjScreen::ObjScreen (QWidget *parent, Qt::WindowFlags flags)
-  : QWidget(parent, flags)
+  : QWidget (parent, flags)
+  , m_views{nullptr, nullptr, nullptr, nullptr}
+  , m_slider(nullptr)
 {
   createGui();
   
