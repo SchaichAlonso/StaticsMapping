@@ -1,8 +1,8 @@
 #pragma once
 
-#include <QSharedPointer>
-#include <QSlider>
-#include <QWidget>
+#include <QtCore/QSharedPointer>
+#include <QtWidgets/QSlider>
+#include <QtWidgets/QWidget>
 
 #include "ObjView.hpp"
 
