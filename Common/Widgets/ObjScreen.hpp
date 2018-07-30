@@ -18,6 +18,9 @@ public Q_SLOTS:
   void update ();
   
 protected:
+  void createGui();
+  
+protected:
   ObjView *m_views[4];
   QSlider *m_slider;
   

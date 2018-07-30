@@ -7,14 +7,9 @@
 
 
 ObjScreen::ObjScreen (QWidget *parent, Qt::WindowFlags flags)
-  : QWidget (parent, flags)
+  : QWidget(parent, flags)
 {
-  QGridLayout *layout = new QGridLayout ();
-  
-  for (size_t i=0; i!=nitems(m_views); ++i) {
-    m_views[i] = new ObjView ();
-    layout->addWidget (m_views[i], i/2, i%2);
-  }
+  createGui();
   
   m_views[0]->setPerspective ();
   //m_views[1]->setRotation ();
@@ -24,20 +19,6 @@ ObjScreen::ObjScreen (QWidget *parent, Qt::WindowFlags flags)
   m_views[1]->setWireframe (true);
   m_views[2]->setWireframe (true);
   m_views[3]->setWireframe (true);
-  
-  m_slider = new QSlider (Qt::Vertical);
-  m_slider->setMinimum (0);
-  m_slider->setMaximum (0);
-  m_slider->setSingleStep(1);
-  m_slider->setTickInterval(1000);
-  m_slider->setTickPosition(QSlider::TicksBothSides);
-  
-  QObject::connect (m_slider, SIGNAL(valueChanged(int)),
-                    this, SLOT(setLod(int)));
-  
-  layout->addWidget(m_slider, 0, 2, -1, 1);
-  
-  setLayout (layout);
 }
 
 
@@ -89,3 +70,27 @@ ObjScreen::update ()
 
 
 
+void
+ObjScreen::createGui()
+{
+  QGridLayout *layout = new QGridLayout ();
+  
+  for (size_t i=0; i!=nitems(m_views); ++i) {
+    m_views[i] = new ObjView ();
+    layout->addWidget (m_views[i], i/2, i%2);
+  }
+  
+  m_slider = new QSlider (Qt::Vertical);
+  m_slider->setMinimum (0);
+  m_slider->setMaximum (0);
+  m_slider->setSingleStep(1);
+  m_slider->setTickInterval(1000);
+  m_slider->setTickPosition(QSlider::TicksBothSides);
+  
+  QObject::connect (m_slider, SIGNAL(valueChanged(int)),
+                    this, SLOT(setLod(int)));
+  
+  layout->addWidget(m_slider, 0, 2, -1, 1);
+  
+  setLayout (layout);
+}
