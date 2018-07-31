@@ -1,10 +1,14 @@
 #pragma once
 
+#include <QtCore/QList>
+
 #include <QtGui/QMatrix4x4>
 #include <QtGui/QOpenGLFunctions>
 #include <QtGui/QVector3D>
 
 #include <QtWidgets/QOpenGLWidget>
+
+#include "OpenGLTexture.hpp"
 
 struct OpenGLWidget : QOpenGLWidget, protected QOpenGLFunctions
 {
@@ -35,6 +39,9 @@ protected:
   virtual void   draw () = 0;
   
   static QVector3D sphericToCarthesian (double lat, double lon);
+  
+  OpenGLTexturePointer texture(QImage);
+  QList<OpenGLTexturePointer> m_textures;
   
   QMatrix4x4 m_projection, m_modelview;
   QVector3D  m_bgcolor;

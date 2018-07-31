@@ -11,6 +11,7 @@
 OpenGLWidget::OpenGLWidget (QWidget *parent, Qt::WindowFlags flags)
   : QOpenGLWidget (parent, flags)
   , QOpenGLFunctions ()
+  , m_textures()
   , m_projection ()
   , m_modelview ()
   , m_bgcolor (0, 0, 0)
@@ -30,6 +31,9 @@ OpenGLWidget::OpenGLWidget (QWidget *parent, Qt::WindowFlags flags)
 
 OpenGLWidget::~OpenGLWidget ()
 {
+  makeCurrent();
+  m_textures.clear();
+  doneCurrent();
 }
 
 
@@ -230,4 +234,14 @@ OpenGLWidget::sphericToCarthesian (double lat, double lon)
       sin_lat,
       cos_lat*cos_lon
   ));
+}
+
+
+
+OpenGLTexturePointer
+OpenGLWidget::texture(QImage image)
+{
+  OpenGLTexturePointer retval(new OpenGLTexture(this, image));
+  m_textures << retval;
+  return (retval);
 }

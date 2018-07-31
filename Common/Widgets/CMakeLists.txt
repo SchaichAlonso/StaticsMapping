@@ -17,6 +17,7 @@ set (Widgets_SOURCES
   ObjectTableDialog.cpp
   ObjScreen.cpp
   ObjView.cpp
+  OpenGLTexture.cpp
   OpenGLWidget.cpp
   TableDialog.cpp
   TextEdit.cpp
