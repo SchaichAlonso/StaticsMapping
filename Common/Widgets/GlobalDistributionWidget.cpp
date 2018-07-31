@@ -28,11 +28,11 @@ GlobalDistributionWidget::Vertex::Vertex (const QVector3D &c, const QVector2D &t
 GlobalDistributionWidget::GlobalDistributionWidget (Classification::DefinitionsPointer definitions, QWidget *parent)
   : OpenGLWidget (parent)
   , m_earth(texture(QImage(Classification::Definitions::dataPath("earthmap1k.jpg"))))
-  , m_zoom (2)
-  , m_airport_labels ()
-  , m_definitions (definitions)
-  , m_zoom_min (1.0)
-  , m_radius (1.0)
+  , m_zoom(2)
+  , m_zoom_min(1.0)
+  , m_radius(1.0)
+  , m_airport_labels()
+  , m_definitions(definitions)
 {
   int lats = 180;
   int lons = 360;
