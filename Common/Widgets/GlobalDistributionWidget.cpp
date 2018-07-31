@@ -31,15 +31,13 @@ GlobalDistributionWidget::GlobalDistributionWidget (Classification::DefinitionsP
   , m_zoom(2)
   , m_zoom_min(1.0)
   , m_radius(1.0)
+  , m_vertices(sphereVertices(180, 360, m_radius))
+  , m_indices(sphereIndices(180, 360))
   , m_airport_labels()
   , m_definitions(definitions)
 {
-  int lats = 180;
-  int lons = 360;
-  
   setMaxZoomDistanceToEarth (150);
   
-  generateSphere (180, 360);
   generateLabels ();
   
   setPerspective ();
@@ -256,37 +254,46 @@ GlobalDistributionWidget::setMaxZoomDistanceToEarth (Classification::Airport::Di
 
 
 
-void
-GlobalDistributionWidget::generateSphere (int lats, int lons)
+QVarLengthArray<GlobalDistributionWidget::Vertex>
+GlobalDistributionWidget::sphereVertices(int lons, int lats, double radius)
 {
+  QVarLengthArray<GlobalDistributionWidget::Vertex> retval;
   for (int lat=0; lat!=lats; ++lat) {
     for (int lon=0; lon!=lons; ++lon) {
       double slat = ((double)lat)/(lats-1);
       double slon = ((double)lon)/(lons-1);
       Vertex v;
-      v.coord = m_radius * sphericToCarthesian (180*slat - 90, 360*slon - 180);
+      v.coord = radius * sphericToCarthesian(180*slat - 90, 360*slon - 180);
       v.tex[0] = slon;
       v.tex[1] = 1.0-slat;
-      m_vertices.append (v);
+      retval.append(v);
     }
   }
-  
+  return (retval);
+}
+
+QVarLengthArray<int>
+GlobalDistributionWidget::sphereIndices(int lons, int lats)
+{
+  QVarLengthArray<int> indices;
   for (int lat=0; lat!=(lats-1); ++lat) {
     for (int lon=0; lon!=lons; ++lon) {
       if (lat != lats-2) {
-        m_indices.append ((lat+0)*lons + (lon+0)%lons);
-        m_indices.append ((lat+1)*lons + (lon+0)%lons);
-        m_indices.append ((lat+1)*lons + (lon+1)%lons);
+        indices.append((lat+0)*lons + (lon+0)%lons);
+        indices.append((lat+1)*lons + (lon+0)%lons);
+        indices.append((lat+1)*lons + (lon+1)%lons);
       }
       
       if (lat != 0) {
-        m_indices.append ((lat+0)*lons + (lon+0)%lons);
-        m_indices.append ((lat+1)*lons + (lon+1)%lons);
-        m_indices.append ((lat+0)*lons + (lon+1)%lons);
+        indices.append((lat+0)*lons + (lon+0)%lons);
+        indices.append((lat+1)*lons + (lon+1)%lons);
+        indices.append((lat+0)*lons + (lon+1)%lons);
       }
     }
   }
+  return (indices);
 }
+
 
 
 void

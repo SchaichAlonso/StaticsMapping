@@ -24,7 +24,6 @@ struct GlobalDistributionWidget : OpenGLWidget
   void setMaxZoomDistanceToEarth (Classification::Airport::DistanceInKM);
   
 protected:
-  void generateSphere (int, int);
   void generateLabels ();
   
   virtual double velocity (double) const Q_DECL_OVERRIDE;
@@ -51,6 +50,10 @@ protected:
     QVector3D coord;
     QVector2D tex;
   };
+  
+  static QVarLengthArray<Vertex> sphereVertices(int lons, int lats, double radius);
+  static QVarLengthArray<int> sphereIndices(int lons, int lats);
+  
   QVarLengthArray<Vertex> m_vertices;
   QVarLengthArray<int>    m_indices;
   
