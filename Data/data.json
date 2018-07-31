@@ -6463,6 +6463,126 @@
             "lat": 39.7825,
             "lon": 116.387778,
             "name": "Beijing Nanyuan"
+        },
+        {
+            "icao": "ZBSJ",
+            "lat": 38.2806865,
+            "lon": 114.6972985,
+            "name": "ZHENGDING"
+        },
+        {
+            "icao": "ZBTJ",
+            "lat": 39.1243515,
+            "lon": 117.346182,
+            "name": "BINHAI"
+        },
+        {
+            "icao": "ZBYN",
+            "lat": 37.746897,
+            "lon": 112.6284265,
+            "name": "WUSU"
+        },
+        {
+            "icao": "ZGGG",
+            "lat": 23.39243875,
+            "lon": 113.29878825,
+            "name": "BAIYUN INTL"
+        },
+        {
+            "icao": "ZGHA",
+            "lat": 28.1891585,
+            "lon": 113.219632,
+            "name": "HUANGHUA"
+        },
+        {
+            "icao": "ZJHK",
+            "lat": 19.93483617,
+            "lon": 110.45526413,
+            "name": "MEILAN"
+        },
+        {
+            "icao": "ZLXY",
+            "lat": 34.44697967,
+            "lon": 108.75220278,
+            "name": "Xianyang"
+        },
+        {
+            "icao": "ZPPP",
+            "lat": 24.9923625,
+            "lon": 102.7435375,
+            "name": "WUJIABA"
+        },
+        {
+            "icao": "ZSAM",
+            "lat": 24.544,
+            "lon": 118.127742,
+            "name": "GAOQI"
+        },
+        {
+            "icao": "ZSCN",
+            "lat": 28.865,
+            "lon": 115.900001,
+            "name": "CHANGBEI INTL"
+        },
+        {
+            "icao": "ZSFZ",
+            "lat": 25.935064,
+            "lon": 119.663272,
+            "name": "CHANGLE"
+        },
+        {
+            "icao": "ZSHC",
+            "lat": 30.229504,
+            "lon": 120.434453,
+            "name": "XIAOSHAN"
+        },
+        {
+            "icao": "ZSPD",
+            "lat": 31.1434265,
+            "lon": 121.80509225,
+            "name": "PUDONG"
+        },
+        {
+            "icao": "ZSQD",
+            "lat": 36.266107,
+            "lon": 120.3744345,
+            "name": "LIUTING"
+        },
+        {
+            "icao": "ZSSS",
+            "lat": 31.197875,
+            "lon": 121.336319,
+            "name": "HONGQIAO INTL"
+        },
+        {
+            "icao": "ZSYT",
+            "lat": 37.4003055,
+            "lon": 121.370367,
+            "name": "LAISHAN"
+        },
+        {
+            "icao": "ZUCK",
+            "lat": 29.7192165,
+            "lon": 106.6416765,
+            "name": "JIANGBEI"
+        },
+        {
+            "icao": "ZUUU",
+            "lat": 30.578528,
+            "lon": 103.947086,
+            "name": "SHUANGLIU"
+        },
+        {
+            "icao": "ZWWW",
+            "lat": 43.9071055,
+            "lon": 87.474243,
+            "name": "DIWOPU"
+        },
+        {
+            "icao": "ZYTL",
+            "lat": 38.9656655,
+            "lon": 121.5386,
+            "name": "ZHOUSHUIZI"
         }
     ],
     "libraries": [
