@@ -59,8 +59,8 @@ GlobalDistributionWidget::TextChunk::TextChunk ()
   , w (-1)
   , h (-1)
   , d (-1)
-  , objects ()
   , highlight (false)
+  , objects ()
 {
 }
 
@@ -73,8 +73,8 @@ GlobalDistributionWidget::TextChunk::TextChunk (QString text, int &x, int &y, co
   , w ()
   , h (fm.lineSpacing ())
   , d (fm.descent ())
-  , objects ()
   , highlight (false)
+  , objects ()
 {
   init (text, x, y, fm, w);
 }
@@ -88,8 +88,8 @@ GlobalDistributionWidget::TextChunk::TextChunk (ObjectList objects, int &x, int 
   , w ()
   , h (fm.lineSpacing ())
   , d (fm.descent ())
-  , objects (objects)
   , highlight (false)
+  , objects (objects)
 {
   QString text;
   int n;
