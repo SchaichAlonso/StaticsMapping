@@ -27,14 +27,12 @@ protected:
   void generateSphere (int, int);
   void generateLabels ();
   
-  virtual void initializeGL () Q_DECL_OVERRIDE;
-  
   virtual double velocity (double) const Q_DECL_OVERRIDE;
   virtual double zoom () const Q_DECL_OVERRIDE;
   virtual void   zoom (bool) Q_DECL_OVERRIDE;
   virtual void draw () Q_DECL_OVERRIDE;
   
-  QSharedPointer<QOpenGLTexture> m_earth;
+  OpenGLTexturePointer m_earth;
   
   double m_zoom;
   double m_zoom_min;

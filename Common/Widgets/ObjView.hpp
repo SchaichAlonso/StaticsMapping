@@ -27,7 +27,7 @@ protected:
   virtual void   draw () Q_DECL_OVERRIDE;
   
   QSharedPointer<VisualModel>    m_mdl;
-  QSharedPointer<QOpenGLTexture> m_draped, m_lit, m_normal, m_texture;
+  OpenGLTexturePointer           m_draped, m_lit, m_normal, m_texture;
   
   Classification::ObjectPointer  m_object;
   

@@ -53,39 +53,10 @@ ObjView::setModel (Classification::ObjectPointer object, QSharedPointer<VisualMo
   m_mdl    = model;
   
   if (m_mdl) {
-    
-    QOpenGLTexture::Filter min = QOpenGLTexture::LinearMipMapLinear;
-    QOpenGLTexture::Filter mag = QOpenGLTexture::Linear;
-    
-    makeCurrent();
-    
-    if (m_mdl->m_draped.isNull()) {
-      m_draped.reset ();
-    } else {
-      m_draped.reset (new QOpenGLTexture (m_mdl->m_draped));
-      m_draped->setMinMagFilters (min, mag);
-    }
-    
-    if (m_mdl->m_lit.isNull()) {
-      m_lit.reset ();
-    } else {
-      m_lit.reset (new QOpenGLTexture (m_mdl->m_lit));
-      m_lit->setMinMagFilters (min, mag);
-    }
-    
-    if (m_mdl->m_normal.isNull()) {
-      m_normal.reset ();
-    } else {
-      m_normal.reset (new QOpenGLTexture (m_mdl->m_normal));
-      m_normal->setMinMagFilters (min, mag);
-    }
-    
-    if (m_mdl->m_texture.isNull()) {
-      m_texture.reset ();
-    } else {
-      m_texture.reset (new QOpenGLTexture (m_mdl->m_texture));
-      m_texture->setMinMagFilters (min, mag);
-    }
+    m_draped = texture(m_mdl->m_draped);
+    m_lit = texture(m_mdl->m_lit);
+    m_normal = texture(m_mdl->m_normal);
+    m_texture = texture(m_mdl->m_texture);
   } else {
     m_draped.reset ();
     m_lit.reset ();
@@ -236,16 +207,14 @@ ObjView::drawObject ()
   glNormalPointer (GL_DOUBLE, stride, v->normal);
   glTexCoordPointer (2, GL_DOUBLE, stride, v->texcoord);
     
-  QSharedPointer<QOpenGLTexture> tex_bound, tex_required;
+  OpenGLTexturePointer bound;
     
   Q_FOREACH (const VisualModel::GeometryGroup &g, m_mdl->m_groups) {
       
-    tex_required = g.state.draped? m_draped : m_texture;
-    if (tex_required != tex_bound) {
-      if (tex_required) {
-        tex_required->bind ();
-      }
-      tex_bound = tex_required;
+    OpenGLTexturePointer required(g.state.draped? m_draped : m_texture);
+    if (required != bound) {
+      required->bind();
+      bound = required;
     }
       
     if (g.state.lod_near != g.state.lod_far) {

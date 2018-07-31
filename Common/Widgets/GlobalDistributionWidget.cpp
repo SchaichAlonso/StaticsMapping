@@ -27,6 +27,7 @@ GlobalDistributionWidget::Vertex::Vertex (const QVector3D &c, const QVector2D &t
 
 GlobalDistributionWidget::GlobalDistributionWidget (Classification::DefinitionsPointer definitions, QWidget *parent)
   : OpenGLWidget (parent)
+  , m_earth(texture(QImage(Classification::Definitions::dataPath("earthmap1k.jpg"))))
   , m_zoom (2)
   , m_airport_labels ()
   , m_definitions (definitions)
@@ -336,20 +337,6 @@ GlobalDistributionWidget::zoom (bool in)
 
 
 void
-GlobalDistributionWidget::initializeGL ()
-{
-  initializeOpenGLFunctions ();
-  
-  QImage earth;
-  
-  if (earth.load (Classification::Definitions::dataPath ("earthmap1k.jpg"))) {
-    m_earth.reset (new QOpenGLTexture (earth, QOpenGLTexture::GenerateMipMaps));
-  }
-}
-
-
-
-void
 GlobalDistributionWidget::draw ()
 {
   glEnableClientState (GL_VERTEX_ARRAY);
@@ -360,10 +347,7 @@ GlobalDistributionWidget::draw ()
   
   glEnable (GL_TEXTURE_2D);
   
-  if (m_earth) {
-    m_earth->bind (0);
-    m_earth->setMinMagFilters (QOpenGLTexture::LinearMipMapLinear, QOpenGLTexture::Linear);
-  }
+  m_earth->bind();
   
   glDrawElements (GL_TRIANGLES, m_indices.size(), GL_UNSIGNED_INT, &m_indices[0]);
   
