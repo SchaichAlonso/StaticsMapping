@@ -12,6 +12,9 @@ struct OpenGLTexture
   void bind();
   
 protected:
+  QSharedPointer<QOpenGLTexture> construct(QImage image);
+  void destroy(QOpenGLTexture *texture);
+  
   QOpenGLWidget *m_widget;
   QImage m_image;
   QSharedPointer<QOpenGLTexture> m_texture;

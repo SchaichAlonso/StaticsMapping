@@ -41,7 +41,6 @@ protected:
   static QVector3D sphericToCarthesian (double lat, double lon);
   
   OpenGLTexturePointer texture(QImage);
-  QList<OpenGLTexturePointer> m_textures;
   
   QMatrix4x4 m_projection, m_modelview;
   QVector3D  m_bgcolor;
