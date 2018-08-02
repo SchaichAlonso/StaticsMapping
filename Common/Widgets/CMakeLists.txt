@@ -20,7 +20,6 @@ set (Widgets_SOURCES
   OpenGLTexture.cpp
   OpenGLWidget.cpp
   TableDialog.cpp
-  TextEdit.cpp
   VisualModel.cpp
   VisualObject.cpp
 )
