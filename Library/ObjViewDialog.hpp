@@ -7,7 +7,7 @@
 
 struct ObjViewDialog : QDialog
 {
-  ObjViewDialog (QString prefix, Classification::DefinitionsPointer defs, Classification::ObjectPointer obj, QWidget *parent=Q_NULLPTR, Qt::WindowFlags=Qt::WindowFlags());
+  ObjViewDialog(QString prefix, Classification::DefinitionsPointer defs, Classification::ObjectPointer obj, QWidget *parent=Q_NULLPTR, Qt::WindowFlags=Qt::WindowFlags());
   virtual ~ObjViewDialog();
   
   virtual int exec() Q_DECL_OVERRIDE;
@@ -15,6 +15,6 @@ struct ObjViewDialog : QDialog
 protected:
   Classification::ObjectPointer m_obj;
   
-  VisualObject m_ogl_data;
-  ObjView     *m_ogl_view;
+  Widgets::VisualObject m_ogl_data;
+  Widgets::ObjView     *m_ogl_view;
 };

@@ -2,13 +2,16 @@
 
 #include "TableDialog.hpp"
 
-struct AirlineTableDialog : TableDialog
+namespace Widgets
 {
-  AirlineTableDialog (Classification::DefinitionsPointer, QWidget * = Q_NULLPTR, Qt::WindowFlags = Qt::WindowFlags());
-  ~AirlineTableDialog ();
-  
-  virtual bool checkDuplicate (QString) const Q_DECL_OVERRIDE;
-  virtual bool verify (QString) const Q_DECL_OVERRIDE;
-  virtual int  drop (QString) Q_DECL_OVERRIDE;
-  virtual void insert (QString) Q_DECL_OVERRIDE;
-};
+  struct AirlineTableDialog : TableDialog
+  {
+    AirlineTableDialog (Classification::DefinitionsPointer, QWidget * = Q_NULLPTR, Qt::WindowFlags = Qt::WindowFlags());
+    ~AirlineTableDialog ();
+    
+    virtual bool checkDuplicate (QString) const Q_DECL_OVERRIDE;
+    virtual bool verify (QString) const Q_DECL_OVERRIDE;
+    virtual int  drop (QString) Q_DECL_OVERRIDE;
+    virtual void insert (QString) Q_DECL_OVERRIDE;
+  };
+}

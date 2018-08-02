@@ -38,7 +38,7 @@ ObjPreview::loadObjFile (QString path)
   
   try {
     Obj8::File obj8 (f, true);
-    QSharedPointer<VisualModel> model (new VisualModel (path));
+    QSharedPointer<Widgets::VisualModel> model(new Widgets::VisualModel(path));
     
     obj8.accept (model.data(), false);
     

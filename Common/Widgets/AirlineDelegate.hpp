@@ -4,13 +4,16 @@
 
 #include "ListDelegate.hpp"
 
-struct AirlineDelegate : ListDelegate
+namespace Widgets
 {
-  AirlineDelegate (Classification::DefinitionsPointer);
- ~AirlineDelegate ();
-  
-  virtual QString displayString (const QModelIndex &index) const;
-  
-protected:
-  Classification::DefinitionsPointer m_definitions;
-};
+  struct AirlineDelegate : ListDelegate
+  {
+    AirlineDelegate(Classification::DefinitionsPointer);
+    ~AirlineDelegate();
+    
+    virtual QString displayString(const QModelIndex &index) const;
+    
+  protected:
+    Classification::DefinitionsPointer m_definitions;
+  };
+}

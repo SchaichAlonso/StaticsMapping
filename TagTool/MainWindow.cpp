@@ -76,11 +76,13 @@ void
 MainWindow::loadObjFile (QString path)
 {
   try {
-    QSharedPointer<VisualObject> obj (new VisualObject (m_definitions, path));
+    Widgets::VisualObjectPointer obj(
+      new Widgets::VisualObject(m_definitions, path)
+    );
     
-    m_objects.append (obj);
+    m_objects.append(obj);
     
-    m_definitions->upsert (obj->data);
+    m_definitions->upsert(obj->data);
     
     //m_object_data_mapper->setCurrentIndex (m_objects.size () - 1);
     
@@ -122,9 +124,8 @@ MainWindow::saveObjFile ()
 {
   QString filename;
   QSharedPointer<Obj8::File> file;
-  VisualObjectPointer ptr;
   
-  ptr = m_objects.value (m_current_visual_object_index);
+  Widgets::VisualObjectPointer ptr(m_objects.value(m_current_visual_object_index));
   
   if (ptr) {
     file = ptr->file;
@@ -134,9 +135,14 @@ MainWindow::saveObjFile ()
     return;
   }
   
-  filename = QFileDialog::getSaveFileName (this, "Save File", QString(),
-        "OBJ8 Files (*.obj)", Q_NULLPTR,
-        QFileDialog::DontResolveSymlinks);
+  filename = QFileDialog::getSaveFileName(
+    this,
+    "Save File",
+    QString(),
+    "OBJ8 Files (*.obj)",
+    Q_NULLPTR,
+    QFileDialog::DontResolveSymlinks
+  );
   
   if (filename.isNull())
     return;
@@ -190,20 +196,18 @@ MainWindow::saveDefinitionsAs (QString path)
 void
 MainWindow::unloadObjFile ()
 {
-  VisualObjectPointer ptr;
   VisualObjectsModel *mdl;
   int idx;
   
   idx = m_current_visual_object_index;
   mdl = dynamic_cast<VisualObjectsModel*>(m_object_select->model());
-  ptr = m_objects.value (idx);
   
   Q_CHECK_PTR (mdl);
   
-  if (ptr) {
-    m_objects.removeAt (idx);
-    mdl->reset ();
-    m_object_select->setCurrentIndex (-1);
+  if (m_objects.value(idx)) {
+    m_objects.removeAt(idx);
+    mdl->reset();
+    m_object_select->setCurrentIndex(-1);
   }
 }
 
@@ -212,8 +216,7 @@ MainWindow::unloadObjFile ()
 void
 MainWindow::showAircraftTableDialog ()
 {
-  AircraftTableDialog dialog (m_definitions, this);
-  dialog.exec ();
+  Widgets::AircraftTableDialog(m_definitions, this).exec();
 }
 
 
@@ -222,8 +225,7 @@ void
 MainWindow::showAirlineHierarchyDialog ()
 {
 #ifdef HAVE_GRAPHS
-  AirlineScreen dialog (m_definitions.data(), this);
-  dialog.exec ();
+  Widgets::AirlineScreen(m_definitions.data(), this).exec();
 #endif
 }
 
@@ -232,8 +234,7 @@ MainWindow::showAirlineHierarchyDialog ()
 void
 MainWindow::showAirlineTableDialog ()
 {
-  AirlineTableDialog dialog (m_definitions, this);
-  dialog.exec ();
+  Widgets::AirlineTableDialog(m_definitions, this).exec();
 }
 
 
@@ -241,8 +242,7 @@ MainWindow::showAirlineTableDialog ()
 void
 MainWindow::showLibraryTableDialog ()
 {
-  LibraryTableDialog dialog (m_definitions, this);
-  dialog.exec ();
+  Widgets::LibraryTableDialog(m_definitions, this).exec();
 }
 
 
@@ -250,8 +250,7 @@ MainWindow::showLibraryTableDialog ()
 void
 MainWindow::showObjectTableDialog ()
 {
-  ObjectTableDialog dialog (m_definitions, this);
-  dialog.exec ();
+  Widgets::ObjectTableDialog(m_definitions, this).exec();
 }
 
 
@@ -307,11 +306,6 @@ MainWindow::dropEvent (QDropEvent *event)
 void
 MainWindow::setDisplayedVisualObject (int visual_object_index)
 {
-  VisualObjectPointer ptr;
-  Classification::ObjectPointer obj;
-  QSharedPointer<VisualModel> mdl;
-  int metadata_index;
-  
   if (visual_object_index == -1) {
     if ((0 <= m_current_visual_object_index) and (m_current_visual_object_index < m_objects.size())) {
       m_object_select->setCurrentIndex (m_current_visual_object_index);
@@ -321,17 +315,19 @@ MainWindow::setDisplayedVisualObject (int visual_object_index)
   
   m_current_visual_object_index = visual_object_index;
   
-  ptr = m_objects.value (visual_object_index);
-    
+  Widgets::VisualObjectPointer ptr(m_objects.value(visual_object_index));
+  QSharedPointer<Widgets::VisualModel> mdl;
+  Classification::ObjectPointer obj;
+  
   if (ptr) {
     obj = ptr->data;
     mdl = ptr->model;
     
-    metadata_index = m_definitions->indexOf (obj);
-    m_object_data_mapper->setCurrentIndex (metadata_index);
+    int metadata_index = m_definitions->indexOf(obj);
+    m_object_data_mapper->setCurrentIndex(metadata_index);
   }
   
-  m_obj_screen->setModel (obj, mdl);
+  m_obj_screen->setModel(obj, mdl);
 }
 
 
@@ -364,8 +360,8 @@ MainWindow::createWidgets ()
   aircraft   = new QComboBox ();
   livery     = new QComboBox ();
   library    = new QComboBox ();
-  usage      = new EnumPicker (QMetaEnum::fromType<Classification::Object::Purpose>());
-  rotate     = new EnumPicker (QMetaEnum::fromType<Classification::Object::Rotate>());
+  usage      = new Widgets::EnumPicker(QMetaEnum::fromType<Classification::Object::Purpose>());
+  rotate     = new Widgets::EnumPicker(QMetaEnum::fromType<Classification::Object::Rotate>());
   fictive    = new QComboBox ();
   introduced = new QSpinBox ();
   retired    = new QSpinBox ();
@@ -375,7 +371,7 @@ MainWindow::createWidgets ()
   comment    = new QTextEdit ();
   purge      = new QPushButton ();
   
-  m_obj_screen = new ObjScreen ();
+  m_obj_screen = new Widgets::ObjScreen();
   
   VisualObjectsModel *visual_objects_model = new VisualObjectsModel (&m_objects);
   
@@ -424,7 +420,7 @@ MainWindow::createWidgets ()
     
     connect (locale[i], SIGNAL(valueChanged(QString)), m_obj_screen, SLOT(update()));
     
-    form->addRow (QString::asprintf("Translation (%c)", (int)('X' + i)), locale[i]);
+    form->addRow (QString::asprintf("Translation (%c)", int('X' + i)), locale[i]);
   }
   
   fictive->addItem ("true");
@@ -440,8 +436,8 @@ MainWindow::createWidgets ()
   library->setModel (libmdl);
   library->setModelColumn (libmdl->column(Classification::Library::KeyProperty));
   
-  aircraft->setItemDelegate (new AircraftDelegate (m_definitions));
-  livery->setItemDelegate (new AirlineDelegate (m_definitions));
+  aircraft->setItemDelegate (new Widgets::AircraftDelegate(m_definitions));
+  livery->setItemDelegate (new Widgets::AirlineDelegate(m_definitions));
   
   m_object_data_mapper->setModel (m_object_data_model);
   m_object_data_mapper->addMapping (filesize, m_object_data_model->column(Classification::Object::FilesizeProperty));

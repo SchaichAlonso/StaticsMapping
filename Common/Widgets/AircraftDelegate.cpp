@@ -5,35 +5,40 @@
 
 #include "AircraftDelegate.hpp"
 
-AircraftDelegate::AircraftDelegate (Classification::DefinitionsPointer d)
-  : ListDelegate ()
-  , m_definitions (d)
+
+namespace Widgets
 {
-}
-
-
-
-AircraftDelegate::~AircraftDelegate ()
-{
-}
-
-
-QString
-AircraftDelegate::displayString (const QModelIndex &index) const
-{
-  QString icao;
-  QString name;
-  Classification::AircraftPointer airline;
   
-  icao = index.data(Qt::UserRole).toString();
-  airline = m_definitions->aircraft (icao);
-  
-  if (airline) {
-    name = QString("%1 (%0)").arg(airline->name()).arg(airline->icao());
-  } else {
-    name = "<NULLPTR>";
+  AircraftDelegate::AircraftDelegate (Classification::DefinitionsPointer d)
+    : ListDelegate ()
+    , m_definitions (d)
+  {
   }
   
-  return (name);
-}
+  
+  
+  AircraftDelegate::~AircraftDelegate ()
+  {
+  }
+  
+  
+  QString
+  AircraftDelegate::displayString (const QModelIndex &index) const
+  {
+    QString icao;
+    QString name;
+    Classification::AircraftPointer airline;
+    
+    icao = index.data(Qt::UserRole).toString();
+    airline = m_definitions->aircraft (icao);
+    
+    if (airline) {
+      name = QString("%1 (%0)").arg(airline->name()).arg(airline->icao());
+    } else {
+      name = "<NULLPTR>";
+    }
+    
+    return (name);
+  }
 
+}

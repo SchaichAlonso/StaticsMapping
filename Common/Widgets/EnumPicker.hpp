@@ -3,8 +3,11 @@
 #include <QtCore/QMetaEnum>
 #include <QtWidgets/QComboBox>
 
-struct EnumPicker : QComboBox
+namespace Widgets
 {
-  EnumPicker (QMetaEnum);
-  virtual ~EnumPicker ();
-};
+  struct EnumPicker : QComboBox
+  {
+    EnumPicker(QMetaEnum metaenum);
+    virtual ~EnumPicker();
+  };
+}

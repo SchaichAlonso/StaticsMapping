@@ -9,14 +9,17 @@
 
 #include "VisualModel.hpp"
 
-struct VisualObject
+namespace Widgets
 {
-  VisualObject (Classification::DefinitionsPointer, QString);
-  ~VisualObject ();
+  struct VisualObject
+  {
+    VisualObject(Classification::DefinitionsPointer, QString);
+    ~VisualObject();
   
-  QSharedPointer<Obj8::File>   file;
-  QSharedPointer<VisualModel>  model;
-  Classification::ObjectPointer data;
-};
+    QSharedPointer<Obj8::File>   file;
+    QSharedPointer<VisualModel>  model;
+    Classification::ObjectPointer data;
+  };
 
-typedef QSharedPointer<VisualObject> VisualObjectPointer;
+  typedef QSharedPointer<VisualObject> VisualObjectPointer;
+}

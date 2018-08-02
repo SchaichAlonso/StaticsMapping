@@ -4,25 +4,29 @@
 
 #include "VisualObject.hpp"
 
-
-
-VisualObject::VisualObject (Classification::DefinitionsPointer definitions, QString path)
-  : file (new Obj8::File (path, true))
-  , model (new VisualModel (path))
-  , data ()
+namespace Widgets
 {
-  data = definitions->match (file->size(), file->fileHash(), file->textureHash());
-  
-  if (!data) {
-    data.reset (new Classification::Object(file->size(), file->fileHash(), file->textureHash()));
-    data->setFileName (file->basename());
+  VisualObject::VisualObject(
+    Classification::DefinitionsPointer definitions,
+    QString path
+  )
+  : file(new Obj8::File(path, true))
+  , model(new VisualModel(path))
+  , data()
+  {
+    data = definitions->match(file->size(), file->fileHash(), file->textureHash());
+    
+    if (!data) {
+      data.reset(new Classification::Object(file->size(), file->fileHash(), file->textureHash()));
+      data->setFileName(file->basename());
+    }
+    
+    file->accept(model.data(), false);
   }
   
-  file->accept (model.data(), false);
-}
-
-
-
-VisualObject::~VisualObject ()
-{
+  
+  
+  VisualObject::~VisualObject ()
+  {
+  }
 }

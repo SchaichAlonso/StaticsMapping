@@ -140,7 +140,7 @@ AfiliatesPage::createPreviewsGui ()
   
   m_airline->setModel (m_airline_model.data());
   m_airline->setModelColumn (m_airline_model->column(Classification::Airline::IcaoProperty));
-  m_airline->setItemDelegate (new AirlineDelegate (m_definitions));
+  m_airline->setItemDelegate (new Widgets::AirlineDelegate (m_definitions));
   
   m_previewables->setModel (m_previewables_model.data());
   m_previewables->setSortingEnabled (true);

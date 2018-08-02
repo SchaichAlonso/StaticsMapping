@@ -4,21 +4,22 @@
 
 #include "EnumPicker.hpp"
 
-
-
-EnumPicker::EnumPicker (QMetaEnum me)
-  : QComboBox ()
+namespace Widgets
 {
-  for (int i=0; i!=me.keyCount(); ++i) {
-    const char *ptr = me.key (i);
-    
-    Q_CHECK_PTR (ptr);
-    
-    addItem (QString::fromUtf8(ptr));
+  EnumPicker::EnumPicker(QMetaEnum metaenum)
+  : QComboBox()
+  {
+    for (int i=0; i!=metaenum.keyCount(); ++i) {
+      const char *ptr = metaenum.key(i);
+      
+      Q_CHECK_PTR (ptr);
+      
+      addItem(QString::fromUtf8(ptr));
+    }
   }
-}
-
-
-EnumPicker::~EnumPicker ()
-{
+  
+  
+  EnumPicker::~EnumPicker()
+  {
+  }
 }

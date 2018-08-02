@@ -44,8 +44,8 @@ IntroPage::createScanGroup()
   QGroupBox *group = new QGroupBox("Create Options");
   QGridLayout *layout = new QGridLayout();
   
-  FilenameLineEdit *dst = new FilenameLineEdit(true, m_scan_dst);
-  FilenameLineEdit *src = new FilenameLineEdit(true, m_scan_src);
+  Widgets::FilenameLineEdit *dst(new Widgets::FilenameLineEdit(true, m_scan_dst));
+  Widgets::FilenameLineEdit *src(new Widgets::FilenameLineEdit(true, m_scan_src));
   
   QSpinBox *threads = new QSpinBox ();
   QComboBox *texture_limit = new QComboBox ();
@@ -58,32 +58,32 @@ IntroPage::createScanGroup()
     texture_limit->addItem (QString("%1x%1").arg(i), QVariant(i));
   }
   
-  connect (src, &FilenameLineEdit::textChanged,
-    [this](const QString &path)
-    {
+  connect(
+    src, &Widgets::FilenameLineEdit::textChanged,
+    [this](const QString &path) {
       m_scan_src = path;
       emit completeChanged();
     }
   );
   
-  connect (dst, &FilenameLineEdit::textChanged,
-    [this](const QString &path)
-    {
+  connect(
+    dst, &Widgets::FilenameLineEdit::textChanged,
+    [this](const QString &path) {
       m_scan_dst = path;
       emit completeChanged();
     }
   );
   
-  connect (threads, (void (QSpinBox::*)(int))(&QSpinBox::valueChanged),
-    [this](const int &value)
-    {
+  connect(
+    threads, (void (QSpinBox::*)(int))(&QSpinBox::valueChanged),
+    [this](const int &value) {
       m_scan_threads = value;
     }
   );
   
-  connect (texture_limit, (void (QComboBox::*)(int))(&QComboBox::currentIndexChanged),
-    [this, texture_limit]()
-    {
+  connect(
+    texture_limit, (void (QComboBox::*)(int))(&QComboBox::currentIndexChanged),
+    [this, texture_limit]() {
       m_scan_texture_limit = texture_limit->currentData().toInt();
     }
   );
@@ -114,12 +114,12 @@ IntroPage::createReuseGroup ()
   QGroupBox *group = new QGroupBox("Reuse Options");
   QGridLayout *layout = new QGridLayout();
   
-  FilenameLineEdit *edit = new FilenameLineEdit(false, m_definitions);
+  Widgets::FilenameLineEdit *edit(new Widgets::FilenameLineEdit(false, m_definitions));
   QLabel *description = new QLabel("Path to found.json");
   
-  connect (edit, &FilenameLineEdit::textChanged,
-    [this](const QString &path)
-    {
+  connect(
+    edit, &Widgets::FilenameLineEdit::textChanged,
+    [this](const QString &path) {
       m_definitions = path;
       emit completeChanged();
     }

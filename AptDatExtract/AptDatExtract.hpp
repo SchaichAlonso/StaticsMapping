@@ -12,5 +12,5 @@ struct AptDatExtractDialog : QDialog
 protected:
   void createGui();
   
-  FilenameLineEdit *m_xp_path;
+  Widgets::FilenameLineEdit *m_xp_path;
 };

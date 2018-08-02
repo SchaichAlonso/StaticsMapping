@@ -7,13 +7,16 @@
 
 #include "GraphWidget.hpp"
 
-struct AirlineGraphWidget : GraphWidget
+namespace Widgets
 {
-  AirlineGraphWidget (QWidget* =Q_NULLPTR, Qt::WindowFlags =Qt::WindowFlags());
-  virtual ~AirlineGraphWidget ();
-  
-  void layout (Classification::Definitions *, QString);
-  
-  QString     defaultLayoutEngine () const;
-  QStringList layoutEngines () const;
-};
+  struct AirlineGraphWidget : GraphWidget
+  {
+    AirlineGraphWidget(QWidget *parent=Q_NULLPTR, Qt::WindowFlags flags=Qt::WindowFlags());
+    virtual ~AirlineGraphWidget();
+    
+    void layout(Classification::Definitions *, QString);
+    
+    QString     defaultLayoutEngine() const;
+    QStringList layoutEngines() const;
+  };
+}

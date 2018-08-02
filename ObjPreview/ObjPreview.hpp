@@ -3,7 +3,7 @@
 #include <Common/Widgets/ObjScreen.hpp>
 #include <Common/Widgets/VisualModel.hpp>
 
-struct ObjPreview : ObjScreen
+struct ObjPreview : Widgets::ObjScreen
 {
   Q_OBJECT;
   

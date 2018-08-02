@@ -40,7 +40,7 @@ AptDatExtractDialog::createGui ()
   QVBoxLayout *vbox   = new QVBoxLayout;
   QHBoxLayout *layout = new QHBoxLayout;
   QHBoxLayout *bottom = new QHBoxLayout;
-  m_xp_path           = new FilenameLineEdit(true);
+  m_xp_path           = new Widgets::FilenameLineEdit(true);
   QPushButton *go     = new QPushButton ("go");
   
   layout->addWidget (new QLabel("XPlane Path:"));

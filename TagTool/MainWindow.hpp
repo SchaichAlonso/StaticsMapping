@@ -57,8 +57,8 @@ protected:
 protected:
   Classification::DefinitionsPointer m_definitions;
   
-  ObjScreen      *m_obj_screen;
-  QList<VisualObjectPointer> m_objects;
+  Widgets::ObjScreen        *m_obj_screen;
+  QList<Widgets::VisualObjectPointer> m_objects;
   
   QComboBox                   *m_object_select;
   Classification::ObjectModel *m_object_data_model;

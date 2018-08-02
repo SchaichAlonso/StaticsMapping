@@ -2,9 +2,9 @@
 
 
 
-VisualObjectsModel::VisualObjectsModel (QList<VisualObjectPointer> *objects)
-  : QAbstractItemModel ()
-  , m_objects (objects)
+VisualObjectsModel::VisualObjectsModel(QList<Widgets::VisualObjectPointer> *objects)
+: QAbstractItemModel()
+, m_objects(objects)
 {
 }
 
@@ -64,12 +64,10 @@ VisualObjectsModel::index (int r, int c, const QModelIndex &) const
 QVariant
 VisualObjectsModel::data (const QModelIndex &index, int role) const
 {
-  VisualObjectPointer ptr;
   QVariant retval;
-  int r;
   
-  r = index.row ();
-  ptr = m_objects->value (r);
+  int r(index.row());
+  Widgets::VisualObjectPointer ptr(m_objects->value(r));
   
   if (ptr) {
     switch (role) {
