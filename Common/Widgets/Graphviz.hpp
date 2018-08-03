@@ -71,24 +71,24 @@ public:
     
     void setRootNode (const QString &name);
     
-    void applyLayout ();
-    QRectF boundingRect () const;
+    void applyLayout();
+    QRectF boundingRect() const;
     
     QList<GVEdge> edges() const;
-    QList<GVNode> nodes () const;
+    QList<GVNode> nodes() const;
 
 protected:
-    Agraph_t* agopen (QString name, Agdesc_t desc);
-    QString   agget (void *object, QString attr, QString alt=QString()) const;
-    int       agset (void *object, QString attr, QString value);
-    Agnode_t *agnode (Agraph_t *graph, QString const& name);
+    Agraph_t* agopen(QString name, Agdesc_t desc);
+    QString   agget(void *object, QString attr, QString alt=QString()) const;
+    int       agset(void *object, QString attr, QString value);
+    Agnode_t *agnode(Agraph_t *graph, QString const& name);
 
-    double    resolution () const;
+    double    resolution() const;
     
 private:
-    GVC_t *_context;
-    Agraph_t *_graph;
-    QFont _font;
-    QMap<QString, Agnode_t*> _nodes;
-    QMap<QPair<QString, QString>, Agedge_t*> _edges;
+    GVC_t *m_context;
+    Agraph_t *m_graph;
+    QFont m_font;
+    QMap<QString, Agnode_t*> m_nodes;
+    QMap<QPair<QString, QString>, Agedge_t*> m_edges;
 };
