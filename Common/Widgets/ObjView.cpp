@@ -1,9 +1,3 @@
-#include <QtMath>
-#include <QDir>
-#include <QMatrix4x4>
-#include <QOpenGLTexture>
-#include <QWheelEvent>
-
 #include "ObjView.hpp"
 
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QtGui/QOpenGLTexture>
+#include <QtGui/QMatrix4x4>
 
 #include <Common/Classification/Object.hpp>
 
