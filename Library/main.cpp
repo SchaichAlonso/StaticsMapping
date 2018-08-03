@@ -1,13 +1,14 @@
 #include <QtCore/QCommandLineOption>
 #include <QtCore/QCommandLineParser>
-#include <QtWidgets/QApplication>
+
+#include <Common/Widgets/Application.hpp>
 
 #include "Wizard.hpp"
 
 int
 main (int argsc, char **argsv)
 {
-  QApplication app(argsc, argsv);
+  Widgets::Application app(argsc, argsv);
   
   QCommandLineParser parser;
   parser.addOption(QCommandLineOption("dst", "scanner attrib", "dst-path"));

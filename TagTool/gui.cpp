@@ -1,5 +1,4 @@
-#include <QApplication>
-#include <QFile>
+#include <Widgets/Application.hpp>
 
 #include "MainWindow.hpp"
 
@@ -7,8 +6,7 @@
 int
 main (int argscnt, char **args)
 {
-  QApplication app (argscnt, args);
-  app.setQuitOnLastWindowClosed (true);
+  Widgets::Application app(argscnt, args);
   
   MainWindow w;
   w.show ();

@@ -1,12 +1,11 @@
-#include <QApplication>
+#include <Common/Widgets/Application.hpp>
 
 #include "ObjPreview.hpp"
 
 int
 main (int argscnt, char **args)
 {
-  QApplication app (argscnt, args);
-  app.setQuitOnLastWindowClosed (true);
+  Widgets::Application app(argscnt, args);
   
   ObjPreview p;
   
