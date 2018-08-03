@@ -8,6 +8,7 @@ set (Widgets_SOURCES
   AircraftTableDialog.cpp
   AirlineDelegate.cpp
   AirlineTableDialog.cpp
+  Application.cpp
   EnumPicker.cpp
   FilenameLineEdit.cpp
   GlobalDistributionDialog.cpp
