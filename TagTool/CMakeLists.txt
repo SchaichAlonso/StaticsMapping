@@ -1,5 +1,6 @@
 
 add_executable (TagTool
+  InsertObjectConfirmationDialog.cpp
   VisualObjectsModel.cpp
   MainWindow.cpp
   gui.cpp

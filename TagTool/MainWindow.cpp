@@ -42,6 +42,7 @@
 #include <Common/Widgets/LibraryTableDialog.hpp>
 #include <Common/Widgets/ObjectTableDialog.hpp>
 
+#include "InsertObjectConfirmationDialog.hpp"
 #include "MainWindow.hpp"
 #include "VisualObjectsModel.hpp"
 
@@ -80,9 +81,11 @@ MainWindow::loadObjFile (QString path)
       new Widgets::VisualObject(m_definitions, path)
     );
     
-    m_objects.append(obj);
-    
-    m_definitions->upsert(obj->data);
+    if (m_definitions->object(obj->data->primaryKey())) {
+      nonInteractiveInsert(obj);
+    } else {
+      interactiveInsert(obj);
+    }
     
     //m_object_data_mapper->setCurrentIndex (m_objects.size () - 1);
     
@@ -266,6 +269,26 @@ MainWindow::showSupportedImageFormats ()
   }
   
   QMessageBox::information(this, "Supported Image Formats", formats.join("\n"));
+}
+
+
+
+void
+MainWindow::nonInteractiveInsert(Widgets::VisualObjectPointer obj)
+{
+  m_objects.append(obj);
+  m_definitions->upsert(obj->data);
+}
+
+
+
+void
+MainWindow::interactiveInsert(Widgets::VisualObjectPointer obj)
+{
+  InsertObjectConfirmationDialog dialog(obj, this);
+  if (dialog.exec() == QDialog::Accepted) {
+    nonInteractiveInsert(obj);
+  }
 }
 
 
