@@ -162,6 +162,16 @@
         },
         {
             "engine": "Turboprop",
+            "icao": "AT43",
+            "introduced": 1984,
+            "length": 22670,
+            "mtow": 16900,
+            "name": "ATR 42-300",
+            "wheelspan": 0,
+            "wingspan": 24570
+        },
+        {
+            "engine": "Turboprop",
             "icao": "AT45",
             "introduced": 1984,
             "length": 22670,
@@ -1158,6 +1168,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1984,
+            "hubs": "SABE",
+            "icao": "AJT",
+            "name": "American Jet",
+            "parent": "AJT"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1990,
             "hubs": "RJAA RJTT",
             "icao": "AJX",
@@ -1244,6 +1263,15 @@
             "icao": "ANH",
             "name": "All Nippon Helicopter",
             "parent": "ANA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2005,
+            "hubs": "SASA",
+            "icao": "ANS",
+            "name": "Andes Lineas Aereas",
+            "parent": "ANS"
         },
         {
             "ceased": 0,
@@ -5847,6 +5875,12 @@
             "name": "Aeroparque Jorge Newbery"
         },
         {
+            "icao": "SASA",
+            "lat": -24.844444,
+            "lon": -65.478611,
+            "name": "SALTA"
+        },
+        {
             "icao": "SBBR",
             "lat": -15.8711015,
             "lon": -47.91862625,
@@ -6586,6 +6620,12 @@
         }
     ],
     "libraries": [
+        {
+            "key": "ar_library-1.0.1",
+            "name": "Librería de objetos argentinos",
+            "url": "https://forums.x-plane.org/index.php?/files/file/44586-ar_library-librer%C3%ADa-de-objetos-argentinos/",
+            "version": "1.0.1"
+        },
         {
             "key": "b787-statics",
             "name": "B787 Static Aircraft Package",
@@ -9307,6 +9347,22 @@
             "size": 267965,
             "texturehash": "684f6215ad1b94a89b04b6787a772ade77c8851eb822f47013360a4d10f05e6b",
             "translate": "0 0 -6.4"
+        },
+        {
+            "aircraft": "AT43",
+            "category": "Airliner",
+            "comment": "",
+            "fictive": false,
+            "filehash": "b635f4675192a01397ff01fc4bbbde3e3f7b8940ba61b75f0500dd7abcd80e83",
+            "filename": "ATR42_AmericanJet_1.obj",
+            "introduced": 0,
+            "library": "ar_library-1.0.1",
+            "livery": "AJT",
+            "retired": 0,
+            "rotate": "RotateNull",
+            "size": 270077,
+            "texturehash": "d15ac2fd2df212c7b5a8d8092e54d5e8e93aeddd0bd65c17b4b8ba694e760a91",
+            "translate": "0 0 -7.4"
         },
         {
             "aircraft": "AN72",
@@ -12465,6 +12521,22 @@
             "category": "Airliner",
             "comment": "",
             "fictive": false,
+            "filehash": "bc1b4d2c49b3123b3a2e4a7cb5d764086d2c46b9403bccadc964b10ccb3ada9f",
+            "filename": "B738_andes.obj",
+            "introduced": 2017,
+            "library": "ar_library-1.0.1",
+            "livery": "ANS",
+            "retired": 0,
+            "rotate": "RotateNull",
+            "size": 602058,
+            "texturehash": "1e2a668e06a3279677fb91293341e7c9bc76ca5af206c72cf97dfaf70926a059",
+            "translate": "0 0 4.1"
+        },
+        {
+            "aircraft": "B738",
+            "category": "Airliner",
+            "comment": "",
+            "fictive": false,
             "filehash": "72f25326e1ad7f1f8ba91bfe6a457a45c9992b973947912ad1c1c6611915a403",
             "filename": "Qantas.obj",
             "introduced": 0,
@@ -12827,6 +12899,22 @@
             "size": 602248,
             "texturehash": "a3cda4429094e9d9d5c5d4b630ab1f7fcb15e9d979d5a82893dc7022dd14a8e7",
             "translate": "0 0 0"
+        },
+        {
+            "aircraft": "A320",
+            "category": "Airliner",
+            "comment": "",
+            "fictive": false,
+            "filehash": "414bcbba496f3c00bba90c1b63358d74ac587b5df6ad6e94ad88563015402272",
+            "filename": "A320IAE_DSM.obj",
+            "introduced": 2004,
+            "library": "ar_library-1.0.1",
+            "livery": "DSM",
+            "retired": 0,
+            "rotate": "RotateNull",
+            "size": 618558,
+            "texturehash": "a6684e12326d2056b6ba4263e3c34f01a7c62a4e3df7229d65726a2b5543b130",
+            "translate": "0 0 5.1"
         },
         {
             "aircraft": "A320",
@@ -13323,6 +13411,70 @@
             "size": 631738,
             "texturehash": "bf9446fcc92d67a4f4e14e47ae3ac5f08170e78e58b805b92470a048153519bd",
             "translate": "0 0 0"
+        },
+        {
+            "aircraft": "A320",
+            "category": "Airliner",
+            "comment": "",
+            "fictive": false,
+            "filehash": "b12d0dadf6d69f571d64686b419e663b076998b6f397ace078fc8cee83e2c598",
+            "filename": "A320SCFM_TAM.obj",
+            "introduced": 2012,
+            "library": "ar_library-1.0.1",
+            "livery": "TAM",
+            "retired": 0,
+            "rotate": "RotateNull",
+            "size": 632236,
+            "texturehash": "08a143a77a4e550c303dc06faf6c63a1b7edb64f52b73b453d4c3f620f1d52c3",
+            "translate": "0 0 5.1"
+        },
+        {
+            "aircraft": "E190",
+            "category": "Airliner",
+            "comment": "",
+            "fictive": false,
+            "filehash": "41e77f99b8320d48899c956dd9c7b56385adf09ed7530c063524b37a4f450e76",
+            "filename": "E190_Austral.obj",
+            "introduced": 0,
+            "library": "ar_library-1.0.1",
+            "livery": "AUT",
+            "retired": 0,
+            "rotate": "RotateNull",
+            "size": 714616,
+            "texturehash": "af18e91e9b96a0ad498b22790364742e70e86977f214bc6f6235603dd73aa2a8",
+            "translate": "0 0 4.15"
+        },
+        {
+            "aircraft": "B738",
+            "category": "Airliner",
+            "comment": "",
+            "fictive": false,
+            "filehash": "fadd9c19c822204c38c5c22fcc40fc9960a87e223cec2d594e0c185554c8e08c",
+            "filename": "B738_ARG.obj",
+            "introduced": 2011,
+            "library": "ar_library-1.0.1",
+            "livery": "ARG",
+            "retired": 0,
+            "rotate": "RotateNull",
+            "size": 726154,
+            "texturehash": "14358e93f8efe138eff3777a53f8c4ed28b67d8abb3404dc1d9d3cae598ee72a",
+            "translate": "0 0 4.1"
+        },
+        {
+            "aircraft": "B738",
+            "category": "Airliner",
+            "comment": "",
+            "fictive": false,
+            "filehash": "fadd9c19c822204c38c5c22fcc40fc9960a87e223cec2d594e0c185554c8e08c",
+            "filename": "B738_GOL.obj",
+            "introduced": 0,
+            "library": "ar_library-1.0.1",
+            "livery": "GLO",
+            "retired": 0,
+            "rotate": "RotateNull",
+            "size": 726154,
+            "texturehash": "9f59357f7f7e3996dfa9ce88dc8adfa2ed9e44e7f80435d8edb308fc007df64e",
+            "translate": "0 0 4.1"
         },
         {
             "aircraft": "T154",
