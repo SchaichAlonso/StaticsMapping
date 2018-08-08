@@ -420,20 +420,11 @@ MainWindow::createFormComboBox(QMetaEnum e)
 void
 MainWindow::createWidgets ()
 {
-  
-  QBoxLayout     *form_container;
-  QFormLayout    *form;
-  
-  QWidget        *dummy;
-  QSpinBox       *introduced, *retired;
-  QLineEdit      *filehash, *filesize, *filename;
-  QTextEdit      *comment;
   QDoubleSpinBox *locale[3];
-  QPushButton    *purge;
   
-  dummy          = new QWidget ();
-  form_container = new QVBoxLayout ();
-  form           = new QFormLayout ();
+  QWidget *dummy(new QWidget());
+  QBoxLayout *form_container(new QVBoxLayout());
+  QFormLayout *form(new QFormLayout());
   
   QComboBox *aircraft(createFormComboBox());
   QComboBox *livery(createFormComboBox());
@@ -441,13 +432,13 @@ MainWindow::createWidgets ()
   QComboBox *usage(createFormComboBox(QMetaEnum::fromType<Classification::Object::Purpose>()));
   QComboBox *fictive(createFormComboBox(QStringList() << "true" << "false"));
   QComboBox *rotate(createFormComboBox(QMetaEnum::fromType<Classification::Object::Rotate>()));
-  introduced = new QSpinBox ();
-  retired    = new QSpinBox ();
-  filehash   = new QLineEdit ();
-  filesize   = new QLineEdit ();
-  filename   = new QLineEdit ();
-  comment    = new QTextEdit ();
-  purge      = new QPushButton ();
+  QSpinBox  *introduced(new QSpinBox());
+  QSpinBox  *retired(new QSpinBox());
+  QLineEdit *filehash(new QLineEdit());
+  QLineEdit *filesize(new QLineEdit());
+  QLineEdit *filename(new QLineEdit());
+  QTextEdit *comment(new QTextEdit());
+  QPushButton *purge(new QPushButton());
   
   VisualObjectsModel *visual_objects_model = new VisualObjectsModel (&m_objects);
   
