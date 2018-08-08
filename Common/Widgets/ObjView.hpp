@@ -23,6 +23,8 @@ namespace Widgets
     void drawAxis ();
     void drawGrid ();
     void drawObject ();
+    void drawTextured();
+    void drawWireframe();
     
     virtual double zoom () const Q_DECL_OVERRIDE;
     virtual void   zoom (bool) Q_DECL_OVERRIDE;

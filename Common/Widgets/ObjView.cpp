@@ -262,40 +262,60 @@ namespace Widgets
     glPushMatrix();
     glMultMatrixf(modelView(true).constData());
     
-    if (m_wireframe) {
-      glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-    } else {
-      glLightModeli(GL_LIGHT_MODEL_LOCAL_VIEWER, GL_TRUE);
-      glEnable(GL_LIGHT0);
-      //glEnable(GL_LIGHT1);
-      
-      GLfloat ambient[4]={0.2f,0.2f,0.2f,1.0f};
-      GLfloat diffuse[4]={0.8f,0.8f,0.8f,1.0f};
-      GLfloat specular[4]={1.0f, 1.0f, 1.0f, 1.0f};
-      GLfloat mat_diffuse[4]={0.85f,0.85f,0.85f,1.0f};
-      
-      glLightfv(GL_LIGHT0, GL_AMBIENT, ambient);
-      glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse);
-      glLightfv(GL_LIGHT0, GL_SPECULAR, specular);
-      
-      GLfloat LightPosition[] = {0.0f, 45.0f, 0.0f, 1.0f};
-      glLightfv(GL_LIGHT0, GL_POSITION, LightPosition);
-      glLightf (GL_LIGHT0, GL_CONSTANT_ATTENUATION, 0.5);
-      glLightf (GL_LIGHT0, GL_LINEAR_ATTENUATION, 0.0);
-      glLightf (GL_LIGHT0, GL_QUADRATIC_ATTENUATION, 0.0);
-      glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE, mat_diffuse);
-      glMaterialf(GL_FRONT, GL_SHININESS, 128.0f / 10);
+    if (m_mdl) {
+      if (m_wireframe) {
+        drawWireframe();
+      } else {
+        drawTextured();
+      }
     }
+    
+    glPopMatrix();
+  }
+  
+  
+  
+  void
+  ObjView::drawTextured()
+  {
+    glLightModeli(GL_LIGHT_MODEL_LOCAL_VIEWER, GL_TRUE);
+    glEnable(GL_LIGHT0);
+    //glEnable(GL_LIGHT1);
+    
+    GLfloat ambient[4]={0.2f,0.2f,0.2f,1.0f};
+    GLfloat diffuse[4]={0.8f,0.8f,0.8f,1.0f};
+    GLfloat specular[4]={1.0f, 1.0f, 1.0f, 1.0f};
+    GLfloat mat_diffuse[4]={0.85f,0.85f,0.85f,1.0f};
+      
+    glLightfv(GL_LIGHT0, GL_AMBIENT, ambient);
+    glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse);
+    glLightfv(GL_LIGHT0, GL_SPECULAR, specular);
+    
+    GLfloat LightPosition[] = {0.0f, 45.0f, 0.0f, 1.0f};
+    glLightfv(GL_LIGHT0, GL_POSITION, LightPosition);
+    glLightf (GL_LIGHT0, GL_CONSTANT_ATTENUATION, 0.5);
+    glLightf (GL_LIGHT0, GL_LINEAR_ATTENUATION, 0.0);
+    glLightf (GL_LIGHT0, GL_QUADRATIC_ATTENUATION, 0.0);
+    glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE, mat_diffuse);
+    glMaterialf(GL_FRONT, GL_SHININESS, 128.0f / 10);
+  
+  
+    drawObject();
+    
+    glDisable(GL_LIGHTING);
+  }
+  
+  
+  
+  void
+  ObjView::drawWireframe()
+  {
+    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     
     if (m_mdl) {
       drawObject();
     }
     
-    if (m_wireframe) {
-      glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-    } else {
-      glDisable(GL_LIGHTING);
-    }
-    glPopMatrix();
+    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
   }
 }
