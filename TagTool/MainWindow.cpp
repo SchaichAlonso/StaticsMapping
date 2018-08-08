@@ -42,7 +42,6 @@
 #  include <Common/Widgets/AirlineScreen.hpp>
 #endif
 #include <Common/Widgets/AirlineTableDialog.hpp>
-#include <Common/Widgets/EnumPicker.hpp>
 #include <Common/Widgets/LibraryTableDialog.hpp>
 #include <Common/Widgets/ObjectTableDialog.hpp>
 
@@ -59,7 +58,7 @@ MainWindow::MainWindow (QWidget *parent , Qt::WindowFlags flags)
 , m_definitions (Classification::Definitions::fromFile())
 , m_obj_screen(new Widgets::ObjScreen())
 , m_objects()
-, m_object_select(new QComboBox())
+, m_object_select(createFormComboBox())
 , m_object_data_model (m_definitions->objectModel ())
 , m_object_data_mapper (new QDataWidgetMapper(this))
 , m_current_visual_object_index (-1)
@@ -394,6 +393,30 @@ MainWindow::createMenuBar()
 }
 
 
+QComboBox *
+MainWindow::createFormComboBox(QStringList content)
+{
+  QComboBox *combobox(new QComboBox());
+  combobox->setSizeAdjustPolicy (QComboBox::AdjustToMinimumContentsLength);
+  combobox->setMinimumContentsLength(32);
+  combobox->addItems(content);
+  return (combobox);
+}
+
+
+
+QComboBox *
+MainWindow::createFormComboBox(QMetaEnum e)
+{
+  QStringList content;
+  for (int i=0; i!=e.keyCount(); ++i) {
+    content.append(QString::fromUtf8(e.key(i)));
+  }
+  return (createFormComboBox(content));
+}
+
+
+
 void
 MainWindow::createWidgets ()
 {
@@ -402,7 +425,6 @@ MainWindow::createWidgets ()
   QFormLayout    *form;
   
   QWidget        *dummy;
-  QComboBox      *aircraft, *livery, *library, *usage, *fictive, *rotate;
   QSpinBox       *introduced, *retired;
   QLineEdit      *filehash, *filesize, *filename;
   QTextEdit      *comment;
@@ -413,12 +435,12 @@ MainWindow::createWidgets ()
   form_container = new QVBoxLayout ();
   form           = new QFormLayout ();
   
-  aircraft   = new QComboBox ();
-  livery     = new QComboBox ();
-  library    = new QComboBox ();
-  usage      = new Widgets::EnumPicker(QMetaEnum::fromType<Classification::Object::Purpose>());
-  rotate     = new Widgets::EnumPicker(QMetaEnum::fromType<Classification::Object::Rotate>());
-  fictive    = new QComboBox ();
+  QComboBox *aircraft(createFormComboBox());
+  QComboBox *livery(createFormComboBox());
+  QComboBox *library(createFormComboBox());
+  QComboBox *usage(createFormComboBox(QMetaEnum::fromType<Classification::Object::Purpose>()));
+  QComboBox *fictive(createFormComboBox(QStringList() << "true" << "false"));
+  QComboBox *rotate(createFormComboBox(QMetaEnum::fromType<Classification::Object::Rotate>()));
   introduced = new QSpinBox ();
   retired    = new QSpinBox ();
   filehash   = new QLineEdit ();
@@ -430,21 +452,6 @@ MainWindow::createWidgets ()
   VisualObjectsModel *visual_objects_model = new VisualObjectsModel (&m_objects);
   
   m_object_select->setModel (visual_objects_model);
-  
-  m_object_select->setSizeAdjustPolicy (QComboBox::AdjustToMinimumContentsLength);
-  aircraft->setSizeAdjustPolicy (QComboBox::AdjustToMinimumContentsLength);
-  livery->setSizeAdjustPolicy (QComboBox::AdjustToMinimumContentsLength);
-  library->setSizeAdjustPolicy (QComboBox::AdjustToMinimumContentsLength);
-  usage->setSizeAdjustPolicy (QComboBox::AdjustToMinimumContentsLength);
-  fictive->setSizeAdjustPolicy (QComboBox::AdjustToMinimumContentsLength);
-  
-  m_object_select->setMinimumContentsLength (32);
-  aircraft->setMinimumContentsLength (32);
-  livery->setMinimumContentsLength (32);
-  library->setMinimumContentsLength (32);
-  usage->setMinimumContentsLength (32);
-  fictive->setMinimumContentsLength (32);
-  
   
   filehash->setEnabled (false);
   filesize->setEnabled (false);
@@ -476,9 +483,6 @@ MainWindow::createWidgets ()
     
     form->addRow (QString::asprintf("Translation (%c)", int('X' + i)), locale[i]);
   }
-  
-  fictive->addItem ("true");
-  fictive->addItem ("false");
   
   Classification::AircraftModel *acfmdl = m_definitions->aircraftModel ();
   Classification::AirlineModel  *almdl = m_definitions->airlineModel ();

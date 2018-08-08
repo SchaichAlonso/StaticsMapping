@@ -9,7 +9,6 @@ set (Widgets_SOURCES
   AirlineDelegate.cpp
   AirlineTableDialog.cpp
   Application.cpp
-  EnumPicker.cpp
   FilenameLineEdit.cpp
   GlobalDistributionDialog.cpp
   GlobalDistributionWidget.cpp

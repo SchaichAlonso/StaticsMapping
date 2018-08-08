@@ -50,6 +50,8 @@ protected:
   virtual void dropEvent (QDropEvent *) Q_DECL_OVERRIDE;
   
   QMenuBar *createMenuBar();
+  QComboBox *createFormComboBox(QStringList contents=QStringList());
+  QComboBox *createFormComboBox(QMetaEnum);
   void createWidgets ();
   
 protected:
