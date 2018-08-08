@@ -63,6 +63,9 @@ MainWindow::MainWindow (QWidget *parent , Qt::WindowFlags flags)
 {
   createWidgets ();
   
+  
+  setMenuBar(createMenuBar());
+  
   //GlobalDistributionDialog *d = new GlobalDistributionDialog(m_definitions);
   //d->show ();
   
@@ -359,11 +362,39 @@ MainWindow::setDisplayedVisualObject (int visual_object_index)
 
 
 
+QMenuBar *
+MainWindow::createMenuBar()
+{
+  QMenuBar *menubar(new QMenuBar());
+  
+  QMenu *obj8(menubar->addMenu("Object"));
+  obj8->addAction("Open OBJ8...", this, SLOT(loadObjFile()));
+  obj8->addAction("Save OBJ8...", this, SLOT(saveObjFile()));
+  obj8->addSeparator();
+  obj8->addAction("Exit", this, SLOT(close()));
+  
+  QMenu *defs(menubar->addMenu("Definitions"));
+  defs->addSeparator();
+  defs->addAction("Save Definitions", this, SLOT(saveDefinitions()));
+  defs->addAction("Save Definitions As...", this, SLOT(saveDefinitionsAs()));
+  defs->addSeparator();
+  defs->addAction("Aircrafts Table", this, SLOT(showAircraftTableDialog()));
+  defs->addAction("Airline Hierarchies", this, SLOT(showAirlineHierarchyDialog()));
+  defs->addAction("Airline Table", this, SLOT(showAirlineTableDialog()));
+  defs->addAction("Library Table", this, SLOT(showLibraryTableDialog()));
+  defs->addAction("Object Table", this, SLOT(showObjectTableDialog()));
+  
+  QMenu *help(menubar->addMenu("Help"));
+  help->addAction("Supported Image Formats", this, SLOT(showSupportedImageFormats()));
+  
+  return (menubar);
+}
+
+
 void
 MainWindow::createWidgets ()
 {
-  QMenuBar       *menubar;
-  QMenu          *obj8, *defs, *help;
+  
   QBoxLayout     *form_container;
   QFormLayout    *form;
   
@@ -376,10 +407,6 @@ MainWindow::createWidgets ()
   QPushButton    *purge;
   
   dummy          = new QWidget ();
-  menubar        = new QMenuBar ();
-  obj8           = menubar->addMenu ("Object");
-  defs           = menubar->addMenu ("Definitions");
-  help           = menubar->addMenu ("Help");
   form_container = new QVBoxLayout ();
   form           = new QFormLayout ();
   
@@ -515,26 +542,4 @@ MainWindow::createWidgets ()
   m_obj_screen->show ();
   
   setCentralWidget (dummy);
-  
-  
-  
-  
-  obj8->addAction ("Open OBJ8...", this, SLOT(loadObjFile()));
-  obj8->addAction ("Save OBJ8...", this, SLOT(saveObjFile()));
-  obj8->addSeparator ();
-  obj8->addAction ("Exit", this, SLOT(close()));
-  
-  defs->addSeparator ();
-  defs->addAction ("Save Definitions", this, SLOT(saveDefinitions()));
-  defs->addAction ("Save Definitions As...", this, SLOT(saveDefinitionsAs()));
-  defs->addSeparator ();
-  defs->addAction ("Aircrafts Table", this, SLOT(showAircraftTableDialog()));
-  defs->addAction ("Airline Hierarchies", this, SLOT(showAirlineHierarchyDialog()));
-  defs->addAction ("Airline Table", this, SLOT(showAirlineTableDialog()));
-  defs->addAction ("Library Table", this, SLOT(showLibraryTableDialog()));
-  defs->addAction ("Object Table", this, SLOT(showObjectTableDialog()));
-  
-  help->addAction ("Supported Image Formats", this, SLOT(showSupportedImageFormats()));
-  
-  setMenuBar (menubar);
 }

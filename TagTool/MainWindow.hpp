@@ -1,12 +1,10 @@
 #pragma once
 
 #include <QtCore/QList>
-#include <QTabBar>
 
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QDataWidgetMapper>
-
-#include <QComboBox>
-#include <QMainWindow>
+#include <QtWidgets/QMainWindow>
 
 #include <Common/Classification/Definitions.hpp>
 #include <Common/Classification/ObjectModel.hpp>
@@ -51,6 +49,7 @@ protected:
   virtual void dragEnterEvent (QDragEnterEvent *) Q_DECL_OVERRIDE;
   virtual void dropEvent (QDropEvent *) Q_DECL_OVERRIDE;
   
+  QMenuBar *createMenuBar();
   void createWidgets ();
   
 protected:
