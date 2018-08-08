@@ -57,6 +57,9 @@
 MainWindow::MainWindow (QWidget *parent , Qt::WindowFlags flags)
 : QMainWindow (parent, flags)
 , m_definitions (Classification::Definitions::fromFile())
+, m_obj_screen(new Widgets::ObjScreen())
+, m_objects()
+, m_object_select(new QComboBox())
 , m_object_data_model (m_definitions->objectModel ())
 , m_object_data_mapper (new QDataWidgetMapper(this))
 , m_current_visual_object_index (-1)
@@ -410,7 +413,6 @@ MainWindow::createWidgets ()
   form_container = new QVBoxLayout ();
   form           = new QFormLayout ();
   
-  m_object_select = new QComboBox ();
   aircraft   = new QComboBox ();
   livery     = new QComboBox ();
   library    = new QComboBox ();
@@ -424,8 +426,6 @@ MainWindow::createWidgets ()
   filename   = new QLineEdit ();
   comment    = new QTextEdit ();
   purge      = new QPushButton ();
-  
-  m_obj_screen = new Widgets::ObjScreen();
   
   VisualObjectsModel *visual_objects_model = new VisualObjectsModel (&m_objects);
   
