@@ -285,7 +285,6 @@ namespace Widgets
     GLfloat ambient[4]={0.2f,0.2f,0.2f,1.0f};
     GLfloat diffuse[4]={0.8f,0.8f,0.8f,1.0f};
     GLfloat specular[4]={1.0f, 1.0f, 1.0f, 1.0f};
-    GLfloat mat_diffuse[4]={0.85f,0.85f,0.85f,1.0f};
       
     glLightfv(GL_LIGHT0, GL_AMBIENT, ambient);
     glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse);
@@ -293,10 +292,9 @@ namespace Widgets
     
     GLfloat LightPosition[] = {0.0f, 45.0f, 0.0f, 1.0f};
     glLightfv(GL_LIGHT0, GL_POSITION, LightPosition);
-    glLightf (GL_LIGHT0, GL_CONSTANT_ATTENUATION, 0.5);
+    glLightf (GL_LIGHT0, GL_CONSTANT_ATTENUATION, 1);
     glLightf (GL_LIGHT0, GL_LINEAR_ATTENUATION, 0.0);
     glLightf (GL_LIGHT0, GL_QUADRATIC_ATTENUATION, 0.0);
-    glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE, mat_diffuse);
     glMaterialf(GL_FRONT, GL_SHININESS, 128.0f / 10);
   
     glEnable(GL_LIGHTING);
