@@ -417,6 +417,18 @@ MainWindow::createFormComboBox(QMetaEnum e)
 
 
 
+QDoubleSpinBox
+*MainWindow::createFormMetricInputSpinner()
+{
+  QDoubleSpinBox *spinbox(new QDoubleSpinBox());
+  spinbox->setSingleStep(0.1);
+  spinbox->setRange(-100, 100);
+  spinbox->setDecimals(3);
+  return (spinbox);
+}
+
+
+
 QLayout *
 MainWindow::createForm()
 {
@@ -464,10 +476,7 @@ MainWindow::createForm()
   form->addRow ("Rotation", rotate);
   
   for (size_t i=0; i!=nitems(locale); ++i) {
-    locale[i] = new QDoubleSpinBox ();
-    locale[i]->setSingleStep(0.1);
-    locale[i]->setRange(-100, 100);
-    locale[i]->setDecimals(3);
+    locale[i] = createFormMetricInputSpinner();
     
     connect (locale[i], SIGNAL(valueChanged(QString)), m_obj_screen, SLOT(update()));
     

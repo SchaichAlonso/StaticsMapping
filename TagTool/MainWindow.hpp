@@ -4,6 +4,7 @@
 
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDataWidgetMapper>
+#include <QtWidgets/QDoubleSpinBox>
 #include <QtWidgets/QMainWindow>
 
 #include <Common/Classification/Definitions.hpp>
@@ -52,6 +53,7 @@ protected:
   QMenuBar *createMenuBar();
   QComboBox *createFormComboBox(QStringList contents=QStringList());
   QComboBox *createFormComboBox(QMetaEnum);
+  QDoubleSpinBox *createFormMetricInputSpinner();
   QLayout   *createForm();
   void createWidgets ();
   
