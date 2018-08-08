@@ -542,9 +542,10 @@ MainWindow::createWidgets ()
   QWidget *dummy(new QWidget());
   QLayout *form(createForm());
   
-  dummy->setLayout (form);
-  
-  m_obj_screen->show ();
+  QHBoxLayout *ext(new QHBoxLayout());
+  ext->addLayout(form);
+  ext->addWidget(m_obj_screen);
+  dummy->setLayout(ext);
   
   setCentralWidget (dummy);
 }
