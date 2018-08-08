@@ -299,6 +299,7 @@ namespace Widgets
     glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE, mat_diffuse);
     glMaterialf(GL_FRONT, GL_SHININESS, 128.0f / 10);
   
+    glEnable(GL_LIGHTING);
   
     drawObject();
     
