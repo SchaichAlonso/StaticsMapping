@@ -5,7 +5,11 @@
 #include <QtCore/QMimeData>
 #include <QtGui/QDragEnterEvent>
 #include <QtGui/QDropEvent>
+#include <QtWidgets/QDoubleSpinBox>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpinBox>
+#include <QtWidgets/QTextEdit>
 
 #include <QCryptographicHash>
 #include <QFile>

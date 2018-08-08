@@ -6,11 +6,7 @@
 #include <QtWidgets/QDataWidgetMapper>
 
 #include <QComboBox>
-#include <QDateEdit>
-#include <QDoubleSpinBox>
-#include <QLineEdit>
 #include <QMainWindow>
-#include <QTextEdit>
 
 #include <Common/Classification/Definitions.hpp>
 #include <Common/Classification/ObjectModel.hpp>
