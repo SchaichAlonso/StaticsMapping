@@ -52,6 +52,7 @@ protected:
   QMenuBar *createMenuBar();
   QComboBox *createFormComboBox(QStringList contents=QStringList());
   QComboBox *createFormComboBox(QMetaEnum);
+  QLayout   *createForm();
   void createWidgets ();
   
 protected:

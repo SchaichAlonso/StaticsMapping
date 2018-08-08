@@ -417,12 +417,11 @@ MainWindow::createFormComboBox(QMetaEnum e)
 
 
 
-void
-MainWindow::createWidgets ()
+QLayout *
+MainWindow::createForm()
 {
   QDoubleSpinBox *locale[3];
   
-  QWidget *dummy(new QWidget());
   QBoxLayout *form_container(new QVBoxLayout());
   QFormLayout *form(new QFormLayout());
   
@@ -532,7 +531,18 @@ MainWindow::createWidgets ()
   form_container->addStretch();
   form_container->addWidget (purge);
   
-  dummy->setLayout (form_container);
+  return (form_container);
+}
+
+
+
+void
+MainWindow::createWidgets ()
+{
+  QWidget *dummy(new QWidget());
+  QLayout *form(createForm());
+  
+  dummy->setLayout (form);
   
   m_obj_screen->show ();
   
