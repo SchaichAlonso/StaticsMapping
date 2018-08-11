@@ -1051,6 +1051,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1986,
+            "hubs": "BIKF",
+            "icao": "ABD",
+            "name": "Air Atlanta Icelandic",
+            "parent": "ABD"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2007,
             "hubs": "RKPK",
             "icao": "ABL",
