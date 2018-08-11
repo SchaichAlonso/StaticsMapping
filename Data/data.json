@@ -2383,6 +2383,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2011,
+            "hubs": "FAGG",
+            "icao": "FSK",
+            "name": "Africa Charter Airlines",
+            "parent": "FSK"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1997,
             "hubs": "BIRK",
             "icao": "FXI",
@@ -5108,6 +5117,12 @@
             "lat": 56.9236625,
             "lon": 23.971193,
             "name": "Riga Intl"
+        },
+        {
+            "icao": "FAGG",
+            "lat": -34.005531,
+            "lon": 22.378515,
+            "name": "George"
         },
         {
             "icao": "FAOR",
