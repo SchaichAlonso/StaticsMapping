@@ -1015,6 +1015,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1946,
+            "hubs": "LFPO",
+            "icao": "AAF",
+            "name": "Aigle Azur",
+            "parent": "AAF"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1926,
             "hubs": "KCLT KDCA KDFW KJFK KLAX KLGA KMIA KORD KPHL KPHX",
             "icao": "AAL",
