@@ -1690,6 +1690,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2010,
+            "hubs": "LROP",
+            "icao": "BUR",
+            "name": "Air Bucharest",
+            "parent": "BUR"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1974,
             "hubs": "LFLL LFPG LFPO",
             "icao": "BZH",
