@@ -3013,6 +3013,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1969,
+            "hubs": "SKBO",
+            "icao": "KRE",
+            "name": "Aerosucre",
+            "parent": "KRE"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1995,
             "hubs": "UUWW",
             "icao": "KSM",
