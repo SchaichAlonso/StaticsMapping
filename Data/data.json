@@ -2644,6 +2644,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1999,
+            "hubs": "RJOO",
+            "icao": "IBX",
+            "name": "Ibex Airlines",
+            "parent": "ANA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1937,
             "hubs": "BIKF",
             "icao": "ICE",
