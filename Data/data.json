@@ -2068,6 +2068,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2005,
+            "hubs": "ZSPD ZSSS",
+            "icao": "DKH",
+            "name": "Juneyao Airlines",
+            "parent": "XXX-StarAlliance"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1991,
             "hubs": "EDDM",
             "icao": "DLA",
@@ -2847,6 +2856,15 @@
             "icao": "JTA",
             "name": "Japan Transocean Air",
             "parent": "JAL"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2015,
+            "hubs": "ZGGG",
+            "icao": "JYH",
+            "name": "9 Air",
+            "parent": "DKH"
         },
         {
             "ceased": 0,
