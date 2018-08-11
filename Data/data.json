@@ -3085,6 +3085,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2001,
+            "hubs": "UAAA UACC",
+            "icao": "KZR",
+            "name": "Air Astana",
+            "parent": "KZR"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 0,
             "hubs": "",
             "icao": "KZS",
@@ -6134,6 +6143,18 @@
             "lat": 18.040889,
             "lon": -63.108974,
             "name": "St Maarten - Princess Juliana Intl"
+        },
+        {
+            "icao": "UAAA",
+            "lat": 43.35523456,
+            "lon": 77.04456951,
+            "name": "Almaty Intl"
+        },
+        {
+            "icao": "UACC",
+            "lat": 51.0221805,
+            "lon": 71.4670625,
+            "name": "Astana INTL"
         },
         {
             "icao": "UATG",
