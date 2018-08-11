@@ -1060,6 +1060,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2003,
+            "hubs": "OMRK OMSJ",
+            "icao": "ABY",
+            "name": "Air Arabia",
+            "parent": "ABY"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1937,
             "hubs": "CYHZ CYOW CYUL CYVR CYYC CYYZ",
             "icao": "ACA",
@@ -2752,6 +2761,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2014,
+            "hubs": "OJAI",
+            "icao": "JAD",
+            "name": "Air Arabia Jordan",
+            "parent": "ABY"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2005,
             "hubs": "EBBR",
             "icao": "JAF",
@@ -3292,6 +3310,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2009,
+            "hubs": "GMMN",
+            "icao": "MAC",
+            "name": "Air Arabia Maroc",
+            "parent": "ABY"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1972,
             "hubs": "WMKK",
             "icao": "MAS",
@@ -3819,6 +3846,15 @@
             "icao": "RAE",
             "name": "Regional Compagnie Arienne Europeene",
             "parent": "HOP"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2009,
+            "hubs": "HEBA",
+            "icao": "RBG",
+            "name": "Air Arabia Egypt",
+            "parent": "ABY"
         },
         {
             "ceased": 0,
@@ -5212,10 +5248,22 @@
             "name": "KAMUZU INTL"
         },
         {
+            "icao": "GMMN",
+            "lat": 33.36746575,
+            "lon": -7.589964,
+            "name": "Casablanca Mohammed V Intl"
+        },
+        {
             "icao": "HAAB",
             "lat": 8.97789175,
             "lon": 38.799321,
             "name": "BOLE INTL"
+        },
+        {
+            "icao": "HEBA",
+            "lat": 30.91275317,
+            "lon": 29.68968883,
+            "name": "BORG EL ARAB INTL"
         },
         {
             "icao": "HECA",
@@ -5816,6 +5864,18 @@
             "lat": 24.888278,
             "lon": 55.160378,
             "name": "Al Maktoum Intl"
+        },
+        {
+            "icao": "OMRK",
+            "lat": 25.6133515,
+            "lon": 55.938831,
+            "name": "RAS AL KHAIMAH INTL"
+        },
+        {
+            "icao": "OMSJ",
+            "lat": 25.3285865,
+            "lon": 55.517218,
+            "name": "SHARJAH INTL"
         },
         {
             "icao": "OTBD",
