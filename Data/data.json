@@ -1033,6 +1033,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2001,
+            "hubs": "HLLM",
+            "icao": "AAW",
+            "name": "Afriqiyah Airways",
+            "parent": "AAW"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2007,
             "hubs": "RKPK",
             "icao": "ABL",
@@ -5195,6 +5204,12 @@
             "lat": -1.31707312,
             "lon": 36.93075712,
             "name": "Nairobi Jomo Kanyatta Intl"
+        },
+        {
+            "icao": "HLLM",
+            "lat": 32.89508275,
+            "lon": 13.2824165,
+            "name": "MITIGA"
         },
         {
             "icao": "HTDA",
