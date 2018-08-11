@@ -2059,6 +2059,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1947,
+            "hubs": "DAAG",
+            "icao": "DAH",
+            "name": "Air Algerie",
+            "parent": "DAH"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1924,
             "hubs": "KATL KBOS KCVG KDTW KJFK KLAX KLGA KMSP KSEA KSLC",
             "icao": "DAL",
@@ -4937,6 +4946,12 @@
             "lat": 43.676134,
             "lon": -79.6276706,
             "name": "Toronto Lester B Pearson Intl"
+        },
+        {
+            "icao": "DAAG",
+            "lat": 36.697521,
+            "lon": 3.21307925,
+            "name": "Alger Houari Boumediene"
         },
         {
             "icao": "DGAA",
