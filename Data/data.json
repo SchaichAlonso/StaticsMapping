@@ -1069,6 +1069,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1972,
+            "hubs": "EIDW",
+            "icao": "ABR",
+            "name": "ASL Airlines Ireland",
+            "parent": "ABR"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2003,
             "hubs": "OMRK OMSJ",
             "icao": "ABY",
@@ -2374,6 +2383,24 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1990,
+            "hubs": "LHBP",
+            "icao": "FAH",
+            "name": "ASL Airlines Hungary",
+            "parent": "ABR"
+        },
+        {
+            "ceased": 2018,
+            "comment": "",
+            "founded": 1984,
+            "hubs": "LFSB",
+            "icao": "FAT",
+            "name": "ASL Airlines Switzerland",
+            "parent": "ABR"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2008,
             "hubs": "OMDB OMDW",
             "icao": "FDB",
@@ -2424,6 +2451,15 @@
             "icao": "FNA",
             "name": "Norlandair",
             "parent": "GRL"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1991,
+            "hubs": "LFPG",
+            "icao": "FPO",
+            "name": "ASL Airlines France",
+            "parent": "ABR"
         },
         {
             "ceased": 0,
@@ -3740,6 +3776,15 @@
             "parent": "PLK"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1987,
+            "hubs": "LEMD",
+            "icao": "PNR",
+            "name": "ASL Airlines Spain",
+            "parent": "ABR"
+        },
+        {
             "ceased": 2014,
             "comment": "",
             "founded": 1988,
@@ -4350,6 +4395,15 @@
             "icao": "TAX",
             "name": "Thai AirAsia X",
             "parent": "AIQ"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1999,
+            "hubs": "EBLG",
+            "icao": "TAY",
+            "name": "ASL Airlines Belgium",
+            "parent": "ABR"
         },
         {
             "ceased": 0,
@@ -5039,6 +5093,12 @@
             "lat": 50.89994811,
             "lon": 4.49281432,
             "name": "Brussels Airport"
+        },
+        {
+            "icao": "EBLG",
+            "lat": 50.63849399,
+            "lon": 5.44371588,
+            "name": "Liege"
         },
         {
             "icao": "EDDF",
