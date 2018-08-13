@@ -3814,6 +3814,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1980,
+            "hubs": "MPMG",
+            "icao": "PST",
+            "name": "Air Panama",
+            "parent": "PST"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1944,
             "hubs": "ULOO",
             "icao": "PSW",
@@ -3954,6 +3963,15 @@
             "icao": "RFF",
             "name": "Russian Federation Air Force",
             "parent": "RFF"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2015,
+            "hubs": "MROC",
+            "icao": "RII",
+            "name": "Air Costa Rica",
+            "parent": "PST"
         },
         {
             "ceased": 0,
@@ -5855,6 +5873,12 @@
             "lat": 12.141493,
             "lon": -86.168178,
             "name": "Managua Intl"
+        },
+        {
+            "icao": "MPMG",
+            "lat": 8.9733609,
+            "lon": -79.55558104,
+            "name": "Marcos A. Gelabert Int'l"
         },
         {
             "icao": "MPTO",
