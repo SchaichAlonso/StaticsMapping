@@ -1267,6 +1267,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1973,
+            "hubs": "LMML",
+            "icao": "AMC",
+            "name": "Air Malta",
+            "parent": "AMC"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1968,
             "hubs": "KDFW",
             "icao": "AMF",
@@ -5774,6 +5783,12 @@
             "lat": 50.10114401,
             "lon": 14.26296344,
             "name": "Praha - Ruzyne"
+        },
+        {
+            "icao": "LMML",
+            "lat": 35.84947769,
+            "lon": 14.48183328,
+            "name": "Malta Int'l"
         },
         {
             "icao": "LOWG",
