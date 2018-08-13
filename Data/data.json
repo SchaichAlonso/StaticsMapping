@@ -1204,6 +1204,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1978,
+            "hubs": "CYGL CYUL CYVP",
+            "icao": "AIE",
+            "name": "Air Inuit",
+            "parent": "AIE"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2004,
             "hubs": "VTBD",
             "icao": "AIQ",
@@ -5035,6 +5044,12 @@
             "name": "Reykjavik"
         },
         {
+            "icao": "CYGL",
+            "lat": 53.62537029,
+            "lon": -77.70411387,
+            "name": "LA GRANDE RIVIERE"
+        },
+        {
             "icao": "CYHZ",
             "lat": 44.88315796,
             "lon": -63.51055355,
@@ -5063,6 +5078,12 @@
             "lat": 45.4672685,
             "lon": -73.74402783,
             "name": "Montreal Pierre E Trudeau Intl"
+        },
+        {
+            "icao": "CYVP",
+            "lat": 58.09694554,
+            "lon": -68.42333387,
+            "name": "KUUJJUAQ"
         },
         {
             "icao": "CYVR",
