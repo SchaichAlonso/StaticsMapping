@@ -1177,6 +1177,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1987,
+            "hubs": "FNLU",
+            "icao": "AGO",
+            "name": "Angola Air Charter",
+            "parent": "DTA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1988,
             "hubs": "VHHH",
             "icao": "AHK",
@@ -1209,6 +1218,15 @@
             "icao": "AIE",
             "name": "Air Inuit",
             "parent": "AIE"
+        },
+        {
+            "ceased": 2013,
+            "comment": "",
+            "founded": 1964,
+            "hubs": "FWCL",
+            "icao": "AIM",
+            "name": "Air Malawi",
+            "parent": "MWI"
         },
         {
             "ceased": 0,
@@ -1420,6 +1438,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2003,
+            "hubs": "HTDA",
+            "icao": "ATC",
+            "name": "Air Tanzania",
+            "parent": "ATC"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1957,
             "hubs": "LOWG LOWI LOWS",
             "icao": "AUA",
@@ -1555,6 +1582,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1967,
+            "hubs": "FVRG",
+            "icao": "AZW",
+            "name": "Air Zimbabwe",
+            "parent": "AZW"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1974,
             "hubs": "EGKK EGLL",
             "icao": "BAW",
@@ -1668,6 +1704,15 @@
             "icao": "BOS",
             "name": "OpenSkies",
             "parent": "BAW"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1972,
+            "hubs": "FBSK",
+            "icao": "BOT",
+            "name": "Air Botswana",
+            "parent": "BOT"
         },
         {
             "ceased": 0,
@@ -1852,6 +1897,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2007,
+            "hubs": "FGSL",
+            "icao": "CEL",
+            "name": "CEIBA International",
+            "parent": "CEL"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1988,
             "hubs": "ZSPD ZSSS",
             "icao": "CES",
@@ -1974,6 +2028,15 @@
             "icao": "CPZ",
             "name": "Compass Airlines",
             "parent": "AAL"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2006,
+            "hubs": "FKKD",
+            "icao": "CRC",
+            "name": "Camair-Co",
+            "parent": "CRC"
         },
         {
             "ceased": 0,
@@ -2237,6 +2300,15 @@
             "parent": "LAN"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1938,
+            "hubs": "FNLU",
+            "icao": "DTA",
+            "name": "TAAG Angola Airlines",
+            "parent": "DTA"
+        },
+        {
             "ceased": 2016,
             "comment": "",
             "founded": 1969,
@@ -2280,6 +2352,15 @@
             "icao": "ENY",
             "name": "Envoy Air",
             "parent": "AAL"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1991,
+            "hubs": "HHAS",
+            "icao": "ERT",
+            "name": "Eritrean Airlines",
+            "parent": "ERT"
         },
         {
             "ceased": 2014,
@@ -2831,6 +2912,15 @@
             "parent": "XXX-Vanilla"
         },
         {
+            "ceased": 2017,
+            "comment": "",
+            "founded": 1995,
+            "hubs": "DGAA",
+            "icao": "IKM",
+            "name": "Starbow",
+            "parent": "IKM"
+        },
+        {
             "ceased": 0,
             "comment": "",
             "founded": 1981,
@@ -2955,6 +3045,15 @@
             "icao": "JLJ",
             "name": "J-Air",
             "parent": "JAL"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2013,
+            "hubs": "HKJK",
+            "icao": "JMA",
+            "name": "Jambojet",
+            "parent": "KQA"
         },
         {
             "ceased": 2009,
@@ -3193,11 +3292,11 @@
         {
             "ceased": 0,
             "comment": "",
-            "founded": 1992,
-            "hubs": "MMMX",
+            "founded": 1964,
+            "hubs": "HLLT",
             "icao": "LAA",
-            "name": "LATAM Cargo Mexico",
-            "parent": "LAN"
+            "name": "Libyan Airlines",
+            "parent": "LAA"
         },
         {
             "ceased": 0,
@@ -3207,6 +3306,15 @@
             "icao": "LAE",
             "name": "LATAM Cargo Colombia",
             "parent": "LAN"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1936,
+            "hubs": "FQMA",
+            "icao": "LAM",
+            "name": "LAM Mozambique Airlines",
+            "parent": "LAM"
         },
         {
             "ceased": 0,
@@ -3409,6 +3517,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1992,
+            "hubs": "MMMX",
+            "icao": "MAA",
+            "name": "LATAM Cargo Mexico",
+            "parent": "LAN"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2009,
             "hubs": "GMMN",
             "icao": "MAC",
@@ -3589,6 +3706,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1995,
+            "hubs": "FQMA",
+            "icao": "MXE",
+            "name": "Mocambique Expresso",
+            "parent": "LAM"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1993,
             "hubs": "ENGM ESSA",
             "icao": "NAX",
@@ -3603,6 +3729,15 @@
             "icao": "NCT",
             "name": "NokScoot",
             "parent": "NOK"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2006,
+            "hubs": "HECA",
+            "icao": "NIA",
+            "name": "Nile Air",
+            "parent": "NIA"
         },
         {
             "ceased": 0,
@@ -3639,6 +3774,15 @@
             "icao": "NLY",
             "name": "Niki",
             "parent": "BER"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1946,
+            "hubs": "FYWH",
+            "icao": "NMB",
+            "name": "Air Namibia",
+            "parent": "NMB"
         },
         {
             "ceased": 0,
@@ -3875,6 +4019,15 @@
             "parent": "PSW"
         },
         {
+            "ceased": 2016,
+            "comment": "",
+            "founded": 2010,
+            "hubs": "FCBB",
+            "icao": "PTI",
+            "name": "Equatorial Congo Airline",
+            "parent": "PTI"
+        },
+        {
             "ceased": 0,
             "comment": "",
             "founded": 1948,
@@ -3972,6 +4125,15 @@
             "icao": "RAE",
             "name": "Regional Compagnie Arienne Europeene",
             "parent": "HOP"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1957,
+            "hubs": "GMMN",
+            "icao": "RAM",
+            "name": "Royal Air Maroc",
+            "parent": "RAM"
         },
         {
             "ceased": 0,
@@ -4098,6 +4260,24 @@
             "icao": "RTM",
             "name": "DHL Ecuador",
             "parent": "DAE"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2002,
+            "hubs": "DBBB HRYR",
+            "icao": "RWD",
+            "name": "RwandAir",
+            "parent": "RWD"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2009,
+            "hubs": "GMMN",
+            "icao": "RXP",
+            "name": "Royal Air Maroc Express",
+            "parent": "RAM"
         },
         {
             "ceased": 0,
@@ -4325,6 +4505,15 @@
             "parent": "EIN"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1946,
+            "hubs": "HSSS",
+            "icao": "SUD",
+            "name": "Sudan Airways",
+            "parent": "SUD"
+        },
+        {
             "ceased": 2007,
             "comment": "",
             "founded": 2001,
@@ -4462,6 +4651,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1948,
+            "hubs": "DTTA",
+            "icao": "TAR",
+            "name": "Tunisair",
+            "parent": "TAR"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2014,
             "hubs": "VTBD",
             "icao": "TAX",
@@ -4539,6 +4737,15 @@
             "icao": "THD",
             "name": "Thai Smile",
             "parent": "THA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2004,
+            "hubs": "FTTJ",
+            "icao": "THE",
+            "name": "Toumai Air Tchad",
+            "parent": "THE"
         },
         {
             "ceased": 0,
@@ -4647,6 +4854,15 @@
             "icao": "TUM",
             "name": "UTAir Cargo",
             "parent": "UTA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1991,
+            "hubs": "DTTA",
+            "icao": "TUX",
+            "name": "Tunisair Express",
+            "parent": "TAR"
         },
         {
             "ceased": 0,
@@ -4795,6 +5011,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1967,
+            "hubs": "DFFD",
+            "icao": "VBW",
+            "name": "Air Burkina",
+            "parent": "VBW"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1987,
             "hubs": "VVTS",
             "icao": "VFC",
@@ -4872,6 +5097,15 @@
             "icao": "VRD",
             "name": "Virgin America",
             "parent": "XXX-AlaskaAir"
+        },
+        {
+            "ceased": 2011,
+            "comment": "",
+            "founded": 1960,
+            "hubs": "DIAP",
+            "icao": "VUN",
+            "name": "Air Ivoire",
+            "parent": "VUN"
         },
         {
             "ceased": 2011,
@@ -5164,6 +5398,18 @@
             "name": "Alger Houari Boumediene"
         },
         {
+            "icao": "DBBB",
+            "lat": 6.35729318,
+            "lon": 2.38456461,
+            "name": "Cadjehoun Airport"
+        },
+        {
+            "icao": "DFFD",
+            "lat": 12.35311712,
+            "lon": -1.51237568,
+            "name": "Ouagadoudou Airport"
+        },
+        {
             "icao": "DGAA",
             "lat": 5.602578,
             "lon": -0.16760158,
@@ -5174,6 +5420,12 @@
             "lat": 5.261386,
             "lon": -3.926296,
             "name": "Abidjan Felix Houphouet Boigny Intl"
+        },
+        {
+            "icao": "DTTA",
+            "lat": 36.85126799,
+            "lon": 10.23002605,
+            "name": "Tunis-Carthage"
         },
         {
             "icao": "DXXX",
@@ -5380,16 +5632,40 @@
             "name": "Johannesburg OR Thambo Intl"
         },
         {
+            "icao": "FBSK",
+            "lat": -24.55309808,
+            "lon": 25.92279028,
+            "name": "Gaborone International Airport Sir Sereste Khama"
+        },
+        {
+            "icao": "FCBB",
+            "lat": -4.25169858,
+            "lon": 15.25302914,
+            "name": "MAYA MAYA"
+        },
+        {
             "icao": "FDMS",
             "lat": -26.529021,
             "lon": 31.307519,
             "name": "MATSAPHA"
         },
         {
+            "icao": "FGSL",
+            "lat": 3.75531553,
+            "lon": 8.70871089,
+            "name": "MALABO"
+        },
+        {
             "icao": "FIMP",
             "lat": -20.4302345,
             "lon": 57.6836015,
             "name": "SIR SEEWOOSAGUR RAMGOOLAM INTL"
+        },
+        {
+            "icao": "FKKD",
+            "lat": 4.00605458,
+            "lon": 9.71950958,
+            "name": "Douala"
         },
         {
             "icao": "FMCV",
@@ -5416,16 +5692,52 @@
             "name": "IVATO"
         },
         {
+            "icao": "FNLU",
+            "lat": -8.85834103,
+            "lon": 13.23106236,
+            "name": "LUANDA 4 DE FEVEREIRO"
+        },
+        {
+            "icao": "FQMA",
+            "lat": -25.920835,
+            "lon": 32.572606,
+            "name": "Maputo International Airport"
+        },
+        {
             "icao": "FSIA",
             "lat": -4.674378,
             "lon": 55.521829,
             "name": "SEYCHELLES INTL"
         },
         {
+            "icao": "FTTJ",
+            "lat": 12.13372736,
+            "lon": 15.03400004,
+            "name": "N'Diamena Hassan Djamous"
+        },
+        {
+            "icao": "FVRG",
+            "lat": -17.931806,
+            "lon": 31.092847,
+            "name": "Robert Gabriel Mugabe Intl"
+        },
+        {
+            "icao": "FWCL",
+            "lat": -15.67724665,
+            "lon": 34.97045192,
+            "name": "CHILEKA INTL"
+        },
+        {
             "icao": "FWKI",
             "lat": -13.7893765,
             "lon": 33.781,
             "name": "KAMUZU INTL"
+        },
+        {
+            "icao": "FYWH",
+            "lat": -22.48181298,
+            "lon": 17.4715607,
+            "name": "Windhoek Hosea Kutako Intl"
         },
         {
             "icao": "GMMN",
@@ -5452,6 +5764,12 @@
             "name": "Cairo Intl"
         },
         {
+            "icao": "HHAS",
+            "lat": 15.29144327,
+            "lon": 38.91026996,
+            "name": "Asmara_Intl"
+        },
+        {
             "icao": "HKJK",
             "lat": -1.31707312,
             "lon": 36.93075712,
@@ -5462,6 +5780,24 @@
             "lat": 32.89508275,
             "lon": 13.2824165,
             "name": "MITIGA"
+        },
+        {
+            "icao": "HLLT",
+            "lat": 32.66565923,
+            "lon": 13.15335626,
+            "name": "TRIPOLI INTL"
+        },
+        {
+            "icao": "HRYR",
+            "lat": -1.96862807,
+            "lon": 30.13945,
+            "name": "Kigali Airport"
+        },
+        {
+            "icao": "HSSS",
+            "lat": 15.58952924,
+            "lon": 32.55317011,
+            "name": "KHARTOUM INTL"
         },
         {
             "icao": "HTDA",
