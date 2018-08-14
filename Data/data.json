@@ -1625,6 +1625,15 @@
             "parent": "BER"
         },
         {
+            "ceased": 2016,
+            "comment": "",
+            "founded": 1997,
+            "hubs": "LFPG",
+            "icao": "BIE",
+            "name": "Air Mediterranee",
+            "parent": "BIE"
+        },
+        {
             "ceased": 0,
             "comment": "",
             "founded": 2012,
@@ -2694,6 +2703,15 @@
             "icao": "HOP",
             "name": "HOP!",
             "parent": "AFR"
+        },
+        {
+            "ceased": 2016,
+            "comment": "",
+            "founded": 2011,
+            "hubs": "LGAV",
+            "icao": "HRM",
+            "name": "Hermes Airlines",
+            "parent": "BIE"
         },
         {
             "ceased": 0,
