@@ -1703,7 +1703,7 @@
             "hubs": "UWWW",
             "icao": "BRZ",
             "name": "Samara Airlines",
-            "parent": "BRZ"
+            "parent": "XXX-AiRUnion"
         },
         {
             "ceased": 0,
@@ -2177,10 +2177,10 @@
             "ceased": 2008,
             "comment": "",
             "founded": 1992,
-            "hubs": "UUEE",
+            "hubs": "UUDD",
             "icao": "DMO",
             "name": "Domodedovo Airlines",
-            "parent": "DMO"
+            "parent": "XXX-AiRUnion"
         },
         {
             "ceased": 2016,
@@ -3089,7 +3089,7 @@
             "hubs": "UNKL",
             "icao": "KJC",
             "name": "Krasnojarsky Airlines",
-            "parent": "KJC"
+            "parent": "XXX-AiRUnion"
         },
         {
             "ceased": 0,
@@ -3704,6 +3704,15 @@
             "parent": "OKA"
         },
         {
+            "ceased": 2008,
+            "comment": "",
+            "founded": 1994,
+            "hubs": "UNOO",
+            "icao": "OMS",
+            "name": "Omskavia",
+            "parent": "XXX-AiRUnion"
+        },
+        {
             "ceased": 0,
             "comment": "",
             "founded": 1998,
@@ -4179,6 +4188,15 @@
             "icao": "SIA",
             "name": "Singapore Airlines",
             "parent": "XXX-StarAlliance"
+        },
+        {
+            "ceased": 2008,
+            "comment": "",
+            "founded": 1995,
+            "hubs": "UNKL",
+            "icao": "SIB",
+            "name": "Sibaviatrans",
+            "parent": "XXX-AiRUnion"
         },
         {
             "ceased": 0,
@@ -4926,6 +4944,15 @@
             "icao": "XME",
             "name": "Australian airExpress",
             "parent": "QFA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 0,
+            "hubs": "",
+            "icao": "XXX-AiRUnion",
+            "name": "AiRUnion",
+            "parent": "XXX-AiRUnion"
         },
         {
             "ceased": 0,
@@ -6425,6 +6452,12 @@
             "lat": 55.0130175,
             "lon": 82.651065,
             "name": "Novosibirsk Tolmachevo"
+        },
+        {
+            "icao": "UNOO",
+            "lat": 54.96473911,
+            "lon": 73.32549102,
+            "name": "Omsk Tsentralny International Airport"
         },
         {
             "icao": "UNTT",
