@@ -1816,6 +1816,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1995,
+            "hubs": "EVRA",
+            "icao": "BTI",
+            "name": "airBaltic",
+            "parent": "BTI"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2013,
             "hubs": "WIHH WIII",
             "icao": "BTK",
