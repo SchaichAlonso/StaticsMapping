@@ -1069,6 +1069,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2003,
+            "hubs": "OPKC",
+            "icao": "ABQ",
+            "name": "airblue",
+            "parent": "ABQ"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1972,
             "hubs": "EIDW",
             "icao": "ABR",
@@ -6605,6 +6614,12 @@
             "lat": 25.3285865,
             "lon": 55.517218,
             "name": "SHARJAH INTL"
+        },
+        {
+            "icao": "OPKC",
+            "lat": 24.9066,
+            "lon": 67.1608,
+            "name": "Karachi Jinnah Intl"
         },
         {
             "icao": "OTBD",
