@@ -3562,6 +3562,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2003,
+            "hubs": "LGAV",
+            "icao": "MDF",
+            "name": "Mediterranean Air Freight",
+            "parent": "SWT"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1962,
             "hubs": "FMMI",
             "icao": "MDG",
@@ -4361,6 +4370,15 @@
             "parent": "XXX-Vanilla"
         },
         {
+            "ceased": 2012,
+            "comment": "",
+            "founded": 2008,
+            "hubs": "OBBI",
+            "icao": "SFL",
+            "name": "Swiftair Bahrain",
+            "parent": "SWT"
+        },
+        {
             "ceased": 2011,
             "comment": "",
             "founded": 2006,
@@ -4575,6 +4593,15 @@
             "icao": "SWR",
             "name": "Swiss International Air Lines",
             "parent": "DLH"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1986,
+            "hubs": "LEMD",
+            "icao": "SWT",
+            "name": "Swiftair",
+            "parent": "SWT"
         },
         {
             "ceased": 0,
