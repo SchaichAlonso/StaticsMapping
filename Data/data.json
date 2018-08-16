@@ -3301,6 +3301,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2007,
+            "hubs": "HECA",
+            "icao": "KHH",
+            "name": "Alexandria Airlines",
+            "parent": "KHH"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2009,
             "hubs": "VDPP",
             "icao": "KHV",
