@@ -1402,6 +1402,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2013,
+            "hubs": "DNMM",
+            "icao": "APK",
+            "name": "Air Peace",
+            "parent": "APK"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1981,
             "hubs": "SKBO",
             "icao": "ARE",
@@ -5513,6 +5522,12 @@
             "lat": 5.261386,
             "lon": -3.926296,
             "name": "Abidjan Felix Houphouet Boigny Intl"
+        },
+        {
+            "icao": "DNMM",
+            "lat": 6.57738,
+            "lon": 3.32135,
+            "name": "Murtala Muhammed Int'l"
         },
         {
             "icao": "DTTA",
