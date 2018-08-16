@@ -2005,6 +2005,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1970,
+            "hubs": "ELLX UNNT",
+            "icao": "CLX",
+            "name": "Cargolux",
+            "parent": "CLX"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1947,
             "hubs": "MPTO",
             "icao": "CMP",
@@ -2874,6 +2883,15 @@
             "icao": "ICE",
             "name": "Icelandair",
             "parent": "ICE"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2008,
+            "hubs": "LIMC",
+            "icao": "ICV",
+            "name": "Cargolix Italia",
+            "parent": "CLX"
         },
         {
             "ceased": 0,
@@ -5623,6 +5641,12 @@
             "name": "Kastrup"
         },
         {
+            "icao": "ELLX",
+            "lat": 49.6265,
+            "lon": 6.21155,
+            "name": "Luxembourg Airport"
+        },
+        {
             "icao": "ENGM",
             "lat": 60.1945072,
             "lon": 11.09899811,
@@ -6167,6 +6191,12 @@
             "lat": 47.43529233,
             "lon": 19.26579167,
             "name": "Ferihegy (Budapest)"
+        },
+        {
+            "icao": "LIMC",
+            "lat": 45.6306,
+            "lon": 8.72812,
+            "name": "Milan-Malpensa Airport"
         },
         {
             "icao": "LIML",
