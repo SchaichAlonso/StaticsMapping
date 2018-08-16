@@ -1113,6 +1113,15 @@
         },
         {
             "ceased": 0,
+            "comment": "",
+            "founded": 1983,
+            "hubs": "NWWW",
+            "icao": "ACI",
+            "name": "Aircalin",
+            "parent": "ACI"
+        },
+        {
+            "ceased": 0,
             "comment": "http://aercaribe.com/",
             "founded": 0,
             "hubs": "SKBO SKSJ SPJC",
@@ -6542,6 +6551,12 @@
             "lat": -17.6982,
             "lon": 168.318,
             "name": "Bauerfield Airport"
+        },
+        {
+            "icao": "NWWW",
+            "lat": -22.0145,
+            "lon": 166.213,
+            "name": "Noumea La Tontouta"
         },
         {
             "icao": "NZAA",
