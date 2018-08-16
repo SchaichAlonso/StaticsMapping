@@ -2743,6 +2743,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2014,
+            "hubs": "LEZG",
+            "icao": "HAT",
+            "name": "Air Horizont",
+            "parent": "HAT"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2010,
             "hubs": "ZBSJ",
             "icao": "HBH",
@@ -6137,6 +6146,12 @@
             "lat": 39.48823624,
             "lon": -0.48389158,
             "name": "Valencia"
+        },
+        {
+            "icao": "LEZG",
+            "lat": 41.667,
+            "lon": -1.04356,
+            "name": "Zaragoza AB"
         },
         {
             "icao": "LFKJ",
