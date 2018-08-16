@@ -1348,6 +1348,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1973,
+            "hubs": "AYPY",
+            "icao": "ANG",
+            "name": "Air Niugini",
+            "parent": "ANG"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 0,
             "hubs": "RJOO",
             "icao": "ANH",
@@ -5370,6 +5379,12 @@
         }
     ],
     "airports": [
+        {
+            "icao": "AYPY",
+            "lat": -9.44208,
+            "lon": 147.219,
+            "name": "Port Moresby Jacksons Intl"
+        },
         {
             "icao": "BGSF",
             "lat": 67.01160478,
