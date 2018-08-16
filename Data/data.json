@@ -1087,6 +1087,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2004,
+            "hubs": "UUEE",
+            "icao": "ABW",
+            "name": "AirBridgeCargo",
+            "parent": "VDA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2003,
             "hubs": "OMRK OMSJ",
             "icao": "ABY",
@@ -5141,7 +5150,7 @@
             "hubs": "UUDD",
             "icao": "VAS",
             "name": "ATRAN Cargo Airlines",
-            "parent": "VAS"
+            "parent": "VDA"
         },
         {
             "ceased": 0,
@@ -5151,6 +5160,15 @@
             "icao": "VBW",
             "name": "Air Burkina",
             "parent": "VBW"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1990,
+            "hubs": "UWLW",
+            "icao": "VDA",
+            "name": "Volga-Dnepr Airlines",
+            "parent": "VDA"
         },
         {
             "ceased": 0,
