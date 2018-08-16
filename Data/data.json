@@ -3724,6 +3724,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2005,
+            "hubs": "ORBI",
+            "icao": "MHK",
+            "name": "Al Naser Wing Airlines",
+            "parent": "MHK"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1993,
             "hubs": "LUKK",
             "icao": "MLD",
@@ -6662,6 +6671,12 @@
             "lat": 24.9066,
             "lon": 67.1608,
             "name": "Karachi Jinnah Intl"
+        },
+        {
+            "icao": "ORBI",
+            "lat": 33.262,
+            "lon": 44.2338,
+            "name": "Baghdad International Airport"
         },
         {
             "icao": "OTBD",
