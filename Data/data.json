@@ -4901,6 +4901,15 @@
             "parent": "KLM"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1986,
+            "hubs": "CYUL CYYZ",
+            "icao": "TSC",
+            "name": "Air Transat",
+            "parent": "TSC"
+        },
+        {
             "ceased": 2015,
             "comment": "",
             "founded": 1992,
