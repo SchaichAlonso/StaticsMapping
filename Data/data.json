@@ -1220,6 +1220,15 @@
             "parent": "AIE"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2012,
+            "hubs": "RKSI",
+            "icao": "AIH",
+            "name": "Air Incheon",
+            "parent": "AIH"
+        },
+        {
             "ceased": 2013,
             "comment": "",
             "founded": 1964,
