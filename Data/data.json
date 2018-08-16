@@ -3488,6 +3488,15 @@
             "parent": "LAN"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2011,
+            "hubs": "FOOL",
+            "icao": "LGE",
+            "name": "Allegiance Airways Gabon",
+            "parent": "LGE"
+        },
+        {
             "ceased": 2017,
             "comment": "",
             "founded": 1980,
@@ -5927,6 +5936,12 @@
             "lat": -8.85834103,
             "lon": 13.23106236,
             "name": "LUANDA 4 DE FEVEREIRO"
+        },
+        {
+            "icao": "FOOL",
+            "lat": 0.458442,
+            "lon": 9.41233,
+            "name": "Libreville Airport"
         },
         {
             "icao": "FQMA",
