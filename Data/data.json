@@ -1562,6 +1562,15 @@
             "parent": "AVJ"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1981,
+            "hubs": "NVVV",
+            "icao": "AVN",
+            "name": "Air Vanuatu",
+            "parent": "AVN"
+        },
+        {
             "ceased": 2015,
             "comment": "",
             "founded": 1939,
@@ -6464,6 +6473,12 @@
             "lat": 13.445666,
             "lon": -89.051739,
             "name": "El Salvador Intl"
+        },
+        {
+            "icao": "NVVV",
+            "lat": -17.6982,
+            "lon": 168.318,
+            "name": "Bauerfield Airport"
         },
         {
             "icao": "NZAA",
