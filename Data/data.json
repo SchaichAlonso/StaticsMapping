@@ -1375,6 +1375,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1977,
+            "hubs": "CYXY",
+            "icao": "ANT",
+            "name": "Air North",
+            "parent": "ANT"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1965,
             "hubs": "NZAA NZCH NZWN",
             "icao": "ANZ",
@@ -5456,6 +5465,12 @@
             "lat": 49.19233125,
             "lon": -123.187993,
             "name": "Vancouver Intl"
+        },
+        {
+            "icao": "CYXY",
+            "lat": 60.7115,
+            "lon": -135.067,
+            "name": "WHITEHORSE INTL"
         },
         {
             "icao": "CYYC",
