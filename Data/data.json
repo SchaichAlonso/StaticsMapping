@@ -5144,6 +5144,15 @@
             "parent": "HVN"
         },
         {
+            "ceased": 2016,
+            "comment": "",
+            "founded": 1990,
+            "hubs": "LBBG LBSF LBWN",
+            "icao": "VIM",
+            "name": "Air VIA",
+            "parent": "VIM"
+        },
+        {
             "ceased": 0,
             "comment": "",
             "founded": 1984,
@@ -6191,6 +6200,24 @@
             "lat": 38.74896438,
             "lon": -90.37040975,
             "name": "Lambert St Louis Intl"
+        },
+        {
+            "icao": "LBBG",
+            "lat": 42.5701,
+            "lon": 27.5153,
+            "name": "Burgas"
+        },
+        {
+            "icao": "LBSF",
+            "lat": 42.4142,
+            "lon": 23.243,
+            "name": "Sofia"
+        },
+        {
+            "icao": "LBWN",
+            "lat": 43.232,
+            "lon": 27.8253,
+            "name": "Varna Airport"
         },
         {
             "icao": "LCLK",
