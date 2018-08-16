@@ -3463,6 +3463,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2009,
+            "hubs": "LFBT LIMC",
+            "icao": "LAV",
+            "name": "AlbaStar",
+            "parent": "LAV"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1929,
             "hubs": "SCEL",
             "icao": "LCO",
@@ -6323,6 +6332,12 @@
             "lat": 41.667,
             "lon": -1.04356,
             "name": "Zaragoza AB"
+        },
+        {
+            "icao": "LFBT",
+            "lat": 43.1786,
+            "lon": -0.00634183,
+            "name": "Tarbes Ossun Lourdes"
         },
         {
             "icao": "LFKJ",
