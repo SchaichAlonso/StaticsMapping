@@ -1744,6 +1744,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2008,
+            "hubs": "LGAV",
+            "icao": "AZI",
+            "name": "Astra Airlines",
+            "parent": "AZI"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1967,
             "hubs": "FVRG",
             "icao": "AZW",
