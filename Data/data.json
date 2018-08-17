@@ -1780,6 +1780,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2010,
+            "hubs": "DNKN",
+            "icao": "AZM",
+            "name": "Azman Air",
+            "parent": "AZM"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1967,
             "hubs": "FVRG",
             "icao": "AZW",
@@ -5933,6 +5942,12 @@
             "lat": 9.00679,
             "lon": 7.26317,
             "name": "Abuja/Nnamdi Azikiwe"
+        },
+        {
+            "icao": "DNKN",
+            "lat": 12.0476,
+            "lon": 8.52461,
+            "name": "Mallam Aminu Kano Intl"
         },
         {
             "icao": "DNMM",
