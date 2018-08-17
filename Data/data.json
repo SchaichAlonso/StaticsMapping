@@ -1150,6 +1150,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2000,
+            "hubs": "HKJK",
+            "icao": "ACP",
+            "name": "Astral Aviation",
+            "parent": "ACP"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 0,
             "hubs": "UKKM",
             "icao": "ADB",
