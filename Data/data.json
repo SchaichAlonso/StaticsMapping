@@ -3560,6 +3560,15 @@
             "parent": "AIC"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2008,
+            "hubs": "HECA",
+            "icao": "LMU",
+            "name": "AlMasria Universal Airlines",
+            "parent": "LMU"
+        },
+        {
             "ceased": 2005,
             "comment": "Merged into LAN",
             "founded": 2003,
