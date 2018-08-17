@@ -4562,6 +4562,15 @@
             "ceased": 0,
             "comment": "",
             "founded": 2015,
+            "hubs": "TNCC",
+            "icao": "RGR",
+            "name": "Avior Regional",
+            "parent": "ROI"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2015,
             "hubs": "MROC",
             "icao": "RII",
             "name": "Air Costa Rica",
@@ -4593,6 +4602,15 @@
             "icao": "RLA",
             "name": "Airlinair",
             "parent": "HOP"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1994,
+            "hubs": "SVBC",
+            "icao": "ROI",
+            "name": "Avior Airlines",
+            "parent": "ROI"
         },
         {
             "ceased": 0,
@@ -7264,6 +7282,12 @@
             "name": "JORGE CHAVEZ INTL"
         },
         {
+            "icao": "SVBC",
+            "lat": 10.1098,
+            "lon": -64.6905,
+            "name": "GENERAL JOSE ANTONIO ANZOATEGUI INTL"
+        },
+        {
             "icao": "SVMI",
             "lat": 10.6032,
             "lon": -66.9903,
@@ -7280,6 +7304,12 @@
             "lat": 12.5015,
             "lon": -70.0156,
             "name": "Queen Beatrix Airport"
+        },
+        {
+            "icao": "TNCC",
+            "lat": 12.1888,
+            "lon": -68.9598,
+            "name": "Hato International Airport"
         },
         {
             "icao": "TNCM",
