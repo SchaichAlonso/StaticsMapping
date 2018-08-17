@@ -1385,6 +1385,15 @@
             "ceased": 0,
             "comment": "",
             "founded": 1988,
+            "hubs": "HECA",
+            "icao": "AMV",
+            "name": "AMC Airlines",
+            "parent": "AMV"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1988,
             "hubs": "MMMX",
             "icao": "AMX",
             "name": "Aeromexico",
