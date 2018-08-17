@@ -3634,6 +3634,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2015,
+            "hubs": "MHTG",
+            "icao": "LEM",
+            "name": "Aviatsa",
+            "parent": "LEM"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2011,
             "hubs": "FOOL",
             "icao": "LGE",
@@ -6803,6 +6812,12 @@
             "lat": 15.451957,
             "lon": -87.924153,
             "name": "La Mesa Intl"
+        },
+        {
+            "icao": "MHTG",
+            "lat": 14.0603,
+            "lon": -87.2174,
+            "name": "Toncontin International Airport"
         },
         {
             "icao": "MMMX",
