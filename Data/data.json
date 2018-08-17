@@ -2752,6 +2752,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1987,
+            "hubs": "EKVG",
+            "icao": "FLI",
+            "name": "Atlantic Airways",
+            "parent": "FLI"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2008,
             "hubs": "BIAR",
             "icao": "FNA",
@@ -5987,6 +5996,12 @@
             "lat": 55.61291491,
             "lon": 12.64096126,
             "name": "Kastrup"
+        },
+        {
+            "icao": "EKVG",
+            "lat": 62.0636,
+            "lon": -7.2746,
+            "name": "Vagar"
         },
         {
             "icao": "ELLX",
