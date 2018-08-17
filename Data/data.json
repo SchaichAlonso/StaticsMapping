@@ -1690,6 +1690,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2011,
+            "hubs": "VYYY",
+            "icao": "AWM",
+            "name": "Asian Wings Airways",
+            "parent": "ANA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2004,
             "hubs": "WARR WIII WIMM",
             "icao": "AWQ",
@@ -7511,6 +7520,12 @@
             "lat": 10.81874992,
             "lon": 106.65173476,
             "name": "TAN SON NHAT INTL"
+        },
+        {
+            "icao": "VYYY",
+            "lat": 16.9108,
+            "lon": 96.1357,
+            "name": "YANGON INTL"
         },
         {
             "icao": "WAAA",
