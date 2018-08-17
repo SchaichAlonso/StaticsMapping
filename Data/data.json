@@ -1600,6 +1600,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1993,
+            "hubs": "OIMN",
+            "icao": "ATR",
+            "name": "Atrak Air",
+            "parent": "ATR"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1957,
             "hubs": "LOWG LOWI LOWS",
             "icao": "AUA",
@@ -6902,6 +6911,12 @@
             "lat": 35.6926,
             "lon": 51.3174,
             "name": "Teheran Mehrabad Intl"
+        },
+        {
+            "icao": "OIMN",
+            "lat": 37.493,
+            "lon": 57.3082,
+            "name": "BOJNORD"
         },
         {
             "icao": "OITT",
