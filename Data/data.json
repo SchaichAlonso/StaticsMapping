@@ -3463,6 +3463,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2001,
+            "hubs": "LTBA",
+            "icao": "KKK",
+            "name": "AtlasGlobal",
+            "parent": "KKK"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1991,
             "hubs": "EHAM",
             "icao": "KLC",
@@ -5340,6 +5349,15 @@
             "icao": "UIA",
             "name": "UNI Air",
             "parent": "EVA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2013,
+            "hubs": "UKKK UKLL",
+            "icao": "UJX",
+            "name": "AtlasGlobal Ukraine",
+            "parent": "KKK"
         },
         {
             "ceased": 2002,
@@ -7310,6 +7328,12 @@
             "lat": 48.5425,
             "lon": 32.285833,
             "name": "Kropyvnytskyi"
+        },
+        {
+            "icao": "UKKK",
+            "lat": 50.4017,
+            "lon": 30.4497,
+            "name": "ZHULIANY INTL"
         },
         {
             "icao": "UKKM",
