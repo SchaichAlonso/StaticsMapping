@@ -1051,6 +1051,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1998,
+            "hubs": "KLAS",
+            "icao": "AAY",
+            "name": "Allegiant Air",
+            "parent": "AAY"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1986,
             "hubs": "BIKF",
             "icao": "ABD",
