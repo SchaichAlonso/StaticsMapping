@@ -1501,6 +1501,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2016,
+            "hubs": "EDDL",
+            "icao": "ARZ",
+            "name": "Azur Air Germany",
+            "parent": "KTK"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1932,
             "hubs": "KLAX KPDX KSEA KSFO PANC",
             "icao": "ASA",
@@ -3445,6 +3454,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1992,
+            "hubs": "UUDD",
+            "icao": "KTK",
+            "name": "Azur Air",
+            "parent": "KTK"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2001,
             "hubs": "UAAA UACC",
             "icao": "KZR",
@@ -5250,6 +5268,15 @@
             "icao": "UTA",
             "name": "UTAir Aviation",
             "parent": "UTA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2008,
+            "hubs": "UKBB",
+            "icao": "UTN",
+            "name": "Azur Air Ukraine",
+            "parent": "KTK"
         },
         {
             "ceased": 0,
