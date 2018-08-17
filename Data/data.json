@@ -1508,6 +1508,15 @@
             "parent": "XXX-SkyTeam"
         },
         {
+            "ceased": 2000,
+            "comment": "",
+            "founded": 1986,
+            "hubs": "TNCA",
+            "icao": "ARU",
+            "name": "Air Aruba",
+            "parent": "OCA"
+        },
+        {
             "ceased": 0,
             "comment": "",
             "founded": 2016,
@@ -4116,6 +4125,15 @@
             "icao": "OAL",
             "name": "Olympic Air",
             "parent": "AEE"
+        },
+        {
+            "ceased": 2018,
+            "comment": "",
+            "founded": 1968,
+            "hubs": "SVMI",
+            "icao": "OCA",
+            "name": "Aserca Airlines",
+            "parent": "OCA"
         },
         {
             "ceased": 0,
@@ -7069,10 +7087,22 @@
             "name": "JORGE CHAVEZ INTL"
         },
         {
+            "icao": "SVMI",
+            "lat": 10.6032,
+            "lon": -66.9903,
+            "name": "Simon Bolivar Intl"
+        },
+        {
             "icao": "TJSJ",
             "lat": 18.43877675,
             "lon": -66.00201825,
             "name": "San Juan - Luis Munoz Marin Intl"
+        },
+        {
+            "icao": "TNCA",
+            "lat": 12.5015,
+            "lon": -70.0156,
+            "name": "Queen Beatrix Airport"
         },
         {
             "icao": "TNCM",
