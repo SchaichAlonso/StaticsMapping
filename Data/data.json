@@ -3794,6 +3794,15 @@
             "parent": "MHK"
         },
         {
+            "ceased": 2017,
+            "comment": "",
+            "founded": 1980,
+            "hubs": "PHNL",
+            "icao": "MKU",
+            "name": "Island Air",
+            "parent": "MKU"
+        },
+        {
             "ceased": 0,
             "comment": "",
             "founded": 1993,
