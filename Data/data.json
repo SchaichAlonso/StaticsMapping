@@ -1024,6 +1024,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1946,
+            "hubs": "PHNL",
+            "icao": "AAH",
+            "name": "Aloha Air Cargo",
+            "parent": "AAH"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1926,
             "hubs": "KCLT KDCA KDFW KJFK KLAX KLGA KMIA KORD KPHL KPHX",
             "icao": "AAL",
