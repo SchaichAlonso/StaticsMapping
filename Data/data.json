@@ -5002,6 +5002,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2008,
+            "hubs": "OIII OITT",
+            "icao": "TBZ",
+            "name": "ATA Airlines",
+            "parent": "TBZ"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2002,
             "hubs": "EBBR",
             "icao": "TCW",
@@ -6812,6 +6821,18 @@
             "lat": 24.95744925,
             "lon": 46.69884175,
             "name": "Riyadh King Khaled Intl"
+        },
+        {
+            "icao": "OIII",
+            "lat": 35.6926,
+            "lon": 51.3174,
+            "name": "Teheran Mehrabad Intl"
+        },
+        {
+            "icao": "OITT",
+            "lat": 38.133,
+            "lon": 46.2349,
+            "name": "TABRIZ INTL"
         },
         {
             "icao": "OJAI",
