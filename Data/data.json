@@ -1483,6 +1483,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2002,
+            "hubs": "DGAA DNAA DNMM",
+            "icao": "ARA",
+            "name": "Arik Air",
+            "parent": "ARA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1981,
             "hubs": "SKBO",
             "icao": "ARE",
