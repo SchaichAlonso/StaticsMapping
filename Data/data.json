@@ -1294,6 +1294,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1998,
+            "hubs": "DNMM",
+            "icao": "AJK",
+            "name": "Allied Air",
+            "parent": "AJK"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1984,
             "hubs": "SABE",
             "icao": "AJT",
