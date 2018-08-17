@@ -1267,6 +1267,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1992,
+            "hubs": "UBBB",
+            "icao": "AHY",
+            "name": "Azerbaijan Airlines",
+            "parent": "AHY"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1946,
             "hubs": "VABB VIDP VOMM",
             "icao": "AIC",
@@ -7334,6 +7343,12 @@
             "lat": 47.121939,
             "lon": 51.821307,
             "name": "ATYRAU"
+        },
+        {
+            "icao": "UBBB",
+            "lat": 40.4721,
+            "lon": 50.0494,
+            "name": "Baki Heydar Aliyev Intl"
         },
         {
             "icao": "UCFM",
