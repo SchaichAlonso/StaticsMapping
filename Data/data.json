@@ -2795,6 +2795,15 @@
             "parent": "FSK"
         },
         {
+            "ceased": 2017,
+            "comment": "",
+            "founded": 1981,
+            "hubs": "KMIA",
+            "icao": "FWL",
+            "name": "Florida West International Airways",
+            "parent": "FWL"
+        },
+        {
             "ceased": 0,
             "comment": "",
             "founded": 1997,
@@ -2892,6 +2901,15 @@
             "icao": "GRL",
             "name": "Air Greenland",
             "parent": "SAS"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1992,
+            "hubs": "KCVG KHSV KIAH KJFK KLAX KMIA",
+            "icao": "GTI",
+            "name": "Atlas Air",
+            "parent": "GTI"
         },
         {
             "ceased": 0,
@@ -4228,6 +4246,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1993,
+            "hubs": "KCVG",
+            "icao": "PAC",
+            "name": "Polar Air Cargo",
+            "parent": "GTI"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2014,
             "hubs": "UUWW",
             "icao": "PBD",
@@ -4782,6 +4809,15 @@
             "icao": "SNJ",
             "name": "Solaseed",
             "parent": "ANA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1947,
+            "hubs": "KCVG",
+            "icao": "SOO",
+            "name": "Southern Air",
+            "parent": "GTI"
         },
         {
             "ceased": 0,
@@ -6314,6 +6350,12 @@
             "lat": 29.64553219,
             "lon": -95.279111,
             "name": "William P Hobby"
+        },
+        {
+            "icao": "KHSV",
+            "lat": 34.6374,
+            "lon": -86.7741,
+            "name": "Huntsville Intl Carl T Jones Fld"
         },
         {
             "icao": "KHYA",
