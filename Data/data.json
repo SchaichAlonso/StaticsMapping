@@ -2516,6 +2516,15 @@
             "parent": "DTA"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2014,
+            "hubs": "MDSD",
+            "icao": "DWI",
+            "name": "Flycana",
+            "parent": "NVD"
+        },
+        {
             "ceased": 2016,
             "comment": "",
             "founded": 1969,
@@ -4170,6 +4179,15 @@
             "icao": "NTH",
             "name": "Hokkaidou Air Systems",
             "parent": "JAL"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2005,
+            "hubs": "EYVI",
+            "icao": "NVD",
+            "name": "Avion Express",
+            "parent": "NVD"
         },
         {
             "ceased": 2011,
@@ -6104,6 +6122,12 @@
             "lat": 56.9236625,
             "lon": 23.971193,
             "name": "Riga Intl"
+        },
+        {
+            "icao": "EYVI",
+            "lat": 54.6342,
+            "lon": 25.2858,
+            "name": "Vilnius International Airport"
         },
         {
             "icao": "FAGG",
