@@ -1996,6 +1996,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1998,
+            "hubs": "LIMC LIRF",
+            "icao": "BPA",
+            "name": "Blue Panorama Airlines",
+            "parent": "BPA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1974,
             "hubs": "WBSB",
             "icao": "BRA",
