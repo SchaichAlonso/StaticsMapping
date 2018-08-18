@@ -1816,6 +1816,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1972,
+            "hubs": "VGHS",
+            "icao": "BBC",
+            "name": "Biman Bangladesh Airlines",
+            "parent": "BBC"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2010,
             "hubs": "EDDP",
             "icao": "BCS",
