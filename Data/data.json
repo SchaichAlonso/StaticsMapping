@@ -1825,6 +1825,24 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2000,
+            "hubs": "BIKF",
+            "icao": "BBD",
+            "name": "Bluebird Cargo",
+            "parent": "ICE"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2008,
+            "hubs": "LGIR",
+            "icao": "BBG",
+            "name": "Bluebird Airways",
+            "parent": "BBG"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2010,
             "hubs": "EDDP",
             "icao": "BCS",
@@ -6821,6 +6839,12 @@
             "lat": 37.9363575,
             "lon": 23.94447,
             "name": "Athens Intl Airport Elefterios Venizel"
+        },
+        {
+            "icao": "LGIR",
+            "lat": 35.3399,
+            "lon": 25.1782,
+            "name": "Iraklion - Nikos Kazantzakis"
         },
         {
             "icao": "LGTS",
