@@ -2006,6 +2006,15 @@
             "ceased": 0,
             "comment": "",
             "founded": 2007,
+            "hubs": "SLVR",
+            "icao": "BOV",
+            "name": "Boliviana de Aviacion",
+            "parent": "BOV"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2007,
             "hubs": "EDDF EDDP",
             "icao": "BOX",
             "name": "AeroLogic",
@@ -7439,6 +7448,12 @@
             "lat": 2.579693,
             "lon": -72.639358,
             "name": "JORGE E GONZALEZ TORRES"
+        },
+        {
+            "icao": "SLVR",
+            "lat": -17.6448,
+            "lon": -63.1354,
+            "name": "Viru Viru Int'l"
         },
         {
             "icao": "SPJC",
