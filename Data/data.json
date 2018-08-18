@@ -1868,6 +1868,15 @@
             "parent": "XXX-OneWorld"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2001,
+            "hubs": "LBSF",
+            "icao": "BGH",
+            "name": "BH Air",
+            "parent": "BGH"
+        },
+        {
             "ceased": 2015,
             "comment": "",
             "founded": 1953,
