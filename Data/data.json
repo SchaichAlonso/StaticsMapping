@@ -5443,6 +5443,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2010,
+            "hubs": "VGHS",
+            "icao": "UBG",
+            "name": "US-Bangla Airlines",
+            "parent": "UBG"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1989,
             "hubs": "KEWR KIAD",
             "icao": "UCA",
@@ -7763,6 +7772,12 @@
             "lat": 22.65561778,
             "lon": 88.44685614,
             "name": "NETAJI SUBHASH CHANDRA BOSE INTL"
+        },
+        {
+            "icao": "VGHS",
+            "lat": 23.8434,
+            "lon": 90.3978,
+            "name": "Dhaka / Hazrat Shahjalal International Airport"
         },
         {
             "icao": "VHHH",
