@@ -1933,6 +1933,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1968,
+            "hubs": "VTBS",
+            "icao": "BKP",
+            "name": "Bangkok Airways",
+            "parent": "BKP"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1985,
             "hubs": "EKCH ESSA",
             "icao": "BLX",
