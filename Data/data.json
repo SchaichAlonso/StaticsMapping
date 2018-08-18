@@ -4723,6 +4723,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1990,
+            "hubs": "LPPD",
+            "icao": "RZO",
+            "name": "Azores Airlines",
+            "parent": "SAT"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1934,
             "hubs": "FAOR",
             "icao": "SAA",
@@ -4737,6 +4746,15 @@
             "icao": "SAS",
             "name": "Scandinavian Airlines",
             "parent": "XXX-OneWorld"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1941,
+            "hubs": "LPPD",
+            "icao": "SAT",
+            "name": "SATA Air Azores",
+            "parent": "SAT"
         },
         {
             "ceased": 0,
@@ -6794,6 +6812,12 @@
             "lat": 48.1100685,
             "lon": 16.56963724,
             "name": "Wien Schwechat"
+        },
+        {
+            "icao": "LPPD",
+            "lat": 37.742,
+            "lon": -25.6975,
+            "name": "PONTA DELGADA"
         },
         {
             "icao": "LPPT",
