@@ -1789,6 +1789,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2008,
+            "hubs": "SBCF SBKP SBRF",
+            "icao": "AZU",
+            "name": "Azul Brazilian Airlines",
+            "parent": "AZU"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1967,
             "hubs": "FVRG",
             "icao": "AZW",
@@ -7274,6 +7283,12 @@
             "lat": -23.0073835,
             "lon": -47.134522,
             "name": "Sao Paulo Viracopos"
+        },
+        {
+            "icao": "SBRF",
+            "lat": -8.12679,
+            "lon": -34.923,
+            "name": "Guararapes-Gilberto Freyre"
         },
         {
             "icao": "SBSP",
