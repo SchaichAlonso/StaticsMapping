@@ -1886,6 +1886,15 @@
             "parent": "BER"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1973,
+            "hubs": "MYNN",
+            "icao": "BHS",
+            "name": "Bahamasair",
+            "parent": "BHS"
+        },
+        {
             "ceased": 2016,
             "comment": "",
             "founded": 1997,
@@ -6968,6 +6977,12 @@
             "lat": 13.445666,
             "lon": -89.051739,
             "name": "El Salvador Intl"
+        },
+        {
+            "icao": "MYNN",
+            "lat": 25.0387,
+            "lon": -77.4668,
+            "name": "Lynden Pindling Airport"
         },
         {
             "icao": "NVVV",
