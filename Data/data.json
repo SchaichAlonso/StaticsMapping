@@ -1843,6 +1843,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2004,
+            "hubs": "HSSS OMSJ",
+            "icao": "BDR",
+            "name": "Badr Airlines",
+            "parent": "BDR"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2007,
             "hubs": "EBBR",
             "icao": "BEL",
