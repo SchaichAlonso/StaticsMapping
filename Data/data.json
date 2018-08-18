@@ -1960,6 +1960,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2004,
+            "hubs": "LROP",
+            "icao": "BMS",
+            "name": "Blue Air",
+            "parent": "BMS"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2008,
             "hubs": "LFPO",
             "icao": "BOS",
