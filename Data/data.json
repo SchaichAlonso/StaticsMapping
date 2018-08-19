@@ -3265,6 +3265,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1976,
+            "hubs": "LLBG",
+            "icao": "ICL",
+            "name": "CAL Cargo Airlines",
+            "parent": "ICL"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2008,
             "hubs": "LIMC",
             "icao": "ICV",
@@ -6923,6 +6932,12 @@
             "lat": 50.10114401,
             "lon": 14.26296344,
             "name": "Praha - Ruzyne"
+        },
+        {
+            "icao": "LLBG",
+            "lat": 32.0098,
+            "lon": 34.8839,
+            "name": "Tel Aviv Ben Gurion"
         },
         {
             "icao": "LMML",
