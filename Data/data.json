@@ -3076,6 +3076,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1991,
+            "hubs": "FZAA",
+            "icao": "FPY",
+            "name": "Compagnie Africaine d'Aviation",
+            "parent": "FPY"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2011,
             "hubs": "FAGG",
             "icao": "FSK",
@@ -6668,6 +6677,12 @@
             "lat": -22.48181298,
             "lon": 17.4715607,
             "name": "Windhoek Hosea Kutako Intl"
+        },
+        {
+            "icao": "FZAA",
+            "lat": -4.38717,
+            "lon": 15.4422,
+            "name": "Ndjili Intl"
         },
         {
             "icao": "GMMN",
