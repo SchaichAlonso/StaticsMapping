@@ -1330,6 +1330,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1968,
+            "hubs": "MKJP MKJS",
+            "icao": "AJM",
+            "name": "Air Jamaica",
+            "parent": "BWA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1984,
             "hubs": "SABE",
             "icao": "AJT",
@@ -2109,6 +2118,15 @@
             "icao": "BUR",
             "name": "Air Bucharest",
             "parent": "BUR"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2006,
+            "hubs": "TTPP MKJP",
+            "icao": "BWA",
+            "name": "Caribbean Airlines",
+            "parent": "BWA"
         },
         {
             "ceased": 0,
@@ -7123,6 +7141,18 @@
             "name": "Toncontin International Airport"
         },
         {
+            "icao": "MKJP",
+            "lat": 17.9357,
+            "lon": -76.7876,
+            "name": "Norman Manley Int'l"
+        },
+        {
+            "icao": "MKJS",
+            "lat": 18.5037,
+            "lon": -77.9133,
+            "name": "Sangster Intl"
+        },
+        {
             "icao": "MMMX",
             "lat": 19.43630772,
             "lon": -99.0721042,
@@ -7595,6 +7625,12 @@
             "lat": 18.040889,
             "lon": -63.108974,
             "name": "St Maarten - Princess Juliana Intl"
+        },
+        {
+            "icao": "TTPP",
+            "lat": 10.5953,
+            "lon": -61.3372,
+            "name": "Piarco Intl"
         },
         {
             "icao": "UAAA",
