@@ -2464,6 +2464,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1986,
+            "hubs": "ZUUU ZUCK",
+            "icao": "CSC",
+            "name": "Sichuan Airlines",
+            "parent": "CSC"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1985,
             "hubs": "ZSPD ZSSS",
             "icao": "CSH",
@@ -5664,6 +5673,15 @@
             "icao": "UDN",
             "name": "Dniproavia",
             "parent": "XXX-Ukrainian"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2004,
+            "hubs": "ZUUU",
+            "icao": "UEA",
+            "name": "Chengdu Airlines",
+            "parent": "CSC"
         },
         {
             "ceased": 0,
