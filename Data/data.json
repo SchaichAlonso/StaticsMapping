@@ -2122,6 +2122,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2004,
+            "hubs": "WIII",
+            "icao": "CAD",
+            "name": "Cardig Air",
+            "parent": "CAD"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1959,
             "hubs": "RCKH RCTP",
             "icao": "CAL",
