@@ -2410,6 +2410,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1993,
+            "hubs": "OIII",
+            "icao": "CPN",
+            "name": "Caspian Airlines",
+            "parent": "CPN"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2006,
             "hubs": "KLAX",
             "icao": "CPZ",
