@@ -2174,6 +2174,15 @@
             "parent": "BAW"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1968,
+            "hubs": "MWCR",
+            "icao": "CAY",
+            "name": "Cayman Airways",
+            "parent": "CAY"
+        },
+        {
             "ceased": 2009,
             "comment": "Renamed from CBK in 2003",
             "founded": 2003,
@@ -7202,6 +7211,12 @@
             "lat": 13.445666,
             "lon": -89.051739,
             "name": "El Salvador Intl"
+        },
+        {
+            "icao": "MWCR",
+            "lat": 19.2928,
+            "lon": -81.3578,
+            "name": "Owen Roberts Intl"
         },
         {
             "icao": "MYNN",
