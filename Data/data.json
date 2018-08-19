@@ -3967,6 +3967,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2002,
+            "hubs": "LBSF",
+            "icao": "LZB",
+            "name": "Bulgaria Air",
+            "parent": "LZB"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1992,
             "hubs": "MMMX",
             "icao": "MAA",
