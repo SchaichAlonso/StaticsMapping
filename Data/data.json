@@ -2536,6 +2536,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1985,
+            "hubs": "KMIA",
+            "icao": "CWC",
+            "name": "Centurion Air Cargo",
+            "parent": "CWC"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1984,
             "hubs": "ZSAM ZSFZ ZSHC",
             "icao": "CXA",
