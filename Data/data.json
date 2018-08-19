@@ -2600,6 +2600,15 @@
             "ceased": 0,
             "comment": "",
             "founded": 1996,
+            "hubs": "ZSNJ",
+            "icao": "CYZ",
+            "name": "China Postal Airlines",
+            "parent": "CYZ"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1996,
             "hubs": "MPTO",
             "icao": "DAE",
             "name": "DHL Aero Expreso",
@@ -8339,6 +8348,12 @@
             "lat": 30.229504,
             "lon": 120.434453,
             "name": "XIAOSHAN"
+        },
+        {
+            "icao": "ZSNJ",
+            "lat": 31.742,
+            "lon": 118.862,
+            "name": "LUKOU"
         },
         {
             "icao": "ZSPD",
