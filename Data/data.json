@@ -2059,6 +2059,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2001,
+            "hubs": "HLLT",
+            "icao": "BRQ",
+            "name": "Buraq Air",
+            "parent": "BRQ"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1996,
             "hubs": "UMMS",
             "icao": "BRU",
