@@ -2437,6 +2437,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2007,
+            "hubs": "ZUCK",
+            "icao": "CQN",
+            "name": "Chongqing Airlines",
+            "parent": "CSN"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2006,
             "hubs": "FKKD",
             "icao": "CRC",
