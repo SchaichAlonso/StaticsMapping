@@ -4120,6 +4120,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1998,
+            "hubs": "CYEG",
+            "icao": "MPE",
+            "name": "Canadian North",
+            "parent": "MPE"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1958,
             "hubs": "EHAM",
             "icao": "MPH",
@@ -6002,6 +6011,12 @@
             "lat": 64.12964356,
             "lon": -21.94060887,
             "name": "Reykjavik"
+        },
+        {
+            "icao": "CYEG",
+            "lat": 53.3087,
+            "lon": -113.581,
+            "name": "Edmonton Intl"
         },
         {
             "icao": "CYGL",
