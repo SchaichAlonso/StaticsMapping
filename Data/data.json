@@ -2374,6 +2374,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2003,
+            "hubs": "LSZH",
+            "icao": "CLA",
+            "name": "Comlux",
+            "parent": "CLA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1958,
             "hubs": "EDDF EDDM",
             "icao": "CLH",
@@ -2568,6 +2577,15 @@
             "icao": "CXA",
             "name": "XiamenAir",
             "parent": "CSN"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2003,
+            "hubs": "TNCA",
+            "icao": "CXB",
+            "name": "Comlux Aruba",
+            "parent": "CLA"
         },
         {
             "ceased": 0,
@@ -3686,6 +3704,15 @@
             "parent": "KAW"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2008,
+            "hubs": "UAAA",
+            "icao": "KAZ",
+            "name": "Comlux Kazakhstan",
+            "parent": "CLA"
+        },
+        {
             "ceased": 2005,
             "comment": "Merged into LYN",
             "founded": 1992,
@@ -4224,6 +4251,15 @@
             "icao": "MLD",
             "name": "Air Moldova",
             "parent": "MLD"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2003,
+            "hubs": "LMML",
+            "icao": "MLM",
+            "name": "Comlux Malta",
+            "parent": "CLA"
         },
         {
             "ceased": 0,
