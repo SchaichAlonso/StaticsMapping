@@ -3164,6 +3164,15 @@
             "parent": "SAS"
         },
         {
+            "ceased": 2016,
+            "comment": "",
+            "founded": 2011,
+            "hubs": "VTBD",
+            "icao": "GTA",
+            "name": "City Airways",
+            "parent": "GTA"
+        },
+        {
             "ceased": 0,
             "comment": "",
             "founded": 1992,
