@@ -2320,6 +2320,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2002,
+            "hubs": "CYHM",
+            "icao": "CJT",
+            "name": "Cargojet",
+            "parent": "CJT"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2016,
             "hubs": "ZSCN",
             "icao": "CJX",
@@ -6050,6 +6059,12 @@
             "lat": 53.62537029,
             "lon": -77.70411387,
             "name": "LA GRANDE RIVIERE"
+        },
+        {
+            "icao": "CYHM",
+            "lat": 43.1743,
+            "lon": -79.9306,
+            "name": "John C. Munro Hamilton Int'l"
         },
         {
             "icao": "CYHZ",
