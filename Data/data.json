@@ -2968,6 +2968,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2015,
+            "hubs": "LCLK",
+            "icao": "FCB",
+            "name": "Cobalt Air",
+            "parent": "FCB"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2008,
             "hubs": "OMDB OMDW",
             "icao": "FDB",
