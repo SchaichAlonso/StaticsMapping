@@ -6008,6 +6008,15 @@
             "parent": "AXM"
         },
         {
+            "ceased": 2017,
+            "comment": "",
+            "founded": 2013,
+            "hubs": "SBGR",
+            "icao": "XCA",
+            "name": "COLT Cargo",
+            "parent": "XCA"
+        },
+        {
             "ceased": 0,
             "comment": "",
             "founded": 1992,
