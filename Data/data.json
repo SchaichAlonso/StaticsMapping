@@ -2833,6 +2833,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1946,
+            "hubs": "CYOW",
+            "icao": "FAB",
+            "name": "First Air",
+            "parent": "FAB"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2016,
             "hubs": "OEJN",
             "icao": "FAD",
