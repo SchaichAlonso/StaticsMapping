@@ -5866,6 +5866,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2004,
+            "hubs": "SVMI",
+            "icao": "VCV",
+            "name": "Conviasa",
+            "parent": "VCV"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1990,
             "hubs": "UWLW",
             "icao": "VDA",
