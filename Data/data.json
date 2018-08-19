@@ -2275,6 +2275,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2007,
+            "hubs": "LBSF",
+            "icao": "CGF",
+            "name": "Cargoair",
+            "parent": "CGF"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1992,
             "hubs": "ZLXY",
             "icao": "CGN",
