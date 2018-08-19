@@ -1816,6 +1816,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2012,
+            "hubs": "UKKK",
+            "icao": "BAY",
+            "name": "Bravo Airways",
+            "parent": "BAY"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1972,
             "hubs": "VGHS",
             "icao": "BBC",
