@@ -2975,6 +2975,15 @@
             "parent": "ERT"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2000,
+            "hubs": "MMSP",
+            "icao": "ESF",
+            "name": "Estafeta",
+            "parent": "ESF"
+        },
+        {
             "ceased": 2014,
             "comment": "",
             "founded": 1995,
@@ -7472,6 +7481,12 @@
             "lat": 25.77865225,
             "lon": -100.105852,
             "name": "General Mariano Escobedo Intl"
+        },
+        {
+            "icao": "MMSP",
+            "lat": 22.2586,
+            "lon": -100.933,
+            "name": "Ponciano Arriaga Intl"
         },
         {
             "icao": "MNMG",
