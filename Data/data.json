@@ -2741,6 +2741,15 @@
             "parent": "XXX-AiRUnion"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2003,
+            "hubs": "ENGM",
+            "icao": "DNU",
+            "name": "Danu Oro Transportas",
+            "parent": "DTR"
+        },
+        {
             "ceased": 2016,
             "comment": "Merged into SDM in 2016",
             "founded": 2000,
@@ -2793,6 +2802,15 @@
             "icao": "DTA",
             "name": "TAAG Angola Airlines",
             "parent": "DTA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1989,
+            "hubs": "EKCH",
+            "icao": "DTR",
+            "name": "Danish Air Transport",
+            "parent": "DTR"
         },
         {
             "ceased": 0,
