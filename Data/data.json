@@ -2869,6 +2869,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1995,
+            "hubs": "LSZH",
+            "icao": "EDW",
+            "name": "Edelweiss Air",
+            "parent": "SWR"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2006,
             "hubs": "",
             "icao": "EFA",
