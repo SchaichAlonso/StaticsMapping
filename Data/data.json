@@ -2849,6 +2849,15 @@
             "parent": "ANZ"
         },
         {
+            "ceased": 1991,
+            "comment": "",
+            "founded": 1926,
+            "hubs": "KMIA",
+            "icao": "EAL",
+            "name": "Eastern Air Lines",
+            "parent": "EAL"
+        },
+        {
             "ceased": 0,
             "comment": "",
             "founded": 1944,
