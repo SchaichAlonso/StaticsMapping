@@ -2878,6 +2878,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2002,
+            "hubs": "ZGSZ",
+            "icao": "EPA",
+            "name": "Donghai Airlines",
+            "parent": "CSC"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1991,
             "hubs": "HHAS",
             "icao": "ERT",
@@ -8468,6 +8477,12 @@
             "lat": 28.1891585,
             "lon": 113.219632,
             "name": "HUANGHUA"
+        },
+        {
+            "icao": "ZGSZ",
+            "lat": 22.6392,
+            "lon": 113.802,
+            "name": "BAOAN INTL"
         },
         {
             "icao": "ZJHK",
