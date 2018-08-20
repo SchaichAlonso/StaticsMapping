@@ -2932,6 +2932,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2009,
+            "hubs": "EPWA",
+            "icao": "ENT",
+            "name": "Enter Air",
+            "parent": "ENT"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1984,
             "hubs": "KDFW KLGA KORD",
             "icao": "ENY",
