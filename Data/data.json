@@ -2887,6 +2887,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2011,
+            "hubs": "MHTG",
+            "icao": "EKY",
+            "name": "EasySky",
+            "parent": "EKY"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1984,
             "hubs": "KDFW KLGA KORD",
             "icao": "ENY",
