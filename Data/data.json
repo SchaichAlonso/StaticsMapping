@@ -2788,6 +2788,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1981,
+            "hubs": "VQPR",
+            "icao": "DRK",
+            "name": "Drukair - Royal Bhutan Airlines",
+            "parent": "DRK"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2000,
             "hubs": "UERP UERR",
             "icao": "DRU",
@@ -8273,6 +8282,12 @@
             "lat": 8.4821205,
             "lon": 76.9201155,
             "name": "THIRUVANANTHAPURAM INTL"
+        },
+        {
+            "icao": "VQPR",
+            "lat": 27.4033,
+            "lon": 89.4247,
+            "name": "Paro Intl."
         },
         {
             "icao": "VTBD",
