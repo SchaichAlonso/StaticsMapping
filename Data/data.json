@@ -2572,6 +2572,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1929,
+            "hubs": "MUHA",
+            "icao": "CUB",
+            "name": "Cubana de Aviacion",
+            "parent": "CUB"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2014,
             "hubs": "ZWWW",
             "icao": "CUH",
@@ -7376,6 +7385,12 @@
             "lat": 13.445666,
             "lon": -89.051739,
             "name": "El Salvador Intl"
+        },
+        {
+            "icao": "MUHA",
+            "lat": 22.9892,
+            "lon": -82.4091,
+            "name": "La Havana / Jose Marti Intl"
         },
         {
             "icao": "MWCR",
