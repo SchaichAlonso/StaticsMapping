@@ -2923,6 +2923,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2005,
+            "hubs": "CYYC",
+            "icao": "ENJ",
+            "name": "Enerjet",
+            "parent": "ENJ"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1984,
             "hubs": "KDFW KLGA KORD",
             "icao": "ENY",
