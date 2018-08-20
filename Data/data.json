@@ -3040,6 +3040,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2013,
+            "hubs": "LEMD LPPT",
+            "icao": "EVE",
+            "name": "Evelop Airlines",
+            "parent": "EVE"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 0,
             "hubs": "CYQM CYQX",
             "icao": "EVS",
