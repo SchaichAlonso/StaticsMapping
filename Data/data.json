@@ -2959,6 +2959,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2015,
+            "hubs": "LIMC",
+            "icao": "ERN",
+            "name": "Ernest Airlines",
+            "parent": "ERN"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1991,
             "hubs": "HHAS",
             "icao": "ERT",
