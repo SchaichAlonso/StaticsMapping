@@ -2687,6 +2687,15 @@
             "parent": "XXX-SkyTeam"
         },
         {
+            "ceased": 2018,
+            "comment": "",
+            "founded": 1997,
+            "hubs": "UKKK",
+            "icao": "DAT",
+            "name": "DART Ukrainian Airlines",
+            "parent": "DAT"
+        },
+        {
             "ceased": 0,
             "comment": "",
             "founded": 1982,
