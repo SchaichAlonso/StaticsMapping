@@ -2149,6 +2149,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2004,
+            "hubs": "LTAI",
+            "icao": "CAI",
+            "name": "Corendon Airlines",
+            "parent": "CAI"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1959,
             "hubs": "RCKH RCTP",
             "icao": "CAL",
@@ -2415,6 +2424,15 @@
             "icao": "CMP",
             "name": "Copa Airlines",
             "parent": "XXX-StarAlliance"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2010,
+            "hubs": "EHAM EHBK",
+            "icao": "CND",
+            "name": "Corendon Dutch Airlines",
+            "parent": "CAI"
         },
         {
             "ceased": 0,
@@ -6488,6 +6506,12 @@
             "lat": 52.31484987,
             "lon": 4.75812143,
             "name": "Schiphol"
+        },
+        {
+            "icao": "EHBK",
+            "lat": 50.9158,
+            "lon": 5.77694,
+            "name": "Maastricht"
         },
         {
             "icao": "EHEH",
