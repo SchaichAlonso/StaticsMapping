@@ -3022,6 +3022,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2009,
+            "hubs": "SVMI",
+            "icao": "ETR",
+            "name": "Estelar Latinoamerica",
+            "parent": "ETR"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1991,
             "hubs": "RCTP",
             "icao": "EVA",
