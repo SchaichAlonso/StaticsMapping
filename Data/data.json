@@ -3302,6 +3302,15 @@
             "ceased": 0,
             "comment": "",
             "founded": 2011,
+            "hubs": "DNMM",
+            "icao": "FRN",
+            "name": "FirstNation Airways",
+            "parent": "FRN"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2011,
             "hubs": "FAGG",
             "icao": "FSK",
             "name": "Africa Charter Airlines",
