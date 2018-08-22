@@ -3211,6 +3211,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2014,
+            "hubs": "HEGN HESH",
+            "icao": "FEG",
+            "name": "FlyEgypt",
+            "parent": "FEG"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2007,
             "hubs": "WMKP WMSA",
             "icao": "FFM",
@@ -6983,6 +6992,18 @@
             "lat": 30.121808,
             "lon": 31.40609517,
             "name": "Cairo Intl"
+        },
+        {
+            "icao": "HEGN",
+            "lat": 27.1775,
+            "lon": 33.7963,
+            "name": "HURGHADA INTL"
+        },
+        {
+            "icao": "HESH",
+            "lat": 27.9773,
+            "lon": 34.3949,
+            "name": "Sharm El-Sheikh Intl"
         },
         {
             "icao": "HHAS",
