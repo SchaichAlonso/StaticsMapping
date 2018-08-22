@@ -3256,6 +3256,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2005,
+            "hubs": "CYEG",
+            "icao": "FLE",
+            "name": "Flair Airlines",
+            "parent": "FLE"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1987,
             "hubs": "EKVG",
             "icao": "FLI",
