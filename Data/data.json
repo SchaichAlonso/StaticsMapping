@@ -3166,6 +3166,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2014,
+            "hubs": "ORBI",
+            "icao": "FBA",
+            "name": "Fly Baghdad",
+            "parent": "FBA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2015,
             "hubs": "LCLK",
             "icao": "FCB",
