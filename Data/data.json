@@ -3229,6 +3229,24 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2006,
+            "hubs": "NFFN",
+            "icao": "FJA",
+            "name": "Fiji Link",
+            "parent": "FJI"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1947,
+            "hubs": "NFFN",
+            "icao": "FJI",
+            "name": "Fiji Airways",
+            "parent": "XXX-OneWorld"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2015,
             "hubs": "FVRG",
             "icao": "FJW",
@@ -7595,6 +7613,12 @@
             "lat": 25.0387,
             "lon": -77.4668,
             "name": "Lynden Pindling Airport"
+        },
+        {
+            "icao": "NFFN",
+            "lat": -17.7584,
+            "lon": 177.442,
+            "name": "Nadi Int'l"
         },
         {
             "icao": "NVVV",
