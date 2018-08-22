@@ -3175,6 +3175,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2016,
+            "hubs": "SACO SADP",
+            "icao": "FBZ",
+            "name": "Flybondi",
+            "parent": "FBZ"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2015,
             "hubs": "LCLK",
             "icao": "FCB",
@@ -7940,6 +7949,18 @@
             "lat": -34.55941433,
             "lon": -58.41574935,
             "name": "Aeroparque Jorge Newbery"
+        },
+        {
+            "icao": "SACO",
+            "lat": -31.3131,
+            "lon": -64.2039,
+            "name": "Ambrosio L. V. Taravella Int'l"
+        },
+        {
+            "icao": "SADP",
+            "lat": -34.6099,
+            "lon": -58.6126,
+            "name": "El Palomar"
         },
         {
             "icao": "SASA",
