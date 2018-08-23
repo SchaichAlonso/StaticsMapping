@@ -4102,6 +4102,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2007,
+            "hubs": "OERK OEJN OEDF",
+            "icao": "KNE",
+            "name": "flynas",
+            "parent": "KNE"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1977,
             "hubs": "HKJK",
             "icao": "KQA",
