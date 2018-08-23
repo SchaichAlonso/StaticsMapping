@@ -1897,6 +1897,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2017,
+            "hubs": "LBSF",
+            "icao": "BEG",
+            "name": "Bulgarian Eagle",
+            "parent": "GMI"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2007,
             "hubs": "EBBR",
             "icao": "BEL",
@@ -3499,11 +3508,29 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1978,
+            "hubs": "EDDT EDDB EDDW EDDC EDDL EDDE EDNY EDDH EDDM EDDG EDDN ETNL",
+            "icao": "GMI",
+            "name": "Germania",
+            "parent": "GMI"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2002,
             "hubs": "BGSF",
             "icao": "GRL",
             "name": "Air Greenland",
             "parent": "SAS"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2014,
+            "hubs": "LSZH",
+            "icao": "GSW",
+            "name": "Germania Flug",
+            "parent": "GMI"
         },
         {
             "ceased": 2016,
@@ -6721,10 +6748,34 @@
             "name": "Liege"
         },
         {
+            "icao": "EDDB",
+            "lat": 52.3622,
+            "lon": 13.5007,
+            "name": "Berlin Schoenefeld"
+        },
+        {
+            "icao": "EDDC",
+            "lat": 51.1343,
+            "lon": 13.768,
+            "name": "Dresden"
+        },
+        {
+            "icao": "EDDE",
+            "lat": 50.9798,
+            "lon": 10.9581,
+            "name": "Erfurt"
+        },
+        {
             "icao": "EDDF",
             "lat": 50.032604,
             "lon": 8.54064075,
             "name": "Frankfurt am Main"
+        },
+        {
+            "icao": "EDDG",
+            "lat": 52.1346,
+            "lon": 7.68483,
+            "name": "Muenster Osnabrueck"
         },
         {
             "icao": "EDDH",
@@ -6751,6 +6802,12 @@
             "name": "Muenchen Franz-Josef Strauss"
         },
         {
+            "icao": "EDDN",
+            "lat": 49.4987,
+            "lon": 11.0776,
+            "name": "Nuernberg Airport"
+        },
+        {
             "icao": "EDDP",
             "lat": 51.42263075,
             "lon": 12.2360415,
@@ -6775,10 +6832,22 @@
             "name": "Hannover"
         },
         {
+            "icao": "EDDW",
+            "lat": 53.0457,
+            "lon": 8.789,
+            "name": "Bremen"
+        },
+        {
             "icao": "EDLW",
             "lat": 51.519107,
             "lon": 7.614447,
             "name": "Dortmund-Wickede"
+        },
+        {
+            "icao": "EDNY",
+            "lat": 47.6711,
+            "lon": 9.50882,
+            "name": "Friedrichshafen"
         },
         {
             "icao": "EEPU",
@@ -6905,6 +6974,12 @@
             "lat": 59.65013968,
             "lon": 17.9436279,
             "name": "Stockholm Arlanda"
+        },
+        {
+            "icao": "ETNL",
+            "lat": 53.9181,
+            "lon": 12.2793,
+            "name": "Laage"
         },
         {
             "icao": "EVRA",
