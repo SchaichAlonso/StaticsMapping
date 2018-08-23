@@ -30,6 +30,7 @@ namespace Widgets
     Classification::DefinitionsPointer m_definitions;
     QString m_primary_key_name;
     QTableView *m_table;
+    QToolBar *m_toolbar;
   
     Q_OBJECT;
   };

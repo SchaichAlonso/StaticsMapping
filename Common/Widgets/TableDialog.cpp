@@ -19,6 +19,7 @@ namespace Widgets
   , m_definitions(defs)
   , m_primary_key_name(primary_key_name)
   , m_table(createTableView(m))
+  , m_toolbar(createToolBar())
   {
     createWidgets();
   }
@@ -149,7 +150,7 @@ namespace Widgets
   {
     QVBoxLayout *layout = new QVBoxLayout(this);
     
-    layout->addWidget(createToolBar());
+    layout->addWidget(m_toolbar);
     layout->addWidget(m_table);
   }
 }
