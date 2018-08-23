@@ -3247,6 +3247,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2000,
+            "hubs": "LTBA",
+            "icao": "FHY",
+            "name": "Freebird Airlines",
+            "parent": "FHY"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2016,
             "hubs": "LUKK",
             "icao": "FIA",
