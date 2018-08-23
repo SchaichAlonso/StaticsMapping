@@ -2,6 +2,7 @@
 
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QTableView>
+#include <QtWidgets/QToolBar>
 
 #include <Common/Classification/Definitions.hpp>
 #include <Common/Classification/Model.hpp>
@@ -23,6 +24,7 @@ namespace Widgets
     void handleInsertRequest();
     
     QTableView *createTableView(Classification::Model *model);
+    QToolBar *createToolBar();
     void createWidgets();
     
     Classification::DefinitionsPointer m_definitions;

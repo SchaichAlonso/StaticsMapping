@@ -118,19 +118,14 @@ namespace Widgets
   }
   
   
-  void
-  TableDialog::createWidgets()
+  QToolBar *
+  TableDialog::createToolBar()
   {
-    QVBoxLayout *layout = new QVBoxLayout(this);
-    QToolBar    *toolbar = new QToolBar();
-    QAction     *add, *drop, *close;
+    QToolBar *toolbar(new QToolBar());
     
-    add    = toolbar->addAction("Create");
-    drop   = toolbar->addAction("Delete Selected");
-    close  = toolbar->addAction("Close Window");
-    
-    layout->addWidget(toolbar);
-    layout->addWidget(m_table);
+    QAction *add(toolbar->addAction("Create"));
+    QAction *drop(toolbar->addAction("Delete Selected"));
+    QAction *close(toolbar->addAction("Close Window"));
     
     connect(
       add, &QAction::triggered,
@@ -144,5 +139,17 @@ namespace Widgets
       close, &QAction::triggered,
       this,  &QDialog::accept
     );
+    
+    return (toolbar);
+  }
+  
+  
+  void
+  TableDialog::createWidgets()
+  {
+    QVBoxLayout *layout = new QVBoxLayout(this);
+    
+    layout->addWidget(createToolBar());
+    layout->addWidget(m_table);
   }
 }
