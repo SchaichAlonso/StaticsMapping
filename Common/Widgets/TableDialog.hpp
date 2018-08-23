@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QLayout>
 #include <QtWidgets/QTableView>
 #include <QtWidgets/QToolBar>
 
@@ -25,7 +26,7 @@ namespace Widgets
     
     QTableView *createTableView(Classification::Model *model);
     QToolBar *createToolBar();
-    void createWidgets();
+    QLayout *createLayout();
     
     Classification::DefinitionsPointer m_definitions;
     QString m_primary_key_name;

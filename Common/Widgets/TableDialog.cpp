@@ -21,7 +21,7 @@ namespace Widgets
   , m_table(createTableView(m))
   , m_toolbar(createToolBar())
   {
-    createWidgets();
+    setLayout(createLayout());
   }
   
   
@@ -145,12 +145,14 @@ namespace Widgets
   }
   
   
-  void
-  TableDialog::createWidgets()
+  QLayout *
+  TableDialog::createLayout()
   {
-    QVBoxLayout *layout = new QVBoxLayout(this);
+    QVBoxLayout *layout(new QVBoxLayout());
     
     layout->addWidget(m_toolbar);
     layout->addWidget(m_table);
+    
+    return (layout);
   }
 }
