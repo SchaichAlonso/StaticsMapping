@@ -2482,6 +2482,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2006,
+            "hubs": "VHHH",
+            "icao": "CRK",
+            "name": "Hong Kong Airlines",
+            "parent": "CRK"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1981,
             "hubs": "LFPO",
             "icao": "CRL",
@@ -3396,6 +3405,15 @@
             "icao": "FXI",
             "name": "Air Iceland Connect",
             "parent": "ICE"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2014,
+            "hubs": "ZSFZ",
+            "icao": "FZA",
+            "name": "Fuzhou Airlines",
+            "parent": "CHH"
         },
         {
             "ceased": 2014,
@@ -5299,6 +5317,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2004,
+            "hubs": "LTFJ",
+            "icao": "RUN",
+            "name": "MyCargo Airlines",
+            "parent": "RUN"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2002,
             "hubs": "DBBB HRYR",
             "icao": "RWD",
@@ -6492,6 +6519,15 @@
             "icao": "XXX-Vanilla",
             "name": "Vanilla Alliance",
             "parent": "XXX-Vanilla"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2003,
+            "hubs": "ZSPD",
+            "icao": "YZR",
+            "name": "Suparna Airlines",
+            "parent": "CHH"
         }
     ],
     "airports": [
