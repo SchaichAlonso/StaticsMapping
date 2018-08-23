@@ -5857,6 +5857,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1994,
+            "hubs": "UGTB",
+            "icao": "TGZ",
+            "name": "Georgian Airways",
+            "parent": "TGZ"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1960,
             "hubs": "VTBS",
             "icao": "THA",
@@ -8252,6 +8261,12 @@
             "lat": 62.5346875,
             "lon": 114.03894382,
             "name": "Mirny"
+        },
+        {
+            "icao": "UGTB",
+            "lat": 41.674,
+            "lon": 44.9472,
+            "name": "Tbilisi International Airport"
         },
         {
             "icao": "UHHH",
