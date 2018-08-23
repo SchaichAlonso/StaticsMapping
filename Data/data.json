@@ -3247,6 +3247,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2016,
+            "hubs": "LUKK",
+            "icao": "FIA",
+            "name": "FlyOne",
+            "parent": "FIA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1923,
             "hubs": "EFHK",
             "icao": "FIN",
