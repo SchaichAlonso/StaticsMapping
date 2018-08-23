@@ -22,7 +22,8 @@ namespace Widgets
     void handleDropRequest();
     void handleInsertRequest();
     
-    void createWidgets(Classification::Model *model);
+    QTableView *createTableView(Classification::Model *model);
+    void createWidgets();
     
     Classification::DefinitionsPointer m_definitions;
     QString m_primary_key_name;

@@ -18,8 +18,9 @@ namespace Widgets
   : QDialog(parent, flags)
   , m_definitions(defs)
   , m_primary_key_name(primary_key_name)
+  , m_table(createTableView(m))
   {
-    createWidgets (m);
+    createWidgets();
   }
   
   
@@ -107,18 +108,22 @@ namespace Widgets
   }
   
   
+  QTableView *
+  TableDialog::createTableView(Classification::Model *model)
+  {
+    QTableView *table(new QTableView);
+    table->setModel(model);
+    table->setSortingEnabled(true);
+    return (table);
+  }
+  
   
   void
-  TableDialog::createWidgets(Classification::Model *model)
+  TableDialog::createWidgets()
   {
     QVBoxLayout *layout = new QVBoxLayout(this);
     QToolBar    *toolbar = new QToolBar();
     QAction     *add, *drop, *close;
-    
-    m_table = new QTableView();
-    
-    m_table->setModel(model);
-    m_table->setSortingEnabled(true);
     
     add    = toolbar->addAction("Create");
     drop   = toolbar->addAction("Delete Selected");
