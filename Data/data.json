@@ -5423,6 +5423,15 @@
             "parent": "SWT"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1965,
+            "hubs": "FAOR",
+            "icao": "SFR",
+            "name": "Safair",
+            "parent": "ABR"
+        },
+        {
             "ceased": 2011,
             "comment": "",
             "founded": 2006,
