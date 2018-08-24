@@ -12,7 +12,7 @@ namespace Classification
   {
     Q_OBJECT
     Q_PROPERTY (QString hubs    READ hubs     WRITE setHubs)
-    Q_PROPERTY (QString hubsMissing READ hubsMissing WRITE setHubsMissing)
+    Q_PROPERTY (QString hubsMissing READ hubsMissing)
     Q_PROPERTY (QString comment READ comment  WRITE setComment)
     Q_PROPERTY (int     ceased  READ ceased   WRITE setCeased)
     Q_PROPERTY (int     founded READ founded  WRITE setFounded)
@@ -46,7 +46,6 @@ namespace Classification
     void setHubs (QString);
     
     QString hubsMissing () const;
-    void setHubsMissing (QString);
     
     QStringList hubsList () const;
     void setHubsList (QStringList);
@@ -66,10 +65,13 @@ namespace Classification
   protected:
     virtual void fixReferences () Q_DECL_OVERRIDE;
     
+    QStringList filterHubs(bool want_good) const;
+    
   protected:
     static QStringList unique(QStringList);
     
-    QStringList m_hubs, m_hubs_missing;
+    
+    QStringList m_hubs;
     QString m_comment, m_parent;
     int     m_founded, m_ceased;
   };

@@ -28,7 +28,6 @@ Classification::Airline::propertyByName (PropertyName p)
 Classification::Airline::Airline (QString icao, QString name)
 : IcaoRecord (icao, name)
 , m_hubs ()
-, m_hubs_missing ()
 , m_comment ()
 , m_parent (icao)
 , m_founded (0)
@@ -40,7 +39,6 @@ Classification::Airline::Airline (QString icao, QString name)
 Classification::Airline::Airline (Definitions *d, const QJsonObject &o)
 : IcaoRecord (d, o)
 , m_hubs ()
-, m_hubs_missing ()
 , m_comment (o.value("comment").toString())
 , m_parent (o.value("parent").toString())
 , m_founded (o.value("founded").toInt())
@@ -118,7 +116,7 @@ Classification::Airline::allHubs() const
 QStringList
 Classification::Airline::allHubsList() const
 {
-  return (unique(m_hubs + m_hubs_missing));
+  return (m_hubs);
 }
 
 
@@ -144,51 +142,51 @@ Classification::Airline::setHubs (QString hubs)
 QString
 Classification::Airline::hubsMissing () const
 {
-  return (m_hubs_missing.join(" "));
-}
-
-
-
-void
-Classification::Airline::setHubsMissing(QString hubs)
-{
-  m_hubs_missing = hubs.split(" ", QString::SkipEmptyParts);
+  return (filterHubs(false).join(" "));
 }
 
 
 
 
 QStringList
-Classification::Airline::hubsList () const
+Classification::Airline::hubsList() const
 {
-  return (m_hubs);
+  return (filterHubs(true));
+}
+
+
+
+QStringList
+Classification::Airline::filterHubs(bool want_good) const
+{
+  QStringList retval;
+  
+  if (m_q) {
+    
+    QSet<QString> filtered;
+    
+    Q_FOREACH (QString airport, m_hubs) {
+      if (airport.isEmpty())
+        continue;
+      bool good(m_q->airport(airport));
+      if (want_good == good) {
+        filtered.insert(airport);
+      }
+    }
+    retval = filtered.toList();
+  } else {
+    retval = m_hubs;
+  }
+  
+  return (retval);
 }
 
 
 
 void
-Classification::Airline::setHubsList (QStringList area)
+Classification::Airline::setHubsList(QStringList hubs)
 {
-  if (m_q) {
-    m_hubs.clear ();
-    Q_FOREACH (QString airport, area) {
-      if (airport.isEmpty())
-        continue;
-      if (m_q->airport(airport)) {
-        m_hubs.append(airport);
-      } else {
-        qCritical ("Removing hub %s from %s",
-           qUtf8Printable(airport),
-           qUtf8Printable(primaryKey())
-        );
-        m_hubs_missing.append(airport);
-      }
-    }
-    m_hubs = unique(m_hubs);
-    m_hubs_missing = unique(m_hubs_missing);
-  } else {
-    m_hubs = area;
-  }
+  m_hubs = hubs;
 }
 
 
