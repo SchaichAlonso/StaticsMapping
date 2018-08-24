@@ -3463,6 +3463,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1950,
+            "hubs": "OBBI",
+            "icao": "GFA",
+            "name": "Gulf Air",
+            "parent": "GFA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1994,
             "hubs": "CYYC CYYZ",
             "icao": "GGN",
