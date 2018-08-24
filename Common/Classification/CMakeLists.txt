@@ -6,6 +6,7 @@ add_library (Classification STATIC
   Airline.cpp
   AirlineModel.cpp
   Airport.cpp
+  AirportDataQuery.cpp
   Constants.cpp
   EngineModel.cpp
   Definitions.cpp
@@ -27,4 +28,5 @@ target_link_libraries (Classification
   Common
   Obj8
   Qt5::Core
+  Qt5::Network
 )

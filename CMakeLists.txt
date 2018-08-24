@@ -24,7 +24,7 @@ set (CXX_STANDARD_REQUIRED On)
 
 include_directories (${CMAKE_CURRENT_SOURCE_DIR})
 
-find_package (Qt5 5.6 COMPONENTS REQUIRED Core Gui Widgets Test)
+find_package (Qt5 5.6 COMPONENTS REQUIRED Core Gui Network Widgets Test)
 find_package (Threads)
 
 set (data_files
