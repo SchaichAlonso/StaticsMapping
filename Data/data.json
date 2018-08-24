@@ -3517,6 +3517,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2012,
+            "hubs": "VYMD",
+            "icao": "GMR",
+            "name": "Golden Myanmar Airlines",
+            "parent": "GMR"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2005,
             "hubs": "VABB",
             "icao": "GOW",
@@ -8738,6 +8747,12 @@
             "lat": 10.81874992,
             "lon": 106.65173476,
             "name": "TAN SON NHAT INTL"
+        },
+        {
+            "icao": "VYMD",
+            "lat": 21.701,
+            "lon": 95.9774,
+            "name": "MANDALAY INTL"
         },
         {
             "icao": "VYYY",
