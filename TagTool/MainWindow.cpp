@@ -173,7 +173,7 @@ MainWindow::saveObjFile ()
 void
 MainWindow::saveDefinitions ()
 {
-  saveDefinitionsAs (QString());
+  m_definitions->toFile();
 }
 
 

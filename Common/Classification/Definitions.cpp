@@ -750,8 +750,17 @@ Classification::Definitions::match (int size, QString filehash, QString texhash)
 
 
 bool
+Classification::Definitions::toFile () const
+{
+  return (toFile(dataPath("data.json")));
+}
+
+
+
+bool
 Classification::Definitions::toFile (QString filename) const
 {
+  Q_ASSERT(!filename.isNull());
   if (filename.isNull()) {
     filename = dataPath("data.json");
   }

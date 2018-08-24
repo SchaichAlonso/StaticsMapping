@@ -122,7 +122,8 @@ namespace Classification
     AirlinesAtAirports airlinesAtAirports () const;
     AirportPopulation airportPopulation () const;
     
-    bool              toFile (QString =QString()) const;
+    bool              toFile() const;
+    bool              toFile(QString filename) const;
     static DefinitionsPointer fromFile (QString =QString());
     
     static QString dataPath (QString);
