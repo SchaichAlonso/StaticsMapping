@@ -3922,6 +3922,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1989,
+            "hubs": "LLBG LLSD LLET",
+            "icao": "ISR",
+            "name": "Israir Airlines",
+            "parent": "ISR"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1981,
             "hubs": "MHLM",
             "icao": "ISV",
@@ -7751,6 +7760,18 @@
             "lat": 32.0098,
             "lon": 34.8839,
             "name": "Tel Aviv Ben Gurion"
+        },
+        {
+            "icao": "LLET",
+            "lat": 29.5613,
+            "lon": 34.9601,
+            "name": "EILAT"
+        },
+        {
+            "icao": "LLSD",
+            "lat": 32.1147,
+            "lon": 34.7822,
+            "name": "Sde Dov"
         },
         {
             "icao": "LMML",
