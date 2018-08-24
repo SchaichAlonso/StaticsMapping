@@ -3436,6 +3436,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2013,
+            "hubs": "EYVI",
+            "icao": "GCA",
+            "name": "Grand Cru Airlines",
+            "parent": "GCA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2007,
             "hubs": "ZBAA",
             "icao": "GDC",
