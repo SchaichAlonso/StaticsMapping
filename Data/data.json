@@ -3517,6 +3517,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2005,
+            "hubs": "VABB",
+            "icao": "GOW",
+            "name": "GoAir",
+            "parent": "GOW"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2002,
             "hubs": "BGSF",
             "icao": "GRL",
