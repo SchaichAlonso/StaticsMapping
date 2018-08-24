@@ -3787,6 +3787,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1945,
+            "hubs": "ORBI",
+            "icao": "IAW",
+            "name": "Iraqi Airways",
+            "parent": "IAW"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1927,
             "hubs": "LEMD",
             "icao": "IBE",
