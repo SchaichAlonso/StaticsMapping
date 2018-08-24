@@ -4964,6 +4964,15 @@
             "parent": "AEE"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2003,
+            "hubs": "LSZH",
+            "icao": "OAW",
+            "name": "Helvetic Airways",
+            "parent": "SWR"
+        },
+        {
             "ceased": 2018,
             "comment": "",
             "founded": 1968,
