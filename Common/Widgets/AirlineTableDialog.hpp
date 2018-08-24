@@ -13,5 +13,11 @@ namespace Widgets
     virtual bool verify (QString) const Q_DECL_OVERRIDE;
     virtual int  drop (QString) Q_DECL_OVERRIDE;
     virtual void insert (QString) Q_DECL_OVERRIDE;
+  
+  protected:
+    void extendToolbar();
+    
+    void queryMissingAirports();
+    void saveDefinitions();
   };
 }
