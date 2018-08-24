@@ -3895,6 +3895,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1944,
+            "hubs": "OIII OIIE",
+            "icao": "IRA",
+            "name": "Iran Air",
+            "parent": "IRA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1981,
             "hubs": "MHLM",
             "icao": "ISV",
@@ -8006,6 +8015,12 @@
             "lat": 24.95744925,
             "lon": 46.69884175,
             "name": "Riyadh King Khaled Intl"
+        },
+        {
+            "icao": "OIIE",
+            "lat": 35.4185,
+            "lon": 51.1435,
+            "name": "Tehran Imam Khomeini Int'l"
         },
         {
             "icao": "OIII",
