@@ -2212,6 +2212,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2015,
+            "hubs": "ZGNN",
+            "icao": "CBG",
+            "name": "Guangxi Beibu Gulf Airlines",
+            "parent": "GCR"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1995,
             "hubs": "ZBAA",
             "icao": "CBJ",
@@ -3441,6 +3450,15 @@
             "icao": "GCA",
             "name": "Grand Cru Airlines",
             "parent": "GCA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2004,
+            "hubs": "ZBTJ",
+            "icao": "GCR",
+            "name": "Tianjin Airlines",
+            "parent": "GCR"
         },
         {
             "ceased": 0,
@@ -8951,6 +8969,12 @@
             "lat": 28.1891585,
             "lon": 113.219632,
             "name": "HUANGHUA"
+        },
+        {
+            "icao": "ZGNN",
+            "lat": 22.608,
+            "lon": 108.172,
+            "name": "WUXU"
         },
         {
             "icao": "ZGSZ",
