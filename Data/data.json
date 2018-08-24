@@ -3904,6 +3904,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1970,
+            "hubs": "OIMM OIII OISS",
+            "icao": "IRC",
+            "name": "Iran Aseman Airlines",
+            "parent": "IRC"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1981,
             "hubs": "MHLM",
             "icao": "ISV",
@@ -8029,10 +8038,22 @@
             "name": "Teheran Mehrabad Intl"
         },
         {
+            "icao": "OIMM",
+            "lat": 36.2352,
+            "lon": 59.6411,
+            "name": "MASHHAD INTL"
+        },
+        {
             "icao": "OIMN",
             "lat": 37.493,
             "lon": 57.3082,
             "name": "BOJNORD"
+        },
+        {
+            "icao": "OISS",
+            "lat": 29.5391,
+            "lon": 52.5899,
+            "name": "SHIRAZ SHAHID DASTGHAIB INTL"
         },
         {
             "icao": "OITT",
