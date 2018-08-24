@@ -3661,6 +3661,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2014,
+            "hubs": "KMIA",
+            "icao": "HAV",
+            "name": "Havana Air",
+            "parent": "SWQ"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2010,
             "hubs": "ZBSJ",
             "icao": "HBH",
@@ -5772,6 +5781,15 @@
             "icao": "SWA",
             "name": "Southwest Airlines",
             "parent": "SWA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1997,
+            "hubs": "KPHX",
+            "icao": "SWQ",
+            "name": "Swift Air",
+            "parent": "SWQ"
         },
         {
             "ceased": 0,
