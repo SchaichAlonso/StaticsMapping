@@ -27,6 +27,10 @@ namespace Widgets
   
   TableDialog::~TableDialog()
   {
+    QAbstractItemModel *mdl = m_table->model();
+    
+    m_table->setModel(Q_NULLPTR);
+    delete(mdl);
   }
   
   
