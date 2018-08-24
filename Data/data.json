@@ -1301,6 +1301,15 @@
             "parent": "AIH"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2005,
+            "hubs": "MMMX",
+            "icao": "AIJ",
+            "name": "Interjet",
+            "parent": "AIJ"
+        },
+        {
             "ceased": 2013,
             "comment": "",
             "founded": 1964,
