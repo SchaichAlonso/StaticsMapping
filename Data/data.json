@@ -3706,6 +3706,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2014,
+            "hubs": "VNKT",
+            "icao": "HIM",
+            "name": "Himalaya Airlines",
+            "parent": "HIM"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2004,
             "hubs": "VHHH",
             "icao": "HKE",
@@ -8750,6 +8759,12 @@
             "lat": 22.148675,
             "lon": 113.5914115,
             "name": "Macau Intl"
+        },
+        {
+            "icao": "VNKT",
+            "lat": 27.6966,
+            "lon": 85.3592,
+            "name": "Kathmandu Tribhuvan Intl"
         },
         {
             "icao": "VOBL",
