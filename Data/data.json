@@ -4309,6 +4309,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1989,
+            "hubs": "OIBK OIII",
+            "icao": "KIS",
+            "name": "Kish Airlines",
+            "parent": "KIS"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 0,
             "hubs": "",
             "icao": "KIT",
@@ -8198,6 +8207,12 @@
             "lat": 24.95744925,
             "lon": 46.69884175,
             "name": "Riyadh King Khaled Intl"
+        },
+        {
+            "icao": "OIBK",
+            "lat": 26.527,
+            "lon": 53.9802,
+            "name": "Kish Island"
         },
         {
             "icao": "OIIE",
