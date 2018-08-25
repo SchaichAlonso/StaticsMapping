@@ -5549,6 +5549,15 @@
             "parent": "AVA"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2013,
+            "hubs": "SCEL",
+            "icao": "ONS",
+            "name": "One Airlines",
+            "parent": "ONS"
+        },
+        {
             "ceased": 2016,
             "comment": "Merged to SDM",
             "founded": 1992,
