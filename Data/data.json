@@ -5794,6 +5794,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2003,
+            "hubs": "EVRA",
+            "icao": "PRI",
+            "name": "Primera Air",
+            "parent": "PRI"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 0,
             "hubs": "",
             "icao": "PSS",
