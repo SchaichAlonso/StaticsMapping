@@ -3967,6 +3967,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1992,
+            "hubs": "VABB VOMM VIDP",
+            "icao": "JAI",
+            "name": "Jet Airways",
+            "parent": "JAI"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1951,
             "hubs": "RJAA RJTT",
             "icao": "JAL",
