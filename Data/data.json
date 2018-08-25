@@ -6649,6 +6649,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1948,
+            "hubs": "VYYY",
+            "icao": "UBA",
+            "name": "Myanmar National Airlines",
+            "parent": "UBA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2010,
             "hubs": "VGHS",
             "icao": "UBG",
