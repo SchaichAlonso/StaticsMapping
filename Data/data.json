@@ -5434,6 +5434,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1997,
+            "hubs": "ESSA ENGM",
+            "icao": "NVR",
+            "name": "Novair",
+            "parent": "NVR"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1998,
             "hubs": "YPPH",
             "icao": "NWK",
