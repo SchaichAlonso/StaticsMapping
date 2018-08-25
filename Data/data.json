@@ -4345,6 +4345,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2003,
+            "hubs": "OAKB",
+            "icao": "KMF",
+            "name": "Kam Air",
+            "parent": "KMF"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 0,
             "hubs": "UUBA",
             "icao": "KMW",
@@ -8135,6 +8144,12 @@
             "lat": -41.32684332,
             "lon": 174.80684208,
             "name": "Wellington Intl"
+        },
+        {
+            "icao": "OAKB",
+            "lat": 34.5659,
+            "lon": 69.2123,
+            "name": "Kabul Intl"
         },
         {
             "icao": "OBBI",
