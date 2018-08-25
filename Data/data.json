@@ -4282,6 +4282,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1990,
+            "hubs": "UKKK",
+            "icao": "KHO",
+            "name": "Khors Air",
+            "parent": "KHO"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2009,
             "hubs": "VDPP",
             "icao": "KHV",
