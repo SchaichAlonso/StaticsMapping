@@ -5920,6 +5920,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1996,
+            "hubs": "OIKQ OIII",
+            "icao": "QSM",
+            "name": "Qeshm Air",
+            "parent": "QSM"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1993,
             "hubs": "OTHH",
             "icao": "QTR",
@@ -8831,6 +8840,12 @@
             "lat": 35.6926,
             "lon": 51.3174,
             "name": "Teheran Mehrabad Intl"
+        },
+        {
+            "icao": "OIKQ",
+            "lat": 26.7547,
+            "lon": 55.9024,
+            "name": "DAYRESTAN"
         },
         {
             "icao": "OIMM",
