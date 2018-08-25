@@ -2284,6 +2284,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2012,
+            "hubs": "ZSHC",
+            "icao": "CDC",
+            "name": "Loong Air",
+            "parent": "CDC"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1994,
             "hubs": "ZBAA ZSQD ZSYT",
             "icao": "CDG",
