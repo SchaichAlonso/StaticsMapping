@@ -5533,6 +5533,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1995,
+            "hubs": "VTBD",
+            "icao": "OEA",
+            "name": "Orient Thai Airlines",
+            "parent": "OEA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1992,
             "hubs": "LTBA",
             "icao": "OHY",
