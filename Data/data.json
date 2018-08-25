@@ -4048,6 +4048,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2005,
+            "hubs": "LTBJ",
+            "icao": "IZM",
+            "name": "IZair",
+            "parent": "PGT"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2009,
             "hubs": "VTBS",
             "icao": "JAA",
@@ -4975,6 +4984,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2006,
+            "hubs": "UCFM",
+            "icao": "MBB",
+            "name": "Air Manas",
+            "parent": "PGT"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1991,
             "hubs": "RCMQ RCSS",
             "icao": "MDA",
@@ -5700,6 +5718,15 @@
             "icao": "PGP",
             "name": "Perm Airlines",
             "parent": "PGP"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1990,
+            "hubs": "LTFJ",
+            "icao": "PGT",
+            "name": "Pegasus Airlines",
+            "parent": "PGT"
         },
         {
             "ceased": 0,
