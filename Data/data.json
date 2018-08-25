@@ -4948,6 +4948,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2004,
+            "hubs": "DNMM",
+            "icao": "MEV",
+            "name": "Med-View Airline",
+            "parent": "MEV"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2005,
             "hubs": "ORBI",
             "icao": "MHK",
