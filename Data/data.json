@@ -5335,6 +5335,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1980,
+            "hubs": "DNKN",
+            "icao": "QNK",
+            "name": "Kabo Air",
+            "parent": "QNK"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2002,
             "hubs": "NZAA NZCH NZWN",
             "icao": "QNZ",
