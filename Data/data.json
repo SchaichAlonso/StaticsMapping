@@ -5351,6 +5351,15 @@
             "parent": "NOS"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1992,
+            "hubs": "CYMX",
+            "icao": "NRL",
+            "name": "Nolinor Aviation",
+            "parent": "NRL"
+        },
+        {
             "ceased": 2011,
             "comment": "",
             "founded": 1996,
@@ -7250,6 +7259,12 @@
             "lat": 44.88315796,
             "lon": -63.51055355,
             "name": "HALIFAX INTL"
+        },
+        {
+            "icao": "CYMX",
+            "lat": 45.6752,
+            "lon": -74.0354,
+            "name": "Montreal Mirabel Intl"
         },
         {
             "icao": "CYOW",
