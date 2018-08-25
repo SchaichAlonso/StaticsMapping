@@ -3598,6 +3598,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1994,
+            "hubs": "MMMX",
+            "icao": "GMT",
+            "name": "Magnicharters",
+            "parent": "GMT"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2005,
             "hubs": "VABB",
             "icao": "GOW",
