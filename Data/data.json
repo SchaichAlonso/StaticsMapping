@@ -4759,6 +4759,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1988,
+            "hubs": "KLAS",
+            "icao": "LVS",
+            "name": "Las Vegas Sands",
+            "parent": "LVS"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1998,
             "hubs": "SCEL",
             "icao": "LXP",
