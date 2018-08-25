@@ -5839,6 +5839,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2007,
+            "hubs": "SPJC",
+            "icao": "PVN",
+            "name": "Peruvian Airlines",
+            "parent": "PVN"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1977,
             "hubs": "OTBD",
             "icao": "QAF",
