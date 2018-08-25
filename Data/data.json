@@ -5045,6 +5045,15 @@
             "parent": "SAA"
         },
         {
+            "ceased": 2017,
+            "comment": "",
+            "founded": 1967,
+            "hubs": "EGCC EGKK EGNM EGBB EGGW",
+            "icao": "MON",
+            "name": "Monarch Airlines",
+            "parent": "MON"
+        },
+        {
             "ceased": 0,
             "comment": "",
             "founded": 2000,
@@ -7408,6 +7417,12 @@
             "name": "Helsinki Vantaa"
         },
         {
+            "icao": "EGBB",
+            "lat": 52.4543,
+            "lon": -1.74852,
+            "name": "Birmingham"
+        },
+        {
             "icao": "EGCC",
             "lat": 53.34714078,
             "lon": -2.28395386,
@@ -7436,6 +7451,12 @@
             "lat": 51.47121788,
             "lon": -0.46097777,
             "name": "London Heathrow"
+        },
+        {
+            "icao": "EGNM",
+            "lat": 53.866,
+            "lon": -1.66078,
+            "name": "Leeds Bradford Airport"
         },
         {
             "icao": "EGNX",
