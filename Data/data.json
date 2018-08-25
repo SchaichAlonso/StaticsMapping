@@ -5324,6 +5324,15 @@
             "parent": "XXX-Value"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2001,
+            "hubs": "LIMC",
+            "icao": "NOS",
+            "name": "Neos",
+            "parent": "NOS"
+        },
+        {
             "ceased": 2011,
             "comment": "",
             "founded": 1996,
