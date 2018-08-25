@@ -5686,6 +5686,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1946,
+            "hubs": "OPLA OPKC OPIS",
+            "icao": "PIA",
+            "name": "Pakistan International Airlines",
+            "parent": "PIA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1991,
             "hubs": "VVTS",
             "icao": "PIC",
@@ -8845,10 +8854,22 @@
             "name": "SALALAH"
         },
         {
+            "icao": "OPIS",
+            "lat": 33.5491,
+            "lon": 72.8257,
+            "name": "Islamabad"
+        },
+        {
             "icao": "OPKC",
             "lat": 24.9066,
             "lon": 67.1608,
             "name": "Karachi Jinnah Intl"
+        },
+        {
+            "icao": "OPLA",
+            "lat": 31.5216,
+            "lon": 74.4046,
+            "name": "ALLAMA IQBAL INTL"
         },
         {
             "icao": "ORBI",
