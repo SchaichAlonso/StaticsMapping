@@ -4786,6 +4786,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2015,
+            "hubs": "HLLM",
+            "icao": "LWA",
+            "name": "Libyan Wings",
+            "parent": "LWA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1998,
             "hubs": "SCEL",
             "icao": "LXP",
