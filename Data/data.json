@@ -4210,6 +4210,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1954,
+            "hubs": "KOAK",
+            "icao": "KAI",
+            "name": "Kaiser Air",
+            "parent": "KAI"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1946,
             "hubs": "RKSI RKSS",
             "icao": "KAL",
