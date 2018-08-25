@@ -3940,6 +3940,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2009,
+            "hubs": "VTBS",
+            "icao": "JAA",
+            "name": "Jet Asia Airways",
+            "parent": "JAA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1983,
             "hubs": "RJFK RJOO",
             "icao": "JAC",
