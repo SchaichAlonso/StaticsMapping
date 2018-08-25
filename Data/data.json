@@ -4705,6 +4705,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2013,
+            "hubs": "WIII WIOO",
+            "icao": "LKN",
+            "name": "Nam Air",
+            "parent": "SJY"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1997,
             "hubs": "USTR",
             "icao": "LLM",
@@ -6069,6 +6078,15 @@
             "icao": "SIB",
             "name": "Sibaviatrans",
             "parent": "XXX-AiRUnion"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2003,
+            "hubs": "WIII",
+            "icao": "SJY",
+            "name": "Sriwijaya Air",
+            "parent": "SJY"
         },
         {
             "ceased": 0,
@@ -9500,6 +9518,12 @@
             "lat": 3.558057,
             "lon": 98.6717155,
             "name": "Medan/Polonia"
+        },
+        {
+            "icao": "WIOO",
+            "lat": -0.150704,
+            "lon": 109.404,
+            "name": "Supadio International Airport"
         },
         {
             "icao": "WMKK",
