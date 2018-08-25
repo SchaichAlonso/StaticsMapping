@@ -5038,6 +5038,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1943,
+            "hubs": "VYYY",
+            "icao": "MMA",
+            "name": "Myanmar Airways International",
+            "parent": "MMA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1962,
             "hubs": "WIII",
             "icao": "MNA",
