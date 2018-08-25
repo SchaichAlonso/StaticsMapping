@@ -4570,6 +4570,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1993,
+            "hubs": "SPJC",
+            "icao": "LCB",
+            "name": "LC Peru",
+            "parent": "LCB"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1929,
             "hubs": "SCEL",
             "icao": "LCO",
