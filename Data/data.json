@@ -5018,6 +5018,15 @@
             "parent": "CLA"
         },
         {
+            "ceased": 2016,
+            "comment": "",
+            "founded": 2006,
+            "hubs": "VCBI",
+            "icao": "MLR",
+            "name": "Mihin Lanka",
+            "parent": "ALK"
+        },
+        {
             "ceased": 0,
             "comment": "",
             "founded": 1962,
