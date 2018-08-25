@@ -2192,15 +2192,6 @@
             "parent": "CCA"
         },
         {
-            "ceased": 2012,
-            "comment": "",
-            "founded": 1977,
-            "hubs": "KCVG KJFK KMCO",
-            "icao": "CAW",
-            "name": "Comair",
-            "parent": "BAW"
-        },
-        {
             "ceased": 0,
             "comment": "",
             "founded": 1968,
@@ -2460,6 +2451,15 @@
             "icao": "CND",
             "name": "Corendon Dutch Airlines",
             "parent": "CAI"
+        },
+        {
+            "ceased": 2012,
+            "comment": "",
+            "founded": 1977,
+            "hubs": "KCVG KJFK KMCO",
+            "icao": "COM",
+            "name": "Comair",
+            "parent": "DAL"
         },
         {
             "ceased": 0,
