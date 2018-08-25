@@ -5506,6 +5506,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2014,
+            "hubs": "LGAV",
+            "icao": "OLY",
+            "name": "Olympus Airways",
+            "parent": "OLY"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1990,
             "hubs": "OOMS",
             "icao": "OMA",
