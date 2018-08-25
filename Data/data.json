@@ -4399,6 +4399,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2012,
+            "hubs": "FEFF",
+            "icao": "KRN",
+            "name": "Karinou Airlines",
+            "parent": "KRN"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1995,
             "hubs": "UUWW",
             "icao": "KSM",
@@ -7274,6 +7283,12 @@
             "lat": -26.529021,
             "lon": 31.307519,
             "name": "MATSAPHA"
+        },
+        {
+            "icao": "FEFF",
+            "lat": 4.39847,
+            "lon": 18.5188,
+            "name": "BANGUI M POKO"
         },
         {
             "icao": "FGSL",
