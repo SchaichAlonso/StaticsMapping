@@ -5227,6 +5227,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1978,
+            "hubs": "RJBB RJAA ROAH",
+            "icao": "NCA",
+            "name": "Nippon Cargo Airlines",
+            "parent": "NCA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2015,
             "hubs": "VTBD",
             "icao": "NCT",
