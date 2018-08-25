@@ -2869,6 +2869,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1998,
+            "hubs": "DAAG",
+            "icao": "DTH",
+            "name": "Tassili Airlines",
+            "parent": "DTH"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1989,
             "hubs": "EKCH",
             "icao": "DTR",
@@ -3949,6 +3958,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1962,
+            "hubs": "OYSN",
+            "icao": "IYE",
+            "name": "Yemenia",
+            "parent": "IYE"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2009,
             "hubs": "VTBS",
             "icao": "JAA",
@@ -4215,6 +4233,15 @@
             "icao": "JZR",
             "name": "Jazeera Airways",
             "parent": "JZR"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1953,
+            "hubs": "OKBK",
+            "icao": "KAC",
+            "name": "Kuwait Airways",
+            "parent": "KAC"
         },
         {
             "ceased": 0,
@@ -4525,6 +4552,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1989,
+            "hubs": "DTMB",
+            "icao": "LBT",
+            "name": "Nouvelair",
+            "parent": "LBT"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1929,
             "hubs": "SCEL",
             "icao": "LCO",
@@ -4755,6 +4791,15 @@
             "icao": "MAC",
             "name": "Air Arabia Maroc",
             "parent": "ABY"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2010,
+            "hubs": "GQNO",
+            "icao": "MAI",
+            "name": "Mauritania Airlines",
+            "parent": "MAI"
         },
         {
             "ceased": 0,
@@ -5171,6 +5216,15 @@
             "parent": "OKA"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1990,
+            "hubs": "OOMS",
+            "icao": "OMA",
+            "name": "Oman Air",
+            "parent": "OMA"
+        },
+        {
             "ceased": 2008,
             "comment": "",
             "founded": 1994,
@@ -5286,6 +5340,15 @@
             "icao": "PNR",
             "name": "ASL Airlines Spain",
             "parent": "ABR"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1995,
+            "hubs": "HEAR",
+            "icao": "PNW",
+            "name": "Palestinian Airlines",
+            "parent": "PNW"
         },
         {
             "ceased": 2014,
@@ -5520,6 +5583,15 @@
             "icao": "RJA",
             "name": "Royal Jordanian",
             "parent": "XXX-OneWorld"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2010,
+            "hubs": "OMAA",
+            "icao": "RJD",
+            "name": "Rotana Jet",
+            "parent": "RJD"
         },
         {
             "ceased": 2002,
@@ -6042,6 +6114,15 @@
             "icao": "SXS",
             "name": "SunExpress",
             "parent": "THY"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1946,
+            "hubs": "OSDI OSAP",
+            "icao": "SYR",
+            "name": "Syrian Arab Airlines",
+            "parent": "SYR"
         },
         {
             "ceased": 0,
@@ -7012,6 +7093,12 @@
             "name": "Murtala Muhammed Int'l"
         },
         {
+            "icao": "DTMB",
+            "lat": 35.7578,
+            "lon": 10.754,
+            "name": "Monastir Habib Bourguiba Intl"
+        },
+        {
             "icao": "DTTA",
             "lat": 36.85126799,
             "lon": 10.23002605,
@@ -7426,6 +7513,12 @@
             "name": "Casablanca Mohammed V Intl"
         },
         {
+            "icao": "GQNO",
+            "lat": 18.3025,
+            "lon": -15.9746,
+            "name": "Nouakchott Intl."
+        },
+        {
             "icao": "HAAB",
             "lat": 8.97789175,
             "lon": 38.799321,
@@ -7436,6 +7529,12 @@
             "lat": 2.01397,
             "lon": 45.304,
             "name": "Aden Adde International Airport"
+        },
+        {
+            "icao": "HEAR",
+            "lat": 31.0732,
+            "lon": 33.8359,
+            "name": "EL ARISH INTL"
         },
         {
             "icao": "HEBA",
@@ -8308,6 +8407,12 @@
             "name": "SHARJAH INTL"
         },
         {
+            "icao": "OOMS",
+            "lat": 23.6003,
+            "lon": 58.2809,
+            "name": "Muscat Intl"
+        },
+        {
             "icao": "OPKC",
             "lat": 24.9066,
             "lon": 67.1608,
@@ -8318,6 +8423,12 @@
             "lat": 33.262,
             "lon": 44.2338,
             "name": "Baghdad International Airport"
+        },
+        {
+            "icao": "OSAP",
+            "lat": 36.1807,
+            "lon": 37.2244,
+            "name": "ALEPPO INTL"
         },
         {
             "icao": "OSDI",
@@ -8336,6 +8447,12 @@
             "lat": 25.27456,
             "lon": 51.60838,
             "name": "Doha Hamad Intl"
+        },
+        {
+            "icao": "OYSN",
+            "lat": 15.4763,
+            "lon": 44.2197,
+            "name": "Sanaa Intl"
         },
         {
             "icao": "PANC",
