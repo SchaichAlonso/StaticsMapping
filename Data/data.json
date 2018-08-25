@@ -4138,6 +4138,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2004,
+            "hubs": "OKBK",
+            "icao": "JZR",
+            "name": "Jazeera Airways",
+            "parent": "JZR"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1946,
             "hubs": "RKSI RKSS",
             "icao": "KAL",
@@ -8105,6 +8114,12 @@
             "lat": 31.72330975,
             "lon": 35.99404575,
             "name": "QUEEN ALIA INTL"
+        },
+        {
+            "icao": "OKBK",
+            "lat": 29.2267,
+            "lon": 47.98,
+            "name": "Kuwait International Airport"
         },
         {
             "icao": "OLBA",
