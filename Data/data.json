@@ -4984,6 +4984,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1956,
+            "hubs": "ZMUB",
+            "icao": "MGL",
+            "name": "MIAT Mongolian Airlines",
+            "parent": "MGL"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2005,
             "hubs": "ORBI",
             "icao": "MHK",
@@ -9605,6 +9614,12 @@
             "lat": 34.44697967,
             "lon": 108.75220278,
             "name": "Xianyang"
+        },
+        {
+            "icao": "ZMUB",
+            "lat": 47.8344,
+            "lon": 106.77,
+            "name": "CHINGGIS KHAAN INTL"
         },
         {
             "icao": "ZPPP",
