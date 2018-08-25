@@ -5371,6 +5371,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2000,
+            "hubs": "HSSS",
+            "icao": "NOV",
+            "name": "Nova Airways",
+            "parent": "NOV"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1992,
             "hubs": "CYMX",
             "icao": "NRL",
