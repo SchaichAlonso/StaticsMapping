@@ -5416,6 +5416,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2008,
+            "hubs": "UUEE",
+            "icao": "NWS",
+            "name": "Nordwind Airlines",
+            "parent": "NWS"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1920,
             "hubs": "NZAA NZCH NZWN",
             "icao": "NZM",
