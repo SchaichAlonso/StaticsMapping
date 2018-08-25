@@ -4003,6 +4003,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2017,
+            "hubs": "SCEL",
+            "icao": "JAT",
+            "name": "JetSmart",
+            "parent": "JAT"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2000,
             "hubs": "KJFK",
             "icao": "JBU",
