@@ -5029,6 +5029,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2010,
+            "hubs": "OIII OIIE",
+            "icao": "MRJ",
+            "name": "Meraj Airlines",
+            "parent": "MRJ"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2003,
             "hubs": "HECA",
             "icao": "MSC",
