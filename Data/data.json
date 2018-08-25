@@ -5839,6 +5839,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1958,
+            "hubs": "VNKT",
+            "icao": "RNA",
+            "name": "Nepal Airlines",
+            "parent": "RNA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1994,
             "hubs": "SVBC",
             "icao": "ROI",
