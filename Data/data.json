@@ -3704,6 +3704,15 @@
             "parent": "GZP"
         },
         {
+            "ceased": 2018,
+            "comment": "",
+            "founded": 2005,
+            "hubs": "ORER",
+            "icao": "GZQ",
+            "name": "Zagrosjet",
+            "parent": "GZQ"
+        },
+        {
             "ceased": 0,
             "comment": "",
             "founded": 1929,
@@ -5502,6 +5511,15 @@
             "icao": "OCA",
             "name": "Aserca Airlines",
             "parent": "OCA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1992,
+            "hubs": "LTBA",
+            "icao": "OHY",
+            "name": "Onur Air",
+            "parent": "OHY"
         },
         {
             "ceased": 0,
@@ -8810,6 +8828,12 @@
             "lat": 33.262,
             "lon": 44.2338,
             "name": "Baghdad International Airport"
+        },
+        {
+            "icao": "ORER",
+            "lat": 36.2379,
+            "lon": 43.9549,
+            "name": "ERBIL INTL"
         },
         {
             "icao": "OSAP",
