@@ -5560,6 +5560,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1974,
+            "hubs": "OOMS OOSA",
+            "icao": "ORF",
+            "name": "Oman Royal Flight",
+            "parent": "ORF"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1996,
             "hubs": "LEMD LEPA",
             "icao": "OVA",
@@ -8759,6 +8768,12 @@
             "lat": 23.6003,
             "lon": 58.2809,
             "name": "Muscat Intl"
+        },
+        {
+            "icao": "OOSA",
+            "lat": 17.0366,
+            "lon": 54.0966,
+            "name": "SALALAH"
         },
         {
             "icao": "OPKC",
