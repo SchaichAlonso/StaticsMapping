@@ -5308,6 +5308,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2010,
+            "hubs": "OEJN",
+            "icao": "NMA",
+            "name": "Nesma Airlines",
+            "parent": "NMA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1946,
             "hubs": "FYWH",
             "icao": "NMB",
