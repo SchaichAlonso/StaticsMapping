@@ -5083,6 +5083,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1981,
+            "hubs": "LIRF LIPE",
+            "icao": "MSA",
+            "name": "Mistral Air",
+            "parent": "MSA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2003,
             "hubs": "HECA",
             "icao": "MSC",
@@ -8153,6 +8162,12 @@
             "lat": 45.45030225,
             "lon": 9.27280075,
             "name": "Milano Linate"
+        },
+        {
+            "icao": "LIPE",
+            "lat": 44.5356,
+            "lon": 11.2883,
+            "name": "Bologna"
         },
         {
             "icao": "LIRF",
