@@ -5227,6 +5227,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1956,
+            "hubs": "PANC",
+            "icao": "NAC",
+            "name": "Northern Air Cargo",
+            "parent": "NAC"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1993,
             "hubs": "ENGM ESSA",
             "icao": "NAX",
