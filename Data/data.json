@@ -5135,6 +5135,15 @@
             "parent": "NAX"
         },
         {
+            "ceased": 2014,
+            "comment": "",
+            "founded": 2011,
+            "hubs": "LIMC",
+            "icao": "NLV",
+            "name": "Livingston Compagnia Aerea",
+            "parent": "NLV"
+        },
+        {
             "ceased": 0,
             "comment": "",
             "founded": 2003,
