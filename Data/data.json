@@ -4534,6 +4534,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1976,
+            "hubs": "VLVT",
+            "icao": "LAO",
+            "name": "Lao Airlines",
+            "parent": "LAO"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1962,
             "hubs": "SGAS",
             "icao": "LAP",
@@ -9119,6 +9128,12 @@
             "lat": 28.5664965,
             "lon": 77.10309025,
             "name": "INDIRA GANDHI INTL"
+        },
+        {
+            "icao": "VLVT",
+            "lat": 17.9883,
+            "lon": 102.563,
+            "name": "Vientiane Wattay"
         },
         {
             "icao": "VMMC",
