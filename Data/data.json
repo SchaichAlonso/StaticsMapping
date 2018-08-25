@@ -3125,7 +3125,7 @@
             "hubs": "LEMD LPPT",
             "icao": "EVE",
             "name": "Evelop Airlines",
-            "parent": "EVE"
+            "parent": "OBS"
         },
         {
             "ceased": 0,
@@ -4017,6 +4017,15 @@
             "icao": "ISV",
             "name": "Avianca Honduras",
             "parent": "AVA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1998,
+            "hubs": "LEPA",
+            "icao": "IWD",
+            "name": "Orbest Orizonia Airlines",
+            "parent": "OBS"
         },
         {
             "ceased": 0,
@@ -5502,6 +5511,15 @@
             "icao": "OAW",
             "name": "Helvetic Airways",
             "parent": "SWR"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2007,
+            "hubs": "LPPT",
+            "icao": "OBS",
+            "name": "Orbest",
+            "parent": "OBS"
         },
         {
             "ceased": 2018,
