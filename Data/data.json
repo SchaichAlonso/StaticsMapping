@@ -4102,6 +4102,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2017,
+            "hubs": "LFPG",
+            "icao": "JON",
+            "name": "Joon",
+            "parent": "AFR"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1991,
             "hubs": "MGGT",
             "icao": "JOS",
