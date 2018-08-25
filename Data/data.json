@@ -2194,6 +2194,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1943,
+            "hubs": "FAOR",
+            "icao": "CAW",
+            "name": "Comair",
+            "parent": "BAW"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1968,
             "hubs": "MWCR",
             "icao": "CAY",
