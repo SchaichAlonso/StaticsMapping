@@ -1211,6 +1211,15 @@
             "parent": "XXX-Ukrainian"
         },
         {
+            "ceased": 2018,
+            "comment": "",
+            "founded": 2005,
+            "hubs": "LIMC",
+            "icao": "AEY",
+            "name": "Air Italy",
+            "parent": "ISS"
+        },
+        {
             "ceased": 0,
             "comment": "",
             "founded": 1971,
@@ -3972,6 +3981,15 @@
             "icao": "ISR",
             "name": "Israir Airlines",
             "parent": "ISR"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1963,
+            "hubs": "LIMC",
+            "icao": "ISS",
+            "name": "Meridiana",
+            "parent": "ISS"
         },
         {
             "ceased": 0,
