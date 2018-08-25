@@ -4622,6 +4622,15 @@
             "parent": "LGE"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1962,
+            "hubs": "ELLX",
+            "icao": "LGL",
+            "name": "Luxair",
+            "parent": "LGL"
+        },
+        {
             "ceased": 2017,
             "comment": "",
             "founded": 1980,
