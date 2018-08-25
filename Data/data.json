@@ -4325,6 +4325,15 @@
             "parent": "KAP"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1993,
+            "hubs": "UUBW",
+            "icao": "KAR",
+            "name": "Pegas Fly",
+            "parent": "KAR"
+        },
+        {
             "ceased": 2010,
             "comment": "",
             "founded": 1996,
@@ -9314,6 +9323,12 @@
             "lat": 53.214193,
             "lon": 34.176447,
             "name": "BRYANSK"
+        },
+        {
+            "icao": "UUBW",
+            "lat": 55.553333,
+            "lon": 38.151667,
+            "name": "Zhukovsky Intl"
         },
         {
             "icao": "UUDD",
