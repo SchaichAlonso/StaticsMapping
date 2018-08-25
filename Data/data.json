@@ -4174,6 +4174,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1998,
+            "hubs": "HCMM",
+            "icao": "JUB",
+            "name": "Jubba Airways",
+            "parent": "JUB"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2015,
             "hubs": "ZGGG",
             "icao": "JYH",
@@ -7352,6 +7361,12 @@
             "lat": 8.97789175,
             "lon": 38.799321,
             "name": "BOLE INTL"
+        },
+        {
+            "icao": "HCMM",
+            "lat": 2.01397,
+            "lon": 45.304,
+            "name": "Aden Adde International Airport"
         },
         {
             "icao": "HEBA",
