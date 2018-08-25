@@ -3958,6 +3958,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1991,
+            "hubs": "OIII",
+            "icao": "IRM",
+            "name": "Mahan Airlines",
+            "parent": "IRM"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1989,
             "hubs": "LLBG LLSD LLET",
             "icao": "ISR",
