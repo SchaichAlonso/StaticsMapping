@@ -2122,6 +2122,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1990,
+            "hubs": "KMIA",
+            "icao": "BSK",
+            "name": "Miami Air International",
+            "parent": "BSK"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1995,
             "hubs": "EVRA",
             "icao": "BTI",
