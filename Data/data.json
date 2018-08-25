@@ -5470,6 +5470,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1993,
+            "hubs": "KTUL",
+            "icao": "OAE",
+            "name": "Omni Air International",
+            "parent": "OAE"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2009,
             "hubs": "LGAV",
             "icao": "OAL",
@@ -8204,6 +8213,12 @@
             "lat": 38.74896438,
             "lon": -90.37040975,
             "name": "Lambert St Louis Intl"
+        },
+        {
+            "icao": "KTUL",
+            "lat": 36.1982,
+            "lon": -95.8895,
+            "name": "Tulsa Intl"
         },
         {
             "icao": "LBBG",
