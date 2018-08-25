@@ -5011,6 +5011,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1962,
+            "hubs": "WIII",
+            "icao": "MNA",
+            "name": "Merpati Nusantara Airlines",
+            "parent": "MNA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2006,
             "hubs": "FAOR",
             "icao": "MNO",
