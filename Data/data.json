@@ -4012,6 +4012,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1988,
+            "hubs": "OJAI",
+            "icao": "JAV",
+            "name": "Jordan Aviation",
+            "parent": "JAV"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2000,
             "hubs": "KJFK",
             "icao": "JBU",
