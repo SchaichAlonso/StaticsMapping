@@ -4130,6 +4130,15 @@
             "ceased": 0,
             "comment": "",
             "founded": 2005,
+            "hubs": "OIII",
+            "icao": "IZG",
+            "name": "Zagros Airlines",
+            "parent": "IZG"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2005,
             "hubs": "LTBJ",
             "icao": "IZM",
             "name": "IZair",
