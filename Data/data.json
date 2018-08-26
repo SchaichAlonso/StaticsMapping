@@ -7583,6 +7583,15 @@
             "parent": "VDA"
         },
         {
+            "ceased": 2016,
+            "comment": "",
+            "founded": 2014,
+            "hubs": "RCTP",
+            "icao": "VAX",
+            "name": "V Air",
+            "parent": "TNA"
+        },
+        {
             "ceased": 0,
             "comment": "",
             "founded": 1967,
