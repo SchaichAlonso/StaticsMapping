@@ -6289,6 +6289,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1993,
+            "hubs": "OPKC",
+            "icao": "SAI",
+            "name": "Shaheen Air",
+            "parent": "SAI"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1946,
             "hubs": "EKCH ENGM ESSA",
             "icao": "SAS",
