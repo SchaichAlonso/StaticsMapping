@@ -6442,6 +6442,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2016,
+            "hubs": "EDDT EDVK",
+            "icao": "SDR",
+            "name": "Sundair",
+            "parent": "SDR"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2004,
             "hubs": "VIDP VOMM VOHS VECC",
             "icao": "SEJ",
@@ -8012,6 +8021,12 @@
             "lat": 47.6711,
             "lon": 9.50882,
             "name": "Friedrichshafen"
+        },
+        {
+            "icao": "EDVK",
+            "lat": 51.4208,
+            "lon": 9.39208,
+            "name": "Kassel Calden"
         },
         {
             "icao": "EEPU",
