@@ -7666,6 +7666,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2007,
+            "hubs": "VVDN VVCI VVNB VVTS",
+            "icao": "VJC",
+            "name": "VietJet Air",
+            "parent": "VJC"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2008,
             "hubs": "EFHK EKCH ENGM ESSA",
             "icao": "VKG",
@@ -10430,6 +10439,18 @@
             "lat": 13.68045552,
             "lon": 100.74751202,
             "name": "Bangkok Suvarnabhumi Intl"
+        },
+        {
+            "icao": "VVCI",
+            "lat": 20.8194,
+            "lon": 106.725,
+            "name": "HAIPHONG CATBI"
+        },
+        {
+            "icao": "VVDN",
+            "lat": 16.0442,
+            "lon": 108.199,
+            "name": "DANANG INTL"
         },
         {
             "icao": "VVNB",
