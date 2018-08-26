@@ -7909,6 +7909,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2013,
+            "hubs": "KRSW",
+            "icao": "WGN",
+            "name": "Western Global Airlines",
+            "parent": "WGN"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2005,
             "hubs": "LPPT",
             "icao": "WHT",
@@ -9071,6 +9080,12 @@
             "lat": 40.49135325,
             "lon": -80.231803,
             "name": "Pittsburgh Intl"
+        },
+        {
+            "icao": "KRSW",
+            "lat": 26.5362,
+            "lon": -81.7552,
+            "name": "Southwest Florida Intl"
         },
         {
             "icao": "KSAN",
