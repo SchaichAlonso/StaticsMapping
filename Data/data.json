@@ -1492,6 +1492,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2012,
+            "hubs": "UKKK",
+            "icao": "ANR",
+            "name": "Yanair",
+            "parent": "ANR"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2005,
             "hubs": "SASA",
             "icao": "ANS",
