@@ -5893,6 +5893,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2003,
+            "hubs": "LEMD",
+            "icao": "PLM",
+            "name": "Wamos Air",
+            "parent": "PLM"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1987,
             "hubs": "LEMD",
             "icao": "PNR",
