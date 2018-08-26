@@ -6881,6 +6881,15 @@
             "parent": "THY"
         },
         {
+            "ceased": 2015,
+            "comment": "",
+            "founded": 2011,
+            "hubs": "DTTX",
+            "icao": "SYA",
+            "name": "Syphax Airlines",
+            "parent": "SYA"
+        },
+        {
             "ceased": 0,
             "comment": "",
             "founded": 1946,
@@ -7928,6 +7937,12 @@
             "lat": 36.85126799,
             "lon": 10.23002605,
             "name": "Tunis-Carthage"
+        },
+        {
+            "icao": "DTTX",
+            "lat": 34.7176,
+            "lon": 10.6908,
+            "name": "THYNA"
         },
         {
             "icao": "DXXX",
