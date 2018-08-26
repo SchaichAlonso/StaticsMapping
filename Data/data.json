@@ -7692,6 +7692,15 @@
         },
         {
             "ceased": 0,
+            "comment": "",
+            "founded": 2001,
+            "hubs": "SVMI",
+            "icao": "VNE",
+            "name": "Venezolana",
+            "parent": "VNE"
+        },
+        {
+            "ceased": 0,
             "comment": "Owned by ANA...",
             "founded": 2013,
             "hubs": "RJAA",
