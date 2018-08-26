@@ -6019,6 +6019,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2010,
+            "hubs": "VGHS",
+            "icao": "RGE",
+            "name": "Regent Airways",
+            "parent": "RGE"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2015,
             "hubs": "TNCC",
             "icao": "RGR",
