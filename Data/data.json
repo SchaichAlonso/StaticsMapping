@@ -6640,6 +6640,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1953,
+            "hubs": "SMJP",
+            "icao": "SLM",
+            "name": "Surinam Airways",
+            "parent": "SLM"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2007,
             "hubs": "HECA",
             "icao": "SME",
@@ -9629,6 +9638,12 @@
             "lat": -17.6448,
             "lon": -63.1354,
             "name": "Viru Viru Int'l"
+        },
+        {
+            "icao": "SMJP",
+            "lat": 5.45285,
+            "lon": -55.1878,
+            "name": "Paramaribo Johan Adolf Pengel Intl"
         },
         {
             "icao": "SPJC",
