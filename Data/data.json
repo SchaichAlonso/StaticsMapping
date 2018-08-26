@@ -1562,6 +1562,15 @@
             "parent": "XXX-SkyTeam"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1992,
+            "hubs": "EVRA",
+            "icao": "ART",
+            "name": "SmartLynx Airlines",
+            "parent": "ART"
+        },
+        {
             "ceased": 2000,
             "comment": "",
             "founded": 1986,
@@ -5335,6 +5344,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2012,
+            "hubs": "EETN",
+            "icao": "MYX",
+            "name": "SmartLynx Airlines Estonia",
+            "parent": "ART"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1956,
             "hubs": "PANC",
             "icao": "NAC",
@@ -7910,6 +7928,12 @@
             "lat": 58.4187945,
             "lon": 24.472822,
             "name": "PARNU"
+        },
+        {
+            "icao": "EETN",
+            "lat": 59.4133,
+            "lon": 24.8325,
+            "name": "TALLINN"
         },
         {
             "icao": "EFHK",
