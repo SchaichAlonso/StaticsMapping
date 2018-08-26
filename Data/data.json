@@ -6359,6 +6359,15 @@
             "parent": "ABR"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2006,
+            "hubs": "OAKB",
+            "icao": "SFW",
+            "name": "Safi Airways",
+            "parent": "SFW"
+        },
+        {
             "ceased": 2011,
             "comment": "",
             "founded": 2006,
