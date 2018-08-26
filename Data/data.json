@@ -6386,6 +6386,15 @@
             "parent": "SFW"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2016,
+            "hubs": "OISS",
+            "icao": "SHI",
+            "name": "Sepehran Airlines",
+            "parent": "SHI"
+        },
+        {
             "ceased": 2011,
             "comment": "",
             "founded": 2006,
