@@ -6026,6 +6026,15 @@
             "parent": "RFF"
         },
         {
+            "ceased": 2016,
+            "comment": "",
+            "founded": 2007,
+            "hubs": "OJAI",
+            "icao": "RFJ",
+            "name": "Royal Falcon",
+            "parent": "RFJ"
+        },
+        {
             "ceased": 0,
             "comment": "",
             "founded": 2010,
