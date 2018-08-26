@@ -8035,6 +8035,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2003,
+            "hubs": "WIDN WAAA",
+            "icao": "XAR",
+            "name": "Xpress Air",
+            "parent": "XAR"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2007,
             "hubs": "WMKK",
             "icao": "XAX",
@@ -10760,6 +10769,12 @@
             "lat": 0.4607845,
             "lon": 101.4445375,
             "name": "Pekanbaru Sultan Syarif Kasim II"
+        },
+        {
+            "icao": "WIDN",
+            "lat": 0.92328,
+            "lon": 104.533,
+            "name": "Raja Haji Fisabilillah"
         },
         {
             "icao": "WIHH",
