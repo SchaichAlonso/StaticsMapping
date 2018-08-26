@@ -5333,6 +5333,15 @@
             "parent": "MTL"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1982,
+            "hubs": "PHNL",
+            "icao": "MUI",
+            "name": "Transair",
+            "parent": "MUI"
+        },
+        {
             "ceased": 2011,
             "comment": "",
             "founded": 1995,
