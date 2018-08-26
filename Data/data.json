@@ -7873,6 +7873,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2005,
+            "hubs": "OKBK",
+            "icao": "WAN",
+            "name": "Wataniya Airways",
+            "parent": "WAN"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2013,
             "hubs": "CYYC CYYZ",
             "icao": "WEN",
