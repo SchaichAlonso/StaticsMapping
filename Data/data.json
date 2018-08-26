@@ -6190,6 +6190,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1974,
+            "hubs": "SVMI SVCB",
+            "icao": "RUC",
+            "name": "RUTACA Airlines",
+            "parent": "RUC"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2004,
             "hubs": "LTFJ",
             "icao": "RUN",
@@ -9308,6 +9317,12 @@
             "lat": 10.1098,
             "lon": -64.6905,
             "name": "GENERAL JOSE ANTONIO ANZOATEGUI INTL"
+        },
+        {
+            "icao": "SVCB",
+            "lat": 8.1216,
+            "lon": -63.5364,
+            "name": "CIUDAD BOLIVAR"
         },
         {
             "icao": "SVMI",
