@@ -7205,6 +7205,15 @@
             "parent": "TSC"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1994,
+            "hubs": "FCPP FCBB",
+            "icao": "TSG",
+            "name": "Trans Air Congo",
+            "parent": "TSG"
+        },
+        {
             "ceased": 2015,
             "comment": "",
             "founded": 1992,
@@ -8378,6 +8387,12 @@
             "lat": -4.25169858,
             "lon": 15.25302914,
             "name": "MAYA MAYA"
+        },
+        {
+            "icao": "FCPP",
+            "lat": -4.81603,
+            "lon": 11.8866,
+            "name": "POINTE NOIRE"
         },
         {
             "icao": "FDMS",
