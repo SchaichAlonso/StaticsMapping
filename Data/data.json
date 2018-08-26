@@ -7954,6 +7954,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2006,
+            "hubs": "OLBA",
+            "icao": "WLB",
+            "name": "Wings of Lebanon",
+            "parent": "WLB"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2016,
             "hubs": "LJMB",
             "icao": "WLM",
