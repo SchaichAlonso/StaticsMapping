@@ -6449,6 +6449,15 @@
             "parent": "XXX-Vanilla"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2002,
+            "hubs": "RJFF RJFR RJBB RJTT",
+            "icao": "SFJ",
+            "name": "StarFlyer",
+            "parent": "SFJ"
+        },
+        {
             "ceased": 2012,
             "comment": "",
             "founded": 2008,
@@ -9376,10 +9385,22 @@
             "name": "AMAKUSA"
         },
         {
+            "icao": "RJFF",
+            "lat": 33.5859,
+            "lon": 130.451,
+            "name": "Fukuoka"
+        },
+        {
             "icao": "RJFK",
             "lat": 31.8034,
             "lon": 130.7194055,
             "name": "KAGOSHIMA"
+        },
+        {
+            "icao": "RJFR",
+            "lat": 33.8456,
+            "lon": 131.035,
+            "name": "Kitakyushu Airport"
         },
         {
             "icao": "RJFU",
