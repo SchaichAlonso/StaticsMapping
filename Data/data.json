@@ -5551,6 +5551,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2001,
+            "hubs": "EGNX",
+            "icao": "NPT",
+            "name": "West Atlantic UK",
+            "parent": "SWN"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1992,
             "hubs": "CYMX",
             "icao": "NRL",
@@ -6861,6 +6870,15 @@
             "icao": "SWG",
             "name": "Sunwing Airlines",
             "parent": "SWG"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2011,
+            "hubs": "LFML ESMS EGNX ENGM",
+            "icao": "SWN",
+            "name": "West Atlantic",
+            "parent": "SWN"
         },
         {
             "ceased": 0,
@@ -8554,6 +8572,12 @@
             "name": "WARSZAWA Okecie"
         },
         {
+            "icao": "ESMS",
+            "lat": 55.5483,
+            "lon": 13.3533,
+            "name": "Malmo Sturup"
+        },
+        {
             "icao": "ESSA",
             "lat": 59.65013968,
             "lon": 17.9436279,
@@ -9170,6 +9194,12 @@
             "lat": 45.72581219,
             "lon": 5.09074806,
             "name": "Lyon Saint Exupery"
+        },
+        {
+            "icao": "LFML",
+            "lat": 43.4358,
+            "lon": 5.21342,
+            "name": "Marseille Provence"
         },
         {
             "icao": "LFPG",
