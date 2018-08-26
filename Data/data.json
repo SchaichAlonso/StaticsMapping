@@ -2176,6 +2176,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2011,
+            "hubs": "VQPR",
+            "icao": "BTN",
+            "name": "Bhutan Airlines",
+            "parent": "BTN"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2010,
             "hubs": "LROP",
             "icao": "BUR",
