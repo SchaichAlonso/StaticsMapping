@@ -6415,6 +6415,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1982,
+            "hubs": "KMSP",
+            "icao": "SCX",
+            "name": "Sun Country Airlines",
+            "parent": "SCX"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 0,
             "hubs": "UIII UNNT",
             "icao": "SDB",
