@@ -42,7 +42,6 @@ endforeach ()
 
 add_subdirectory (Common)
 
-add_subdirectory (AptDatExtract)
 add_subdirectory (TagTool)
 add_subdirectory (ObjIdentify)
 add_subdirectory (ObjPreview)
