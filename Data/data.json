@@ -6505,6 +6505,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1996,
+            "hubs": "RJTT",
+            "icao": "SKY",
+            "name": "Skymark Airlines",
+            "parent": "SKY"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1988,
             "hubs": "MMMX MMMY",
             "icao": "SLI",
