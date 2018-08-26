@@ -4615,6 +4615,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2010,
+            "hubs": "MTPP",
+            "icao": "KSZ",
+            "name": "Sunrise Airways",
+            "parent": "KSZ"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1992,
             "hubs": "UUDD",
             "icao": "KTK",
@@ -9071,6 +9080,12 @@
             "lat": 13.445666,
             "lon": -89.051739,
             "name": "El Salvador Intl"
+        },
+        {
+            "icao": "MTPP",
+            "lat": 18.58,
+            "lon": -72.2925,
+            "name": "Toussaint Louvertoure Int'l"
         },
         {
             "icao": "MUHA",
