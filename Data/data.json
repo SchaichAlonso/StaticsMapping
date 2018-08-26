@@ -6478,6 +6478,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2001,
+            "hubs": "SCEL",
+            "icao": "SKU",
+            "name": "Sky Airline",
+            "parent": "SKU"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2010,
             "hubs": "CYYZ",
             "icao": "SKV",
