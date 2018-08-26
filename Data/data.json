@@ -2554,6 +2554,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2004,
+            "hubs": "ZSPD ZSSS",
+            "icao": "CQH",
+            "name": "Spring Airlines",
+            "parent": "CQH"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2007,
             "hubs": "ZUCK",
             "icao": "CQN",
