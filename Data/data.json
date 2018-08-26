@@ -5704,6 +5704,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1959,
+            "hubs": "NSFA",
+            "icao": "PAO",
+            "name": "Samoa Airways",
+            "parent": "PAO"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2014,
             "hubs": "UUWW",
             "icao": "PBD",
@@ -8837,6 +8846,12 @@
             "lat": -17.7584,
             "lon": 177.442,
             "name": "Nadi Int'l"
+        },
+        {
+            "icao": "NSFA",
+            "lat": -13.83,
+            "lon": -172.008,
+            "name": "Faleolo International"
         },
         {
             "icao": "NVVV",
