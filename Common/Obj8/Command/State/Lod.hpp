@@ -22,8 +22,8 @@ namespace Obj8
         virtual String        name () const Q_DECL_OVERRIDE;
         virtual String        toString () const Q_DECL_OVERRIDE;
         
-        int near () const;
-        int far () const;
+        int nearDistance() const;
+        int farDistance() const;
         
       protected:
         Parameter::Integer m_near, m_far;

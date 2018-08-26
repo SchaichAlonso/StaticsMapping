@@ -65,7 +65,7 @@ Obj8::Command::State::Lod::toString () const
 
 
 int
-Obj8::Command::State::Lod::near () const
+Obj8::Command::State::Lod::nearDistance() const
 {
   return (m_near.toInt ());
 }
@@ -73,7 +73,7 @@ Obj8::Command::State::Lod::near () const
 
 
 int
-Obj8::Command::State::Lod::far () const
+Obj8::Command::State::Lod::farDistance() const
 {
   return (m_far.toInt ());
 }

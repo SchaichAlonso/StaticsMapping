@@ -1110,8 +1110,8 @@ Obj8::Test::Mnemonics::ATTR_LOD ()
   MnemonicPointer mp = qSharedPointerDynamicCast<Mnemonic>(sp);
   
   QVERIFY (mp);
-  QVERIFY (mp->near() == 1234);
-  QVERIFY (mp->far()  == 5678);
+  QVERIFY (mp->nearDistance() == 1234);
+  QVERIFY (mp->farDistance()  == 5678);
 }
 
 

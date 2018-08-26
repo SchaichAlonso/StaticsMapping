@@ -159,8 +159,8 @@ namespace Widgets
   {
     int n, f;
     
-    n = l->near();
-    f = l->far();
+    n = l->nearDistance();
+    f = l->farDistance();
     
     if (n != m_current_state.lod_far) {
       Q_ASSERT(true);
