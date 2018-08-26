@@ -6127,6 +6127,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1994,
+            "hubs": "KVPS",
+            "icao": "RBY",
+            "name": "Vision Airlines",
+            "parent": "RBY"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2006,
             "hubs": "UUEE",
             "icao": "RCF",
@@ -8981,6 +8990,12 @@
             "lat": 32.1169,
             "lon": -110.942,
             "name": "Tucson Intl"
+        },
+        {
+            "icao": "KVPS",
+            "lat": 30.4835,
+            "lon": -86.5251,
+            "name": "EGLIN AFB"
         },
         {
             "icao": "LBBG",
