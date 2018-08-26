@@ -5974,6 +5974,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1974,
+            "hubs": "WBSB",
+            "icao": "RBA",
+            "name": "Royal Brunei Airlines",
+            "parent": "RBA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2009,
             "hubs": "HEBA",
             "icao": "RBG",
