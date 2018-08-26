@@ -7106,6 +7106,15 @@
             "parent": "TJK"
         },
         {
+            "ceased": 2016,
+            "comment": "",
+            "founded": 2006,
+            "hubs": "TNCA",
+            "icao": "TNM",
+            "name": "Tiara Air Aruba",
+            "parent": "TNM"
+        },
+        {
             "ceased": 0,
             "comment": "",
             "founded": 2001,
