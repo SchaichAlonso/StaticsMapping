@@ -7225,6 +7225,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2010,
+            "hubs": "RKSS RKSI",
+            "icao": "TWB",
+            "name": "T'way Air",
+            "parent": "TWB"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2009,
             "hubs": "UNKL UOOO",
             "icao": "TYA",
