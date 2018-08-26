@@ -6622,6 +6622,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1998,
+            "hubs": "FNLU",
+            "icao": "SOR",
+            "name": "SonAir",
+            "parent": "SOR"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1971,
             "hubs": "KTUS",
             "icao": "SPA",
