@@ -7718,6 +7718,15 @@
             "parent": "VLK"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1992,
+            "hubs": "EBAW",
+            "icao": "VLM",
+            "name": "VLM Airlines",
+            "parent": "VLM"
+        },
+        {
             "ceased": 2005,
             "comment": "Merged to JST",
             "founded": 2004,
@@ -7869,6 +7878,15 @@
             "icao": "WJA",
             "name": "WestJet",
             "parent": "WJA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2016,
+            "hubs": "LJMB",
+            "icao": "WLM",
+            "name": "VLM Airlines Slovenia",
+            "parent": "VLM"
         },
         {
             "ceased": 0,
@@ -8228,6 +8246,12 @@
             "lat": 6.165736,
             "lon": 1.2541415,
             "name": "GNASSINGBE EYADEMA INTL"
+        },
+        {
+            "icao": "EBAW",
+            "lat": 51.1907,
+            "lon": 4.46307,
+            "name": "Antwerp Deurne"
         },
         {
             "icao": "EBBR",
@@ -9188,6 +9212,12 @@
             "lat": 46.223685,
             "lon": 14.4576085,
             "name": "LJUBLJANA"
+        },
+        {
+            "icao": "LJMB",
+            "lat": 46.4799,
+            "lon": 15.6862,
+            "name": "MARIBOR"
         },
         {
             "icao": "LKPR",
