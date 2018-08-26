@@ -6982,6 +6982,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1958,
+            "hubs": "GVAC",
+            "icao": "TCV",
+            "name": "Cabo Verde Airlines",
+            "parent": "TCV"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2002,
             "hubs": "EBBR",
             "icao": "TCW",
@@ -8405,6 +8414,12 @@
             "lat": 18.3025,
             "lon": -15.9746,
             "name": "Nouakchott Intl."
+        },
+        {
+            "icao": "GVAC",
+            "lat": 16.7376,
+            "lon": -22.95,
+            "name": "Sal Amilcar Cabral Intl"
         },
         {
             "icao": "HAAB",
