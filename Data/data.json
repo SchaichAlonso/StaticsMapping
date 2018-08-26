@@ -7252,6 +7252,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2006,
+            "hubs": "LTFJ LTAI",
+            "icao": "TWI",
+            "name": "Tailwind Airlines",
+            "parent": "TWI"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2009,
             "hubs": "UNKL UOOO",
             "icao": "TYA",
