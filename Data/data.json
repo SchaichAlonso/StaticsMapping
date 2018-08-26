@@ -6973,6 +6973,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2002,
+            "hubs": "UEEE",
+            "icao": "SYL",
+            "name": "Yakutia Airlines",
+            "parent": "SYL"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1946,
             "hubs": "OSDI OSAP",
             "icao": "SYR",
@@ -10268,6 +10277,12 @@
             "lat": 40.1473,
             "lon": 44.3959,
             "name": "Yerevan Zvartnots Airport"
+        },
+        {
+            "icao": "UEEE",
+            "lat": 62.0941,
+            "lon": 129.776,
+            "name": "Yakutsk"
         },
         {
             "icao": "UERP",
