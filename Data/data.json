@@ -6802,6 +6802,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2005,
+            "hubs": "CYUL CYYZ",
+            "icao": "SWG",
+            "name": "Sunwing Airlines",
+            "parent": "SWG"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1997,
             "hubs": "KPHX",
             "icao": "SWQ",
