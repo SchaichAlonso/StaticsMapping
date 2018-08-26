@@ -7279,6 +7279,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1992,
+            "hubs": "UTAA",
+            "icao": "TUA",
+            "name": "Turkmenistan Airlines",
+            "parent": "TUA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1972,
             "hubs": "EDDV",
             "icao": "TUI",
@@ -10130,6 +10139,12 @@
             "lat": 57.18041616,
             "lon": 65.31467742,
             "name": "Roschino"
+        },
+        {
+            "icao": "UTAA",
+            "lat": 37.9867,
+            "lon": 58.3583,
+            "name": "ASHGABAT"
         },
         {
             "icao": "UTDD",
