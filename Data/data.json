@@ -1825,6 +1825,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2001,
+            "hubs": "UBBB",
+            "icao": "AZQ",
+            "name": "Silk Way Airlines",
+            "parent": "AZQ"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2008,
             "hubs": "SBCF SBKP SBRF",
             "icao": "AZU",
