@@ -1742,6 +1742,15 @@
             "parent": "AVN"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1988,
+            "hubs": "EGSS",
+            "icao": "AWC",
+            "name": "Titan Airways",
+            "parent": "AWC"
+        },
+        {
             "ceased": 2015,
             "comment": "",
             "founded": 1939,
