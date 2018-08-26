@@ -7153,6 +7153,15 @@
         {
             "ceased": 2016,
             "comment": "",
+            "founded": 1951,
+            "hubs": "RCKH RCSS RCTP",
+            "icao": "TNA",
+            "name": "TransAsia Airways",
+            "parent": "TNA"
+        },
+        {
+            "ceased": 2016,
+            "comment": "",
             "founded": 2006,
             "hubs": "TNCA",
             "icao": "TNM",
