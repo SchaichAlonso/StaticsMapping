@@ -6424,6 +6424,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2004,
+            "hubs": "VIDP VOMM VOHS VECC",
+            "icao": "SEJ",
+            "name": "SpiceJet",
+            "parent": "SEJ"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1977,
             "hubs": "FSIA",
             "icao": "SEY",
