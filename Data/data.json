@@ -7567,6 +7567,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1992,
+            "hubs": "UTTT",
+            "icao": "UZB",
+            "name": "Uzbekistan Airways",
+            "parent": "UZB"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1942,
             "hubs": "UUDD",
             "icao": "VAS",
@@ -10181,6 +10190,12 @@
             "lat": 40.2154,
             "lon": 69.6947,
             "name": "KHUDZHAND"
+        },
+        {
+            "icao": "UTTT",
+            "lat": 41.2575,
+            "lon": 69.281,
+            "name": "Yuzhny"
         },
         {
             "icao": "UUBA",
