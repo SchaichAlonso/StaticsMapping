@@ -7981,6 +7981,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2011,
+            "hubs": "BIKF",
+            "icao": "WOW",
+            "name": "WOW air",
+            "parent": "WOW"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2003,
             "hubs": "UKBB",
             "icao": "WRC",
