@@ -7090,6 +7090,42 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2001,
+            "hubs": "LHBP",
+            "icao": "TVL",
+            "name": "Travel Service Hungary",
+            "parent": "TVS"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2012,
+            "hubs": "EPWA",
+            "icao": "TVP",
+            "name": "Travel Service Poland",
+            "parent": "TVS"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2010,
+            "hubs": "LZIB",
+            "icao": "TVQ",
+            "name": "Travel Service Slovakia",
+            "parent": "TVS"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1998,
+            "hubs": "LKPR",
+            "icao": "TVS",
+            "name": "Travel Service",
+            "parent": "TVS"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2009,
             "hubs": "UNKL UOOO",
             "icao": "TYA",
