@@ -3560,6 +3560,15 @@
             "parent": "CHH"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2014,
+            "hubs": "FVRG",
+            "icao": "FZW",
+            "name": "Zimbabwe flyafrica.com",
+            "parent": "FZW"
+        },
+        {
             "ceased": 2014,
             "comment": "",
             "founded": 1995,
