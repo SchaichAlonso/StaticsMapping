@@ -6910,6 +6910,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1962,
+            "hubs": "SEQM",
+            "icao": "TAE",
+            "name": "TAME",
+            "parent": "TAE"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1931,
             "hubs": "MSLP",
             "icao": "TAI",
