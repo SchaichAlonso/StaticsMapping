@@ -7088,6 +7088,15 @@
             "parent": "TGW"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1991,
+            "hubs": "WIII",
+            "icao": "TGN",
+            "name": "Trigana Air Service",
+            "parent": "TGN"
+        },
+        {
             "ceased": 2017,
             "comment": "Merged into SCO",
             "founded": 2003,
