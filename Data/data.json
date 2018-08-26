@@ -7045,6 +7045,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1984,
+            "hubs": "LDZA",
+            "icao": "TDR",
+            "name": "Trade Air",
+            "parent": "TDR"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2005,
             "hubs": "EHAM",
             "icao": "TFL",
