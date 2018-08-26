@@ -5992,6 +5992,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2012,
+            "hubs": "VTBD",
+            "icao": "RCT",
+            "name": "R Airlines",
+            "parent": "RCT"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1975,
             "hubs": "FMEE",
             "icao": "REU",
