@@ -7502,6 +7502,15 @@
             "parent": "KKK"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1996,
+            "hubs": "UKBB",
+            "icao": "UKN",
+            "name": "Ukraine Air Enterprise",
+            "parent": "UKN"
+        },
+        {
             "ceased": 2002,
             "comment": "",
             "founded": 1992,
