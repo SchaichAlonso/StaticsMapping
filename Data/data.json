@@ -6595,6 +6595,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2008,
+            "hubs": "UTDD",
+            "icao": "SMR",
+            "name": "Somon Air",
+            "parent": "SMR"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1997,
             "hubs": "RJTT ROAH",
             "icao": "SNJ",
@@ -9830,6 +9839,12 @@
             "lat": 57.18041616,
             "lon": 65.31467742,
             "name": "Roschino"
+        },
+        {
+            "icao": "UTDD",
+            "lat": 38.5435,
+            "lon": 68.8246,
+            "name": "DUSHANBE"
         },
         {
             "icao": "UUBA",
