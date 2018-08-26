@@ -5668,6 +5668,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1988,
+            "hubs": "LPPT",
+            "icao": "OAV",
+            "name": "Omni Aviation",
+            "parent": "OAV"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2003,
             "hubs": "LSZH",
             "icao": "OAW",
@@ -7968,6 +7977,15 @@
             "icao": "WSF",
             "name": "Westair Benin",
             "parent": "WSF"
+        },
+        {
+            "ceased": 2014,
+            "comment": "",
+            "founded": 2010,
+            "hubs": "SBKP",
+            "icao": "WTJ",
+            "name": "Whitejets",
+            "parent": "OAV"
         },
         {
             "ceased": 0,
