@@ -1078,6 +1078,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1992,
+            "hubs": "UUEE",
+            "icao": "ABG",
+            "name": "Royal Flight",
+            "parent": "ABG"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2007,
             "hubs": "RKPK",
             "icao": "ABL",
