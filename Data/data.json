@@ -7675,6 +7675,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2006,
+            "hubs": "MMMY",
+            "icao": "VIV",
+            "name": "VivaAerobus",
+            "parent": "VIV"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2007,
             "hubs": "VVDN VVCI VVNB VVTS",
             "icao": "VJC",
