@@ -7081,6 +7081,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1923,
+            "hubs": "UTDD UTDL",
+            "icao": "TJK",
+            "name": "Tajik Air",
+            "parent": "TJK"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2001,
             "hubs": "MMMX",
             "icao": "TNO",
@@ -10013,6 +10022,12 @@
             "lat": 38.5435,
             "lon": 68.8246,
             "name": "DUSHANBE"
+        },
+        {
+            "icao": "UTDL",
+            "lat": 40.2154,
+            "lon": 69.6947,
+            "name": "KHUDZHAND"
         },
         {
             "icao": "UUBA",
