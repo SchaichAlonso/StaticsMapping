@@ -6172,6 +6172,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1999,
+            "hubs": "UUDD",
+            "icao": "RWZ",
+            "name": "Red Wings Airlines",
+            "parent": "RWZ"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2009,
             "hubs": "GMMN",
             "icao": "RXP",
