@@ -6982,6 +6982,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2010,
+            "hubs": "ZGGG ZULS",
+            "icao": "TBA",
+            "name": "Tibet Airlines",
+            "parent": "CCA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2005,
             "hubs": "OIMM",
             "icao": "TBM",
@@ -10562,6 +10571,12 @@
             "lat": 29.7192165,
             "lon": 106.6416765,
             "name": "JIANGBEI"
+        },
+        {
+            "icao": "ZULS",
+            "lat": 29.298,
+            "lon": 90.9122,
+            "name": "Lhasa-Gonggar"
         },
         {
             "icao": "ZUUU",
