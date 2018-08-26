@@ -7756,6 +7756,24 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2016,
+            "hubs": "MROC MSLP",
+            "icao": "VOC",
+            "name": "Volaris Costa Rica",
+            "parent": "VOI"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2004,
+            "hubs": "MMGL MMMX MMTJ",
+            "icao": "VOI",
+            "name": "Volaris",
+            "parent": "VOI"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1999,
             "hubs": "NZAA YSSY",
             "icao": "VOZ",
@@ -9394,6 +9412,12 @@
             "name": "Sangster Intl"
         },
         {
+            "icao": "MMGL",
+            "lat": 20.5247,
+            "lon": -103.309,
+            "name": "Miguel Hidalgo y Costilla Airport"
+        },
+        {
             "icao": "MMMX",
             "lat": 19.43630772,
             "lon": -99.0721042,
@@ -9410,6 +9434,12 @@
             "lat": 22.2586,
             "lon": -100.933,
             "name": "Ponciano Arriaga Intl"
+        },
+        {
+            "icao": "MMTJ",
+            "lat": 32.5411,
+            "lon": -116.97,
+            "name": "Tijuana International Airport"
         },
         {
             "icao": "MNMG",
