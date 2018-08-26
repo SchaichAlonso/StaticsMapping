@@ -7954,6 +7954,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2002,
+            "hubs": "DBBB",
+            "icao": "WSF",
+            "name": "Westair Benin",
+            "parent": "WSF"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1972,
             "hubs": "KLAS",
             "icao": "WWW",
