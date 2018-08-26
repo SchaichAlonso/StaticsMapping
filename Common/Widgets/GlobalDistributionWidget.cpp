@@ -3,6 +3,7 @@
 #include <QtGui/QImage>
 #include <QtGui/QPainter>
 
+#include <Common/DataPath.hpp>
 #include <Common/Classification/Airport.hpp>
 #include <Common/Classification/Airline.hpp>
 #include <Common/Classification/Definitions.hpp>
@@ -32,7 +33,7 @@ namespace Widgets
     QWidget *parent
   )
   : OpenGLWidget(parent)
-  , m_earth(texture(QImage(Classification::Definitions::dataPath("earthmap1k.jpg"))))
+  , m_earth(texture(QImage(DataPath::existingPath("earthmap1k.jpg"))))
   , m_zoom(2)
   , m_zoom_min(1.0)
   , m_radius(1.0)

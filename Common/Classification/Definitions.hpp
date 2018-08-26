@@ -126,9 +126,6 @@ namespace Classification
     bool              toFile(QString filename) const;
     static DefinitionsPointer fromFile (QString =QString());
     
-    static QString dataPath (QString);
-    
-    
     AircraftModel *aircraftModel ();
     AirlineModel  *airlineModel ();
     LibraryModel  *libraryModel ();

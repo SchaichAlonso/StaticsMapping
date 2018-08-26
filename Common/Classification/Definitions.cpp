@@ -6,6 +6,8 @@
 #include <QtCore/QJsonArray>
 #include <QtCore/QJsonDocument>
 
+#include <Common/DataPath.hpp>
+
 #include "Aircraft.hpp"
 #include "Airline.hpp"
 #include "Airport.hpp"
@@ -752,7 +754,7 @@ Classification::Definitions::match (int size, QString filehash, QString texhash)
 bool
 Classification::Definitions::toFile () const
 {
-  return (toFile(dataPath("data.json")));
+  return (toFile(DataPath::existingPath("data.json")));
 }
 
 
@@ -762,7 +764,7 @@ Classification::Definitions::toFile (QString filename) const
 {
   Q_ASSERT(!filename.isNull());
   if (filename.isNull()) {
-    filename = dataPath("data.json");
+    filename = DataPath::existingPath("data.json");
   }
   
   QFile file (filename);
@@ -788,29 +790,13 @@ Classification::Definitions::fromFile (QString filename)
   DefinitionsPointer retval;
   
   if (filename.isNull())
-    filename = dataPath ("data.json");
+    filename = DataPath::existingPath("data.json");
   
   QJsonObject defs(readJson(filename));
   
   if (defs.size() != 0) {
     retval.reset (new Definitions (defs));
   }
-  
-  return (retval);
-}
-
-
-
-QString
-Classification::Definitions::dataPath (QString filename)
-{
-  QString retval;
-  
-  QDir path (QCoreApplication::applicationDirPath());
-  path.cdUp ();
-  path.cd ("Data");
-  
-  retval = path.filePath (filename);
   
   return (retval);
 }

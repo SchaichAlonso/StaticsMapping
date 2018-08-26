@@ -2,6 +2,7 @@ project (Common)
 
 add_library (Common STATIC
   CryptoHash.cpp
+  DataPath.cpp
   Diagnostics.cpp
 )
 
