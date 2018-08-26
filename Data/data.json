@@ -7630,6 +7630,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1996,
+            "hubs": "SVMI",
+            "icao": "VEC",
+            "name": "Vensecar Internacional",
+            "parent": "DAE"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1987,
             "hubs": "VVTS",
             "icao": "VFC",
