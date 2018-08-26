@@ -6964,6 +6964,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2005,
+            "hubs": "OIMM",
+            "icao": "TBM",
+            "name": "Taban Air",
+            "parent": "TBM"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2008,
             "hubs": "OIII OITT",
             "icao": "TBZ",
