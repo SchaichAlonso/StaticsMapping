@@ -6442,6 +6442,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2010,
+            "hubs": "SBCT",
+            "icao": "SID",
+            "name": "Sideral Air Cargo",
+            "parent": "SID"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2003,
             "hubs": "WIII",
             "icao": "SJY",
@@ -9287,6 +9296,12 @@
             "lat": -19.6337585,
             "lon": -43.968854,
             "name": "Tancredo Neves"
+        },
+        {
+            "icao": "SBCT",
+            "lat": -25.5288,
+            "lon": -49.1731,
+            "name": "Curitiba Alfonso Pena Intl"
         },
         {
             "icao": "SBGL",
