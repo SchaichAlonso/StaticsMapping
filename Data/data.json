@@ -7972,6 +7972,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2003,
+            "hubs": "UKBB",
+            "icao": "WRC",
+            "name": "Windrose Airlines",
+            "parent": "WRC"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2002,
             "hubs": "DBBB",
             "icao": "WSF",
