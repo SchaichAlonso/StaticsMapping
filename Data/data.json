@@ -2761,6 +2761,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1987,
+            "hubs": "KMIA",
+            "icao": "CXP",
+            "name": "Xtra Airways",
+            "parent": "CXP"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2006,
             "hubs": "LIRF",
             "icao": "CYL",
