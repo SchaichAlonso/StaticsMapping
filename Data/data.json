@@ -7756,6 +7756,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2016,
+            "hubs": "SPJC",
+            "icao": "VPE",
+            "name": "Viva Air Peru",
+            "parent": "VPE"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2004,
             "hubs": "KLAX KSFO",
             "icao": "VRD",
@@ -7806,6 +7815,15 @@
             "icao": "VVA",
             "name": "Aviast Air",
             "parent": "VVA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2009,
+            "hubs": "SKRG SKBO",
+            "icao": "VVC",
+            "name": "Viva Air Colombia",
+            "parent": "VPE"
         },
         {
             "ceased": 0,
