@@ -4777,11 +4777,29 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2017,
+            "hubs": "VDSR",
+            "icao": "LKH",
+            "name": "Small Planet Airlines Cambodia",
+            "parent": "LLC"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2013,
             "hubs": "WIII WIOO",
             "icao": "LKN",
             "name": "Nam Air",
             "parent": "SJY"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2007,
+            "hubs": "EYVI",
+            "icao": "LLC",
+            "name": "Small Planet Airlines",
+            "parent": "LLC"
         },
         {
             "ceased": 0,
@@ -4795,11 +4813,29 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2009,
+            "hubs": "EPKT EPWA",
+            "icao": "LLP",
+            "name": "Small Planet Airlines Poland",
+            "parent": "LLC"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1996,
             "hubs": "VABB VECC VIDP VOBL VOHS",
             "icao": "LLR",
             "name": "Alliance Air",
             "parent": "AIC"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2015,
+            "hubs": "EDDL",
+            "icao": "LLX",
+            "name": "Small Planet Airlines Germany",
+            "parent": "LLC"
         },
         {
             "ceased": 0,
@@ -7996,6 +8032,12 @@
             "name": "Oslo Gardermoen"
         },
         {
+            "icao": "EPKT",
+            "lat": 50.476,
+            "lon": 19.0821,
+            "name": "Katowice Airport"
+        },
+        {
             "icao": "EPWA",
             "lat": 52.16509137,
             "lon": 20.96692341,
@@ -9830,6 +9872,12 @@
             "lat": 11.5465415,
             "lon": 104.8441415,
             "name": "Phnom Penh Intl"
+        },
+        {
+            "icao": "VDSR",
+            "lat": 13.4107,
+            "lon": 103.813,
+            "name": "Siem Reap"
         },
         {
             "icao": "VECC",
