@@ -7765,6 +7765,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2013,
+            "hubs": "VIDP",
+            "icao": "VTI",
+            "name": "Vistara",
+            "parent": "VTI"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2016,
             "hubs": "SVVA",
             "icao": "VTU",
