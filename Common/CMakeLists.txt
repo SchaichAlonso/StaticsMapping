@@ -3,7 +3,6 @@ project (Common)
 add_library (Common STATIC
   CryptoHash.cpp
   Diagnostics.cpp
-  Settings.cpp
 )
 
 target_link_libraries (Common
