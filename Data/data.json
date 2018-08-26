@@ -7574,6 +7574,15 @@
             "parent": "UZB"
         },
         {
+            "ceased": 2017,
+            "comment": "",
+            "founded": 2014,
+            "hubs": "MSLP",
+            "icao": "VAR",
+            "name": "VECA Airlines",
+            "parent": "VAR"
+        },
+        {
             "ceased": 0,
             "comment": "",
             "founded": 1942,
