@@ -7053,6 +7053,15 @@
         },
         {
             "ceased": 0,
+            "comment": "https://ru.wikipedia.org/wiki/Toll_Aviation",
+            "founded": 1989,
+            "hubs": "YBBN",
+            "icao": "TFX",
+            "name": "Toll Aviation",
+            "parent": "TFX"
+        },
+        {
+            "ceased": 0,
             "comment": "",
             "founded": 2007,
             "hubs": "YMML",
