@@ -7234,6 +7234,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 2014,
+            "hubs": "VTBS",
+            "icao": "TVJ",
+            "name": "Thai Vietjet Air",
+            "parent": "TVJ"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2001,
             "hubs": "LHBP",
             "icao": "TVL",
