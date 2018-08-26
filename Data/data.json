@@ -7691,6 +7691,15 @@
             "parent": "VSV"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 2016,
+            "hubs": "SVVA",
+            "icao": "VTU",
+            "name": "Turpial Airlines",
+            "parent": "VTU"
+        },
+        {
             "ceased": 2011,
             "comment": "",
             "founded": 1960,
@@ -9857,6 +9866,12 @@
             "lat": 10.6032,
             "lon": -66.9903,
             "name": "Simon Bolivar Intl"
+        },
+        {
+            "icao": "SVVA",
+            "lat": 10.1497,
+            "lon": -67.9284,
+            "name": "Arturo Michelena Int'l"
         },
         {
             "icao": "TJSJ",
