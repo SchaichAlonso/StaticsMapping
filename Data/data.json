@@ -6532,6 +6532,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1971,
+            "hubs": "KTUS",
+            "icao": "SPA",
+            "name": "Sierra Pacific Airlines",
+            "parent": "SPA"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 2001,
             "hubs": "WSSS",
             "icao": "SQC",
@@ -8480,6 +8489,12 @@
             "lat": 36.1982,
             "lon": -95.8895,
             "name": "Tulsa Intl"
+        },
+        {
+            "icao": "KTUS",
+            "lat": 32.1169,
+            "lon": -110.942,
+            "name": "Tucson Intl"
         },
         {
             "icao": "LBBG",
