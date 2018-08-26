@@ -7268,6 +7268,15 @@
             "parent": "XXX-AlaskaAir"
         },
         {
+            "ceased": 0,
+            "comment": "",
+            "founded": 1997,
+            "hubs": "UAII",
+            "icao": "VSV",
+            "name": "SCAT Airlines",
+            "parent": "VSV"
+        },
+        {
             "ceased": 2011,
             "comment": "",
             "founded": 1960,
@@ -9404,6 +9413,12 @@
             "lat": 51.0221805,
             "lon": 71.4670625,
             "name": "Astana INTL"
+        },
+        {
+            "icao": "UAII",
+            "lat": 42.3642,
+            "lon": 69.4791,
+            "name": "SHYMKENT"
         },
         {
             "icao": "UATG",
