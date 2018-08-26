@@ -8053,6 +8053,15 @@
         {
             "ceased": 0,
             "comment": "",
+            "founded": 1995,
+            "hubs": "LFPG",
+            "icao": "XLF",
+            "name": "XL Airways France",
+            "parent": "XLF"
+        },
+        {
+            "ceased": 0,
+            "comment": "",
             "founded": 1992,
             "hubs": "YMML",
             "icao": "XME",
