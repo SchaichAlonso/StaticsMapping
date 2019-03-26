@@ -2,9 +2,13 @@
 
 #include <QtCore/QMap>
 #include <QtCore/QVarLengthArray>
+
 #include <QtGui/QImage>
+#include <QtGui/QVector3D>
 
 #include <Common/Obj8/AbstractVisitor.hpp>
+
+#include "OpenGL/Model.hpp"
 
 namespace Widgets
 {
@@ -31,6 +35,16 @@ namespace Widgets
       double texcoord[2];
     };
     
+    struct Light
+    {
+      Light();
+      Light(QVector3D coords, QVector3D color);
+      
+      QVector3D coordinates;
+      QVector3D color;
+      bool      enabled;
+    };
+    
     struct GeometryGroup
     {
       State state;
@@ -40,9 +54,10 @@ namespace Widgets
       int   offset;
     };
     
-    VisualModel(QString = QString());
+    VisualModel(QString filename= QString());
     virtual ~VisualModel();
     
+    virtual void visit(Obj8::Command::Geometry::LightNamed *) Q_DECL_OVERRIDE;
     virtual void visit(Obj8::Command::Geometry::Lights *) Q_DECL_OVERRIDE;
     virtual void visit(Obj8::Command::Geometry::Lines *) Q_DECL_OVERRIDE;
     virtual void visit(Obj8::Command::Geometry::Triangles *) Q_DECL_OVERRIDE;
@@ -79,12 +94,17 @@ namespace Widgets
     State       m_current_state;
     
   protected:
+    OpenGL::MeshPointer m_mesh;
+    OpenGL::ModelPointer m_model;
+    
+  protected:
     friend ObjView;
     QImage m_draped, m_lit, m_normal, m_texture;
     
     QVarLengthArray<Vertex>         m_vertices;
     QVarLengthArray<int>            m_indices;
     QVarLengthArray<GeometryGroup>  m_groups;
+    QVarLengthArray<Light>          m_lights;
     
     int m_vertex_count, m_line_vertex_count, m_light_count, m_index_count;
     int m_vertex_index, m_line_vertex_index, m_light_index, m_index_index;

@@ -10,6 +10,9 @@
 #include <Common/Classification/Definitions.hpp>
 #include <Common/Classification/Object.hpp>
 
+#include "OpenGL/Scene.hpp"
+#include "OpenGL/Texture.hpp"
+#include "OpenGL/Model.hpp"
 #include "OpenGLWidget.hpp"
 
 namespace Widgets
@@ -26,6 +29,8 @@ namespace Widgets
     void setMaxZoomDistanceToEarth(Classification::Airport::DistanceInKM);
     
   protected:
+    OpenGL::ScenePointer scene() const;
+    OpenGL::ModelPointer globe(int longitudes, int latitudes, float radius) const;
     void generateLabels();
     
     virtual double velocity(double) const Q_DECL_OVERRIDE;
@@ -33,31 +38,11 @@ namespace Widgets
     virtual void   zoom(bool) Q_DECL_OVERRIDE;
     virtual void draw() Q_DECL_OVERRIDE;
     
-    OpenGLTexturePointer m_earth;
-    
     double m_zoom;
     double m_zoom_min;
     double m_radius;
     
-  protected:
-    /*
-   * TODO
-   *   deduplicate
-   */
-    struct Vertex
-    {
-      Vertex();
-      Vertex(const QVector3D &coord, const QVector2D &tex);
-      
-      QVector3D coord;
-      QVector2D tex;
-    };
-    
-    static QVarLengthArray<Vertex> sphereVertices(int lons, int lats, double radius);
-    static QVarLengthArray<int> sphereIndices(int lons, int lats);
-    
-    QVarLengthArray<Vertex> m_vertices;
-    QVarLengthArray<int>    m_indices;
+    OpenGL::ScenePointer m_scene;
     
   protected:
     struct TextChunk

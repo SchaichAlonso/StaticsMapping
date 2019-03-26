@@ -1,5 +1,6 @@
 #pragma once
 
+#include <QtCore/QDateTime>
 #include <QtCore/QList>
 
 #include <QtGui/QMatrix4x4>
@@ -8,7 +9,7 @@
 
 #include <QtWidgets/QOpenGLWidget>
 
-#include "OpenGLTexture.hpp"
+#include "OpenGL/FrameBufferObject.hpp"
 
 namespace Widgets
 {
@@ -40,13 +41,14 @@ namespace Widgets
     virtual void   zoom(bool) = 0;
     virtual void   draw() = 0;
     
-    static QVector3D sphericToCarthesian(double lat, double lon);
+    static QVector3D sphericToCarthesian(float lat, float lon);
     
-    OpenGLTexturePointer texture(QImage);
-    
+    QDateTime  m_t0;
     QMatrix4x4 m_projection, m_modelview;
     QVector3D  m_bgcolor;
     QVector3D  m_observer;
+    
+    OpenGL::FrameBufferObject m_offscreen;
     
     double     m_pitch, m_yaw;
     

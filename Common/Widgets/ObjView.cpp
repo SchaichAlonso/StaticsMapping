@@ -1,3 +1,11 @@
+#include <QtCore/QtMath>
+
+#include <Common/DataPath.hpp>
+
+#include "OpenGL/Mesh.hpp"
+#include "OpenGL/Model.hpp"
+#include "OpenGL/Object.hpp"
+#include "OpenGL/Obj8Shader.hpp"
 #include "ObjView.hpp"
 
 
@@ -20,6 +28,7 @@ namespace Widgets
 {
   ObjView::ObjView(QWidget *parent)
   : OpenGLWidget(parent)
+  , m_scene(scene())
   , zoom_level(sizeof(zoom_levels)/sizeof(*zoom_levels)/2)
   , m_lod(0)
   , m_wireframe(false)
@@ -48,19 +57,38 @@ namespace Widgets
     QSharedPointer<VisualModel> model
   )
   {
+    if (m_mdl) {
+      m_scene->removeModel(m_mdl->m_model);
+    }
+    
     m_object = object;
     m_mdl    = model;
     
     if (m_mdl) {
-      m_draped = texture(m_mdl->m_draped);
-      m_lit = texture(m_mdl->m_lit);
-      m_normal = texture(m_mdl->m_normal);
-      m_texture = texture(m_mdl->m_texture);
-    } else {
-      m_draped.reset();
-      m_lit.reset();
-      m_normal.reset();
-      m_texture.reset();
+      
+      for (int i=0; i!=m_mdl->m_lights.size(); ++i) {
+        OpenGL::LightPointer l(
+          new OpenGL::Light(
+            m_mdl->m_lights[i].coordinates,
+            m_mdl->m_lights[i].color
+          )
+        );
+        
+        if (m_mdl->m_lights[i].enabled) {
+          m_scene->addLight(l);
+        }
+      }
+      
+      /*
+      for (int i=0; i<360; i+=30) {
+        OpenGL::ModelPointer clone(new OpenGL::Model(*m_mdl->m_model.data()));
+        clone->move(50 * QVector3D(qSin(3.14 * i / 180), 0, qCos(3.14 * i / 180)));
+        clone->setOrientation(0, 0, i);
+        m_scene->addModel(clone);
+      }*/
+      
+      m_scene->addModel(m_mdl->m_model);
+      
     }
   }
   
@@ -70,6 +98,101 @@ namespace Widgets
   ObjView::setWireframe(bool wireframe)
   {
     m_wireframe = wireframe;
+  }
+  
+  
+  OpenGL::ScenePointer
+  ObjView::scene() const
+  {
+    OpenGL::ScenePointer scene{
+      new OpenGL::Scene{
+        OpenGL::ShaderPointer{
+          new OpenGL::Shader{
+            DataPath::existingPath("obj8-vert.glsl"),
+            DataPath::existingPath("obj8-frag.glsl")
+          }
+        }
+      }
+    };
+    scene->addModel(axis());
+    scene->addModel(ground());
+    return (scene);
+  }
+  
+  
+  OpenGL::ModelPointer
+  ObjView::axis() const
+  {
+    OpenGL::MeshPointer axis(new OpenGL::Mesh);
+    
+    QVector3D midpoint(0,0,0);
+    QVector3D vaxis[] = {
+      QVector3D(1, 0, 0),
+      QVector3D(0, 1, 0),
+      QVector3D(0, 0, 1)
+    };
+    
+    axis->drawElements(
+      new OpenGL::DrawElements(
+        QVector<int>()
+          << axis->addVertex(vaxis[0], vaxis[0])
+          << axis->addVertex(midpoint, vaxis[0])
+          << axis->addVertex(vaxis[1], vaxis[1])
+          << axis->addVertex(midpoint, vaxis[1])
+          << axis->addVertex(vaxis[2], vaxis[2])
+          << axis->addVertex(midpoint, vaxis[2]),
+        GL_LINES
+      )
+    );
+    
+    return OpenGL::ModelPointer{
+      new OpenGL::Model{
+        
+        axis,
+        OpenGL::Model::DepthMasked
+      }
+    };
+  }
+  
+  
+  OpenGL::ModelPointer
+  ObjView::ground() const
+  {
+    OpenGL::MeshPointer ground(new OpenGL::Mesh);
+    
+    QVector4D gray(0.5f,0.5f,0.5f,1.0f);
+    ground->drawElements(
+      new OpenGL::DrawElements(
+        QVector<int>()
+          << ground->addVertex(QVector3D(-256, 0, -256), gray)
+          << ground->addVertex(QVector3D(-256, 0,  256), gray)
+          << ground->addVertex(QVector3D( 256, 0,  256), gray)
+          << ground->addVertex(QVector3D(-256, 0, -256), gray)
+          << ground->addVertex(QVector3D( 256, 0,  256), gray)
+          << ground->addVertex(QVector3D( 256, 0, -256), gray),
+        GL_TRIANGLES
+      )
+    );
+    
+    OpenGL::IndexArray indices;
+    for(int line=0, lines=512, offset=lines/2; line!=lines; ++line) {
+      int alpha;
+      alpha = ((line - offset) % 10) != 0 ? 24 : 64;
+      alpha = (line != offset)? alpha : 192;
+      
+      QVector4D color(1, 1, 1, alpha/255.0f);
+      
+      indices << ground->addVertex(QVector3D(line - offset, 0.1f, -offset), color);
+      indices << ground->addVertex(QVector3D(line - offset, 0.1f,  offset), color);
+      
+      indices << ground->addVertex(QVector3D(-offset, 0.1f, line - offset), color);
+      indices << ground->addVertex(QVector3D( offset, 0.1f, line - offset), color);
+    }
+    ground->drawElements(
+      new OpenGL::DrawElements(indices, GL_LINES)
+    );
+    
+    return (OpenGL::ModelPointer(new OpenGL::Model(ground, OpenGL::Model::Lighting)));
   }
   
   
@@ -86,6 +209,8 @@ namespace Widgets
     
     Q_ASSERT (zoom_level >= 0);
     Q_ASSERT (zoom_level < max);
+    
+    m_scene->camera()->zoom(in);
   }
   
   
@@ -142,179 +267,26 @@ namespace Widgets
   
   
   void
-  ObjView::drawAxis()
-  {
-    GLubyte axis[3][3] = {
-      { 255,   0,   0 },
-      {   0, 255,   0 },
-      {   0,   0, 255 }
-    };
-    
-    QVector3D locale(0,0,0);
-    glBegin(GL_LINES);
-    for (int i=0; i!=3; ++i) {
-      glColor3ubv(axis[i]);
-      glVertex3f(
-        locale[0] + axis[i][0],
-        locale[1] + axis[i][1],
-        locale[2] + axis[i][2]
-      );
-      glVertex3fv(&locale[0]);
-    }
-    glEnd();
-  }
-  
-  
-  
-  void
-  ObjView::drawGrid()
-  {
-    glDisable(GL_DEPTH_TEST);
-    glBegin(GL_LINES);
-    for(int line=0, lines=512, offset=lines/2; line!=lines; ++line) {
-      
-      int alpha;
-      alpha = ((line - offset) % 10) != 0 ? 24 : 64;
-      alpha = (line != offset)? alpha : 192;
-      
-      glColor4ub(255, 255, 255, alpha);
-      
-      glVertex3i(line - offset, 0, -offset);
-      glVertex3i(line - offset, 0,  offset);
-      
-      glVertex3i(-offset, 0, line - offset);
-      glVertex3i( offset, 0, line - offset);
-    }
-    glEnd();
-    glEnable(GL_DEPTH_TEST);
-  }
-  
-  
-  
-  void
-  ObjView::drawObject()
-  {
-    glEnableClientState(GL_VERTEX_ARRAY);
-    glEnableClientState(GL_COLOR_ARRAY);
-    glEnableClientState(GL_NORMAL_ARRAY);
-    glEnableClientState(GL_TEXTURE_COORD_ARRAY);
-    
-    size_t stride = sizeof(VisualModel::Vertex);
-    VisualModel::Vertex *v = &m_mdl->m_vertices[0];
-    
-    glVertexPointer(3, GL_DOUBLE, stride, v->coordinates);
-    glColorPointer(3, GL_DOUBLE, stride, v->color);
-    glNormalPointer(GL_DOUBLE, stride, v->normal);
-    glTexCoordPointer(2, GL_DOUBLE, stride, v->texcoord);
-    
-    OpenGLTexturePointer bound;
-    
-    Q_FOREACH (const VisualModel::GeometryGroup &g, m_mdl->m_groups) {
-      
-      OpenGLTexturePointer required(g.state.draped? m_draped : m_texture);
-      if (required != bound) {
-        required->bind();
-        bound = required;
-      }
-      
-      if (g.state.lod_near != g.state.lod_far) {
-        if ((m_lod < g.state.lod_near) or (g.state.lod_far <= m_lod)) {
-          continue;
-        }
-      }
-      
-      GLenum mode = g.is_line ? GL_LINES : GL_TRIANGLES;
-      
-      if (g.is_line or m_wireframe) {
-        glDisable(GL_TEXTURE_2D);
-        glDisable(GL_LIGHTING);
-      } else {
-        glEnable(GL_TEXTURE_2D);
-        glEnable(GL_LIGHTING);
-      }
-      
-      glDrawElements(mode, g.count, GL_UNSIGNED_INT, &m_mdl->m_indices[g.offset]);
-    }
-    
-    glDisable(GL_TEXTURE_2D);
-    
-    glDisableClientState(GL_VERTEX_ARRAY);
-    glDisableClientState(GL_COLOR_ARRAY);
-    glDisableClientState(GL_NORMAL_ARRAY);
-    glDisableClientState(GL_TEXTURE_COORD_ARRAY);
-  }
-  
-  
-  
-  void
   ObjView::draw()
   {
-    glPushMatrix();
-    glMultMatrixf(modelView(false).constData());
-    glDisable(GL_DEPTH_TEST);
-    if (not m_ortho) {
-      drawGrid();
-    }
-    drawAxis();
-    glEnable(GL_DEPTH_TEST);
-    glPopMatrix();
+    OpenGL::CameraPointer cam(m_scene->camera());
+    cam->setPitch(m_pitch);
+    cam->setYaw(m_yaw);
+    cam->setPosition(QVector3D(0,0,0));
+    //cam->setPosition(cam->zoom() * sphericToCarthesian(m_pitch, m_yaw));
+    cam->setPosition(QVector3D(0, 0, cam->zoom()));
+    cam->setScreenDimensions(size());
     
-    glPushMatrix();
-    glMultMatrixf(modelView(true).constData());
+    QMatrix4x4 model(m_modelview * modelView(true));
     
-    if (m_mdl) {
-      if (m_wireframe) {
-        drawWireframe();
-      } else {
-        drawTextured();
-      }
+    if (m_wireframe) {
+      glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     }
     
-    glPopMatrix();
-  }
-  
-  
-  
-  void
-  ObjView::drawTextured()
-  {
-    glLightModeli(GL_LIGHT_MODEL_LOCAL_VIEWER, GL_TRUE);
-    glEnable(GL_LIGHT0);
-    //glEnable(GL_LIGHT1);
+    m_scene->draw();
     
-    GLfloat ambient[4]={0.2f,0.2f,0.2f,1.0f};
-    GLfloat diffuse[4]={0.8f,0.8f,0.8f,1.0f};
-    GLfloat specular[4]={1.0f, 1.0f, 1.0f, 1.0f};
-      
-    glLightfv(GL_LIGHT0, GL_AMBIENT, ambient);
-    glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse);
-    glLightfv(GL_LIGHT0, GL_SPECULAR, specular);
-    
-    GLfloat LightPosition[] = {0.0f, 45.0f, 0.0f, 1.0f};
-    glLightfv(GL_LIGHT0, GL_POSITION, LightPosition);
-    glLightf (GL_LIGHT0, GL_CONSTANT_ATTENUATION, 1);
-    glLightf (GL_LIGHT0, GL_LINEAR_ATTENUATION, 0.0);
-    glLightf (GL_LIGHT0, GL_QUADRATIC_ATTENUATION, 0.0);
-    glMaterialf(GL_FRONT, GL_SHININESS, 128.0f / 10);
-  
-    glEnable(GL_LIGHTING);
-  
-    drawObject();
-    
-    glDisable(GL_LIGHTING);
-  }
-  
-  
-  
-  void
-  ObjView::drawWireframe()
-  {
-    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-    
-    if (m_mdl) {
-      drawObject();
+    if (m_wireframe) {
+      glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
     }
-    
-    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
   }
 }

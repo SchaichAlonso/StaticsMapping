@@ -5,6 +5,7 @@
 #include <QtGui/QMouseEvent>
 #include <QtGui/QWheelEvent>
 
+#include "OpenGL/Context.hpp"
 #include "OpenGLWidget.hpp"
 
 namespace Widgets
@@ -12,19 +13,22 @@ namespace Widgets
   OpenGLWidget::OpenGLWidget(QWidget *parent, Qt::WindowFlags flags)
   : QOpenGLWidget(parent, flags)
   , QOpenGLFunctions()
+  , m_t0(QDateTime::currentDateTimeUtc())
   , m_projection()
   , m_modelview()
   , m_bgcolor(0, 0, 0)
   , m_observer(0, 0, 1)
+  , m_offscreen()
   , m_pitch(0)
   , m_yaw(0)
   , m_ortho(true)
   , m_mouse_tracking_active(false)
   {
-    QSurfaceFormat fmt;
+    
+    /*QSurfaceFormat fmt;
     fmt.setDepthBufferSize(24);
     fmt.setSamples(128);
-    setFormat(fmt);
+    setFormat(fmt);*/
   }
   
   
@@ -154,7 +158,9 @@ namespace Widgets
   void
   OpenGLWidget::resizeGL(int w, int h)
   {
+#if 0
     glViewport(0, 0, w, h);
+#endif
     
     update();
   }
@@ -191,6 +197,20 @@ namespace Widgets
         QVector3D (0, 1, 0)
       );
     }
+        
+#if 0
+    GLint max_viewport_dimensions[2];
+    glGetIntegerv(GL_MAX_VIEWPORT_DIMS, &max_viewport_dimensions[0]);
+    
+    QSize viewport(
+      qMin<int>(qNextPowerOfTwo(width()), max_viewport_dimensions[0]),
+      qMin<int>(qNextPowerOfTwo(height()), max_viewport_dimensions[1])
+    );
+#else
+    QSize viewport(size());
+#endif
+    m_offscreen.bind(viewport);
+    glViewport(0, 0, viewport.width(), viewport.height());
     
     glClearColor(m_bgcolor[0], m_bgcolor[1], m_bgcolor[2], 0);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -205,6 +225,19 @@ namespace Widgets
     glLoadMatrixf(m_modelview.constData());
     
     draw();
+    
+    m_offscreen.release();
+    m_offscreen.blit(Q_NULLPTR, rect());
+    
+    QDateTime t1(QDateTime::currentDateTimeUtc());
+    
+    if (t1 != m_t0) {
+      qint64 msecs(m_t0.msecsTo(t1));
+      if (msecs != 0) {
+        qDebug("Took %d msecs (%f fps)", int(msecs), 1000.0 / msecs);
+      }
+      m_t0 = t1;
+    }
   }
   
   
@@ -218,9 +251,9 @@ namespace Widgets
   
   
   QVector3D
-  OpenGLWidget::sphericToCarthesian(double lat, double lon)
+  OpenGLWidget::sphericToCarthesian(float lat, float lon)
   {
-    qreal cos_lat, cos_lon, sin_lat, sin_lon;
+    float cos_lat, cos_lon, sin_lat, sin_lon;
     cos_lon = qCos(qDegreesToRadians(lon));
     sin_lon = qSin(qDegreesToRadians(lon));
     cos_lat = qCos(qDegreesToRadians(lat));
@@ -233,14 +266,5 @@ namespace Widgets
         cos_lat*cos_lon
       )
     );
-  }
-  
-  
-  
-  OpenGLTexturePointer
-  OpenGLWidget::texture(QImage image)
-  {
-    OpenGLTexturePointer retval(new OpenGLTexture(this, image));
-    return (retval);
   }
 }

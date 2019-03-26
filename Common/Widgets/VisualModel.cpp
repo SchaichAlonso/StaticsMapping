@@ -1,5 +1,6 @@
 #include <QtCore/QDir>
 
+#include <Common/Obj8/Command/Geometry/LightNamed.hpp>
 #include <Common/Obj8/Command/Geometry/Lights.hpp>
 #include <Common/Obj8/Command/Geometry/Lines.hpp>
 #include <Common/Obj8/Command/Geometry/Triangles.hpp>
@@ -8,6 +9,7 @@
 #include <Common/Obj8/Command/State/NoDraped.hpp>
 #include <Common/Obj8/Data/Index10.hpp>
 #include <Common/Obj8/Data/LineVertex.hpp>
+#include <Common/Obj8/Data/LightVertex.hpp>
 #include <Common/Obj8/Data/Vertex.hpp>
 #include <Common/Obj8/Global/PointsCounts.hpp>
 #include <Common/Obj8/Global/Texture.hpp>
@@ -17,6 +19,9 @@
 
 #include "VisualModel.hpp"
 
+#include "OpenGL/DrawElementsObj8.hpp"
+#include "OpenGL/Mesh.hpp"
+#include "OpenGL/Obj8Shader.hpp"
 
 #include <QtPlugin>
 Q_IMPORT_PLUGIN (QDDSPlugin);
@@ -42,9 +47,38 @@ namespace Widgets
   
   
   
+  VisualModel::Light::Light()
+  : coordinates()
+  , color()
+  , enabled(false)
+  {
+  }
+  
+  
+  
+  VisualModel::Light::Light(QVector3D coord, QVector3D color)
+  : coordinates(coord)
+  , color(color)
+  , enabled(true)
+  {
+  }
+  
+  
+  
   VisualModel::VisualModel(QString filename)
     : AbstractVisitor(filename)
+    , m_symbol_table()
     , m_current_state()
+    , m_mesh(new OpenGL::Mesh())
+    , m_model(new OpenGL::Model(m_mesh))
+    , m_draped()
+    , m_lit()
+    , m_normal()
+    , m_texture()
+    , m_vertices()
+    , m_indices()
+    , m_groups()
+    , m_lights()
     , m_vertex_count(-1)
     , m_line_vertex_count(-1)
     , m_light_count(-1)
@@ -57,6 +91,11 @@ namespace Widgets
     setSatisfied("GLOBAL_LIGHTING", false);
     setSatisfied("GLOBAL_SHADOWS", false);
     setSatisfied("VERSION10", true);
+    
+    /*
+     * x-plane 11.10
+     */
+    setSatisfied("SCENERY_SHADOWS", true);
   }
   
   
@@ -76,6 +115,7 @@ namespace Widgets
     m_vertices.clear();
     m_indices.clear();
     m_groups.clear();
+    m_lights.clear();
     
     m_vertex_count = m_line_vertex_count = m_light_count = m_index_count = -1;
     m_vertex_index = m_line_vertex_index = m_light_index = m_index_index = -1;
@@ -113,10 +153,54 @@ namespace Widgets
   
   
   void
+  VisualModel::visit(Obj8::Command::Geometry::LightNamed *t)
+  {
+    /*
+     * https://github.com/der-On/XPlane2Blender/blob/master/io_xplane2blender/resources/lights.txt
+     */
+    QMap<QString,QVector3D> known;
+    known["airplane_nav_tail_static_h"]  = QVector3D(1.00f, 1.00f, 0.80f);
+    known["airplane_nav_tail_static"]    = QVector3D(1.00f, 1.00f, 0.80f);
+    known["airplane_nav_left_static_h"]  = QVector3D(0.90f, 0.10f, 0.00f);
+    known["airplane_nav_left_static"]    = QVector3D(0.90f, 0.10f, 0.00f);
+    known["airplane_nav_right_static_h"] = QVector3D(0.02f, 0.74f, 0.36f);
+    known["airplane_nav_right_static"]   = QVector3D(0.02f, 0.74f, 0.36f);
+    
+    m_model->addLight(
+      OpenGL::LightPointer(
+        new OpenGL::Light(
+          QVector3D(
+            t->m_x.toDouble(),
+            t->m_y.toDouble(),
+            t->m_z.toDouble()
+          ),
+          known.value(t->m_name.value(), QVector3D(1,1,1))
+        )
+      )
+    );
+    
+    m_lights.append(
+      Light(
+        QVector3D(
+          t->m_x.toDouble(),
+          t->m_y.toDouble(),
+          t->m_z.toDouble()
+        ),
+        known.value(t->m_name.value(), QVector3D(1,1,1))
+      )
+    );
+  }
+  
+  
+  void
   VisualModel::visit(Obj8::Command::Geometry::Lights *t)
   {
     if (t->offset() + t->count() > m_light_count) {
       Q_ASSERT(false);
+    }
+    
+    for(int i=0; i<t->count(); ++i) {
+      m_lights[t->offset() + i].enabled = true;
     }
   }
   
@@ -197,10 +281,19 @@ namespace Widgets
   
   
   void
-  VisualModel::visit(Obj8::Data::LightVertex *)
+  VisualModel::visit(Obj8::Data::LightVertex *v)
   {
     if (++m_light_index > m_light_count)
       Q_ASSERT(false);
+    
+    Light *l(&m_lights[m_light_index]);
+    l->coordinates[0] = v->x.toDouble();
+    l->coordinates[1] = v->y.toDouble();
+    l->coordinates[2] = v->z.toDouble();
+    
+    l->color[0] = v->r.toDouble();
+    l->color[1] = v->g.toDouble();
+    l->color[2] = v->b.toDouble();
   }
   
   
@@ -222,6 +315,12 @@ namespace Widgets
     vertex->color[0] = v->r.toDouble();
     vertex->color[1] = v->g.toDouble();
     vertex->color[2] = v->b.toDouble();
+    
+    m_mesh->setVertex(
+      m_vertex_count + m_line_vertex_index,
+      QVector3D(v->x.toDouble(), v->y.toDouble(), v->z.toDouble()),
+      QVector4D(v->r.toDouble(), v->g.toDouble(), v->b.toDouble(), 1)
+    );
   }
   
   
@@ -246,6 +345,13 @@ namespace Widgets
     
     vertex->texcoord[0] =  v->s.toDouble();
     vertex->texcoord[1] = -v->t.toDouble();
+    
+    m_mesh->setVertex(
+      m_vertex_index,
+      QVector3D(v->x.toDouble(), v->y.toDouble(), v->z.toDouble()),
+      QVector3D(v->nx.toDouble(), v->ny.toDouble(), v->nz.toDouble()),
+      QVector2D(v->s.toDouble(), -v->t.toDouble())
+    );
   }
   
   
@@ -268,6 +374,8 @@ namespace Widgets
     m_index_count = p->indices();
     
     m_vertices.resize(m_vertex_count + m_line_vertex_count);
+    
+    m_mesh->setVertexCount(m_vertex_count + m_line_vertex_count);
   }
   
   
@@ -276,6 +384,8 @@ namespace Widgets
   VisualModel::visit(Obj8::Global::Texture *t)
   {
     m_texture = loadTexture(t->path ());
+    
+    m_model->setTexture(0, m_texture);
   }
   
   
@@ -284,6 +394,8 @@ namespace Widgets
   VisualModel::visit(Obj8::Global::TextureDraped *t)
   {
     m_draped = loadTexture(t->path());
+    
+    m_model->setTexture(1, m_draped);
   }
   
   
@@ -292,6 +404,8 @@ namespace Widgets
   VisualModel::visit(Obj8::Global::TextureLit *t)
   {
     m_lit = loadTexture(t->path());
+    
+    m_model->setTexture(2, m_lit);
   }
   
   
@@ -300,6 +414,8 @@ namespace Widgets
   VisualModel::visit(Obj8::Global::TextureNormal *t)
   {
     m_normal = loadTexture(t->path());
+    
+    m_model->setTexture(3, m_normal);
   }
   
   
@@ -329,6 +445,35 @@ namespace Widgets
     g.offset  = offset;
     
     m_groups.append (g);
+    
+    
+    
+    
+    
+    
+    OpenGL::IndexArray indices;
+    for (i=offset; i!=e; ++i) {
+      if (m_indices[i] > array_size) {
+        throw std::runtime_error(
+          QString("Index %1 at position %2 out of bounds")
+            .arg(m_indices[i])
+            .arg(i)
+            .toStdString()
+        );
+      }
+      indices.append(m_indices[i]);
+    }
+    m_mesh->drawElements(
+      new OpenGL::DrawElementsObj8(
+        indices,
+        is_line,
+        OpenGL::Obj8RenderAttributes(
+          m_current_state.lod_near,
+          m_current_state.lod_far,
+          m_current_state.draped
+        )
+      )
+    );
   }
   
   

@@ -18,7 +18,21 @@ set (Widgets_SOURCES
   ObjectTableDialog.cpp
   ObjScreen.cpp
   ObjView.cpp
-  OpenGLTexture.cpp
+  OpenGL/Camera.cpp
+  OpenGL/Context.cpp
+  OpenGL/DrawElementsObj8.cpp
+  OpenGL/DrawElements.cpp
+  OpenGL/FrameBufferObject.cpp
+  OpenGL/Light.cpp
+  OpenGL/Mesh.cpp
+  OpenGL/Model.cpp
+  OpenGL/Object.cpp
+  OpenGL/Obj8Lod.cpp
+  OpenGL/Obj8Visitor.cpp
+  OpenGL/Obj8Shader.cpp
+  OpenGL/Scene.cpp
+  OpenGL/Shader.cpp
+  OpenGL/Texture.cpp
   OpenGLWidget.cpp
   TableDialog.cpp
   VisualModel.cpp

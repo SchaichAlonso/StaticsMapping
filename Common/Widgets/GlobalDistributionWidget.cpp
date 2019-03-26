@@ -9,36 +9,22 @@
 #include <Common/Classification/Definitions.hpp>
 #include <Common/Classification/Object.hpp>
 
+#include "OpenGL/Mesh.hpp"
+
 #include "GlobalDistributionWidget.hpp"
 
 namespace Widgets
 {
 
-  GlobalDistributionWidget::Vertex::Vertex()
-  : coord()
-  , tex()
-  {
-  }
-  
-  
-  GlobalDistributionWidget::Vertex::Vertex(const QVector3D &c, const QVector2D &t)
-  : coord(c)
-  , tex(t)
-  {
-  }
-  
-  
   GlobalDistributionWidget::GlobalDistributionWidget(
     Classification::DefinitionsPointer definitions,
     QWidget *parent
   )
   : OpenGLWidget(parent)
-  , m_earth(texture(QImage(DataPath::existingPath("earthmap1k.jpg"))))
-  , m_zoom(2)
+  , m_zoom(5)
   , m_zoom_min(1.0)
   , m_radius(1.0)
-  , m_vertices(sphereVertices(180, 360, m_radius))
-  , m_indices(sphereIndices(180, 360))
+  , m_scene(scene())
   , m_airport_labels()
   , m_definitions(definitions)
   {
@@ -53,7 +39,6 @@ namespace Widgets
   
   GlobalDistributionWidget::~GlobalDistributionWidget()
   {
-    m_earth.reset();
   }
   
   
@@ -211,7 +196,7 @@ namespace Widgets
         painter.drawText(c.x+m, c.y+m+c.h-c.d, c.text);
       }
       painter.end();
-      surface.save(m_chunks[0].text + ".png");
+      //surface.save(m_chunks[0].text + ".png");
       m_texture.reset(new QOpenGLTexture(surface));
     }
     return (m_texture);
@@ -259,45 +244,79 @@ namespace Widgets
   }
   
   
-  
-  QVarLengthArray<GlobalDistributionWidget::Vertex>
-  GlobalDistributionWidget::sphereVertices(int lons, int lats, double radius)
+  OpenGL::ScenePointer
+  GlobalDistributionWidget::scene() const
   {
-    QVarLengthArray<GlobalDistributionWidget::Vertex> retval;
-    for (int lat=0; lat!=lats; ++lat) {
-      for (int lon=0; lon!=lons; ++lon) {
-        double slat = ((double)lat)/(lats-1);
-        double slon = ((double)lon)/(lons-1);
-        Vertex v;
-        v.coord = radius * sphericToCarthesian(180*slat - 90, 360*slon - 180);
-        v.tex[0] = slon;
-        v.tex[1] = 1.0-slat;
-        retval.append(v);
+    OpenGL::ScenePointer scene{
+      new OpenGL::Scene{
+        OpenGL::ShaderPointer{
+          new OpenGL::Shader{
+            DataPath::existingPath("obj8-vert.glsl"),
+            DataPath::existingPath("earth-frag.glsl")
+          }
+        }
       }
-    }
-    return (retval);
+    };
+    scene->addModel(globe(180, 360, 1.0 /* m_radius */));
+    return (scene);
   }
   
-  QVarLengthArray<int>
-  GlobalDistributionWidget::sphereIndices(int lons, int lats)
+  
+  OpenGL::ModelPointer
+  GlobalDistributionWidget::globe(int longitudes, int latitudes, float radius) const
   {
-    QVarLengthArray<int> indices;
-    for (int lat=0; lat!=(lats-1); ++lat) {
-      for (int lon=0; lon!=lons; ++lon) {
-        if (lat != lats-2) {
-          indices.append((lat+0)*lons + (lon+0)%lons);
-          indices.append((lat+1)*lons + (lon+0)%lons);
-          indices.append((lat+1)*lons + (lon+1)%lons);
+    OpenGL::MeshPointer mesh(new OpenGL::Mesh());
+    QDateTime t0(QDateTime::currentDateTimeUtc());
+    mesh->setVertexCount(latitudes * longitudes);
+    for (int lat=0; lat!=latitudes; ++lat) {
+      for (int lon=0; lon!=longitudes; ++lon) {
+        float slat(lat / float(latitudes-1));
+        float slon(lon / float(longitudes-1));
+        int index(lat*longitudes + lon);
+        
+        QVector3D r(sphericToCarthesian(180 * slat - 90, 360 * slon - 180));
+        
+        mesh->setVertex(index, radius * r, r, QVector2D(slon, 1-slat));
+      }
+    }
+    
+    QVector<int> indices;
+    indices.reserve((latitudes-1)*longitudes*6 + 2*longitudes*3);
+    for (int lat=0; lat!=(latitudes-1); ++lat) {
+      for (int lon=0; lon!=longitudes; ++lon) {
+        if (lat != latitudes-2) {
+          indices.append((lat+0)*longitudes + (lon+0)%longitudes);
+          indices.append((lat+1)*longitudes + (lon+0)%longitudes);
+          indices.append((lat+1)*longitudes + (lon+1)%longitudes);
         }
         
         if (lat != 0) {
-          indices.append((lat+0)*lons + (lon+0)%lons);
-          indices.append((lat+1)*lons + (lon+1)%lons);
-          indices.append((lat+0)*lons + (lon+1)%lons);
+          indices.append((lat+0)*longitudes + (lon+0)%longitudes);
+          indices.append((lat+1)*longitudes + (lon+1)%longitudes);
+          indices.append((lat+0)*longitudes + (lon+1)%longitudes);
         }
       }
     }
-    return (indices);
+    mesh->drawElements(new OpenGL::DrawElements(indices, GL_TRIANGLES));
+    
+    
+    OpenGL::ModelPointer model{new OpenGL::Model{mesh}};
+    
+    model->addLight(
+      OpenGL::LightPointer(
+        new OpenGL::Light(
+          QVector3D(2, 0, 0),
+          QVector3D(1, 1, 1),
+          QVector3D(1, 0, 0)
+        )
+      )
+    );
+    
+    model->setTexture(0, QImage(DataPath::existingPath("Earth.png")));
+    model->setTexture(1, QImage(DataPath::existingPath("EarthSpec.png")));
+    model->setTexture(2, QImage(DataPath::existingPath("EarthNight.jpg")));
+    
+    return (model);
   }
   
   
@@ -323,7 +342,7 @@ namespace Widgets
     double z = zoom();
     if ((m_zoom_min <= z) and (z <= m_zoom_min+1)) {
       z -= m_zoom_min;
-      v *= z;
+      v *= z/3;
     }
     return (v);
   }
@@ -352,20 +371,9 @@ namespace Widgets
   void
   GlobalDistributionWidget::draw()
   {
-    glEnableClientState(GL_VERTEX_ARRAY);
-    glEnableClientState(GL_TEXTURE_COORD_ARRAY);
-    
-    glVertexPointer(3, GL_FLOAT, sizeof(m_vertices[0]), &m_vertices[0].coord[0]);
-    glTexCoordPointer(2, GL_FLOAT, sizeof(m_vertices[0]), &m_vertices[0].tex[0]);
-    
-    glEnable(GL_TEXTURE_2D);
-    
-    m_earth->bind();
-    
-    glDrawElements(GL_TRIANGLES, m_indices.size(), GL_UNSIGNED_INT, &m_indices[0]);
-    
-    glDisableClientState(GL_VERTEX_ARRAY);
-    glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+    m_scene->camera()->setOrientation(0, m_pitch, m_yaw);
+    m_scene->camera()->setPosition(QVector3D(0, 0, m_zoom));
+    m_scene->draw();
     
     /*
      * OSD
