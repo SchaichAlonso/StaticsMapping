@@ -19,6 +19,11 @@ namespace OpenGL
     m_position = transform(transform(), delta);
   }
   
+  QVector3D Object::position() const
+  {
+    return (m_position);
+  }
+  
   void Object::setPosition(QVector3D position)
   {
     m_position = position;
@@ -31,16 +36,31 @@ namespace OpenGL
     m_yaw = yaw;
   }
   
+  float Object::roll() const
+  {
+    return (m_roll);
+  }
+  
   void Object::setRoll(float roll)
   {
     setOrientation(roll, m_pitch, m_yaw);
   }
   
+  float Object::pitch() const
+  {
+    return (m_pitch);
+  }
+
   void Object::setPitch(float pitch)
   {
     setOrientation(m_roll, pitch, m_yaw);
   }
   
+  float Object::yaw() const
+  {
+    return (m_yaw);
+  }
+
   void Object::setYaw(float yaw)
   {
     setOrientation(m_roll, m_pitch, yaw);
