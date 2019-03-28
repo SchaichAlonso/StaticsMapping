@@ -23,9 +23,7 @@ namespace OpenGL
     void addModel(ModelPointer model);
     void removeModel(ModelPointer model);
     
-    CameraPointer camera() const;
-    
-    void draw();
+    void draw(CameraPointer camera);
     
     ShaderPointer defaultShader() const;
     ShaderPointer bind(ShaderPointer shader);
@@ -35,8 +33,6 @@ namespace OpenGL
     
   protected:
     float m_roll, m_pitch, m_yaw;
-    
-    CameraPointer m_camera;
     
     typedef QSet<LightPointer> Lights;
     Lights m_lights;

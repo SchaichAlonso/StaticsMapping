@@ -25,6 +25,7 @@ namespace Widgets
   , m_zoom_min(1.0)
   , m_radius(1.0)
   , m_scene(scene())
+  , m_camera(new OpenGL::Camera)
   , m_airport_labels()
   , m_definitions(definitions)
   {
@@ -371,9 +372,10 @@ namespace Widgets
   void
   GlobalDistributionWidget::draw()
   {
-    m_scene->camera()->setOrientation(0, m_pitch, m_yaw);
-    m_scene->camera()->setPosition(QVector3D(0, 0, m_zoom));
-    m_scene->draw();
+    m_camera->setOrientation(0, m_pitch, m_yaw);
+    m_camera->setPosition(QVector3D(0, 0, m_zoom));
+    m_camera->setScreenDimensions(size());
+    m_scene->draw(m_camera);
     
     /*
      * OSD

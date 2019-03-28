@@ -29,6 +29,7 @@ namespace Widgets
   ObjView::ObjView(QWidget *parent)
   : OpenGLWidget(parent)
   , m_scene(scene())
+  , m_camera(new OpenGL::Camera)
   , zoom_level(sizeof(zoom_levels)/sizeof(*zoom_levels)/2)
   , m_lod(0)
   , m_wireframe(false)
@@ -210,7 +211,7 @@ namespace Widgets
     Q_ASSERT (zoom_level >= 0);
     Q_ASSERT (zoom_level < max);
     
-    m_scene->camera()->zoom(in);
+    m_camera->zoom(in);
   }
   
   
@@ -269,13 +270,12 @@ namespace Widgets
   void
   ObjView::draw()
   {
-    OpenGL::CameraPointer cam(m_scene->camera());
-    cam->setPitch(m_pitch);
-    cam->setYaw(m_yaw);
-    cam->setPosition(QVector3D(0,0,0));
-    //cam->setPosition(cam->zoom() * sphericToCarthesian(m_pitch, m_yaw));
-    cam->setPosition(QVector3D(0, 0, cam->zoom()));
-    cam->setScreenDimensions(size());
+    m_camera->setPitch(m_pitch);
+    m_camera->setYaw(m_yaw);
+    m_camera->setPosition(QVector3D(0,0,0));
+    //m_camera->setPosition(cam->zoom() * sphericToCarthesian(m_pitch, m_yaw));
+    m_camera->setPosition(QVector3D(0, 0, m_camera->zoom()));
+    m_camera->setScreenDimensions(size());
     
     QMatrix4x4 model(m_modelview * modelView(true));
     
@@ -283,7 +283,7 @@ namespace Widgets
       glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     }
     
-    m_scene->draw();
+    m_scene->draw(m_camera);
     
     if (m_wireframe) {
       glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);

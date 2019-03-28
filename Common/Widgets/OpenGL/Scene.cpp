@@ -5,7 +5,6 @@ namespace OpenGL
 {
   Scene::Scene(ShaderPointer default_shader)
   : QEnableSharedFromThis<Scene>{}
-  , m_camera{new Camera}
   , m_lights{}
   , m_bound_shader{}
   , m_default_shader{default_shader}
@@ -40,10 +39,10 @@ namespace OpenGL
     return (lights);
   }
   
-  void Scene::draw()
+  void Scene::draw(CameraPointer camera)
   {
-    const QMatrix4x4 projection(m_camera->projection());
-    const QMatrix4x4 modelview(m_camera->transform());
+    const QMatrix4x4 projection(camera->projection());
+    const QMatrix4x4 modelview(camera->transform());
     
     QList<LightPointer> lights(allLights(modelview));
     
@@ -107,11 +106,5 @@ namespace OpenGL
   void Scene::removeModel(ModelPointer model)
   {
     m_models.remove(model);
-  }
-  
-  
-  CameraPointer Scene::camera() const
-  {
-    return (m_camera);
   }
 }

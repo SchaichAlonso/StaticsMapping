@@ -35,6 +35,7 @@ namespace Widgets
     virtual void   draw () Q_DECL_OVERRIDE;
     
     OpenGL::ScenePointer m_scene;
+    OpenGL::CameraPointer m_camera;
     
     QSharedPointer<VisualModel>    m_mdl;
     

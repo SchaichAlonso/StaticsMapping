@@ -10,6 +10,7 @@
 #include <Common/Classification/Definitions.hpp>
 #include <Common/Classification/Object.hpp>
 
+#include "OpenGL/Camera.hpp"
 #include "OpenGL/Scene.hpp"
 #include "OpenGL/Texture.hpp"
 #include "OpenGL/Model.hpp"
@@ -43,6 +44,7 @@ namespace Widgets
     double m_radius;
     
     OpenGL::ScenePointer m_scene;
+    OpenGL::CameraPointer m_camera;
     
   protected:
     struct TextChunk
