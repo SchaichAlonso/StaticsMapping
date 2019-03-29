@@ -16,8 +16,10 @@ namespace OpenGL
     typedef int ZoomStage;
     typedef QList<float> ZoomStages;
     
-    Camera();
+    Camera(QString name="");
     virtual ~Camera();
+    
+    QString name() const;
    
     void move(QVector3D delta) Q_DECL_OVERRIDE;
     void setPosition(QVector3D position) Q_DECL_OVERRIDE;
@@ -42,6 +44,7 @@ namespace OpenGL
     ZoomStage  m_zoom_active;
     
     QSize m_screen;
+    QString m_name;
     
     float m_fovy;
     bool m_ortho;

@@ -2,11 +2,12 @@
 
 namespace OpenGL
 {
-  Camera::Camera()
+  Camera::Camera(QString name)
   : Object()
   , m_zoom_stages{ 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610 }
   , m_zoom_active(m_zoom_stages.size() / 2)
   , m_screen(-1, -1)
+  , m_name(name)
   , m_fovy(30)
   , m_ortho(false)
   {
@@ -15,6 +16,11 @@ namespace OpenGL
   
   Camera::~Camera()
   {
+  }
+  
+  QString Camera::name() const
+  {
+    return (m_name);
   }
   
   void Camera::move(QVector3D delta)
