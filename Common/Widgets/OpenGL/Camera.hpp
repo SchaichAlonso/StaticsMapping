@@ -17,7 +17,7 @@ namespace OpenGL
     typedef QList<float> ZoomStages;
     
     Camera();
-   ~Camera();
+    virtual ~Camera();
    
     void move(QVector3D delta) Q_DECL_OVERRIDE;
     void setPosition(QVector3D position) Q_DECL_OVERRIDE;
@@ -32,7 +32,7 @@ namespace OpenGL
     bool ortho() const;
     void setOrtho(bool ortho);
    
-    QMatrix4x4 projection() const;
+    virtual QMatrix4x4 projection() const;
     
     float zoom() const;
     void zoom(bool in);
