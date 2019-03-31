@@ -99,7 +99,6 @@ namespace Widgets
     
   protected:
     friend ObjView;
-    QImage m_draped, m_lit, m_normal, m_texture;
     
     QVarLengthArray<Vertex>         m_vertices;
     QVarLengthArray<int>            m_indices;

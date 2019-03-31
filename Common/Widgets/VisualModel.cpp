@@ -71,10 +71,6 @@ namespace Widgets
     , m_current_state()
     , m_mesh(new OpenGL::Mesh())
     , m_model(new OpenGL::Model(m_mesh))
-    , m_draped()
-    , m_lit()
-    , m_normal()
-    , m_texture()
     , m_vertices()
     , m_indices()
     , m_groups()
@@ -109,7 +105,6 @@ namespace Widgets
   void
   VisualModel::reset()
   {
-    m_draped = m_lit = m_normal = m_texture = QImage();
     m_current_state = State();
     
     m_vertices.clear();
@@ -383,9 +378,7 @@ namespace Widgets
   void
   VisualModel::visit(Obj8::Global::Texture *t)
   {
-    m_texture = loadTexture(t->path ());
-    
-    m_model->setTexture(0, m_texture);
+    m_model->setTexture(0, loadTexture(t->path()));
   }
   
   
@@ -393,9 +386,7 @@ namespace Widgets
   void
   VisualModel::visit(Obj8::Global::TextureDraped *t)
   {
-    m_draped = loadTexture(t->path());
-    
-    m_model->setTexture(1, m_draped);
+    m_model->setTexture(1, loadTexture(t->path()));
   }
   
   
@@ -403,9 +394,7 @@ namespace Widgets
   void
   VisualModel::visit(Obj8::Global::TextureLit *t)
   {
-    m_lit = loadTexture(t->path());
-    
-    m_model->setTexture(2, m_lit);
+    m_model->setTexture(2, loadTexture(t->path()));
   }
   
   
@@ -413,9 +402,7 @@ namespace Widgets
   void
   VisualModel::visit(Obj8::Global::TextureNormal *t)
   {
-    m_normal = loadTexture(t->path());
-    
-    m_model->setTexture(3, m_normal);
+    m_model->setTexture(3, loadTexture(t->path()));
   }
   
   
