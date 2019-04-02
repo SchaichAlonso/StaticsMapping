@@ -2,23 +2,10 @@
 #include "Model.hpp"
 #include "Scene.hpp"
 
+#include "State/DepthMask.hpp"
+
 namespace OpenGL
 {
-  struct DepthMask
-  {
-    DepthMask(bool masked)
-    {
-      GLboolean param = masked? GL_FALSE : GL_TRUE;
-      glDepthMask(param);
-    }
-    
-   ~DepthMask()
-    {
-      glDepthMask(GL_TRUE);
-    }
-  };
-  
-  
   Model::Model(MeshPointer mesh, int flags)
   : m_lights()
   , m_textures()
@@ -124,7 +111,7 @@ namespace OpenGL
     shader->setTexturingEnabled(m_flags & Texturing);
     shader->setLightingEnabled(m_flags & Lighting);
     
-    DepthMask d(m_flags & DepthMasked);
+    State::DepthMask d((m_flags & DepthMasked) == 0);
     m_mesh->draw(shader);
   }
 }

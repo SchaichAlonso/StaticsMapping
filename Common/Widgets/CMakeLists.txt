@@ -19,6 +19,7 @@ set (Widgets_SOURCES
   ObjScreen.cpp
   ObjView.cpp
   OpenGL/Camera/Camera.cpp
+  OpenGL/State/DepthMask.cpp
   OpenGL/Context.cpp
   OpenGL/DrawElementsObj8.cpp
   OpenGL/DrawElements.cpp
