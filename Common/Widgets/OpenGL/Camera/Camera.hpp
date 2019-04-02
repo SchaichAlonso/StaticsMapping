@@ -7,12 +7,13 @@
 #include <QtGui/QMatrix4x4>
 #include <QtGui/QVector3D>
 
-#include "Object.hpp"
+#include <OpenGL/Object.hpp>
 
 namespace OpenGL
 {
   struct Camera : Object
   {
+    typedef float Zoom;
     typedef int ZoomStage;
     typedef QList<float> ZoomStages;
     
@@ -20,6 +21,8 @@ namespace OpenGL
     virtual ~Camera();
     
     QString name() const;
+    
+    virtual bool wireframe() const;
    
     void move(QVector3D delta) Q_DECL_OVERRIDE;
     void setPosition(QVector3D position) Q_DECL_OVERRIDE;
@@ -36,8 +39,8 @@ namespace OpenGL
    
     virtual QMatrix4x4 projection() const;
     
-    float zoom() const;
-    void zoom(bool in);
+    virtual Zoom zoom() const;
+    virtual void zoom(bool in);
     
   protected:
     ZoomStages m_zoom_stages;

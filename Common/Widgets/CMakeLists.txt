@@ -18,7 +18,7 @@ set (Widgets_SOURCES
   ObjectTableDialog.cpp
   ObjScreen.cpp
   ObjView.cpp
-  OpenGL/Camera.cpp
+  OpenGL/Camera/Camera.cpp
   OpenGL/Context.cpp
   OpenGL/DrawElementsObj8.cpp
   OpenGL/DrawElements.cpp
@@ -70,6 +70,8 @@ endif (GraphViz_FOUND)
 add_library (Widgets STATIC
   ${Widgets_SOURCES}
 )
+
+target_include_directories (Widgets PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 target_link_libraries (Widgets
   ${Widgets_LIBS}

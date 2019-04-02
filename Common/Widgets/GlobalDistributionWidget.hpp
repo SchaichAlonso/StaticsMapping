@@ -10,7 +10,7 @@
 #include <Common/Classification/Definitions.hpp>
 #include <Common/Classification/Object.hpp>
 
-#include "OpenGL/Camera.hpp"
+#include "OpenGL/Camera/Camera.hpp"
 #include "OpenGL/Scene.hpp"
 #include "OpenGL/Texture.hpp"
 #include "OpenGL/Model.hpp"

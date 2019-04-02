@@ -5,7 +5,7 @@
 
 #include <QtGui/QMatrix4x4>
 
-#include "Camera.hpp"
+#include "Camera/Camera.hpp"
 #include "Light.hpp"
 #include "Model.hpp"
 #include "Shader.hpp"
