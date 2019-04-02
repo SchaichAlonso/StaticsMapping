@@ -20,6 +20,7 @@ namespace OpenGL
     if (m_texture.isNull()) {
       if ((m_image.width() > 0) && (m_image.height() > 0)) {
         m_texture.reset(new QOpenGLTexture(m_image));
+        m_texture->setMinificationFilter(QOpenGLTexture::Linear);
       }
     }
     if (m_texture) {
