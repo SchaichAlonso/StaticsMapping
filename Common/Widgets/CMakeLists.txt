@@ -37,6 +37,7 @@ set (Widgets_SOURCES
   OpenGL/Obj8Visitor.cpp
   OpenGL/Obj8Shader.cpp
   OpenGL/Scene.cpp
+  OpenGL/Screen.cpp
   OpenGL/Shader.cpp
   OpenGL/Texture.cpp
   OpenGLWidget.cpp
