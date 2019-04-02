@@ -51,4 +51,5 @@ namespace OpenGL
   };
   
   typedef QSharedPointer<Model> ModelPointer;
+  typedef QWeakPointer<Model> ModelWeakPointer;
 }
