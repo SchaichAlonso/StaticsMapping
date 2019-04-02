@@ -78,23 +78,25 @@ vec4 colorFromTexture(vec3 light)
       }
     }
   }
+  bright = clamp(bright, 0, 1);
   return bright;
 }
 
 void main(void)
 {
   vec4 c;
+  vec3 light;
   
   if (light_enabled) {
-    
-    vec3 light = lighting();
-    
-    if (texturing)
-      c = colorFromTexture(light);
-    else
-      c = color * vec4(light,1);
+    light = lighting();
   } else {
-    c = color;
+    light = vec3(1,1,1);
+  }
+
+  if (texturing) {
+    c = color * colorFromTexture(light);
+  } else {
+    c = color * vec4(light,1);
   }
   
   if (discard_translucent) {
