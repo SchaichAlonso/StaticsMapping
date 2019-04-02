@@ -154,12 +154,25 @@ namespace Widgets
      * https://github.com/der-On/XPlane2Blender/blob/master/io_xplane2blender/resources/lights.txt
      */
     QMap<QString,QVector3D> known;
-    known["airplane_nav_tail_static_h"]  = QVector3D(1.00f, 1.00f, 0.80f);
-    known["airplane_nav_tail_static"]    = QVector3D(1.00f, 1.00f, 0.80f);
+    
+    known["taillight"]       = QVector3D(0.40f, 0.05f, 0.00f);
+    known["taillight2"]      = QVector3D(0.40f, 0.00f, 0.03f);
+    known["taillight3"]      = QVector3D(0.40f, 0.03f, 0.00f);
+    known["HGV_taillight"]   = QVector3D(0.40f, 0.04f, 0.00f);
+    known["Tug_taillight"]   = QVector3D(0.40f, 0.04f, 0.00f);
+    known["headlight"]       = QVector3D(0.95f, 0.95f, 1.00f);
+    known["headlight2"]      = QVector3D(1.00f, 0.941f, 0.875f);
+    known["headlight3"]      = QVector3D(0.90f, 0.941f, 0.875f);
+    known["Tug_headlight"]   = QVector3D(1.00f, 0.95f, 0.90f);
+    known["train_headlight"] = QVector3D(0.95f, 0.95f, 0.80f);
+    
+    known["airplane_nav_tail_static_h"]  = 0.1*QVector3D(1.00f, 1.00f, 0.80f);
+    known["airplane_nav_tail_static"]    = 0.1*QVector3D(1.00f, 1.00f, 0.80f);
     known["airplane_nav_left_static_h"]  = QVector3D(0.90f, 0.10f, 0.00f);
     known["airplane_nav_left_static"]    = QVector3D(0.90f, 0.10f, 0.00f);
     known["airplane_nav_right_static_h"] = QVector3D(0.02f, 0.74f, 0.36f);
     known["airplane_nav_right_static"]   = QVector3D(0.02f, 0.74f, 0.36f);
+    
     
     m_model->addLight(
       OpenGL::LightPointer(
