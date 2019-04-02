@@ -1,3 +1,5 @@
+#include "State/PolygonMode.hpp"
+
 #include "Mesh.hpp"
 #include "Scene.hpp"
 
@@ -45,6 +47,7 @@ namespace OpenGL
     const QMatrix4x4 modelview(camera->transform());
     
     QList<LightPointer> lights(allLights(modelview));
+    State::PolygonMode pmguard(GL_FRONT_AND_BACK, camera->wireframe()? GL_LINE:GL_FILL);
     
     Q_FOREACH(ModelPointer m, m_models) {
       ShaderPointer shader{bind(m->shader())};
