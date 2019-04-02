@@ -227,7 +227,7 @@ namespace Widgets
     draw();
     
     m_offscreen.release();
-    m_offscreen.blit(Q_NULLPTR, rect());
+    m_offscreen.blit(rect());
     
     QDateTime t1(QDateTime::currentDateTimeUtc());
     

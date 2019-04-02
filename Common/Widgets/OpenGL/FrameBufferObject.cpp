@@ -52,18 +52,18 @@ namespace OpenGL
     return m_handle;
   }
   
-  void FrameBufferObject::blit(QOpenGLFramebufferObject *target, QRect size)
+  void FrameBufferObject::blit(QRect target)
   {
     if (m_handle && m_handle->isValid()) {
       QRect src(QPoint(0, 0), m_size);
       
       QOpenGLFramebufferObject::blitFramebuffer(
+        Q_NULLPTR,
         target,
-        size,
         m_handle.get(),
         src,
         GL_COLOR_BUFFER_BIT,
-        GL_LINEAR
+        GL_NEAREST
       );
     }
   }

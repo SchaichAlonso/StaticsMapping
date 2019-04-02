@@ -18,7 +18,7 @@ namespace OpenGL {
     
     bool bind(QSize viewport);
     bool release();
-    void blit(QOpenGLFramebufferObject *target, QRect size);
+    void blit(QRect target);
     
     Handle handle();
     
