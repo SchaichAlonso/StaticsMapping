@@ -93,7 +93,7 @@ namespace Widgets
     SymbolTable m_symbol_table;
     State       m_current_state;
     
-  protected:
+  public:
     OpenGL::MeshPointer m_mesh;
     OpenGL::ModelPointer m_model;
     
