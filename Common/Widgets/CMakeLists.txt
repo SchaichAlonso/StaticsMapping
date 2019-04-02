@@ -19,6 +19,10 @@ set (Widgets_SOURCES
   ObjScreen.cpp
   ObjView.cpp
   OpenGL/Camera/Camera.cpp
+  OpenGL/Camera/OnScreenDisplay.cpp
+  OpenGL/Camera/OrthoCamera.cpp
+  OpenGL/Camera/PerspectiveCamera.cpp
+  OpenGL/Camera/ZoomableCamera.cpp
   OpenGL/State/DepthMask.cpp
   OpenGL/State/PolygonMode.cpp
   OpenGL/Context.cpp
