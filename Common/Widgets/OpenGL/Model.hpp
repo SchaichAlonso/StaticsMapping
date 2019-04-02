@@ -41,6 +41,7 @@ namespace OpenGL
     void bind(ScenePointer ctx);
     void release(ScenePointer ctx);
     void draw(ScenePointer ctx);
+    void draw(ScenePointer ctx, int flags);
     
   protected:
     QSet<LightPointer> m_lights;

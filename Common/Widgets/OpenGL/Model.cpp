@@ -106,12 +106,18 @@ namespace OpenGL
   void
   Model::draw(ScenePointer ctx)
   {
+    draw(ctx, m_flags);
+  }
+  
+  void
+  Model::draw(ScenePointer ctx, int flags)
+  {
     ShaderPointer shader{ctx->bound()};
     
-    shader->setTexturingEnabled(m_flags & Texturing);
-    shader->setLightingEnabled(m_flags & Lighting);
+    shader->setTexturingEnabled(flags & Texturing);
+    shader->setLightingEnabled(flags & Lighting);
     
-    State::DepthMask d((m_flags & DepthMasked) == 0);
+    State::DepthMask d((flags & DepthMasked) == 0);
     m_mesh->draw(shader);
   }
 }
