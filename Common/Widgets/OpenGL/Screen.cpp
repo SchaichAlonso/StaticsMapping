@@ -48,6 +48,7 @@ namespace OpenGL
   , m_scene(scene)
   , m_active()
   , m_last_cursor_pos()
+  , m_last_frame_completion(QDateTime::currentDateTimeUtc())
   , m_fbo(QOpenGLTexture::RGBA32F)
   , m_hdr(hdr)
   {
@@ -190,8 +191,6 @@ namespace OpenGL
   void
   Screen::paintGL()
   {
-    QDateTime t0(QDateTime::currentDateTimeUtc());
-    
     //QColor bg(QPalette().color(QPalette::Window));
     QColor bg(Qt::black);
     
@@ -248,23 +247,24 @@ namespace OpenGL
       }
     }
     
-    QDateTime t1(QDateTime::currentDateTimeUtc());
-    qint64 msecs(t0.msecsTo(t1));
+    QDateTime now(QDateTime::currentDateTimeUtc());
+    QDateTime target(m_last_frame_completion.addMSecs(1000 / 30));
     
     {
       QPainter painter(&osd);
       painter.setPen(QColor(Qt::white));
-      QString label(QString("Rendered in %1 msecs\n%2Hz\nHDR: %3").arg(msecs).arg(1000.0 / qMax<qint64>(msecs, 1)).arg(m_hdr));
+      QString label(QString("Rendered in %1 msecs\nHDR: %2").arg(m_last_frame_completion.msecsTo(now)).arg(m_hdr));
       painter.drawText(osd.rect(), 0, label);
     }
+    m_last_frame_completion = now;
     
     gl->glViewport(0, 0, width(), height());
     osdScene(rect(), osd)->draw(CameraPointer(new OnScreenDisplay(rect())));
     
-    if (msecs < 1000 / 30) {
-      QTimer::singleShot(1000 / 30 - msecs, this, SLOT(update()));
-    } else {
+    if (now.msecsTo(target) <= 0) {
       update();
+    } else {
+      QTimer::singleShot(now.msecsTo(target), this, SLOT(update()));
     }
   }
   

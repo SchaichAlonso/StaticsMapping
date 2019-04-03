@@ -1,5 +1,6 @@
 #pragma once
 
+#include <QtCore/QDateTime>
 #include <QtCore/QList>
 #include <QtCore/QPoint>
 #include <QtCore/QRect>
@@ -63,6 +64,7 @@ namespace OpenGL
     
     CameraPointer m_active;
     QPoint m_last_cursor_pos;
+    QDateTime m_last_frame_completion;
     
     FrameBufferObject m_fbo;
     bool m_hdr;
