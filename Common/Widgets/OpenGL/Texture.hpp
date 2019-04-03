@@ -4,13 +4,17 @@
 #include <QtGui/QImage>
 #include <QtGui/QOpenGLTexture>
 
+#include "RawImage.hpp"
+
 namespace OpenGL
 {
   struct Texture
   {
     typedef int Unit;
     
-    Texture(QImage image=QImage());
+    Texture();
+    Texture(RawImage image);
+    Texture(QImage image);
    ~Texture();
     
     bool bind(Unit unit);
@@ -21,6 +25,7 @@ namespace OpenGL
     
   protected:
     QImage m_image;
+    RawImage m_raw_data;
     QSharedPointer<QOpenGLTexture> m_texture;
     
   };
