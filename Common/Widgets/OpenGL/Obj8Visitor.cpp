@@ -141,13 +141,26 @@ namespace OpenGL
     /*
      * https://github.com/der-On/XPlane2Blender/blob/master/io_xplane2blender/resources/lights.txt
      */
-    QMap<QString,QVector3D> known;
-    known["airplane_nav_tail_static_h"]  = QVector3D(1.00f, 1.00f, 0.80f);
-    known["airplane_nav_tail_static"]    = QVector3D(1.00f, 1.00f, 0.80f);
-    known["airplane_nav_left_static_h"]  = QVector3D(0.90f, 0.10f, 0.00f);
-    known["airplane_nav_left_static"]    = QVector3D(0.90f, 0.10f, 0.00f);
-    known["airplane_nav_right_static_h"] = QVector3D(0.02f, 0.74f, 0.36f);
-    known["airplane_nav_right_static"]   = QVector3D(0.02f, 0.74f, 0.36f);
+    QMap<QString,QColor> known;
+    
+    known["taillight"]       = QColor::fromRgbF(0.40, 0.05, 0.00);
+    known["taillight2"]      = QColor::fromRgbF(0.40, 0.00, 0.03);
+    known["taillight3"]      = QColor::fromRgbF(0.40, 0.03, 0.00);
+    known["HGV_taillight"]   = QColor::fromRgbF(0.40, 0.04, 0.00);
+    known["Tug_taillight"]   = QColor::fromRgbF(0.40, 0.04, 0.00);
+    known["headlight"]       = QColor::fromRgbF(0.95, 0.95, 1.00);
+    known["headlight2"]      = QColor::fromRgbF(1.00, 0.941, 0.875);
+    known["headlight3"]      = QColor::fromRgbF(0.90, 0.941, 0.875);
+    known["Tug_headlight"]   = QColor::fromRgbF(1.00, 0.95, 0.90);
+    known["train_headlight"] = QColor::fromRgbF(0.95, 0.95, 0.80);
+    
+    known["airplane_nav_tail_static_h"]  = QColor::fromRgbF(1.00, 1.00, 0.80);
+    known["airplane_nav_tail_static"]    = QColor::fromRgbF(1.00, 1.00, 0.80);
+    known["airplane_nav_left_static_h"]  = QColor::fromRgbF(0.90, 0.10, 0.00);
+    known["airplane_nav_left_static"]    = QColor::fromRgbF(0.90, 0.10, 0.00);
+    known["airplane_nav_right_static_h"] = QColor::fromRgbF(0.02, 0.74, 0.36);
+    known["airplane_nav_right_static"]   = QColor::fromRgbF(0.02, 0.74, 0.36);
+    
     
     m_model->addLight(
       OpenGL::LightPointer(
@@ -157,7 +170,7 @@ namespace OpenGL
             t->m_y.toDouble(),
             t->m_z.toDouble()
           ),
-          known.value(t->m_name.value(), QVector3D(1,1,1))
+          known.value(t->m_name.value(), QColor(Qt::white))
         )
       )
     );
@@ -169,7 +182,7 @@ namespace OpenGL
           t->m_y.toDouble(),
           t->m_z.toDouble()
         ),
-        known.value(t->m_name.value(), QVector3D(1,1,1))
+        QVector3D(1,1,1)
       )
     );
   }

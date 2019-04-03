@@ -2,8 +2,8 @@
 
 namespace OpenGL
 {
-  Light::Light(QVector3D position, QVector3D color, QVector3D attenuation)
-  : m_position(position)
+  Light::Light(QVector3D position, QColor color, QVector3D attenuation)
+  : Object(position)
   , m_color(color)
   , m_attenuation(attenuation)
   {
@@ -17,16 +17,9 @@ namespace OpenGL
   }
   
   
-  QVector3D
+  QColor
   Light::color() const
   {
     return (m_color);
-  }
-  
-  
-  QVector3D
-  Light::position() const
-  {
-    return (m_position);
   }
 } 

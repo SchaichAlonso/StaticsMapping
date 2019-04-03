@@ -324,7 +324,7 @@ namespace OpenGL
             1000,
             0
           ),
-          QVector3D(0.1, 0.1, 0.1),
+          QColor(25, 25, 25),
           QVector3D(1.0, 0.0, 0.0)
         )
       )

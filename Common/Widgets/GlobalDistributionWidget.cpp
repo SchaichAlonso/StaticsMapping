@@ -307,7 +307,7 @@ namespace Widgets
       OpenGL::LightPointer(
         new OpenGL::Light(
           QVector3D(2, 0, 0),
-          QVector3D(1, 1, 1),
+          QColor(Qt::white),
           QVector3D(1, 0, 0)
         )
       )

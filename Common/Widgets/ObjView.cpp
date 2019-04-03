@@ -66,7 +66,7 @@ namespace Widgets
     m_mdl    = model;
     
     if (m_mdl) {
-      
+      /*
       for (int i=0; i!=m_mdl->m_lights.size(); ++i) {
         OpenGL::LightPointer l(
           new OpenGL::Light(
@@ -79,7 +79,7 @@ namespace Widgets
           m_scene->addLight(l);
         }
       }
-      
+      */
       /*
       for (int i=0; i<360; i+=30) {
         OpenGL::ModelPointer clone(new OpenGL::Model(*m_mdl->m_model.data()));
