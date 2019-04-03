@@ -166,6 +166,12 @@ namespace OpenGL
     SET_UNIFORM_VALUE(vec4, name, value);
   }
   
+  void Shader::setUniformValue(QString name, const QColor& value)
+  {
+    QVector3D rgb(value.redF(), value.greenF(), value.blueF());
+    SET_UNIFORM_VALUE(vec4, name, rgb);
+  }
+  
   void Shader::setUniformValue(QString name, const QMatrix4x4& value)
   {
     SET_UNIFORM_VALUE(mat4x4, name, value);

@@ -37,6 +37,7 @@ namespace OpenGL
     void setUniformValue(QString name, const QVector2D& value);
     void setUniformValue(QString name, const QVector3D& value);
     void setUniformValue(QString name, const QVector4D& value);
+    [[deprecated("rbg only")]] void setUniformValue(QString name, const QColor &value);
     void setUniformValue(QString name, const QMatrix4x4& value);
     
   protected:
