@@ -2,8 +2,8 @@
 
 namespace OpenGL
 {
-  Object::Object()
-  : m_position(0, 0, 0)
+  Object::Object(QVector3D position)
+  : m_position(position)
   , m_roll(0)
   , m_pitch(0)
   , m_yaw(0)

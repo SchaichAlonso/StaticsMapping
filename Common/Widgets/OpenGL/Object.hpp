@@ -7,7 +7,7 @@ namespace OpenGL
 {
   struct Object
   {
-    Object();
+    Object(QVector3D position=QVector3D(0,0,0));
     virtual ~Object();
     
     virtual void move(QVector3D delta);
