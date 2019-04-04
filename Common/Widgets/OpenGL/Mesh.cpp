@@ -180,37 +180,51 @@ namespace OpenGL
   
   
   int
+  Mesh::addVertex(const Vertex &v)
+  {
+    return m_geometry.addVertex(v);
+  }
+  
+  
+  int
   Mesh::addVertex(QVector3D coords, QVector3D normal, QVector2D texcoord)
   {
-    return m_geometry.addVertex(Vertex(coords, QVector4D(1,1,1,1), normal, texcoord));
+    return addVertex(Vertex(coords, QVector4D(1,1,1,1), normal, texcoord));
   }
   
   
   int
   Mesh::addVertex(QVector3D coords, QVector3D color)
   {
-    return m_geometry.addVertex(Vertex(coords, QVector4D(color,1), QVector3D(0,1,0), QVector2D()));
+    return addVertex(Vertex(coords, QVector4D(color,1), QVector3D(0,1,0), QVector2D()));
   }
   
   
   int
   Mesh::addVertex(QVector3D coords, QVector4D color)
   {
-    return m_geometry.addVertex(Vertex(coords, color, QVector3D(0,1,0), QVector2D()));
+    return addVertex(Vertex(coords, color, QVector3D(0,1,0), QVector2D()));
+  }
+  
+  
+  void
+  Mesh::setVertex(int index, const Vertex &vertex)
+  {
+    m_geometry.setVertex(index, vertex);
   }
   
   
   void
   Mesh::setVertex(int index, QVector3D coords, QVector3D normal, QVector2D texcoord)
   {
-    m_geometry.setVertex(index, Vertex(coords, QVector4D(1,1,1,1), normal, texcoord));
+    setVertex(index, Vertex(coords, QVector4D(1,1,1,1), normal, texcoord));
   }
   
   
   void
   Mesh::setVertex(int index, QVector3D coords, QVector4D color)
   {
-    m_geometry.setVertex(index, Vertex(coords, color, QVector3D(0,1,0), QVector2D()));
+    setVertex(index, Vertex(coords, color, QVector3D(0,1,0), QVector2D()));
   }
   
   

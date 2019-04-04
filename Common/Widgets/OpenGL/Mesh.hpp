@@ -62,9 +62,11 @@ namespace OpenGL
     void bind(ShaderPointer shader);
     void release(ShaderPointer shader);
     
+    int addVertex(const Vertex &vertex);
     int addVertex(QVector3D coords, QVector3D normal, QVector2D texcoord);
     int addVertex(QVector3D coords, QVector3D color);
     int addVertex(QVector3D coords, QVector4D color);
+    void setVertex(int index, const Vertex &vertex);
     void setVertex(int index, QVector3D coords, QVector3D normal, QVector2D texcoord);
     void setVertex(int index, QVector3D coords, QVector4D color);
     void setVertexCount(int n);
