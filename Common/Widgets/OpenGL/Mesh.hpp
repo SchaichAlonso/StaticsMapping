@@ -24,6 +24,7 @@ namespace OpenGL
   struct Vertex
   {
     Vertex();
+    Vertex(QVector3D position, QColor color);
     Vertex(QVector3D position, QColor color, QVector3D normal, QVector2D texcoord);
     Vertex(QVector3D position, QVector4D color, QVector3D normal, QVector2D texcoord);
   
