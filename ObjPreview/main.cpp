@@ -11,6 +11,7 @@
 #include <QtWidgets/QMessageBox>
 #include <Common/Obj8/File.hpp>
 #include <Common/DataPath.hpp>
+#include <Common/Widgets/OpenGL/Obj8Visitor.hpp>
 
 OpenGL::ModelPointer
 loadObjFile (QString path)
@@ -29,12 +30,12 @@ loadObjFile (QString path)
   }
   
   try {
+    retval.reset(new OpenGL::Model);
+    
     Obj8::File obj8 (f, true);
-    QSharedPointer<Widgets::VisualModel> model(new Widgets::VisualModel(path));
+    QSharedPointer<OpenGL::Obj8Visitor> model(new OpenGL::Obj8Visitor(retval, path));
     
     obj8.accept (model.data(), false);
-    
-    retval = model->m_model;
     
   } catch (const Obj8::Parser::SyntaxError &error) {
     
