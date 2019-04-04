@@ -42,6 +42,23 @@ namespace OpenGL
   }
   
   
+  QList<ModelPointer>
+  Scene::allModels(const QMatrix4x4 &modelview, QList<LightPointer> lights) const
+  {
+    QList<ModelPointer> models{m_models.toList()};
+    
+    QMatrix4x4 mvinv{modelview.inverted()};
+    Q_FOREACH(LightPointer light, lights) {
+      QColor color{light->color()};
+      ModelPointer indicator{pointIndicator(color, color, color)};
+      indicator->setPosition(mvinv * light->position());
+      models.append(indicator);
+    }
+    
+    return (models);
+  }
+  
+  
   ModelPointer
   Scene::pointIndicator(QColor x, QColor y, QColor z, float b, bool mirror)
   {
@@ -73,7 +90,7 @@ namespace OpenGL
     QList<LightPointer> lights(allLights(modelview));
     State::PolygonMode pmguard(GL_FRONT_AND_BACK, camera->wireframe()? GL_LINE:GL_FILL);
     
-    Q_FOREACH(ModelPointer m, m_models) {
+    Q_FOREACH(ModelPointer m, allModels(modelview, lights)) {
       ShaderPointer shader{bind(m->shader())};
       
       shader->setProjectionMatrix(projection);

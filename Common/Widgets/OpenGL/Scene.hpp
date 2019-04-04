@@ -30,6 +30,7 @@ namespace OpenGL
     ShaderPointer bound();
     
     QList<LightPointer> allLights(const QMatrix4x4 &modelview) const;
+    QList<ModelPointer> allModels(const QMatrix4x4 &modelview, QList<LightPointer> lights) const;
     
     static ModelPointer pointIndicator(QColor x, QColor y, QColor z, float axis_length=1, bool mirror=true);
     
