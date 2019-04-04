@@ -17,6 +17,11 @@ namespace OpenGL
   {
   }
   
+  Vertex::Vertex(QVector3D position, QColor color, QVector3D normal, QVector2D texcoord)
+  : Vertex(position, QVector4D(color.redF(), color.greenF(), color.blueF(), color.alphaF()), normal, texcoord)
+  {
+  }
+  
   Vertex::Vertex(QVector3D position, QVector4D color, QVector3D normal, QVector2D texcoord)
   : position(position)
   , color(color)

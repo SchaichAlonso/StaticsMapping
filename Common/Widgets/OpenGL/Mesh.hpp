@@ -3,6 +3,7 @@
 #include <QtCore/QList>
 #include <QtCore/QMap>
 #include <QtCore/QSharedPointer>
+#include <QtGui/QColor>
 #include <QtGui/QVector2D>
 #include <QtGui/QVector3D>
 #include <QtGui/QVector4D>
@@ -23,6 +24,7 @@ namespace OpenGL
   struct Vertex
   {
     Vertex();
+    Vertex(QVector3D position, QColor color, QVector3D normal, QVector2D texcoord);
     Vertex(QVector3D position, QVector4D color, QVector3D normal, QVector2D texcoord);
   
     static int positionOffset();
