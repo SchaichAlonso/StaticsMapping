@@ -55,12 +55,12 @@ namespace OpenGL
   
   
   
-  Obj8Visitor::Obj8Visitor(QString filename)
+  Obj8Visitor::Obj8Visitor(ModelPointer output, QString filename)
     : AbstractVisitor(filename)
     , m_symbol_table()
     , m_current_state()
-    , m_mesh(new OpenGL::Mesh())
-    , m_model(new OpenGL::Model(m_mesh))
+    , m_model(output)
+    , m_mesh(output->mesh())
     , m_indices()
     , m_groups()
     , m_lights()

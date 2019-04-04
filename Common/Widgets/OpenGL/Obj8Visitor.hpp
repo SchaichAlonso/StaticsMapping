@@ -45,7 +45,7 @@ namespace OpenGL
       int   offset;
     };
     
-    Obj8Visitor(QString filename= QString());
+    Obj8Visitor(ModelPointer result, QString filename= QString());
     virtual ~Obj8Visitor();
     
     virtual void visit(Obj8::Command::Geometry::LightNamed *) Q_DECL_OVERRIDE;
@@ -85,8 +85,8 @@ namespace OpenGL
     State       m_current_state;
     
   protected:
-    OpenGL::MeshPointer m_mesh;
     OpenGL::ModelPointer m_model;
+    OpenGL::MeshPointer m_mesh;
     
   protected:
     friend ObjView;
