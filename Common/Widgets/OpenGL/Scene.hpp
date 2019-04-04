@@ -31,6 +31,8 @@ namespace OpenGL
     
     QList<LightPointer> allLights(const QMatrix4x4 &modelview) const;
     
+    static ModelPointer pointIndicator(QColor x, QColor y, QColor z, float axis_length=1, bool mirror=true);
+    
   protected:
     float m_roll, m_pitch, m_yaw;
     

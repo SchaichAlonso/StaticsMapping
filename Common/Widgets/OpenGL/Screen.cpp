@@ -391,34 +391,7 @@ namespace OpenGL
   OpenGL::ModelPointer
   Screen::localeIndicator()
   {
-    OpenGL::MeshPointer axis(new OpenGL::Mesh);
-    
-    QVector3D midpoint(0,0,0);
-    QVector3D vaxis[] = {
-      QVector3D(1, 0, 0),
-      QVector3D(0, 1, 0),
-      QVector3D(0, 0, 1)
-    };
-    
-    axis->drawElements(
-      new OpenGL::DrawElements(
-        QVector<int>()
-          << axis->addVertex(vaxis[0], vaxis[0])
-          << axis->addVertex(midpoint, vaxis[0])
-          << axis->addVertex(vaxis[1], vaxis[1])
-          << axis->addVertex(midpoint, vaxis[1])
-          << axis->addVertex(vaxis[2], vaxis[2])
-          << axis->addVertex(midpoint, vaxis[2]),
-        GL_LINES
-      )
-    );
-    
-    return OpenGL::ModelPointer{
-      new OpenGL::Model{
-        axis,
-        OpenGL::Model::DepthMasked
-      }
-    };
+    return Scene::pointIndicator(QColor(Qt::red), QColor(Qt::green), QColor(Qt::blue), 5, false);
   }
   
   

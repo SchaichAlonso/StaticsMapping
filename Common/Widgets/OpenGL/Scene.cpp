@@ -41,6 +41,30 @@ namespace OpenGL
     return (lights);
   }
   
+  
+  ModelPointer
+  Scene::pointIndicator(QColor x, QColor y, QColor z, float b, bool mirror)
+  {
+    OpenGL::MeshPointer axis(new OpenGL::Mesh);
+    
+    float a{mirror? -b:0};
+        
+    axis->drawElements(
+      new OpenGL::DrawElements(
+        QVector<int>()
+          << axis->addVertex(Vertex(QVector3D( a,  0,  0), x))
+          << axis->addVertex(Vertex(QVector3D( b,  0,  0), x))
+          << axis->addVertex(Vertex(QVector3D( 0,  a,  0), y))
+          << axis->addVertex(Vertex(QVector3D( 0,  b,  0), y))
+          << axis->addVertex(Vertex(QVector3D( 0,  0,  a), z))
+          << axis->addVertex(Vertex(QVector3D( 0,  0,  b), z)),
+        GL_LINES
+      )
+    );
+    
+    return OpenGL::ModelPointer{new OpenGL::Model{axis, 0}};
+  }
+  
   void Scene::draw(CameraPointer camera)
   {
     const QMatrix4x4 projection(camera->projection());
