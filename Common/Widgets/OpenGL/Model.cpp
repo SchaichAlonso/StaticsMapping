@@ -6,6 +6,11 @@
 
 namespace OpenGL
 {
+  Model::Model()
+  : Model(MeshPointer(new Mesh))
+  {
+  }
+  
   Model::Model(MeshPointer mesh, int flags)
   : m_lights()
   , m_textures()
