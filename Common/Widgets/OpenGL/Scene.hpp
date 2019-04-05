@@ -20,6 +20,7 @@ namespace OpenGL
     void addLight(LightPointer light);
     void removeLight(LightPointer light);
     
+    ModelWeakPointer addModel(int rendering_attributes);
     void addModel(ModelPointer model);
     void removeModel(ModelPointer model);
     

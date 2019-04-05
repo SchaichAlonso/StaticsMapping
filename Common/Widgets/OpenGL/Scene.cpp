@@ -141,6 +141,12 @@ namespace OpenGL
   }
   
   
+  ModelWeakPointer Scene::addModel(int rendering_attributes)
+  {
+    return (*m_models.insert(ModelPointer(new Model(rendering_attributes))));
+  }
+  
+  
   void Scene::addModel(ModelPointer model)
   {
     m_models.insert(model);
