@@ -6,8 +6,8 @@
 
 namespace OpenGL
 {
-  Model::Model()
-  : Model(MeshPointer(new Mesh))
+  Model::Model(int rendering_attributes)
+  : Model(MeshPointer(new Mesh), rendering_attributes)
   {
   }
   

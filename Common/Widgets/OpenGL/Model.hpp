@@ -23,7 +23,7 @@ namespace OpenGL
       DepthMasked = 1 << 2
     };
     
-    Model();
+    Model(int flags=Texturing|Lighting);
     Model(MeshPointer mesh, int flags=Texturing|Lighting);
    ~Model();
     
