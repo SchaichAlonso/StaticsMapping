@@ -54,8 +54,6 @@ namespace OpenGL
     QSize clampedViewport(QSize candidate) const;
     
   protected:
-    static ModelPointer localeIndicator();
-    static ModelPointer grid();
     static ModelPointer osdQuad(QRect dst, QImage content);
     
   protected:

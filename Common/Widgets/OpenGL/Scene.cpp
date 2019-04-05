@@ -19,14 +19,14 @@ namespace OpenGL
   }
   
   
-  QList<LightPointer>
+  Scene::Lights
   Scene::allLights(const QMatrix4x4 &modelview) const
   {
-    QList<LightPointer> lights;
+    Lights lights;
     
     Q_FOREACH(ModelPointer m, m_models) {
       Q_FOREACH(LightPointer l, m->allLights()) {
-        lights.append(
+        lights.insert(
           LightPointer(
             new Light(
               Object::transform(modelview * m->transform(), l->position()),
@@ -42,32 +42,15 @@ namespace OpenGL
   }
   
   
-  QList<ModelPointer>
-  Scene::allModels(const QMatrix4x4 &modelview, QList<LightPointer> lights) const
+  ModelWeakPointer Scene::insertPositionIndicator(QColor x, QColor y, QColor z, float b, bool mirror)
   {
-    QList<ModelPointer> models{m_models.toList()};
-    
-    QMatrix4x4 mvinv{modelview.inverted()};
-    Q_FOREACH(LightPointer light, lights) {
-      QColor color{light->color()};
-      ModelPointer indicator{pointIndicator(color, color, color)};
-      indicator->setPosition(mvinv * light->position());
-      models.append(indicator);
-    }
-    
-    return (models);
-  }
-  
-  
-  ModelPointer
-  Scene::pointIndicator(QColor x, QColor y, QColor z, float b, bool mirror)
-  {
-    OpenGL::MeshPointer axis(new OpenGL::Mesh);
+    ModelPointer model{insertModel(0)};
+    MeshPointer axis{model->mesh()};
     
     float a{mirror? -b:0};
         
     axis->drawElements(
-      new OpenGL::DrawElements(
+      new DrawElements(
         QVector<int>()
           << axis->addVertex(Vertex(QVector3D( a,  0,  0), x))
           << axis->addVertex(Vertex(QVector3D( b,  0,  0), x))
@@ -79,7 +62,52 @@ namespace OpenGL
       )
     );
     
-    return OpenGL::ModelPointer{new OpenGL::Model{axis, 0}};
+    return (model);
+  }
+  
+  ModelWeakPointer Scene::insertGrid(QVector3D u, QVector3D v, int repetitions, bool surface)
+  {
+    ModelPointer model{insertModel(Model::Lighting)};
+    MeshPointer mesh{model->mesh()};
+    
+    QVector3D normal(QVector3D::normal(u, v));
+    
+    IndexArray indices{};
+    for (int i=-repetitions; i<repetitions; ++i) {
+      QVector4D color(1, 1, 1, 1);
+      if (i%100 != 0)
+        color.setW(0.75);
+      if (i%10 != 0)
+        color.setW(0.5);
+        
+      indices << mesh->addVertex(Vertex(i*u + repetitions*v, color, normal, QVector2D(i, repetitions)));
+      indices << mesh->addVertex(Vertex(i*u - repetitions*v, color, normal, QVector2D(i,-repetitions)));
+      
+      indices << mesh->addVertex(Vertex(i*v + repetitions*u, color, normal, QVector2D( repetitions, i)));
+      indices << mesh->addVertex(Vertex(i*v - repetitions*u, color, normal, QVector2D(-repetitions, i)));
+    }
+    
+    mesh->drawElements(DrawElementsPointer(new DrawElements(indices, GL_LINES)));
+    
+    if (surface) {
+      QVector4D floor(1, 1, 1, 0.5);
+      mesh->drawElements(
+        DrawElementsPointer(
+          new DrawElements(
+            IndexArray()
+              << mesh->addVertex(Vertex(-repetitions*u -repetitions*v, floor, normal, QVector2D(-repetitions, -repetitions)))
+              << mesh->addVertex(Vertex(-repetitions*u +repetitions*v, floor, normal, QVector2D(-repetitions,  repetitions)))
+              << mesh->addVertex(Vertex( repetitions*u +repetitions*v, floor, normal, QVector2D( repetitions,  repetitions)))
+              << mesh->addVertex(Vertex(-repetitions*u -repetitions*v, floor, normal, QVector2D(-repetitions, -repetitions)))
+              << mesh->addVertex(Vertex( repetitions*u +repetitions*v, floor, normal, QVector2D( repetitions,  repetitions)))
+              << mesh->addVertex(Vertex( repetitions*u -repetitions*v, floor, normal, QVector2D( repetitions, -repetitions))),
+            GL_TRIANGLES
+          )
+        )
+      );
+    }
+    
+    return (model);
   }
   
   void Scene::draw(CameraPointer camera)
@@ -87,19 +115,24 @@ namespace OpenGL
     const QMatrix4x4 projection(camera->projection());
     const QMatrix4x4 modelview(camera->transform());
     
-    QList<LightPointer> lights(allLights(modelview));
+    Lights lights(allLights(modelview));
+    Models temporaries(insertLightIndicators(modelview, lights));
     State::PolygonMode pmguard(GL_FRONT_AND_BACK, camera->wireframe()? GL_LINE:GL_FILL);
     
-    Q_FOREACH(ModelPointer m, allModels(modelview, lights)) {
+    Q_FOREACH(ModelPointer m, m_models) {
       ShaderPointer shader{bind(m->shader())};
       
       shader->setProjectionMatrix(projection);
       shader->setModelviewMatrix(modelview * m->transform());
-      shader->setLights(lights);
+      shader->setLights(lights.toList());
       
       m->bind(sharedFromThis());
       m->draw(sharedFromThis());
       m->release(sharedFromThis());
+    }
+    
+    Q_FOREACH(ModelPointer temp, temporaries) {
+      removeModel(temp);
     }
   }
   
@@ -141,7 +174,7 @@ namespace OpenGL
   }
   
   
-  ModelWeakPointer Scene::addModel(int rendering_attributes)
+  ModelWeakPointer Scene::insertModel(int rendering_attributes)
   {
     return (*m_models.insert(ModelPointer(new Model(rendering_attributes))));
   }
@@ -157,4 +190,20 @@ namespace OpenGL
   {
     m_models.remove(model);
   }
+  
+  
+  Scene::Models Scene::insertLightIndicators(const QMatrix4x4& modelview, Lights lights)
+  {
+    Models retval;
+    QMatrix4x4 modelview_inverse{modelview.inverted()};
+    
+    Q_FOREACH(LightPointer light, lights) {
+      QColor color{light->color()};
+      ModelPointer indicator(insertPositionIndicator(color, color, color));
+      indicator->setPosition(modelview_inverse * light->position());
+      retval.insert(indicator);
+    }
+    return (retval);
+  }
+
 }

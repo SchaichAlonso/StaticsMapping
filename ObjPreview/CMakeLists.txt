@@ -11,3 +11,6 @@ target_link_libraries (
     Qt5::Widgets
     Qt5::Gui
 )
+
+install(TARGETS ObjPreview RUNTIME DESTINATION "bin")
+

@@ -301,13 +301,13 @@ namespace OpenGL
   
   
   
-  OpenGL::ScenePointer
+  ScenePointer
   Screen::gridScene()
   {
-    OpenGL::ScenePointer scene{
-      new OpenGL::Scene{
-        OpenGL::ShaderPointer{
-          new OpenGL::Shader{
+    ScenePointer scene{
+      new Scene{
+        ShaderPointer{
+          new Shader{
             DataPath::existingPath("obj8-vert.glsl"),
             DataPath::existingPath("obj8-frag.glsl")
           }
@@ -315,23 +315,22 @@ namespace OpenGL
       }
     };
     
-    ModelPointer ground(grid());
-    ground->addLight(
-      OpenGL::LightPointer(
-        new OpenGL::Light(
+    scene->addLight(
+      LightPointer(
+        new Light(
           QVector3D(
             0,
             1000,
             0
           ),
-          QColor(25, 25, 25),
+          QColor(128, 128, 128),
           QVector3D(1.0, 0.0, 0.0)
         )
       )
     );
     
-    scene->addModel(localeIndicator());
-    scene->addModel(ground);
+    scene->insertPositionIndicator(QColor(Qt::red), QColor(Qt::green), QColor(Qt::blue), 5, false);
+    scene->insertGrid(QVector3D(0,0,1), QVector3D(1,0,0), 256, true);
     return (scene);
   }
   
@@ -384,56 +383,5 @@ namespace OpenGL
     model->setTexture(0, content);
     
     return (model);
-  }
-  
-  
-  
-  OpenGL::ModelPointer
-  Screen::localeIndicator()
-  {
-    return Scene::pointIndicator(QColor(Qt::red), QColor(Qt::green), QColor(Qt::blue), 5, false);
-  }
-  
-  
-  OpenGL::ModelPointer
-  Screen::grid()
-  {
-    OpenGL::MeshPointer ground(new OpenGL::Mesh);
-    
-    QVector4D gray(0.9f,0.9f,0.9f,1.0f);
-#if 1
-    ground->drawElements(
-      new OpenGL::DrawElements(
-        QVector<int>()
-          << ground->addVertex(QVector3D(-256, 0, -256), gray)
-          << ground->addVertex(QVector3D(-256, 0,  256), gray)
-          << ground->addVertex(QVector3D( 256, 0,  256), gray)
-          << ground->addVertex(QVector3D(-256, 0, -256), gray)
-          << ground->addVertex(QVector3D( 256, 0,  256), gray)
-          << ground->addVertex(QVector3D( 256, 0, -256), gray),
-        GL_TRIANGLES
-      )
-    );
-#endif
-    
-    OpenGL::IndexArray indices;
-    for(int line=0, lines=512, offset=lines/2; line!=lines; ++line) {
-      int alpha;
-      alpha = ((line - offset) % 10) != 0 ? 24 : 64;
-      alpha = (line != offset)? alpha : 192;
-      
-      QVector4D color(1, 1, 1, alpha/255.0f);
-      
-      indices << ground->addVertex(QVector3D(line - offset, 0.1f, -offset), color);
-      indices << ground->addVertex(QVector3D(line - offset, 0.1f,  offset), color);
-      
-      indices << ground->addVertex(QVector3D(-offset, 0.1f, line - offset), color);
-      indices << ground->addVertex(QVector3D( offset, 0.1f, line - offset), color);
-    }
-    ground->drawElements(
-      new OpenGL::DrawElements(indices, GL_LINES)
-    );
-    
-    return (OpenGL::ModelPointer(new OpenGL::Model(ground, OpenGL::Model::Lighting)));
   }
 }

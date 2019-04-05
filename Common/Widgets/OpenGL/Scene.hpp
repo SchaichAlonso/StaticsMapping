@@ -14,13 +14,17 @@ namespace OpenGL
 {
   struct Scene : QEnableSharedFromThis<Scene>
   {
+    typedef QSet<LightPointer> Lights;
+    typedef QSet<ModelPointer> Models;
+    
+  public:
     Scene(ShaderPointer default_shader);
    ~Scene();
     
     void addLight(LightPointer light);
     void removeLight(LightPointer light);
     
-    ModelWeakPointer addModel(int rendering_attributes);
+    ModelWeakPointer insertModel(int rendering_attributes=Model::Lighting|Model::Texturing);
     void addModel(ModelPointer model);
     void removeModel(ModelPointer model);
     
@@ -30,17 +34,20 @@ namespace OpenGL
     ShaderPointer bind(ShaderPointer shader);
     ShaderPointer bound();
     
-    QList<LightPointer> allLights(const QMatrix4x4 &modelview) const;
+    Lights allLights(const QMatrix4x4 &modelview) const;
     QList<ModelPointer> allModels(const QMatrix4x4 &modelview, QList<LightPointer> lights) const;
     
-    static ModelPointer pointIndicator(QColor x, QColor y, QColor z, float axis_length=1, bool mirror=true);
+    ModelWeakPointer insertPositionIndicator(QColor x, QColor y, QColor z, float axis_length=1, bool mirror=true);
+    ModelWeakPointer insertGrid(QVector3D u, QVector3D v, int repetitions, bool surface);
+    
+  protected:
+    Models insertLightIndicators(const QMatrix4x4 &modelview, Lights lights);
     
   protected:
     float m_roll, m_pitch, m_yaw;
     
-    typedef QSet<LightPointer> Lights;
     Lights m_lights;
-    QSet<ModelPointer> m_models;
+    Models m_models;
     
     ShaderPointer m_bound_shader;
     ShaderPointer m_default_shader;
