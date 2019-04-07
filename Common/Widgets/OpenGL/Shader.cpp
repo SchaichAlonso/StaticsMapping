@@ -37,10 +37,15 @@ namespace OpenGL
   {
     int count(0);
     Q_FOREACH(LightPointer l, lights) {
-      setUniformValue(QString("light_positions[%1]").arg(count), l->position());
-      setUniformValue(QString("light_colors[%1]").arg(count), l->color());
-      setUniformValue(QString("light_attenuations[%1]").arg(count), l->attenuation());
-      if(++count >= 128) {
+      setUniformValue(QString("lights[%1].position").arg(count), l->position());
+      setUniformValue(QString("lights[%1].color").arg(count), l->color());
+      setUniformValue(QString("lights[%1].attenuation").arg(count), l->attenuation());
+      setUniformValue(QString("lights[%1].spotDirection").arg(count), l->spotDirection());
+      setUniformValue(QString("lights[%1].range").arg(count), l->range());
+      setUniformValue(QString("lights[%1].rangeExp").arg(count), l->rangeExp());
+      setUniformValue(QString("lights[%1].spotCutoffAngle").arg(count), l->spotCutoffAngle());
+      setUniformValue(QString("lights[%1].spotExp").arg(count), l->spotExp());
+      if(++count >= 64) {
         qCritical("Light count too high!");
         break;
       }

@@ -20,21 +20,13 @@ namespace OpenGL
   
   
   Scene::Lights
-  Scene::allLights(const QMatrix4x4 &modelview) const
+  Scene::allLights(QMatrix4x4 modelview) const
   {
     Lights lights;
     
     Q_FOREACH(ModelPointer m, m_models) {
       Q_FOREACH(LightPointer l, m->allLights()) {
-        lights.insert(
-          LightPointer(
-            new Light(
-              Object::transform(modelview * m->transform(), l->position()),
-              l->color(),
-              l->attenuation()
-            )
-          )
-        );
+        lights.insert(LightPointer{new Light{modelview * m->transform(), *l}});
       }
     }
     
@@ -192,15 +184,15 @@ namespace OpenGL
   }
   
   
-  Scene::Models Scene::insertLightIndicators(const QMatrix4x4& modelview, Lights lights)
+  Scene::Models Scene::insertLightIndicators(QMatrix4x4 modelview, Lights lights)
   {
     Models retval;
-    QMatrix4x4 modelview_inverse{modelview.inverted()};
+    QMatrix4x4 inverse(modelview.inverted());
     
     Q_FOREACH(LightPointer light, lights) {
       QColor color{light->color()};
       ModelPointer indicator(insertPositionIndicator(color, color, color));
-      indicator->setPosition(modelview_inverse * light->position());
+      indicator->setPosition(inverse * light->position());
       retval.insert(indicator);
     }
     return (retval);

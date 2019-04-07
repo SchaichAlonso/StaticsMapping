@@ -10,10 +10,22 @@ uniform bool texturing;
 
 uniform bool light_enabled;
 uniform int  light_count;
-uniform vec3 light_ambient = vec3(0.1, 0.1, 0.1);
-uniform vec3 light_attenuations[128];
-uniform vec3 light_positions[128];
-uniform vec3 light_colors[128];
+uniform vec3 light_ambient = vec3(0, 0, 0);
+
+struct Light {
+  vec3  position;
+  vec3  color;
+  
+  vec3  attenuation;
+  float range;
+  float rangeExp;
+  
+  vec3  spotDirection;
+  float spotCutoffAngle;
+  float spotExp;
+};
+
+uniform Light lights[64];
 
 uniform mat4 modelview;
 
@@ -32,14 +44,12 @@ vec3 lighting()
   vec3 lit = light_ambient;
   
   for (int i=0; i!=light_count; ++i) {
-    vec3 lightdir = light_positions[i] - world_vertex;
+    vec3 lightdir = lights[i].position - world_vertex;
     float distance = length(lightdir);
     
     vec3 lightdir0 = normalize(lightdir);
     float diffuse = dot(lightdir0, normal0);
     diffuse = clamp(diffuse, 0, 1);
-    
-    //lit += light_colors[i] * diffuse;
     
     vec3 reflection = reflect(lightdir0, normal0);
     vec3 reflection0 = normalize(reflection);
@@ -49,9 +59,26 @@ vec3 lighting()
     specular = clamp(specular, 0, 1);
     specular = pow(specular, 128);
     
-    float attenuation = 1.0 / (light_attenuations[i].x + light_attenuations[i].y * distance + light_attenuations[i].z * distance * distance);
+    float attenuation = 1.0;
+    if (lights[i].range <= 0) {
+      attenuation = 1.0 / (lights[i].attenuation.x + lights[i].attenuation.y * distance + lights[i].attenuation.z * distance * distance);
+    } else {
+      attenuation = 1.0 - min(1.0, pow(distance/lights[i].range, lights[i].rangeExp));
+    }
     
-    lit += attenuation * (diffuse + specular) * light_colors[i];
+    if (0 < lights[i].spotCutoffAngle && lights[i].spotCutoffAngle < 180) {
+      vec3 spotdir0 = normalize(lights[i].spotDirection);
+      float spotcutoff = cos(radians(lights[i].spotCutoffAngle/2));
+      float spotfactor = max(0, -dot(spotdir0, lightdir0));
+      if (spotfactor < spotcutoff) {
+        spotfactor = 0;
+      } else {
+        spotfactor = 1-pow(spotcutoff/spotfactor, lights[i].spotExp);
+      }
+      attenuation *= spotfactor;
+    }
+    
+    lit += attenuation * (diffuse + specular) * lights[i].color;
   }
   
   lit = clamp(lit, 0, 1);
