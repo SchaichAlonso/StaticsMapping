@@ -56,6 +56,15 @@ float specularReflection(vec3 lightdir0, vec3 normal0)
   return (specular);
 }
 
+float attenuationFactor(Light light, float distance)
+{
+  if (light.range <= 0) {
+    return 1.0 / (light.attenuation.x + light.attenuation.y * distance + light.attenuation.z * distance * distance);
+  } else {
+    return 1.0 - min(1.0, pow(distance/light.range, light.rangeExp));
+  }
+}
+
 vec3 lighting()
 {
   vec3 normal0 = normalize(world_normal);
@@ -73,12 +82,7 @@ vec3 lighting()
     
     float specular = specularReflection(lightdir0, normal0);
     
-    float attenuation = 1.0;
-    if (light.range <= 0) {
-      attenuation = 1.0 / (light.attenuation.x + light.attenuation.y * distance + light.attenuation.z * distance * distance);
-    } else {
-      attenuation = 1.0 - min(1.0, pow(distance/light.range, light.rangeExp));
-    }
+    float attenuation = attenuationFactor(light, distance);
     
     if (0 < light.spotCutoffAngle && light.spotCutoffAngle < 180) {
       vec3 spotdir0 = normalize(light.spotDirection);
