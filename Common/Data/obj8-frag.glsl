@@ -65,6 +65,18 @@ float attenuationFactor(Light light, float distance)
   }
 }
 
+float spotFactor(Light light, vec3 lightdir0)
+{
+  vec3 spotdir0 = normalize(light.spotDirection);
+  float spotcutoff = cos(radians(light.spotCutoffAngle/2));
+  float spotfactor = max(0, -dot(spotdir0, lightdir0));
+  if (spotfactor < spotcutoff) {
+    return 0;
+  } else {
+    return 1-pow(spotcutoff/spotfactor, light.spotExp);
+  }
+}
+
 vec3 lighting()
 {
   vec3 normal0 = normalize(world_normal);
@@ -85,15 +97,7 @@ vec3 lighting()
     float attenuation = attenuationFactor(light, distance);
     
     if (0 < light.spotCutoffAngle && light.spotCutoffAngle < 180) {
-      vec3 spotdir0 = normalize(light.spotDirection);
-      float spotcutoff = cos(radians(light.spotCutoffAngle/2));
-      float spotfactor = max(0, -dot(spotdir0, lightdir0));
-      if (spotfactor < spotcutoff) {
-        spotfactor = 0;
-      } else {
-        spotfactor = 1-pow(spotcutoff/spotfactor, light.spotExp);
-      }
-      attenuation *= spotfactor;
+      attenuation *= spotFactor(light, lightdir0);
     }
     
     lit += attenuation * (diffuse + specular) * light.color;
