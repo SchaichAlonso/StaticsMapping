@@ -119,16 +119,19 @@ vec3 lighting()
     Light light = getLight(i);
     vec3 lightdir = light.position - world_vertex;
     float distance = length(lightdir);
-    
     vec3 lightdir0 = normalize(lightdir);
+    
     float diffuse = dot(lightdir0, normal0);
     if (diffuse < 0) {
       continue;
     }
     
-    float specular = specularReflection(lightdir0, normal0);
-    
     float attenuation = attenuationFactor(i, distance);
+    if (attenuation <= 0.0) {
+      continue;
+    }
+    
+    float specular = specularReflection(lightdir0, normal0);
     
     attenuation *= spotFactor(i, lightdir0);
     
