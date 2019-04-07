@@ -43,6 +43,19 @@ Light getLight(int i)
   return (l);
 }
 
+float specularReflection(vec3 lightdir0, vec3 normal0)
+{
+  vec3 reflection = reflect(lightdir0, normal0);
+  vec3 reflection0 = normalize(reflection);
+  vec3 eye0 = normalize(world_vertex);
+    
+  float specular = dot(eye0, reflection0);
+  specular = clamp(specular, 0, 1);
+  specular = pow(specular, 128);
+  
+  return (specular);
+}
+
 vec3 lighting()
 {
   vec3 normal0 = normalize(world_normal);
@@ -58,13 +71,7 @@ vec3 lighting()
     float diffuse = dot(lightdir0, normal0);
     diffuse = clamp(diffuse, 0, 1);
     
-    vec3 reflection = reflect(lightdir0, normal0);
-    vec3 reflection0 = normalize(reflection);
-    vec3 eye0 = normalize(world_vertex);
-    
-    float specular = dot(eye0, reflection0);
-    specular = clamp(specular, 0, 1);
-    specular = pow(specular, 128);
+    float specular = specularReflection(lightdir0, normal0);
     
     float attenuation = 1.0;
     if (light.range <= 0) {
