@@ -141,7 +141,12 @@ namespace OpenGL
       shader->setTextureUnitEnabled(7, light_tex->bind(7));
       
       m->bind(sharedFromThis());
-      m->draw(sharedFromThis());
+      if (camera->wireframe()) {
+        m->draw(sharedFromThis(), 0);
+      } else {
+        m->draw(sharedFromThis());
+      }
+      
       m->release(sharedFromThis());
       
       shader->setTextureUnitEnabled(7, false);
