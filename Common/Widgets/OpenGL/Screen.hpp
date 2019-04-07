@@ -31,6 +31,8 @@ namespace OpenGL
     Screen();
     virtual ~Screen();
     
+    SceneWeakPointer scene() const;
+    
     void addModel(ModelPointer model);
     
     static ScenePointer gridScene();

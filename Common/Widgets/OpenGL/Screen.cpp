@@ -293,6 +293,12 @@ namespace OpenGL
   }
   
   
+  SceneWeakPointer Screen::scene() const
+  {
+    return (m_scene);
+  }
+  
+  
   
   void Screen::addModel(ModelPointer model)
   {
