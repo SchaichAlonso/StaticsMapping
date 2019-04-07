@@ -53,4 +53,5 @@ namespace OpenGL
   };
   
   typedef QSharedPointer<Scene> ScenePointer;
+  typedef QWeakPointer<Scene> SceneWeakPointer;
 }
