@@ -19,6 +19,25 @@ namespace OpenGL
   }
   
   
+  RawImage Scene::lightTexture(Lights lights)
+  {
+    RawImage r(QSize(lights.size(), 8));
+    int x=0;
+    Q_FOREACH(LightPointer light, lights) {
+      r.setPixel(x, 0, light->position());
+      r.setPixel(x, 1, light->color());
+      r.setPixel(x, 2, light->attenuation());
+      r.setPixel(x, 3, QVector2D(light->range(), light->rangeExp()));
+      r.setPixel(x, 4, light->spotDirection());
+      r.setPixel(x, 5, QVector2D(light->spotCutoffAngle(), light->spotExp()));
+      
+      x++;
+    }
+    
+    return (r);
+  }
+  
+  
   Scene::Lights
   Scene::allLights(QMatrix4x4 modelview) const
   {
@@ -111,16 +130,21 @@ namespace OpenGL
     Models temporaries(insertLightIndicators(modelview, lights));
     State::PolygonMode pmguard(GL_FRONT_AND_BACK, camera->wireframe()? GL_LINE:GL_FILL);
     
+    TexturePointer light_tex(new Texture(lightTexture(lights)));
+    
     Q_FOREACH(ModelPointer m, m_models) {
       ShaderPointer shader{bind(m->shader())};
       
       shader->setProjectionMatrix(projection);
       shader->setModelviewMatrix(modelview * m->transform());
       shader->setLights(lights.toList());
+      shader->setTextureUnitEnabled(7, light_tex->bind(7));
       
       m->bind(sharedFromThis());
       m->draw(sharedFromThis());
       m->release(sharedFromThis());
+      
+      shader->setTextureUnitEnabled(7, false);
     }
     
     Q_FOREACH(ModelPointer temp, temporaries) {

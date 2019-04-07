@@ -35,22 +35,7 @@ namespace OpenGL
   
   void Shader::setLights(QList<LightPointer> lights)
   {
-    int count(0);
-    Q_FOREACH(LightPointer l, lights) {
-      setUniformValue(QString("lights[%1].position").arg(count), l->position());
-      setUniformValue(QString("lights[%1].color").arg(count), l->color());
-      setUniformValue(QString("lights[%1].attenuation").arg(count), l->attenuation());
-      setUniformValue(QString("lights[%1].spotDirection").arg(count), l->spotDirection());
-      setUniformValue(QString("lights[%1].range").arg(count), l->range());
-      setUniformValue(QString("lights[%1].rangeExp").arg(count), l->rangeExp());
-      setUniformValue(QString("lights[%1].spotCutoffAngle").arg(count), l->spotCutoffAngle());
-      setUniformValue(QString("lights[%1].spotExp").arg(count), l->spotExp());
-      if(++count >= 64) {
-        qCritical("Light count too high!");
-        break;
-      }
-    }
-    setUniformValue("light_count", count);
+    setUniformValue("light_count", lights.count());
   }
   
   void Shader::setModelviewMatrix(const QMatrix4x4 &value)

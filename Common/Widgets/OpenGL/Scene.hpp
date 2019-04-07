@@ -38,6 +38,7 @@ namespace OpenGL
     ModelWeakPointer insertGrid(QVector3D u, QVector3D v, int repetitions, bool surface);
     
   protected:
+    RawImage lightTexture(Lights lights);
     Lights allLights(QMatrix4x4 modelview) const;
     Models insertLightIndicators(QMatrix4x4 modelview, Lights lights);
     
