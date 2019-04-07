@@ -37,6 +37,9 @@ namespace OpenGL
     void setShader(ShaderPointer shader);
     ShaderPointer shader() const;
     
+    int flags() const;
+    void setFlags(int flags);
+    
     void setTexture(Texture::Unit unit, QImage image);
     
     void bind(ScenePointer ctx);

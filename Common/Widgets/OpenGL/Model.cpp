@@ -75,6 +75,18 @@ namespace OpenGL
   }
   
   
+  int Model::flags() const
+  {
+    return (m_flags);
+  }
+  
+  
+  void Model::setFlags(int flags)
+  {
+    m_flags = flags;
+  }
+  
+  
   void
   Model::setTexture(Texture::Unit unit, QImage image)
   {
