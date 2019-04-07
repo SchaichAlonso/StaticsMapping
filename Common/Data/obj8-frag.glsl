@@ -37,6 +37,12 @@ in vec3 world_vertex;
 
 out vec4 FragColor;
 
+Light getLight(int i)
+{
+  Light l = lights[i];
+  return (l);
+}
+
 vec3 lighting()
 {
   vec3 normal0 = normalize(world_normal);
@@ -44,7 +50,8 @@ vec3 lighting()
   vec3 lit = light_ambient;
   
   for (int i=0; i!=light_count; ++i) {
-    vec3 lightdir = lights[i].position - world_vertex;
+    Light light = getLight(i);
+    vec3 lightdir = light.position - world_vertex;
     float distance = length(lightdir);
     
     vec3 lightdir0 = normalize(lightdir);
@@ -60,25 +67,25 @@ vec3 lighting()
     specular = pow(specular, 128);
     
     float attenuation = 1.0;
-    if (lights[i].range <= 0) {
-      attenuation = 1.0 / (lights[i].attenuation.x + lights[i].attenuation.y * distance + lights[i].attenuation.z * distance * distance);
+    if (light.range <= 0) {
+      attenuation = 1.0 / (light.attenuation.x + light.attenuation.y * distance + light.attenuation.z * distance * distance);
     } else {
-      attenuation = 1.0 - min(1.0, pow(distance/lights[i].range, lights[i].rangeExp));
+      attenuation = 1.0 - min(1.0, pow(distance/light.range, light.rangeExp));
     }
     
-    if (0 < lights[i].spotCutoffAngle && lights[i].spotCutoffAngle < 180) {
-      vec3 spotdir0 = normalize(lights[i].spotDirection);
-      float spotcutoff = cos(radians(lights[i].spotCutoffAngle/2));
+    if (0 < light.spotCutoffAngle && light.spotCutoffAngle < 180) {
+      vec3 spotdir0 = normalize(light.spotDirection);
+      float spotcutoff = cos(radians(light.spotCutoffAngle/2));
       float spotfactor = max(0, -dot(spotdir0, lightdir0));
       if (spotfactor < spotcutoff) {
         spotfactor = 0;
       } else {
-        spotfactor = 1-pow(spotcutoff/spotfactor, lights[i].spotExp);
+        spotfactor = 1-pow(spotcutoff/spotfactor, light.spotExp);
       }
       attenuation *= spotfactor;
     }
     
-    lit += attenuation * (diffuse + specular) * lights[i].color;
+    lit += attenuation * (diffuse + specular) * light.color;
   }
   
   lit = clamp(lit, 0, 1);
