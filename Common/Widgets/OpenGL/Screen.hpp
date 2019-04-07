@@ -28,7 +28,7 @@ namespace OpenGL
     
   struct Screen : QOpenGLWidget, protected QOpenGLFunctions
   {
-    Screen(ScenePointer scene, bool hdr);
+    Screen();
     virtual ~Screen();
     
     void addModel(ModelPointer model);

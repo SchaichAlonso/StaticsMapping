@@ -43,14 +43,14 @@ namespace OpenGL
   }
   
   
-  Screen::Screen(ScenePointer scene, bool hdr)
+  Screen::Screen()
   : m_views()
-  , m_scene(scene)
+  , m_scene(gridScene())
   , m_active()
   , m_last_cursor_pos()
   , m_last_frame_completion(QDateTime::currentDateTimeUtc())
   , m_fbo(QOpenGLTexture::RGBA32F)
-  , m_hdr(hdr)
+  , m_hdr(false)
   {
 #if 0
     m_views << View(QRectF(0.0, 0.0, 1.0, 1.0), CameraPointer(new PerspectiveCamera(30, "full")));

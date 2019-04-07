@@ -58,7 +58,7 @@ main (int argscnt, char **args)
 {
   Widgets::Application app(argscnt, args);
   
-  OpenGL::Screen screen(OpenGL::Screen::gridScene(), false);
+  OpenGL::Screen screen;
   screen.show();
   
   for(int i=1; i!=argscnt; ++i) {
