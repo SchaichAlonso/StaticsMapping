@@ -6,6 +6,7 @@ add_library (Common STATIC
   CryptoHash.cpp
   DataPath.cpp
   Diagnostics.cpp
+  Json.cpp
 )
 
 set_property (

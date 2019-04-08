@@ -134,9 +134,7 @@ namespace Classification
     void unlinkModel (Model *);
     void invalidateModels (int, int);
     
-  protected:
-    static QJsonObject readJson (QString);
-    
+  protected:    
     typedef Table<Aircraft> AircraftTable;
     typedef Table<Airline>  AirlineTable;
     typedef Table<Airport>  AirportTable;

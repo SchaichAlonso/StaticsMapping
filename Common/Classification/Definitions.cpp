@@ -7,6 +7,7 @@
 #include <QtCore/QJsonDocument>
 
 #include <Common/DataPath.hpp>
+#include <Common/Json.hpp>
 
 #include "Aircraft.hpp"
 #include "Airline.hpp"
@@ -792,7 +793,7 @@ Classification::Definitions::fromFile (QString filename)
   if (filename.isNull())
     filename = DataPath::existingPath("data.json");
   
-  QJsonObject defs(readJson(filename));
+  QJsonObject defs{Json::readJsonFile(filename).object()};
   
   if (defs.size() != 0) {
     retval.reset (new Definitions (defs));
@@ -866,32 +867,4 @@ Classification::Definitions::unlinkModel (Model *model)
   m_airport_table.unlink (model);
   m_library_table.unlink (model);
   m_object_table.unlink (model);
-}
-
-
-
-QJsonObject
-Classification::Definitions::readJson (QString filename)
-{
-  QFile file (filename);
-  bool ok;
-  
-  QJsonParseError error;
-  QByteArray data;
-  QJsonDocument doc;
-  
-  ok = file.open (QFile::ReadOnly);
-  if (ok) {
-    data = file.readAll ();
-    doc = QJsonDocument::fromJson (data, &error);
-    file.close ();
-    
-    if (error.error != QJsonParseError::NoError) {
-      throw (std::runtime_error(error.errorString().toStdString()));
-    }
-  } else {
-    throw (std::runtime_error(QString("Cannot open \'%1\'").arg(filename).toStdString()));
-  }
-  
-  return (doc.object ());
 }
