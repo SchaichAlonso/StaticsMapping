@@ -10,7 +10,7 @@
 #include <Common/Classification/Definitions.hpp>
 #include <Common/Classification/ObjectModel.hpp>
 
-#include <Common/Widgets/ObjScreen.hpp>
+#include <Common/Widgets/OpenGL/Screen.hpp>
 #include <Common/Widgets/VisualObject.hpp>
 
 struct MainWindow : QMainWindow
@@ -60,7 +60,7 @@ protected:
 protected:
   Classification::DefinitionsPointer m_definitions;
   
-  Widgets::ObjScreen        *m_obj_screen;
+  OpenGL::Screen                     *m_obj_screen;
   QList<Widgets::VisualObjectPointer> m_objects;
   
   QComboBox                   *m_object_select;

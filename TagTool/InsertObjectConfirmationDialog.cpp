@@ -2,7 +2,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QVBoxLayout>
 
-#include <Common/Widgets/ObjView.hpp>
+#include <Common/Widgets/OpenGL/Screen.hpp>
 
 #include "InsertObjectConfirmationDialog.hpp"
 
@@ -14,8 +14,9 @@ InsertObjectConfirmationDialog::InsertObjectConfirmationDialog(
 : QDialog(parent, flags)
 , m_vop(vop)
 {
-  Widgets::ObjView *preview(new Widgets::ObjView());
-  preview->setModel(vop->data, vop->model);
+  OpenGL::Screen *preview(new OpenGL::Screen());
+#warning "!!!!"
+  //preview->setModel(vop->data, vop->model);
   
   QPushButton *accept(new QPushButton("accept"));
   QPushButton *reject(new QPushButton("reject"));

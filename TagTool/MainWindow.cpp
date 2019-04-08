@@ -49,14 +49,12 @@
 #include "MainWindow.hpp"
 #include "VisualObjectsModel.hpp"
 
-#include <Common/Widgets/GlobalDistributionDialog.hpp>
-
 
 
 MainWindow::MainWindow (QWidget *parent , Qt::WindowFlags flags)
 : QMainWindow (parent, flags)
 , m_definitions (Classification::Definitions::fromFile())
-, m_obj_screen(new Widgets::ObjScreen())
+, m_obj_screen(new OpenGL::Screen())
 , m_objects()
 , m_object_select(createFormComboBox())
 , m_object_data_model (m_definitions->objectModel ())
@@ -87,7 +85,7 @@ MainWindow::loadObjFile (QString path)
 {
   try {
     Widgets::VisualObjectPointer obj(
-      new Widgets::VisualObject(m_definitions, path)
+      new Widgets::VisualObject(m_definitions, m_obj_screen->scene(), path)
     );
     
     if (m_definitions->object(obj->data->primaryKey())) {
@@ -347,8 +345,9 @@ MainWindow::setDisplayedVisualObject (int visual_object_index)
   
   m_current_visual_object_index = visual_object_index;
   
+
   Widgets::VisualObjectPointer ptr(m_objects.value(visual_object_index));
-  QSharedPointer<Widgets::VisualModel> mdl;
+  OpenGL::ModelWeakPointer mdl;
   Classification::ObjectPointer obj;
   
   if (ptr) {
@@ -358,8 +357,10 @@ MainWindow::setDisplayedVisualObject (int visual_object_index)
     int metadata_index = m_definitions->indexOf(obj);
     m_object_data_mapper->setCurrentIndex(metadata_index);
   }
-  
-  m_obj_screen->setModel(obj, mdl);
+#warning "!!!!!!"
+  #if 0 
+  //m_obj_screen->setModel(obj, mdl);
+#endif
 }
 
 
@@ -550,10 +551,9 @@ MainWindow::createWidgets ()
 {
   QWidget *dummy(new QWidget());
   QLayout *form(createForm());
-  
   QHBoxLayout *ext(new QHBoxLayout());
   ext->addLayout(form);
-  ext->addWidget(m_obj_screen);
+  ext->addWidget(m_obj_screen, 1);
   dummy->setLayout(ext);
   
   setCentralWidget (dummy);
