@@ -8,6 +8,8 @@
 
 #include <Common/Obj8/AbstractVisitor.hpp>
 
+#include "Obj8NamedLightFactory.hpp"
+
 #include "Mesh.hpp"
 #include "Model.hpp"
 
@@ -85,8 +87,9 @@ namespace OpenGL
     State       m_current_state;
     
   protected:
-    OpenGL::ModelPointer m_model;
-    OpenGL::MeshPointer m_mesh;
+    Obj8NamedLightFactory m_light_factory;
+    ModelPointer m_model;
+    MeshPointer m_mesh;
     
   protected:
     friend ObjView;

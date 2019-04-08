@@ -33,6 +33,7 @@ set (Widgets_SOURCES
   OpenGL/Mesh.cpp
   OpenGL/Model.cpp
   OpenGL/Object.cpp
+  OpenGL/Obj8NamedLightFactory.cpp
   OpenGL/Obj8Lod.cpp
   OpenGL/Obj8Visitor.cpp
   OpenGL/Obj8Shader.cpp

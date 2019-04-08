@@ -1,0 +1,2244 @@
+{
+    "HGV_headlight": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 35,
+            "rangeExp": 2
+        },
+        "b": 230,
+        "g": 242,
+        "r": 255,
+        "spot": {
+            "cutoff": 30,
+            "exp": 1,
+            "x": 0.08699999749660492,
+            "y": -0.08699999749660492,
+            "z": -0.9919999837875366
+        }
+    },
+    "HGV_taillight": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 4,
+            "rangeExp": 2
+        },
+        "b": 0,
+        "g": 10,
+        "r": 102,
+        "spot": {
+            "cutoff": 91,
+            "exp": 1,
+            "x": 0,
+            "y": -0.5,
+            "z": 0.8600000143051147
+        }
+    },
+    "Hg_area_lt_sml_sp": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 40,
+            "rangeExp": 2
+        },
+        "b": 102,
+        "g": 85,
+        "r": 80,
+        "spot": {
+            "cutoff": 133,
+            "exp": 1,
+            "x": 0,
+            "y": -0.8659999966621399,
+            "z": -0.5
+        }
+    },
+    "Hwy10Deg1_var1": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 27,
+            "rangeExp": 2
+        },
+        "b": 35,
+        "g": 83,
+        "r": 153,
+        "spot": {
+            "cutoff": 179,
+            "exp": 1,
+            "x": 0,
+            "y": -0.9679999947547913,
+            "z": -0.25
+        }
+    },
+    "Hwy10Deg1_var2": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 26.5,
+            "rangeExp": 2
+        },
+        "b": 38,
+        "g": 90,
+        "r": 166,
+        "spot": {
+            "cutoff": 179,
+            "exp": 1,
+            "x": 0,
+            "y": -0.9679999947547913,
+            "z": -0.25
+        }
+    },
+    "Hwy10Deg1_var3": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 26,
+            "rangeExp": 2
+        },
+        "b": 35,
+        "g": 83,
+        "r": 153,
+        "spot": {
+            "cutoff": 179,
+            "exp": 1,
+            "x": 0,
+            "y": -0.9679999947547913,
+            "z": -0.25
+        }
+    },
+    "Hwy20Deg1_var1": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 28,
+            "rangeExp": 2
+        },
+        "b": 3,
+        "g": 69,
+        "r": 179,
+        "spot": {
+            "cutoff": 179,
+            "exp": 1,
+            "x": 0,
+            "y": -0.9679999947547913,
+            "z": -0.25
+        }
+    },
+    "Hwy20Deg1_var2": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 27,
+            "rangeExp": 2
+        },
+        "b": 2,
+        "g": 62,
+        "r": 157,
+        "spot": {
+            "cutoff": 179,
+            "exp": 1,
+            "x": 0,
+            "y": -0.9679999947547913,
+            "z": -0.25
+        }
+    },
+    "Hwy20Deg1_var3": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 26,
+            "rangeExp": 2
+        },
+        "b": 2,
+        "g": 56,
+        "r": 145,
+        "spot": {
+            "cutoff": 179,
+            "exp": 1,
+            "x": 0,
+            "y": -0.9679999947547913,
+            "z": -0.25
+        }
+    },
+    "HwyLPSHighMast": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 32,
+            "rangeExp": 2
+        },
+        "b": 3,
+        "g": 79,
+        "r": 205,
+        "spot": {
+            "cutoff": 179,
+            "exp": 1,
+            "x": 0,
+            "y": -0.9679999947547913,
+            "z": -0.25
+        }
+    },
+    "LPS_street_light": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 24,
+            "rangeExp": 2
+        },
+        "b": 5,
+        "g": 30,
+        "r": 56,
+        "spot": {
+            "cutoff": 360,
+            "exp": 1,
+            "x": 0,
+            "y": 0,
+            "z": 0
+        }
+    },
+    "LPS_street_light2": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 22,
+            "rangeExp": 2
+        },
+        "b": 5,
+        "g": 27,
+        "r": 51,
+        "spot": {
+            "cutoff": 360,
+            "exp": 1,
+            "x": 0,
+            "y": 0,
+            "z": 0
+        }
+    },
+    "LPS_street_light3": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 22,
+            "rangeExp": 2
+        },
+        "b": 3,
+        "g": 20,
+        "r": 38,
+        "spot": {
+            "cutoff": 360,
+            "exp": 1,
+            "x": 0,
+            "y": 0,
+            "z": 0
+        }
+    },
+    "MH_street_light1": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 26,
+            "rangeExp": 2
+        },
+        "b": 77,
+        "g": 76,
+        "r": 73,
+        "spot": {
+            "cutoff": 360,
+            "exp": 1,
+            "x": 0,
+            "y": 0,
+            "z": 0
+        }
+    },
+    "MH_street_light2": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 24,
+            "rangeExp": 2
+        },
+        "b": 71,
+        "g": 71,
+        "r": 68,
+        "spot": {
+            "cutoff": 360,
+            "exp": 1,
+            "x": 0,
+            "y": 0,
+            "z": 0
+        }
+    },
+    "RCLS_r_rev_sp": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 1.2000000476837158,
+            "rangeExp": 2
+        },
+        "b": 10,
+        "g": 22,
+        "r": 255,
+        "spot": {
+            "cutoff": 70,
+            "exp": 1,
+            "x": 0,
+            "y": 0.11999999731779099,
+            "z": -0.9890000224113464
+        }
+    },
+    "RCLS_r_sp": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 1.2000000476837158,
+            "rangeExp": 2
+        },
+        "b": 10,
+        "g": 22,
+        "r": 255,
+        "spot": {
+            "cutoff": 70,
+            "exp": 1,
+            "x": 0,
+            "y": 0.11999999731779099,
+            "z": 0.9890000224113464
+        }
+    },
+    "RCLS_w_rev_sp": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 1.2000000476837158,
+            "rangeExp": 2
+        },
+        "b": 175,
+        "g": 173,
+        "r": 255,
+        "spot": {
+            "cutoff": 70,
+            "exp": 1,
+            "x": 0,
+            "y": 0.11999999731779099,
+            "z": -0.9890000224113464
+        }
+    },
+    "RCLS_w_sp": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 1.2000000476837158,
+            "rangeExp": 2
+        },
+        "b": 175,
+        "g": 173,
+        "r": 255,
+        "spot": {
+            "cutoff": 70,
+            "exp": 1,
+            "x": 0,
+            "y": 0.11999999731779099,
+            "z": 0.9890000224113464
+        }
+    },
+    "Rmp10Deg1_var1": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 20,
+            "rangeExp": 2
+        },
+        "b": 35,
+        "g": 83,
+        "r": 153,
+        "spot": {
+            "cutoff": 150,
+            "exp": 1,
+            "x": 0,
+            "y": -0.9847999811172485,
+            "z": -0.1736000031232834
+        }
+    },
+    "Rmp10Deg1_var2": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 21,
+            "rangeExp": 2
+        },
+        "b": 35,
+        "g": 83,
+        "r": 153,
+        "spot": {
+            "cutoff": 150,
+            "exp": 1,
+            "x": 0,
+            "y": -0.9847999811172485,
+            "z": -0.1736000031232834
+        }
+    },
+    "Rmp20Deg1_var1": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 21,
+            "rangeExp": 2
+        },
+        "b": 2,
+        "g": 54,
+        "r": 145,
+        "spot": {
+            "cutoff": 150,
+            "exp": 1,
+            "x": 0,
+            "y": -0.9847999811172485,
+            "z": -0.1736000031232834
+        }
+    },
+    "Rmp20Deg1_var2": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 22,
+            "rangeExp": 2
+        },
+        "b": 2,
+        "g": 60,
+        "r": 157,
+        "spot": {
+            "cutoff": 150,
+            "exp": 1,
+            "x": 0,
+            "y": -0.9847999811172485,
+            "z": -0.1736000031232834
+        }
+    },
+    "RoadBridgeDeck_var1": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 25,
+            "rangeExp": 2
+        },
+        "b": 126,
+        "g": 132,
+        "r": 139,
+        "spot": {
+            "cutoff": 120,
+            "exp": 1,
+            "x": 0,
+            "y": -1,
+            "z": 0
+        }
+    },
+    "TDZL_sp": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 1.2000000476837158,
+            "rangeExp": 2
+        },
+        "b": 255,
+        "g": 255,
+        "r": 255,
+        "spot": {
+            "cutoff": 70,
+            "exp": 1,
+            "x": 0,
+            "y": 0.11999999731779099,
+            "z": 0.9890000224113464
+        }
+    },
+    "Tug_headlight": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 35,
+            "rangeExp": 2
+        },
+        "b": 230,
+        "g": 242,
+        "r": 255,
+        "spot": {
+            "cutoff": 30,
+            "exp": 1,
+            "x": 0.08699999749660492,
+            "y": -0.08699999749660492,
+            "z": 0.9919999837875366
+        }
+    },
+    "Tug_taillight": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 4,
+            "rangeExp": 2
+        },
+        "b": 0,
+        "g": 10,
+        "r": 102,
+        "spot": {
+            "cutoff": 91,
+            "exp": 1,
+            "x": 0,
+            "y": -0.5,
+            "z": -0.8600000143051147
+        }
+    },
+    "airplane_nav_left_static": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 5.5,
+            "rangeExp": 2
+        },
+        "b": 0,
+        "g": 26,
+        "r": 230,
+        "spot": {
+            "cutoff": 157,
+            "exp": 1,
+            "x": -0.949999988079071,
+            "y": 0,
+            "z": -0.3100000023841858
+        }
+    },
+    "airplane_nav_left_static_h": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 9.5,
+            "rangeExp": 2
+        },
+        "b": 0,
+        "g": 26,
+        "r": 230,
+        "spot": {
+            "cutoff": 157,
+            "exp": 1,
+            "x": -0.949999988079071,
+            "y": 0,
+            "z": -0.3100000023841858
+        }
+    },
+    "airplane_nav_right_static": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 5.5,
+            "rangeExp": 2
+        },
+        "b": 92,
+        "g": 189,
+        "r": 5,
+        "spot": {
+            "cutoff": 157,
+            "exp": 1,
+            "x": 0.949999988079071,
+            "y": 0,
+            "z": -0.3100000023841858
+        }
+    },
+    "airplane_nav_right_static_h": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 9.5,
+            "rangeExp": 2
+        },
+        "b": 92,
+        "g": 189,
+        "r": 5,
+        "spot": {
+            "cutoff": 157,
+            "exp": 1,
+            "x": 0.949999988079071,
+            "y": 0,
+            "z": -0.3100000023841858
+        }
+    },
+    "airplane_nav_tail_static": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 5.5,
+            "rangeExp": 2
+        },
+        "b": 204,
+        "g": 255,
+        "r": 255,
+        "spot": {
+            "cutoff": 157,
+            "exp": 1,
+            "x": 0,
+            "y": 0,
+            "z": 1
+        }
+    },
+    "airplane_nav_tail_static_h": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 10,
+            "rangeExp": 2
+        },
+        "b": 204,
+        "g": 255,
+        "r": 255,
+        "spot": {
+            "cutoff": 157,
+            "exp": 1,
+            "x": 0,
+            "y": 0,
+            "z": 1
+        }
+    },
+    "amb_street_light": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 23,
+            "rangeExp": 2
+        },
+        "b": 12,
+        "g": 28,
+        "r": 51,
+        "spot": {
+            "cutoff": 360,
+            "exp": 1,
+            "x": 0,
+            "y": 0,
+            "z": 0
+        }
+    },
+    "amb_street_light2": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 22,
+            "rangeExp": 2
+        },
+        "b": 8,
+        "g": 20,
+        "r": 38,
+        "spot": {
+            "cutoff": 360,
+            "exp": 1,
+            "x": 0,
+            "y": 0,
+            "z": 0
+        }
+    },
+    "amb_street_light3": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 28,
+            "rangeExp": 2
+        },
+        "b": 18,
+        "g": 41,
+        "r": 77,
+        "spot": {
+            "cutoff": 360,
+            "exp": 1,
+            "x": 0,
+            "y": 0,
+            "z": 0
+        }
+    },
+    "amb_street_light4": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 26,
+            "rangeExp": 2
+        },
+        "b": 17,
+        "g": 41,
+        "r": 77,
+        "spot": {
+            "cutoff": 360,
+            "exp": 1,
+            "x": 0,
+            "y": 0,
+            "z": 0
+        }
+    },
+    "appch_r": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 5,
+            "rangeExp": 2
+        },
+        "b": 3,
+        "g": 7,
+        "r": 77,
+        "spot": {
+            "cutoff": 64,
+            "exp": 1,
+            "x": 0,
+            "y": 0,
+            "z": 1
+        }
+    },
+    "appch_w": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 5,
+            "rangeExp": 2
+        },
+        "b": 58,
+        "g": 73,
+        "r": 77,
+        "spot": {
+            "cutoff": 64,
+            "exp": 1,
+            "x": 0,
+            "y": 0,
+            "z": 1
+        }
+    },
+    "apron_light_E": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 110,
+            "rangeExp": 2
+        },
+        "b": 41,
+        "g": 46,
+        "r": 51,
+        "spot": {
+            "cutoff": 106,
+            "exp": 1,
+            "x": 0.6420000195503235,
+            "y": -0.765999972820282,
+            "z": 0
+        }
+    },
+    "apron_light_N": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 110,
+            "rangeExp": 2
+        },
+        "b": 41,
+        "g": 46,
+        "r": 51,
+        "spot": {
+            "cutoff": 106,
+            "exp": 1,
+            "x": 0,
+            "y": -0.765999972820282,
+            "z": -0.6420000195503235
+        }
+    },
+    "apron_light_S": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 110,
+            "rangeExp": 2
+        },
+        "b": 41,
+        "g": 46,
+        "r": 51,
+        "spot": {
+            "cutoff": 106,
+            "exp": 1,
+            "x": 0,
+            "y": -0.765999972820282,
+            "z": 0.6420000195503235
+        }
+    },
+    "apron_light_W": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 110,
+            "rangeExp": 2
+        },
+        "b": 41,
+        "g": 46,
+        "r": 51,
+        "spot": {
+            "cutoff": 106,
+            "exp": 1,
+            "x": -0.6420000195503235,
+            "y": -0.765999972820282,
+            "z": 0
+        }
+    },
+    "apron_light_uni": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 120,
+            "rangeExp": 2
+        },
+        "b": 41,
+        "g": 46,
+        "r": 51,
+        "spot": {
+            "cutoff": 120,
+            "exp": 1,
+            "x": 0,
+            "y": -0.8190000057220459,
+            "z": -0.30000001192092896
+        }
+    },
+    "apt_beacon_green_axial": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 200,
+            "rangeExp": 2
+        },
+        "b": 230,
+        "g": 230,
+        "r": 77,
+        "spot": {
+            "cutoff": 16,
+            "exp": 1,
+            "x": -1,
+            "y": 0,
+            "z": 0
+        }
+    },
+    "apt_beacon_white_axial": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 200,
+            "rangeExp": 2
+        },
+        "b": 217,
+        "g": 242,
+        "r": 255,
+        "spot": {
+            "cutoff": 16,
+            "exp": 1,
+            "x": 1,
+            "y": 0,
+            "z": 0
+        }
+    },
+    "apt_light_halo_test": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 0.10000000149011612,
+            "rangeExp": 2
+        },
+        "b": 179,
+        "g": 255,
+        "r": 255,
+        "spot": {
+            "cutoff": 120,
+            "exp": 1,
+            "x": 0,
+            "y": -1,
+            "z": 0
+        }
+    },
+    "area_lt_lrg_sp": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 85,
+            "rangeExp": 2
+        },
+        "b": 179,
+        "g": 134,
+        "r": 152,
+        "spot": {
+            "cutoff": 120,
+            "exp": 1,
+            "x": 0,
+            "y": -0.7070000171661377,
+            "z": -0.7070000171661377
+        }
+    },
+    "area_lt_med_sp": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 60,
+            "rangeExp": 2
+        },
+        "b": 138,
+        "g": 122,
+        "r": 153,
+        "spot": {
+            "cutoff": 133,
+            "exp": 1,
+            "x": 0,
+            "y": -0.8659999966621399,
+            "z": -0.5
+        }
+    },
+    "area_lt_sml_sp": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 40,
+            "rangeExp": 2
+        },
+        "b": 102,
+        "g": 102,
+        "r": 128,
+        "spot": {
+            "cutoff": 133,
+            "exp": 1,
+            "x": 0,
+            "y": -0.8659999966621399,
+            "z": -0.5
+        }
+    },
+    "bldg_uplight_sp1": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 60,
+            "rangeExp": 2
+        },
+        "b": 51,
+        "g": 153,
+        "r": 255,
+        "spot": {
+            "cutoff": 120,
+            "exp": 1,
+            "x": -0.15000000596046448,
+            "y": 0.8889999985694885,
+            "z": 0.4339999854564667
+        }
+    },
+    "bldg_uplight_sp10": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 60,
+            "rangeExp": 2
+        },
+        "b": 51,
+        "g": 153,
+        "r": 255,
+        "spot": {
+            "cutoff": 120,
+            "exp": 1,
+            "x": 0.08500000089406967,
+            "y": 0.9729999899864197,
+            "z": 0.22300000488758087
+        }
+    },
+    "bldg_uplight_sp11": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 60,
+            "rangeExp": 2
+        },
+        "b": 51,
+        "g": 153,
+        "r": 255,
+        "spot": {
+            "cutoff": 120,
+            "exp": 1,
+            "x": 0.08500000089406967,
+            "y": 0.9729999899864197,
+            "z": -0.22300000488758087
+        }
+    },
+    "bldg_uplight_sp12": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 60,
+            "rangeExp": 2
+        },
+        "b": 51,
+        "g": 153,
+        "r": 255,
+        "spot": {
+            "cutoff": 120,
+            "exp": 1,
+            "x": -0.08500000089406967,
+            "y": 0.9729999899864197,
+            "z": -0.22300000488758087
+        }
+    },
+    "bldg_uplight_sp2": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 60,
+            "rangeExp": 2
+        },
+        "b": 51,
+        "g": 153,
+        "r": 255,
+        "spot": {
+            "cutoff": 120,
+            "exp": 1,
+            "x": 0.15000000596046448,
+            "y": 0.8889999985694885,
+            "z": 0.4339999854564667
+        }
+    },
+    "bldg_uplight_sp3": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 60,
+            "rangeExp": 2
+        },
+        "b": 51,
+        "g": 153,
+        "r": 255,
+        "spot": {
+            "cutoff": 120,
+            "exp": 1,
+            "x": -0.15000000596046448,
+            "y": 0.8889999985694885,
+            "z": -0.4339999854564667
+        }
+    },
+    "bldg_uplight_sp4": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 60,
+            "rangeExp": 2
+        },
+        "b": 51,
+        "g": 153,
+        "r": 255,
+        "spot": {
+            "cutoff": 120,
+            "exp": 1,
+            "x": 0.15000000596046448,
+            "y": 0.8889999985694885,
+            "z": -0.4339999854564667
+        }
+    },
+    "bldg_uplight_sp5": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 60,
+            "rangeExp": 2
+        },
+        "b": 51,
+        "g": 153,
+        "r": 255,
+        "spot": {
+            "cutoff": 120,
+            "exp": 1,
+            "x": -0.6050000190734863,
+            "y": 0.781000018119812,
+            "z": -0.16500000655651093
+        }
+    },
+    "bldg_uplight_sp6": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 60,
+            "rangeExp": 2
+        },
+        "b": 51,
+        "g": 153,
+        "r": 255,
+        "spot": {
+            "cutoff": 120,
+            "exp": 1,
+            "x": -0.6050000190734863,
+            "y": 0.781000018119812,
+            "z": 0.16500000655651093
+        }
+    },
+    "bldg_uplight_sp7": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 60,
+            "rangeExp": 2
+        },
+        "b": 51,
+        "g": 153,
+        "r": 255,
+        "spot": {
+            "cutoff": 120,
+            "exp": 1,
+            "x": 0.6050000190734863,
+            "y": 0.781000018119812,
+            "z": 0.16500000655651093
+        }
+    },
+    "bldg_uplight_sp8": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 60,
+            "rangeExp": 2
+        },
+        "b": 51,
+        "g": 153,
+        "r": 255,
+        "spot": {
+            "cutoff": 120,
+            "exp": 1,
+            "x": 0.6050000190734863,
+            "y": 0.781000018119812,
+            "z": -0.16500000655651093
+        }
+    },
+    "bldg_uplight_sp9": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 60,
+            "rangeExp": 2
+        },
+        "b": 51,
+        "g": 153,
+        "r": 255,
+        "spot": {
+            "cutoff": 120,
+            "exp": 1,
+            "x": -0.08500000089406967,
+            "y": 0.9729999899864197,
+            "z": 0.22300000488758087
+        }
+    },
+    "camera_flash": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 50,
+            "rangeExp": 2
+        },
+        "b": 255,
+        "g": 255,
+        "r": 255,
+        "spot": {
+            "cutoff": 74,
+            "exp": 1,
+            "x": 0,
+            "y": 0,
+            "z": -1
+        }
+    },
+    "edge_r": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 1.75,
+            "rangeExp": 2
+        },
+        "b": 5,
+        "g": 0,
+        "r": 98,
+        "spot": {
+            "cutoff": 148,
+            "exp": 1,
+            "x": 0,
+            "y": -0.07100000232458115,
+            "z": 0.9909999966621399
+        }
+    },
+    "edge_r_rev": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 1.75,
+            "rangeExp": 2
+        },
+        "b": 5,
+        "g": 0,
+        "r": 98,
+        "spot": {
+            "cutoff": 148,
+            "exp": 1,
+            "x": 0,
+            "y": -0.07100000232458115,
+            "z": -0.9909999966621399
+        }
+    },
+    "edge_w": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 1.75,
+            "rangeExp": 2
+        },
+        "b": 63,
+        "g": 62,
+        "r": 92,
+        "spot": {
+            "cutoff": 148,
+            "exp": 1,
+            "x": 0,
+            "y": -0.07100000232458115,
+            "z": 0.9909999966621399
+        }
+    },
+    "edge_w_rev": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 1.75,
+            "rangeExp": 2
+        },
+        "b": 63,
+        "g": 62,
+        "r": 92,
+        "spot": {
+            "cutoff": 148,
+            "exp": 1,
+            "x": 0,
+            "y": -0.07100000232458115,
+            "z": -0.9909999966621399
+        }
+    },
+    "edge_y": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 1.75,
+            "rangeExp": 2
+        },
+        "b": 0,
+        "g": 51,
+        "r": 92,
+        "spot": {
+            "cutoff": 148,
+            "exp": 1,
+            "x": 0,
+            "y": -0.07100000232458115,
+            "z": 0.9909999966621399
+        }
+    },
+    "edge_y_rev": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 1.75,
+            "rangeExp": 2
+        },
+        "b": 0,
+        "g": 51,
+        "r": 92,
+        "spot": {
+            "cutoff": 148,
+            "exp": 1,
+            "x": 0,
+            "y": -0.07100000232458115,
+            "z": -0.9909999966621399
+        }
+    },
+    "flood_N_45dn": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 20,
+            "rangeExp": 2
+        },
+        "b": 89,
+        "g": 128,
+        "r": 128,
+        "spot": {
+            "cutoff": 106,
+            "exp": 1,
+            "x": 0,
+            "y": -0.7070000171661377,
+            "z": -0.7070000171661377
+        }
+    },
+    "flood_dn_wide": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 10,
+            "rangeExp": 2
+        },
+        "b": 128,
+        "g": 121,
+        "r": 121,
+        "spot": {
+            "cutoff": 106,
+            "exp": 1,
+            "x": 0,
+            "y": -1,
+            "z": 0
+        }
+    },
+    "full_custom_halo": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 30,
+            "rangeExp": 2
+        },
+        "b": 0,
+        "g": 255,
+        "r": 0,
+        "spot": {
+            "cutoff": 360,
+            "exp": 1,
+            "x": 0.2409999966621399,
+            "y": -0.9390000104904175,
+            "z": 0.24079999327659607
+        }
+    },
+    "headlight": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 30,
+            "rangeExp": 2
+        },
+        "b": 255,
+        "g": 242,
+        "r": 242,
+        "spot": {
+            "cutoff": 30,
+            "exp": 1,
+            "x": 0.08699999749660492,
+            "y": -0.08699999749660492,
+            "z": -0.9919999837875366
+        }
+    },
+    "headlight2": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 30,
+            "rangeExp": 2
+        },
+        "b": 223,
+        "g": 240,
+        "r": 255,
+        "spot": {
+            "cutoff": 30,
+            "exp": 1,
+            "x": 0.08699999749660492,
+            "y": -0.08699999749660492,
+            "z": -0.9919999837875366
+        }
+    },
+    "headlight3": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 30,
+            "rangeExp": 2
+        },
+        "b": 223,
+        "g": 240,
+        "r": 230,
+        "spot": {
+            "cutoff": 30,
+            "exp": 1,
+            "x": 0.08699999749660492,
+            "y": -0.08699999749660492,
+            "z": -0.9919999837875366
+        }
+    },
+    "heli_g": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 1.5,
+            "rangeExp": 2
+        },
+        "b": 64,
+        "g": 115,
+        "r": 29,
+        "spot": {
+            "cutoff": 360,
+            "exp": 1,
+            "x": 0,
+            "y": 1,
+            "z": 0
+        }
+    },
+    "heli_y": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 1.5,
+            "rangeExp": 2
+        },
+        "b": 0,
+        "g": 99,
+        "r": 153,
+        "spot": {
+            "cutoff": 360,
+            "exp": 1,
+            "x": 0,
+            "y": 1,
+            "z": 0
+        }
+    },
+    "hold_short_y_sp": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 0.800000011920929,
+            "rangeExp": 2
+        },
+        "b": 26,
+        "g": 153,
+        "r": 255,
+        "spot": {
+            "cutoff": 60,
+            "exp": 1,
+            "x": 0,
+            "y": 0.08699999749660492,
+            "z": 0.9959999918937683
+        }
+    },
+    "hospital_helipad_blue": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 0.800000011920929,
+            "rangeExp": 2
+        },
+        "b": 255,
+        "g": 26,
+        "r": 26,
+        "spot": {
+            "cutoff": 360,
+            "exp": 1,
+            "x": 0,
+            "y": 1,
+            "z": 0
+        }
+    },
+    "inset_appch_r_sp": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 1.2000000476837158,
+            "rangeExp": 2
+        },
+        "b": 10,
+        "g": 22,
+        "r": 255,
+        "spot": {
+            "cutoff": 45,
+            "exp": 1,
+            "x": 0,
+            "y": -0.11800000071525574,
+            "z": 0.9929999709129333
+        }
+    },
+    "inset_appch_w_sp": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 1.2000000476837158,
+            "rangeExp": 2
+        },
+        "b": 193,
+        "g": 242,
+        "r": 255,
+        "spot": {
+            "cutoff": 45,
+            "exp": 1,
+            "x": 0,
+            "y": -0.11800000071525574,
+            "z": 0.9929999709129333
+        }
+    },
+    "inset_edge_r_rev_sp": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 1.2000000476837158,
+            "rangeExp": 2
+        },
+        "b": 10,
+        "g": 22,
+        "r": 255,
+        "spot": {
+            "cutoff": 70,
+            "exp": 1,
+            "x": 0,
+            "y": 0.11999999731779099,
+            "z": -0.9890000224113464
+        }
+    },
+    "inset_edge_r_sp": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 1.2000000476837158,
+            "rangeExp": 2
+        },
+        "b": 10,
+        "g": 22,
+        "r": 255,
+        "spot": {
+            "cutoff": 70,
+            "exp": 1,
+            "x": 0,
+            "y": 0.11999999731779099,
+            "z": 0.9890000224113464
+        }
+    },
+    "inset_edge_w_rev_sp": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 1.2000000476837158,
+            "rangeExp": 2
+        },
+        "b": 193,
+        "g": 242,
+        "r": 255,
+        "spot": {
+            "cutoff": 70,
+            "exp": 1,
+            "x": 0,
+            "y": 0.11999999731779099,
+            "z": -0.9890000224113464
+        }
+    },
+    "inset_edge_w_sp": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 1.2000000476837158,
+            "rangeExp": 2
+        },
+        "b": 193,
+        "g": 242,
+        "r": 255,
+        "spot": {
+            "cutoff": 70,
+            "exp": 1,
+            "x": 0,
+            "y": 0.11999999731779099,
+            "z": 0.9890000224113464
+        }
+    },
+    "inset_edge_y_rev_sp": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 1.2000000476837158,
+            "rangeExp": 2
+        },
+        "b": 0,
+        "g": 143,
+        "r": 255,
+        "spot": {
+            "cutoff": 70,
+            "exp": 1,
+            "x": 0,
+            "y": 0.11999999731779099,
+            "z": -0.9890000224113464
+        }
+    },
+    "inset_edge_y_sp": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 1.2000000476837158,
+            "rangeExp": 2
+        },
+        "b": 0,
+        "g": 143,
+        "r": 255,
+        "spot": {
+            "cutoff": 70,
+            "exp": 1,
+            "x": 0,
+            "y": 0.11999999731779099,
+            "z": 0.9890000224113464
+        }
+    },
+    "inset_heli_b": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 1,
+            "rangeExp": 2
+        },
+        "b": 255,
+        "g": 26,
+        "r": 26,
+        "spot": {
+            "cutoff": 360,
+            "exp": 1,
+            "x": 0,
+            "y": 1,
+            "z": 0
+        }
+    },
+    "inset_heli_g": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 2,
+            "rangeExp": 2
+        },
+        "b": 99,
+        "g": 230,
+        "r": 57,
+        "spot": {
+            "cutoff": 360,
+            "exp": 1,
+            "x": 0,
+            "y": 1,
+            "z": 0
+        }
+    },
+    "inset_heli_y": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 2,
+            "rangeExp": 2
+        },
+        "b": 0,
+        "g": 168,
+        "r": 255,
+        "spot": {
+            "cutoff": 360,
+            "exp": 1,
+            "x": 0,
+            "y": 1,
+            "z": 0
+        }
+    },
+    "inset_thresh_g_rev_sp": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 2.5,
+            "rangeExp": 2
+        },
+        "b": 46,
+        "g": 46,
+        "r": 0,
+        "spot": {
+            "cutoff": 68,
+            "exp": 1,
+            "x": 0,
+            "y": -0.01269999984651804,
+            "z": -0.9929999709129333
+        }
+    },
+    "inset_thresh_g_sp": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 2.5,
+            "rangeExp": 2
+        },
+        "b": 46,
+        "g": 46,
+        "r": 0,
+        "spot": {
+            "cutoff": 68,
+            "exp": 1,
+            "x": 0,
+            "y": -0.01269999984651804,
+            "z": 0.9929999709129333
+        }
+    },
+    "inset_thresh_r_rev_sp": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 2.5,
+            "rangeExp": 2
+        },
+        "b": 2,
+        "g": 0,
+        "r": 46,
+        "spot": {
+            "cutoff": 68,
+            "exp": 1,
+            "x": 0,
+            "y": -0.01269999984651804,
+            "z": -0.9929999709129333
+        }
+    },
+    "inset_thresh_r_sp": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 2.5,
+            "rangeExp": 2
+        },
+        "b": 2,
+        "g": 0,
+        "r": 46,
+        "spot": {
+            "cutoff": 68,
+            "exp": 1,
+            "x": 0,
+            "y": -0.01269999984651804,
+            "z": 0.9929999709129333
+        }
+    },
+    "lantern_street_light": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 20,
+            "rangeExp": 2
+        },
+        "b": 18,
+        "g": 34,
+        "r": 51,
+        "spot": {
+            "cutoff": 360,
+            "exp": 1,
+            "x": 0,
+            "y": 0,
+            "z": 0
+        }
+    },
+    "oz_spill": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 50,
+            "rangeExp": 2
+        },
+        "b": 255,
+        "g": 255,
+        "r": 255,
+        "spot": {
+            "cutoff": 64,
+            "exp": 1,
+            "x": 0,
+            "y": 0,
+            "z": -1
+        }
+    },
+    "pad_flood": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 10,
+            "rangeExp": 2
+        },
+        "b": 121,
+        "g": 121,
+        "r": 128,
+        "spot": {
+            "cutoff": 91,
+            "exp": 1,
+            "x": 0,
+            "y": -0.05000000074505806,
+            "z": 0.9900000095367432
+        }
+    },
+    "sign_bridge": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 5,
+            "rangeExp": 2
+        },
+        "b": 229,
+        "g": 239,
+        "r": 253,
+        "spot": {
+            "cutoff": 100,
+            "exp": 1,
+            "x": 0,
+            "y": 0.5149999856948853,
+            "z": -0.8569999933242798
+        }
+    },
+    "taillight": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 3,
+            "rangeExp": 2
+        },
+        "b": 0,
+        "g": 10,
+        "r": 82,
+        "spot": {
+            "cutoff": 91,
+            "exp": 1,
+            "x": 0,
+            "y": -0.5,
+            "z": 0.8600000143051147
+        }
+    },
+    "taillight2": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 3,
+            "rangeExp": 2
+        },
+        "b": 6,
+        "g": 0,
+        "r": 82,
+        "spot": {
+            "cutoff": 91,
+            "exp": 1,
+            "x": 0,
+            "y": -0.5,
+            "z": 0.8600000143051147
+        }
+    },
+    "taillight3": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 3.5,
+            "rangeExp": 2
+        },
+        "b": 0,
+        "g": 6,
+        "r": 82,
+        "spot": {
+            "cutoff": 91,
+            "exp": 1,
+            "x": 0,
+            "y": -0.5,
+            "z": 0.8600000143051147
+        }
+    },
+    "taxi_b": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 1.2000000476837158,
+            "rangeExp": 2
+        },
+        "b": 153,
+        "g": 15,
+        "r": 15,
+        "spot": {
+            "cutoff": 360,
+            "exp": 1,
+            "x": 0,
+            "y": -1,
+            "z": 0
+        }
+    },
+    "taxi_g_rev_sp": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 1,
+            "rangeExp": 2
+        },
+        "b": 153,
+        "g": 153,
+        "r": 0,
+        "spot": {
+            "cutoff": 60,
+            "exp": 1,
+            "x": 0,
+            "y": 0.08699999749660492,
+            "z": -0.9959999918937683
+        }
+    },
+    "taxi_g_sp": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 1,
+            "rangeExp": 2
+        },
+        "b": 153,
+        "g": 153,
+        "r": 0,
+        "spot": {
+            "cutoff": 60,
+            "exp": 1,
+            "x": 0,
+            "y": 0.08699999749660492,
+            "z": 0.9959999918937683
+        }
+    },
+    "taxi_r": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 1.2000000476837158,
+            "rangeExp": 2
+        },
+        "b": 7,
+        "g": 15,
+        "r": 179,
+        "spot": {
+            "cutoff": 360,
+            "exp": 1,
+            "x": 0,
+            "y": -1,
+            "z": 0
+        }
+    },
+    "taxi_y_rev_sp": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 1,
+            "rangeExp": 2
+        },
+        "b": 0,
+        "g": 107,
+        "r": 179,
+        "spot": {
+            "cutoff": 60,
+            "exp": 1,
+            "x": 0,
+            "y": 0.08699999749660492,
+            "z": -0.9959999918937683
+        }
+    },
+    "taxi_y_sp": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 1,
+            "rangeExp": 2
+        },
+        "b": 0,
+        "g": 107,
+        "r": 179,
+        "spot": {
+            "cutoff": 60,
+            "exp": 1,
+            "x": 0,
+            "y": 0.08699999749660492,
+            "z": 0.9959999918937683
+        }
+    },
+    "test_amb_sp": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 30,
+            "rangeExp": 2
+        },
+        "b": 34,
+        "g": 41,
+        "r": 51,
+        "spot": {
+            "cutoff": 64,
+            "exp": 1,
+            "x": 0,
+            "y": 0,
+            "z": -1
+        }
+    },
+    "thresh_g": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 5,
+            "rangeExp": 2
+        },
+        "b": 38,
+        "g": 34,
+        "r": 2,
+        "spot": {
+            "cutoff": 52,
+            "exp": 1,
+            "x": 0,
+            "y": 0,
+            "z": 1
+        }
+    },
+    "thresh_g_rev": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 5,
+            "rangeExp": 2
+        },
+        "b": 38,
+        "g": 34,
+        "r": 2,
+        "spot": {
+            "cutoff": 52,
+            "exp": 1,
+            "x": 0,
+            "y": 0,
+            "z": -1
+        }
+    },
+    "thresh_r": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 5,
+            "rangeExp": 2
+        },
+        "b": 1,
+        "g": 3,
+        "r": 38,
+        "spot": {
+            "cutoff": 52,
+            "exp": 1,
+            "x": 0,
+            "y": 0,
+            "z": 1
+        }
+    },
+    "thresh_r_rev": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 5,
+            "rangeExp": 2
+        },
+        "b": 1,
+        "g": 3,
+        "r": 38,
+        "spot": {
+            "cutoff": 52,
+            "exp": 1,
+            "x": 0,
+            "y": 0,
+            "z": -1
+        }
+    },
+    "train_headlight": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 50,
+            "rangeExp": 2
+        },
+        "b": 204,
+        "g": 242,
+        "r": 242,
+        "spot": {
+            "cutoff": 30,
+            "exp": 1,
+            "x": 0,
+            "y": -0.08699999749660492,
+            "z": -0.9919999837875366
+        }
+    },
+    "wall_flood_lite_E": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 10,
+            "rangeExp": 2
+        },
+        "b": 255,
+        "g": 255,
+        "r": 255,
+        "spot": {
+            "cutoff": 133,
+            "exp": 1,
+            "x": 0.4399999976158142,
+            "y": -1,
+            "z": 0
+        }
+    },
+    "wall_flood_lite_N": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 10,
+            "rangeExp": 2
+        },
+        "b": 255,
+        "g": 255,
+        "r": 255,
+        "spot": {
+            "cutoff": 133,
+            "exp": 1,
+            "x": 0,
+            "y": -1,
+            "z": -0.4399999976158142
+        }
+    },
+    "wall_flood_lite_S": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 10,
+            "rangeExp": 2
+        },
+        "b": 255,
+        "g": 255,
+        "r": 255,
+        "spot": {
+            "cutoff": 133,
+            "exp": 1,
+            "x": 0,
+            "y": -1,
+            "z": 0.4399999976158142
+        }
+    },
+    "wall_flood_lite_W": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 10,
+            "rangeExp": 2
+        },
+        "b": 255,
+        "g": 255,
+        "r": 255,
+        "spot": {
+            "cutoff": 133,
+            "exp": 1,
+            "x": -0.4399999976158142,
+            "y": -1,
+            "z": 0
+        }
+    },
+    "white_street_light": {
+        "attenuation": {
+            "constant": 1,
+            "linear": 0,
+            "quadratic": 0,
+            "range": 26,
+            "rangeExp": 2
+        },
+        "b": 77,
+        "g": 76,
+        "r": 73,
+        "spot": {
+            "cutoff": 360,
+            "exp": 1,
+            "x": 0,
+            "y": 0,
+            "z": 0
+        }
+    }
+}

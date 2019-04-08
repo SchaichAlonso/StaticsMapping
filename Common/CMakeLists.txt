@@ -32,6 +32,7 @@ target_link_libraries (Common
 set (data_files
   Data/earthmap1k.jpg
   Data/data.json
+  Data/obj8-lights.json
   Data/obj8-frag.glsl
   Data/obj8-vert.glsl
 )

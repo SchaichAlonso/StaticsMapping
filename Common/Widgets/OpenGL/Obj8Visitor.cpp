@@ -21,6 +21,7 @@
 
 #include "DrawElementsObj8.hpp"
 #include "Mesh.hpp"
+#include "Obj8NamedLightFactory.hpp"
 #include "Obj8Shader.hpp"
 
 #include <QtPlugin>
@@ -59,6 +60,7 @@ namespace OpenGL
     : AbstractVisitor(filename)
     , m_symbol_table()
     , m_current_state()
+    , m_light_factory()
     , m_model(output)
     , m_mesh(output->mesh())
     , m_indices()
@@ -138,49 +140,20 @@ namespace OpenGL
   void
   Obj8Visitor::visit(Obj8::Command::Geometry::LightNamed *t)
   {
-    /*
-     * https://github.com/der-On/XPlane2Blender/blob/master/io_xplane2blender/resources/lights.txt
-     */
-    QMap<QString,QColor> known;
-    
-    known["taillight"]       = QColor::fromRgbF(0.40, 0.05, 0.00);
-    known["taillight2"]      = QColor::fromRgbF(0.40, 0.00, 0.03);
-    known["taillight3"]      = QColor::fromRgbF(0.40, 0.03, 0.00);
-    known["HGV_taillight"]   = QColor::fromRgbF(0.40, 0.04, 0.00);
-    known["Tug_taillight"]   = QColor::fromRgbF(0.40, 0.04, 0.00);
-    known["headlight"]       = QColor::fromRgbF(0.95, 0.95, 1.00);
-    known["headlight2"]      = QColor::fromRgbF(1.00, 0.941, 0.875);
-    known["headlight3"]      = QColor::fromRgbF(0.90, 0.941, 0.875);
-    known["Tug_headlight"]   = QColor::fromRgbF(1.00, 0.95, 0.90);
-    known["train_headlight"] = QColor::fromRgbF(0.95, 0.95, 0.80);
-    
-    known["airplane_nav_tail_static_h"]  = QColor::fromRgbF(1.00, 1.00, 0.80);
-    known["airplane_nav_tail_static"]    = QColor::fromRgbF(1.00, 1.00, 0.80);
-    known["airplane_nav_left_static_h"]  = QColor::fromRgbF(0.90, 0.10, 0.00);
-    known["airplane_nav_left_static"]    = QColor::fromRgbF(0.90, 0.10, 0.00);
-    known["airplane_nav_right_static_h"] = QColor::fromRgbF(0.02, 0.74, 0.36);
-    known["airplane_nav_right_static"]   = QColor::fromRgbF(0.02, 0.74, 0.36);
-    
-    
-    m_model->addLight(
-      OpenGL::LightPointer(
-        new OpenGL::Light(
-          QVector3D(
-            t->m_x.toDouble(),
-            t->m_y.toDouble(),
-            t->m_z.toDouble()
-          ),
-          known.value(t->m_name.value(), QColor(Qt::white))
-        )
-      )
-    );
+    QVector3D position(t->m_x.toFloat(), t->m_y.toFloat(), t->m_z.toFloat());
+    LightPointer light(m_light_factory.create(position, t->m_name.value()));
+    if (light) {
+      m_model->addLight(light);
+    } else {
+      qInfo("<%s> is not a known light name.", qUtf8Printable(t->m_name.value()));
+    }
     
     m_lights.append(
       Light(
         QVector3D(
-          t->m_x.toDouble(),
-          t->m_y.toDouble(),
-          t->m_z.toDouble()
+          t->m_x.toFloat(),
+          t->m_y.toFloat(),
+          t->m_z.toFloat()
         ),
         QVector3D(1,1,1)
       )
