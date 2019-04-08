@@ -1,5 +1,6 @@
 #pragma once
 
+#include <QtCore/QJsonObject>
 #include <QtCore/QSharedPointer>
 
 #include <QtGui/QColor>
@@ -15,6 +16,9 @@ namespace OpenGL
     SpotData(QVector3D dir=QVector3D(), float cutoff=360.0, float exp=1);
     SpotData(QMatrix4x4 transformation, const SpotData &other);
     
+    SpotData(QJsonObject json);
+    QJsonObject toJson() const;
+    
     QVector3D direction;
     float cutoff_angle;
     float exp;
@@ -25,6 +29,9 @@ namespace OpenGL
     Attenuation(QVector3D attenuation);
     Attenuation(float range, float exp=2);
     
+    Attenuation(QJsonObject json);
+    QJsonObject toJson() const;
+    
     QVector3D gl_attenuation;
     float range;
     float range_exp;
@@ -32,8 +39,12 @@ namespace OpenGL
   
   struct Light : Object
   {
+    Light(QColor color, Attenuation attenuation=Attenuation(50.0), SpotData spot=SpotData());
     Light(QVector3D position, QColor color, Attenuation attenuation=Attenuation(50.0), SpotData spot=SpotData());
     Light(QMatrix4x4 transformation, const Light &other);
+    
+    Light(QJsonObject json);
+    QJsonObject toJson() const;
     
     QColor    color() const;
     

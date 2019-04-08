@@ -18,6 +18,28 @@ namespace OpenGL
   {
   }
   
+  Attenuation::Attenuation(QJsonObject json)
+  : gl_attenuation(
+      json["constant"].toDouble(),
+      json["linear"].toDouble(),
+      json["quadratic"].toDouble()
+    )
+  , range(json["range"].toDouble())
+  , range_exp(json["rangeExp"].toDouble())
+  {
+  }
+  
+  QJsonObject Attenuation::toJson() const
+  {
+    QJsonObject retval;
+    retval.insert("constant", gl_attenuation.x());
+    retval.insert("linear", gl_attenuation.y());
+    retval.insert("quadratic", gl_attenuation.z());
+    retval.insert("range", range);
+    retval.insert("rangeExp", range_exp);
+    return (retval);
+  }
+  
   SpotData::SpotData(QVector3D dir, float cutoff, float exp)
   : direction(dir)
   , cutoff_angle(cutoff)
@@ -31,6 +53,59 @@ namespace OpenGL
   , exp(other.exp)
   {
   }
+  
+  SpotData::SpotData(QJsonObject json)
+  : direction(
+      json["x"].toDouble(),
+      json["y"].toDouble(),
+      json["z"].toDouble()
+    )
+  , cutoff_angle(json["cutoff"].toDouble())
+  , exp(json["exp"].toDouble())
+  {
+  }
+  
+  QJsonObject SpotData::toJson() const
+  {
+    QJsonObject retval;
+    retval.insert("cutoff", cutoff_angle);
+    retval.insert("exp", exp);
+    retval.insert("x", direction.x());
+    retval.insert("y", direction.y());
+    retval.insert("z", direction.z());
+    return (retval);
+  }
+  
+  
+  Light::Light(QJsonObject json)
+  : Light(
+      QColor::fromRgb(
+        json["r"].toInt(),
+        json["g"].toInt(),
+        json["b"].toInt()
+      ),
+      Attenuation(json["attenuation"].toObject()),
+      SpotData(json["spot"].toObject())
+    )
+  {
+  }
+  
+  QJsonObject Light::toJson() const
+  {
+    QJsonObject retval;
+    retval.insert("r", m_color.red());
+    retval.insert("g", m_color.green());
+    retval.insert("b", m_color.blue());
+    retval.insert("attenuation", m_attenuation.toJson());
+    retval.insert("spot", m_spot.toJson());
+    return (retval);
+  }
+  
+  Light::Light(QColor color, Attenuation attenuation, SpotData spot)
+  : Light(QVector3D(), color, attenuation, spot)
+  {
+  }
+  
   
   Light::Light(QVector3D position, QColor color, Attenuation attenuation, SpotData spot)
   : Object(position)
