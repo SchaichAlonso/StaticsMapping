@@ -15,3 +15,5 @@ target_link_libraries (
     Qt5::Gui
     Qt5::Widgets
 )
+
+install(TARGETS TagTool RUNTIME DESTINATION "bin")
