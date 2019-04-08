@@ -102,16 +102,17 @@ namespace OpenGL
     
     if (surface) {
       QVector4D floor(1, 1, 1, 0.5);
+      QVector3D offset(0.01*normal);
       mesh->drawElements(
         DrawElementsPointer(
           new DrawElements(
             IndexArray()
-              << mesh->addVertex(Vertex(-repetitions*u -repetitions*v, floor, normal, QVector2D(-repetitions, -repetitions)))
-              << mesh->addVertex(Vertex(-repetitions*u +repetitions*v, floor, normal, QVector2D(-repetitions,  repetitions)))
-              << mesh->addVertex(Vertex( repetitions*u +repetitions*v, floor, normal, QVector2D( repetitions,  repetitions)))
-              << mesh->addVertex(Vertex(-repetitions*u -repetitions*v, floor, normal, QVector2D(-repetitions, -repetitions)))
-              << mesh->addVertex(Vertex( repetitions*u +repetitions*v, floor, normal, QVector2D( repetitions,  repetitions)))
-              << mesh->addVertex(Vertex( repetitions*u -repetitions*v, floor, normal, QVector2D( repetitions, -repetitions))),
+              << mesh->addVertex(Vertex(offset - repetitions*u - repetitions*v, floor, normal, QVector2D(-repetitions, -repetitions)))
+              << mesh->addVertex(Vertex(offset - repetitions*u + repetitions*v, floor, normal, QVector2D(-repetitions,  repetitions)))
+              << mesh->addVertex(Vertex(offset + repetitions*u + repetitions*v, floor, normal, QVector2D( repetitions,  repetitions)))
+              << mesh->addVertex(Vertex(offset - repetitions*u - repetitions*v, floor, normal, QVector2D(-repetitions, -repetitions)))
+              << mesh->addVertex(Vertex(offset + repetitions*u + repetitions*v, floor, normal, QVector2D( repetitions,  repetitions)))
+              << mesh->addVertex(Vertex(offset + repetitions*u - repetitions*v, floor, normal, QVector2D( repetitions, -repetitions))),
             GL_TRIANGLES
           )
         )
