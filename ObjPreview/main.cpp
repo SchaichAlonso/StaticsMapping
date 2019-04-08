@@ -14,7 +14,7 @@
 #include <Common/Widgets/OpenGL/Obj8Visitor.hpp>
 
 OpenGL::ModelPointer
-loadObjFile (QString path)
+loadObjFile (OpenGL::ScenePointer scene, QString path)
 {
   OpenGL::ModelPointer retval;
   
@@ -30,12 +30,12 @@ loadObjFile (QString path)
   }
   
   try {
-    retval.reset(new OpenGL::Model);
+    retval = scene->insertModel();
     
     Obj8::File obj8 (f, true);
-    QSharedPointer<OpenGL::Obj8Visitor> model(new OpenGL::Obj8Visitor(retval, path));
+    QSharedPointer<OpenGL::Obj8Visitor> visitor(new OpenGL::Obj8Visitor(retval, path));
     
-    obj8.accept (model.data(), false);
+    obj8.accept(visitor.data(), false);
     
   } catch (const Obj8::Parser::SyntaxError &error) {
     
@@ -63,9 +63,8 @@ main (int argscnt, char **args)
   
   for(int i=1; i!=argscnt; ++i) {
     QVector3D offset((i-1)*50, 0, 0);
-    OpenGL::ModelPointer model(loadObjFile(args[i]));
+    OpenGL::ModelPointer model(loadObjFile(screen.scene(), args[i]));
     model->setPosition(offset);
-    screen.addModel(model);
   }
   
   return (app.exec());

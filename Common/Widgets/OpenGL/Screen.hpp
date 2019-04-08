@@ -33,8 +33,6 @@ namespace OpenGL
     
     SceneWeakPointer scene() const;
     
-    void addModel(ModelPointer model);
-    
     static ScenePointer gridScene();
     static ScenePointer osdScene(QRect dst, QImage image);
     
@@ -56,7 +54,7 @@ namespace OpenGL
     QSize clampedViewport(QSize candidate) const;
     
   protected:
-    static ModelPointer osdQuad(QRect dst, QImage content);
+    static ModelPointer osdQuad(ScenePointer scene, QRect dst, QImage content);
     
   protected:
     QList<View> m_views;

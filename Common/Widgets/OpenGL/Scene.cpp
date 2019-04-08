@@ -202,12 +202,6 @@ namespace OpenGL
   }
   
   
-  void Scene::addModel(ModelPointer model)
-  {
-    m_models.insert(model);
-  }
-  
-  
   void Scene::removeModel(ModelPointer model)
   {
     m_models.remove(model);

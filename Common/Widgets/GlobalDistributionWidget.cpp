@@ -258,7 +258,7 @@ namespace Widgets
         }
       }
     };
-    scene->addModel(globe(180, 360, 1.0 /* m_radius */));
+    //scene->addModel(globe(180, 360, 1.0 /* m_radius */));
     return (scene);
   }
   

@@ -86,10 +86,10 @@ namespace Widgets
         clone->move(50 * QVector3D(qSin(3.14 * i / 180), 0, qCos(3.14 * i / 180)));
         clone->setOrientation(0, 0, i);
         m_scene->addModel(clone);
-      }*/
+      }
       
       m_scene->addModel(m_mdl->m_model);
-      
+      */
     }
   }
   
@@ -115,8 +115,8 @@ namespace Widgets
         }
       }
     };
-    scene->addModel(axis());
-    scene->addModel(ground());
+    //scene->addModel(axis());
+    //scene->addModel(ground());
     return (scene);
   }
   

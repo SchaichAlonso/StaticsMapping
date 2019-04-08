@@ -236,7 +236,7 @@ namespace OpenGL
     
       if (m_hdr) {
         m_fbo.release();
-#if 0
+#if 0   
         QImage fbo(m_fbo.handle()->toImage());
         QImage scaled(fbo.scaled(screen.size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
         //QImage scaled(fbo);
@@ -312,13 +312,6 @@ namespace OpenGL
   
   
   
-  void Screen::addModel(ModelPointer model)
-  {
-    m_scene->addModel(model);
-  }
-  
-  
-  
   ScenePointer
   Screen::gridScene()
   {
@@ -367,21 +360,22 @@ namespace OpenGL
         }
       }
     };
-    scene->addModel(osdQuad(target, content));
+    osdQuad(scene, target, content);
     return (scene);
   }
   
   
   
   OpenGL::ModelPointer
-  Screen::osdQuad(QRect dst, QImage content)
+  Screen::osdQuad(ScenePointer scene, QRect dst, QImage content)
   {
     /*
      * QRect::right and QRect::bottom return off-by-one values.
      */
     dst.adjust(0, 0, 1, 1);
     
-    OpenGL::MeshPointer mesh(new OpenGL::Mesh);
+    ModelPointer model(scene->insertModel(Model::Texturing));
+    MeshPointer mesh(model->mesh());
     
     QVector3D normal(0,1,0);
     mesh->drawElements(
@@ -397,7 +391,6 @@ namespace OpenGL
       )
     );
     
-    OpenGL::ModelPointer model(new OpenGL::Model(mesh, OpenGL::Model::Texturing));
     model->setTexture(0, content);
     
     return (model);
