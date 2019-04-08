@@ -51,6 +51,7 @@ namespace OpenGL
   , m_last_frame_completion(QDateTime::currentDateTimeUtc())
   , m_fbo(QOpenGLTexture::RGBA32F)
   , m_hdr(false)
+  , m_benchmark(false)
   {
 #if 0
     m_views << View(QRectF(0.0, 0.0, 1.0, 1.0), CameraPointer(new PerspectiveCamera(30, "full")));
@@ -203,8 +204,11 @@ namespace OpenGL
     gl->glClearColor(bg.redF(), bg.greenF(), bg.blueF(), 0);
     gl->glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
-    QImage osd(size(), QImage::Format_RGBA8888);
-    osd.fill(QColor(0,0,0,0));
+    QImage osd;
+    if (m_benchmark) {
+      osd = QImage(size(), QImage::Format_RGBA8888);
+      osd.fill(QColor(0,0,0,0));
+    }
     
     Q_FOREACH(View view, m_views) {
       QRect screen(view.viewport(rect()));
@@ -232,7 +236,7 @@ namespace OpenGL
     
       if (m_hdr) {
         m_fbo.release();
-#if 1
+#if 0
         QImage fbo(m_fbo.handle()->toImage());
         QImage scaled(fbo.scaled(screen.size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
         //QImage scaled(fbo);
@@ -251,22 +255,28 @@ namespace OpenGL
     
     QDateTime now(QDateTime::currentDateTimeUtc());
     QDateTime target(m_last_frame_completion.addMSecs(1000 / 30));
+    qint64 delta_t(m_last_frame_completion.msecsTo(now));
+    QString fps_label(QString("Rendered in %1 msecs\nFPS: %2\nHDR: %3").arg(delta_t).arg(1000.0/delta_t).arg(m_hdr));
     
+    if(m_benchmark)
     {
       QPainter painter(&osd);
       painter.setPen(QColor(Qt::white));
-      QString label(QString("Rendered in %1 msecs\nHDR: %2").arg(m_last_frame_completion.msecsTo(now)).arg(m_hdr));
-      painter.drawText(osd.rect(), 0, label);
+      painter.drawText(osd.rect(), 0, fps_label);
     }
     m_last_frame_completion = now;
     
-    gl->glViewport(0, 0, width(), height());
-    osdScene(rect(), osd)->draw(CameraPointer(new OnScreenDisplay(rect())));
+    if(m_benchmark) {
+      gl->glViewport(0, 0, width(), height());
+      osdScene(rect(), osd)->draw(CameraPointer(new OnScreenDisplay(rect())));
     
-    if (now.msecsTo(target) <= 0) {
-      update();
+      if (now.msecsTo(target) <= 0) {
+        update();
+      } else {
+        QTimer::singleShot(now.msecsTo(target), this, SLOT(update()));
+      }
     } else {
-      QTimer::singleShot(now.msecsTo(target), this, SLOT(update()));
+      qDebug() << fps_label;
     }
   }
   

@@ -68,5 +68,6 @@ namespace OpenGL
     
     FrameBufferObject m_fbo;
     bool m_hdr;
+    bool m_benchmark;
   };
 }
