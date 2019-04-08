@@ -25,6 +25,7 @@ namespace Obj8
       Number &operator= (const Number &);
       
       double toDouble () const;
+      float  toFloat () const;
       int    toInt () const;
       bool   isInt () const;
       bool   isValid () const;

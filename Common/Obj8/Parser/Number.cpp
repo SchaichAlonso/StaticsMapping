@@ -362,6 +362,12 @@ Obj8::Parser::Number::toDouble () const
 }
 
 
+float
+Obj8::Parser::Number::toFloat() const
+{
+  return float(toDouble());
+}
+
 
 int
 Obj8::Parser::Number::toInt () const
