@@ -70,6 +70,8 @@ namespace OpenGL
   Screen::~Screen()
   {
     makeCurrent();
+    m_scene.reset();
+    doneCurrent();
   }
   
   
