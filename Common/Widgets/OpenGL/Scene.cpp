@@ -21,17 +21,17 @@ namespace OpenGL
   
   RawImage Scene::lightTexture(Lights lights)
   {
-    RawImage r(QSize(lights.size(), 8));
-    int x=0;
+    RawImage r(QSize(8, lights.size()));
+    int y=0;
     Q_FOREACH(LightPointer light, lights) {
-      r.setPixel(x, 0, light->position());
-      r.setPixel(x, 1, light->color());
-      r.setPixel(x, 2, light->attenuation());
-      r.setPixel(x, 3, QVector2D(light->range(), light->rangeExp()));
-      r.setPixel(x, 4, light->spotDirection());
-      r.setPixel(x, 5, QVector2D(light->spotCutoffAngle(), light->spotExp()));
+      r.setPixel(0, y, light->position());
+      r.setPixel(1, y, light->color());
+      r.setPixel(2, y, light->attenuation());
+      r.setPixel(3, y, QVector2D(light->range(), light->rangeExp()));
+      r.setPixel(4, y, light->spotDirection());
+      r.setPixel(5, y, QVector2D(light->spotCutoffAngle(), light->spotExp()));
       
-      x++;
+      y++;
     }
     
     return (r);

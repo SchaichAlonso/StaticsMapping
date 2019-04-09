@@ -42,8 +42,8 @@ Light getLight(int i)
 {
   Light l;
   
-  l.position = texelFetch(texture_unit[7], ivec2(i,0), 0).xyz;
-  l.color    = texelFetch(texture_unit[7], ivec2(i,1), 0).xyz;
+  l.position = texelFetch(texture_unit[7], ivec2(0,i), 0).xyz;
+  l.color    = texelFetch(texture_unit[7], ivec2(1,i), 0).xyz;
   
   return l;
 }
@@ -51,8 +51,8 @@ Light getLight(int i)
 AttenuationData getAttenuation(int i)
 {
   AttenuationData a;
-  a.attenuation = texelFetch(texture_unit[7], ivec2(i,2), 0).xyz;
-  vec2 blob     = texelFetch(texture_unit[7], ivec2(i,3), 0).xy;
+  a.attenuation = texelFetch(texture_unit[7], ivec2(2,i), 0).xyz;
+  vec2 blob     = texelFetch(texture_unit[7], ivec2(3,i), 0).xy;
   a.range = blob.x;
   a.rangeExp = blob.y;
   return a;
@@ -61,8 +61,8 @@ AttenuationData getAttenuation(int i)
 SpotData getSpotData(int i)
 {
   SpotData s;
-  s.spotDirection = texelFetch(texture_unit[7], ivec2(i,4), 0).xyz;
-  vec2 blob       = texelFetch(texture_unit[7], ivec2(i,5), 0).xy;
+  s.spotDirection = texelFetch(texture_unit[7], ivec2(4,i), 0).xyz;
+  vec2 blob       = texelFetch(texture_unit[7], ivec2(5,i), 0).xy;
   s.spotCutoffAngle = blob.x;
   s.spotExp = blob.y;
   return (s);
