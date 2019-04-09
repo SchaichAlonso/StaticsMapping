@@ -7,6 +7,7 @@ namespace OpenGL
 {
   Scene::Scene(ShaderPointer default_shader)
   : QEnableSharedFromThis<Scene>{}
+  , m_ambient{128, 128, 128}
   , m_lights{}
   , m_bound_shader{}
   , m_default_shader{default_shader}
@@ -139,6 +140,7 @@ namespace OpenGL
       shader->setProjectionMatrix(projection);
       shader->setModelviewMatrix(modelview * m->transform());
       shader->setLights(lights.toList());
+      shader->setAmbientColor(m_ambient);
       shader->setTextureUnitEnabled(7, light_tex->bind(7));
       
       m->bind(sharedFromThis());

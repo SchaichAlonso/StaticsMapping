@@ -44,6 +44,7 @@ namespace OpenGL
   protected:
     float m_roll, m_pitch, m_yaw;
     
+    QColor m_ambient;
     Lights m_lights;
     Models m_models;
     

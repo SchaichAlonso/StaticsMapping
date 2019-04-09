@@ -10,6 +10,7 @@ uniform bool texturing;
 
 uniform bool light_enabled;
 uniform int  light_count;
+uniform vec3 light_ambient;
 
 struct AttenuationData {
   vec3  attenuation;
@@ -113,7 +114,7 @@ vec3 lighting()
 {
   vec3 normal0 = normalize(world_normal);
   
-  vec3 lit = vec3(0, 0, 0);
+  vec3 lit = light_ambient;
   
   for (int i=0; i!=light_count; ++i) {
     Light light = getLight(i);

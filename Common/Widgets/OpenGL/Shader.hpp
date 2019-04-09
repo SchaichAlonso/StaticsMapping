@@ -22,6 +22,7 @@ namespace OpenGL
     void setTexturingEnabled(bool enable);
     void setLightingEnabled(bool enable);
     void setLights(QList<LightPointer> lights);
+    void setAmbientColor(QColor ambient);
     void setModelviewMatrix(const QMatrix4x4& value);
     void setProjectionMatrix(const QMatrix4x4& value);
     

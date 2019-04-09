@@ -38,6 +38,11 @@ namespace OpenGL
     setUniformValue("light_count", lights.count());
   }
   
+  void Shader::setAmbientColor(QColor ambient)
+  {
+    setUniformValue("light_ambient", ambient);
+  }
+  
   void Shader::setModelviewMatrix(const QMatrix4x4 &value)
   {
     setUniformValue("modelview", value);
