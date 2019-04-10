@@ -11,8 +11,6 @@
 #include <QtGui/QOpenGLShaderProgram>
 #include <QtGui/QOpenGLTexture>
 
-#include <Widgets/OpenGLWidget.hpp>
-
 #include "DrawElements.hpp"
 #include "Shader.hpp"
 #include "Texture.hpp"
