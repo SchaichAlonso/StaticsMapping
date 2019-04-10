@@ -1,3 +1,4 @@
+#include "API.hpp"
 #include "DrawElements.hpp"
 
 namespace OpenGL
@@ -17,6 +18,6 @@ namespace OpenGL
   {
     Q_UNUSED(shader);
     
-    glDrawElements(m_mode, m_indices.size(), GL_UNSIGNED_INT, &m_indices[0]);
+    OpenGL::api()->glDrawElements(m_mode, m_indices.size(), GL_UNSIGNED_INT, &m_indices[0]);
   }
 }
