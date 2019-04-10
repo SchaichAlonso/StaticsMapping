@@ -107,6 +107,8 @@ add_library (Obj8 STATIC
 )
 
 target_link_libraries (Obj8
+  Common
+  
   Qt5::Core
 )
 
