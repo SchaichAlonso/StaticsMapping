@@ -28,6 +28,7 @@ set_property(
 target_compile_options(Common PUBLIC $<$<CXX_COMPILER_ID:Clang>:-Wall -Wextra>)
 target_compile_options(Common PUBLIC $<$<CXX_COMPILER_ID:MSVC>:-W4>)
 
+target_include_directories (Common PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(Common Qt5::Core)
 
 set (data_files

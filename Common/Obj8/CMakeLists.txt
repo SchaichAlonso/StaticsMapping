@@ -111,5 +111,3 @@ target_link_libraries (Obj8
   
   Qt5::Core
 )
-
-target_include_directories (Obj8 PUBLIC ${Common_SOURCE_DIR})
