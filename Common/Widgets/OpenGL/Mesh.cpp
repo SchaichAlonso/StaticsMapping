@@ -1,4 +1,5 @@
 #include <cstddef>
+#include <stdexcept>
 
 #include "Mesh.hpp"
 #include "Obj8Shader.hpp"
@@ -83,11 +84,6 @@ namespace OpenGL
   void
   Geometry::bind(ShaderPointer shader)
   {
-    glEnableClientState(GL_VERTEX_ARRAY);
-    glEnableClientState(GL_COLOR_ARRAY);
-    glEnableClientState(GL_NORMAL_ARRAY);
-    glEnableClientState(GL_TEXTURE_COORD_ARRAY);
-    
     const Vertex *v(m_data.constData());
     GLsizei stride(sizeof(*v));
     
@@ -113,10 +109,7 @@ namespace OpenGL
       shader->setAttributeBuffer("a_texcoord", GL_FLOAT, _off(Vertex, texcoord), 2, stride);
       shader->setAttributeBuffer("a_color",    GL_FLOAT, _off(Vertex, color),    4, stride);
     } else {
-      glVertexPointer(3, GL_FLOAT, stride, &v->position);
-      glColorPointer(4, GL_FLOAT, stride, &v->color);
-      glNormalPointer(GL_FLOAT, stride, &v->normal);
-      glTexCoordPointer(2, GL_FLOAT, stride, &v->texcoord);
+      throw std::runtime_error{"failed to allocate geometry"};
     }
   }
   
@@ -129,11 +122,6 @@ namespace OpenGL
       shader->disableAttributeArray("a_normal");
       shader->disableAttributeArray("a_texcoord");
       shader->disableAttributeArray("a_color");
-    } else {
-      glDisableClientState(GL_VERTEX_ARRAY);
-      glDisableClientState(GL_COLOR_ARRAY);
-      glDisableClientState(GL_NORMAL_ARRAY);
-      glDisableClientState(GL_TEXTURE_COORD_ARRAY);
     }
   }
   
