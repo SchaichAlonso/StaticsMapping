@@ -25,9 +25,10 @@ set_property(
       SHARED_DATA_PATH="${SHARED_DATA_PATH}"
 )
 
-target_link_libraries (Common
-  Qt5::Core
-)
+target_compile_options(Common PUBLIC $<$<CXX_COMPILER_ID:Clang>:-Wall -Wextra>)
+target_compile_options(Common PUBLIC $<$<CXX_COMPILER_ID:MSVC>:-W4>)
+
+target_link_libraries(Common Qt5::Core)
 
 set (data_files
   Data/earthmap1k.jpg
