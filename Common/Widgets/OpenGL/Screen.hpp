@@ -5,7 +5,6 @@
 #include <QtCore/QPoint>
 #include <QtCore/QRect>
 
-#include <QtGui/QOpenGLFunctions>
 #include <QtWidgets/QOpenGLWidget>
 
 #include "Camera/Camera.hpp"

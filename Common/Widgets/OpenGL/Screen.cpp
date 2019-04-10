@@ -11,6 +11,7 @@
 
 #include <Common/DataPath.hpp>
 
+#include "API.hpp"
 #include "Screen.hpp"
 #include "Camera/PerspectiveCamera.hpp"
 #include "Camera/OrthoCamera.hpp"
@@ -165,7 +166,7 @@ namespace OpenGL
   void
   Screen::initializeGL()
   {
-    QOpenGLFunctions_3_3_Core* gl(context()->versionFunctions<QOpenGLFunctions_3_3_Core>());
+    API *gl{OpenGL::api()};
     
     gl->glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     gl->glEnable(GL_BLEND);
@@ -195,8 +196,7 @@ namespace OpenGL
     //QColor bg(QPalette().color(QPalette::Window));
     QColor bg(Qt::black);
     
-    QOpenGLFunctions_3_3_Core* gl(context()->versionFunctions<QOpenGLFunctions_3_3_Core>());
-    //QOpenGLFunctions *gl(context()->functions());
+    OpenGL::API *gl{OpenGL::api()};
     
     gl->glEnable(GL_DEPTH_TEST);
     gl->glClearColor(bg.redF(), bg.greenF(), bg.blueF(), 0);
@@ -285,7 +285,7 @@ namespace OpenGL
   {
     GLint buf[2] = {0, 0};
     if (isValid()) {
-      context()->functions()->glGetIntegerv(GL_MAX_VIEWPORT_DIMS, &buf[0]);
+      OpenGL::api()->glGetIntegerv(GL_MAX_VIEWPORT_DIMS, &buf[0]);
     }
     return QSize(buf[0], buf[1]);
   }

@@ -25,6 +25,7 @@ set (Widgets_SOURCES
   OpenGL/Camera/ZoomableCamera.cpp
   OpenGL/State/DepthMask.cpp
   OpenGL/State/PolygonMode.cpp
+  OpenGL/API.cpp
   OpenGL/Context.cpp
   OpenGL/DrawElementsObj8.cpp
   OpenGL/DrawElements.cpp
