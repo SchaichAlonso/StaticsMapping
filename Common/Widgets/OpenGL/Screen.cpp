@@ -165,8 +165,6 @@ namespace OpenGL
   void
   Screen::initializeGL()
   {
-    initializeOpenGLFunctions();
-    
     QOpenGLFunctions_3_3_Core* gl(context()->versionFunctions<QOpenGLFunctions_3_3_Core>());
     
     gl->glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);

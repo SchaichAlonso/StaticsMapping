@@ -5,6 +5,7 @@
 #include <QtCore/QPoint>
 #include <QtCore/QRect>
 
+#include <QtGui/QOpenGLFunctions>
 #include <QtWidgets/QOpenGLWidget>
 
 #include "Camera/Camera.hpp"
@@ -26,7 +27,7 @@ namespace OpenGL
     CameraPointer m_camera;
   };
     
-  struct Screen : QOpenGLWidget, protected QOpenGLFunctions
+  struct Screen : QOpenGLWidget
   {
     Screen();
     virtual ~Screen();
