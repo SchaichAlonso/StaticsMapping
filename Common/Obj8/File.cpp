@@ -153,6 +153,13 @@ Obj8::File::basename () const
 }
 
 
+QString
+Obj8::File::filename() const
+{
+  return (m_path);
+}
+
+
 
 QByteArray
 Obj8::File::read (QFile &f)

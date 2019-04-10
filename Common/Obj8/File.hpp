@@ -26,6 +26,7 @@ namespace Obj8
     int        size () const;
     
     QString    basename () const;
+    QString    filename () const;
     
     static QByteArray read (QFile &file);
     static QByteArray read (QString path);
