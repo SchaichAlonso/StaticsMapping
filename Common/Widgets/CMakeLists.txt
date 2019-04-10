@@ -1,8 +1,3 @@
-find_package (Qt5 5.6 COMPONENTS REQUIRED Core Gui Widgets OpenGL)
-find_package (OpenGL REQUIRED)
-
-include_directories (${OPENGL_INCLUDE_DIR})
-
 set (Widgets_SOURCES
   AircraftDelegate.cpp
   AircraftTableDialog.cpp
@@ -16,8 +11,6 @@ set (Widgets_SOURCES
   LibraryTableDialog.cpp
   ListDelegate.cpp
   ObjectTableDialog.cpp
-  ObjScreen.cpp
-  ObjView.cpp
   OpenGL/Camera/Camera.cpp
   OpenGL/Camera/OnScreenDisplay.cpp
   OpenGL/Camera/OrthoCamera.cpp
@@ -43,9 +36,7 @@ set (Widgets_SOURCES
   OpenGL/Screen.cpp
   OpenGL/Shader.cpp
   OpenGL/Texture.cpp
-  OpenGLWidget.cpp
   TableDialog.cpp
-  VisualModel.cpp
   VisualObject.cpp
 )
 
@@ -56,8 +47,6 @@ set (Widgets_LIBS
   
   Qt5::Widgets
   Qt5::Gui
-  Qt5::OpenGL
-  ${OPENGL_LIBRARIES}
 )
 
 find_package (GraphViz)

@@ -1,6 +1,5 @@
 
 add_executable (ObjPreview
-  ObjPreview.cpp
   main.cpp
 )
 
