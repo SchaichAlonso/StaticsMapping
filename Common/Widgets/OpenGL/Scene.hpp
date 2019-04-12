@@ -24,6 +24,7 @@ namespace OpenGL
     void addLight(LightPointer light);
     void removeLight(LightPointer light);
     
+    ModelWeakPointer insertModel(ModelPointer model);
     ModelWeakPointer insertModel(int rendering_attributes=Model::Lighting|Model::Texturing);
     void removeModel(ModelPointer model);
     
