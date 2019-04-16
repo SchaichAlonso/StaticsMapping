@@ -19,7 +19,7 @@ namespace OpenGL
     
   public:
     Scene(ShaderPointer default_shader);
-   ~Scene();
+    virtual ~Scene();
     
     void addLight(LightPointer light);
     void removeLight(LightPointer light);
