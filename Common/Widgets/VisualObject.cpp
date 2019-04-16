@@ -8,18 +8,18 @@
 namespace Widgets
 {
   VisualObject::VisualObject(Classification::ObjectPointer data, QSharedPointer<Obj8::File> file, OpenGL::ModelWeakPointer model)
-  : file(file)
-  , model(model)
-  , data(data)
+  : file{file}
+  , model{model}
+  , data{data}
   {
   }
   
   VisualObject::VisualObject(Classification::DefinitionsPointer definitions, QSharedPointer<Obj8::File> file, OpenGL::ScenePointer scene)
-  : VisualObject(
-    definitions->match(file->size(), file->fileHash(), file->textureHash()),
-    file,
-    qSharedPointerDynamicCast<OpenGL::Obj8Scene>(scene)->insertModel(file.get())
-  )
+  : VisualObject{
+      definitions->match(file->size(), file->fileHash(), file->textureHash()),
+      file,
+      qSharedPointerDynamicCast<OpenGL::Obj8Scene>(scene)->insertModel(file.get())
+    }
   {
   }
   
@@ -28,11 +28,11 @@ namespace Widgets
     OpenGL::ScenePointer scene,
     QString path
   )
-  : VisualObject(
+  : VisualObject{
       definitions,
-      QSharedPointer<Obj8::File>(new Obj8::File(path, true)),
+      QSharedPointer<Obj8::File>{new Obj8::File{path, true}},
       scene
-    )
+    }
   {
     if (!data) {
       data.reset(new Classification::Object(file->size(), file->fileHash(), file->textureHash()));
