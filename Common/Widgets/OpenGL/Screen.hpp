@@ -28,13 +28,11 @@ namespace OpenGL
     
   struct Screen : QOpenGLWidget
   {
-    Screen();
     Screen(ScenePointer scene);
     virtual ~Screen();
     
     SceneWeakPointer scene() const;
     
-    static ScenePointer gridScene();
     static ScenePointer osdScene(QRect dst, QImage image);
     
   protected:

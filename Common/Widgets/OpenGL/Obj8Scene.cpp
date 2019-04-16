@@ -11,7 +11,15 @@ namespace OpenGL
   {
     if (add_grid) {
       insertPositionIndicator(QColor(Qt::red), QColor(Qt::green), QColor(Qt::blue), 5, false);
-      insertGrid(QVector3D(0,0,1), QVector3D(1,0,0), 256, true);
+      ModelPointer squares{grid(QVector3D(0,0,1), QVector3D(1,0,0), 256)};
+      ModelPointer ground{plane(QVector3D(0,0,1), QVector3D(1,0,0), 256)};
+      
+      squares->setFlags(squares->flags() & ~(Model::Texturing | Model::Lighting));
+      ground->setFlags(squares->flags() & ~Model::Texturing);
+      ground->setPosition(QVector3D(0,-0.1f,0));
+      
+      insertModel(ground);
+      insertModel(squares);
     }
   }
   

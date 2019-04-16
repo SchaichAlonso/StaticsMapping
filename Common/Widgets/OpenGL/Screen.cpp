@@ -44,12 +44,6 @@ namespace OpenGL
   }
   
   
-  Screen::Screen()
-  : Screen(gridScene())
-  {
-  }
-  
-  
   Screen::Screen(ScenePointer scene)
   : m_views()
   , m_scene(scene)
@@ -312,41 +306,6 @@ namespace OpenGL
   SceneWeakPointer Screen::scene() const
   {
     return (m_scene);
-  }
-  
-  
-  
-  ScenePointer
-  Screen::gridScene()
-  {
-    ScenePointer scene{
-      new Scene{
-        ShaderPointer{
-          new Shader{
-            DataPath::existingPath("obj8-vert.glsl"),
-            DataPath::existingPath("obj8-frag.glsl")
-          }
-        }
-      }
-    };
-    
-    scene->addLight(
-      LightPointer(
-        new Light(
-          QVector3D(
-            0,
-            1000,
-            0
-          ),
-          QColor(128, 128, 128),
-          QVector3D(1.0, 0.0, 0.0)
-        )
-      )
-    );
-    
-    scene->insertPositionIndicator(QColor(Qt::red), QColor(Qt::green), QColor(Qt::blue), 5, false);
-    scene->insertGrid(QVector3D(0,0,1), QVector3D(1,0,0), 256, true);
-    return (scene);
   }
   
   

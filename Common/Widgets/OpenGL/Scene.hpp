@@ -35,12 +35,15 @@ namespace OpenGL
     ShaderPointer bound();
     
     ModelWeakPointer insertPositionIndicator(QColor x, QColor y, QColor z, float axis_length=1, bool mirror=true);
-    ModelWeakPointer insertGrid(QVector3D u, QVector3D v, int repetitions, bool surface);
     
   protected:
     RawImage lightTexture(Lights lights);
     Lights allLights(QMatrix4x4 modelview) const;
-    Models insertLightIndicators(QMatrix4x4 modelview, Lights lights);
+    Models lightIndicators(QMatrix4x4 modelview, Lights lights);
+    
+    ModelPointer positionIndicator(QColor x, QColor y, QColor z, float axis_length=1, bool mirror=true);
+    ModelPointer plane(QVector3D u, QVector3D v, int repetitions);
+    ModelPointer grid(QVector3D u, QVector3D v, int repetitions);
     
   protected:
     float m_roll, m_pitch, m_yaw;
