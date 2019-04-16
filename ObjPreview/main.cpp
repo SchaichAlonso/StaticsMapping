@@ -1,70 +1,31 @@
+#include <QtWidgets/QMessageBox>
+
 #include <Common/Widgets/Application.hpp>
 #include <Common/Widgets/OpenGL/Screen.hpp>
-
-#include "ObjPreview.hpp"
-
-
-
-
-#include <QtCore/QTimer>
-#include <QtCore/QFile>
-#include <QtWidgets/QMessageBox>
-#include <Common/Obj8/File.hpp>
-#include <Common/DataPath.hpp>
-#include <Common/Widgets/OpenGL/Obj8Visitor.hpp>
-
-OpenGL::ModelPointer
-loadObjFile (OpenGL::ScenePointer scene, QString path)
-{
-  OpenGL::ModelPointer retval;
-  
-  QFile f(path);
-  if (not f.open (QFile::ReadOnly)) {
-    QMessageBox::critical (
-      Q_NULLPTR,
-      "Fatal",
-      QString("Cannot read %1")
-      .arg(path)
-    );
-    return (retval);
-  }
-  
-  try {
-    retval = scene->insertModel();
-    
-    Obj8::File obj8 (f, true);
-    QSharedPointer<OpenGL::Obj8Visitor> visitor(new OpenGL::Obj8Visitor(retval, path));
-    
-    obj8.accept(visitor.data(), false);
-    
-  } catch (const Obj8::Parser::SyntaxError &error) {
-    
-    Obj8::Parser::LexerContext lc = error.info ();
-    
-    QMessageBox::critical (
-      Q_NULLPTR,
-      "Fatal",
-      QString("Error at %1:%2.")
-      .arg(lc.line())
-      .arg(lc.column())
-    );
-  }
-  
-  return (retval);
-}
+#include <Common/Widgets/OpenGL/Obj8Scene.hpp>
 
 int
 main (int argscnt, char **args)
 {
   Widgets::Application app(argscnt, args);
   
-  OpenGL::Screen screen;
+  OpenGL::Screen screen(OpenGL::Obj8ScenePointer(new OpenGL::Obj8Scene()));
   screen.show();
   
   for(int i=1; i!=argscnt; ++i) {
-    QVector3D offset((i-1)*50, 0, 0);
-    OpenGL::ModelPointer model(loadObjFile(screen.scene(), args[i]));
-    model->setPosition(offset);
+    QString filename(args[i]);
+    try {
+      OpenGL::Obj8ScenePointer scene(qSharedPointerDynamicCast<OpenGL::Obj8Scene>(screen.scene()));
+      if (scene) {
+        QVector3D offset((i-1)*50, 0, 0);
+        OpenGL::ModelPointer model(scene->insertModel(filename));
+        model->setPosition(offset);
+      }
+    } catch (const Obj8::Parser::SyntaxError &e) {
+      QMessageBox::critical(Q_NULLPTR, "Exception", QString("SyntaxError in <%1:%2:%3>").arg(filename).arg(e.info().line()).arg(e.info().column()));
+    } catch (const std::exception &e) {
+      QMessageBox::critical(Q_NULLPTR, "Exception", QString("std::exception while parsing <%1>: <%2>").arg(filename).arg(e.what()));
+    }
   }
   
   return (app.exec());
