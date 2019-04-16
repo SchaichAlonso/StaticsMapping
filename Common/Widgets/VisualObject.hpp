@@ -16,12 +16,12 @@ namespace Widgets
 {
   struct VisualObject
   {
-    VisualObject(Classification::ObjectPointer data, QSharedPointer<Obj8::File> file, OpenGL::ModelWeakPointer model);
-    VisualObject(Classification::DefinitionsPointer, QSharedPointer<Obj8::File> file, OpenGL::ScenePointer scene);
+    VisualObject(Classification::ObjectPointer data, Obj8::FilePointer file, OpenGL::ModelWeakPointer model);
+    VisualObject(Classification::DefinitionsPointer, Obj8::FilePointer file, OpenGL::ScenePointer scene);
     VisualObject(Classification::DefinitionsPointer, OpenGL::ScenePointer, QString filename);
     ~VisualObject();
   
-    QSharedPointer<Obj8::File> file;
+    Obj8::FilePointer file;
     OpenGL::ModelWeakPointer model;
     Classification::ObjectPointer data;
   };

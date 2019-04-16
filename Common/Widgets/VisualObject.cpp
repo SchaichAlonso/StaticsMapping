@@ -7,14 +7,14 @@
 
 namespace Widgets
 {
-  VisualObject::VisualObject(Classification::ObjectPointer data, QSharedPointer<Obj8::File> file, OpenGL::ModelWeakPointer model)
+  VisualObject::VisualObject(Classification::ObjectPointer data, Obj8::FilePointer file, OpenGL::ModelWeakPointer model)
   : file{file}
   , model{model}
   , data{data}
   {
   }
   
-  VisualObject::VisualObject(Classification::DefinitionsPointer definitions, QSharedPointer<Obj8::File> file, OpenGL::ScenePointer scene)
+  VisualObject::VisualObject(Classification::DefinitionsPointer definitions, Obj8::FilePointer file, OpenGL::ScenePointer scene)
   : VisualObject{
       definitions->match(file->size(), file->fileHash(), file->textureHash()),
       file,
@@ -30,7 +30,7 @@ namespace Widgets
   )
   : VisualObject{
       definitions,
-      QSharedPointer<Obj8::File>{new Obj8::File{path, true}},
+      Obj8::FilePointer{new Obj8::File{path, true}},
       scene
     }
   {
