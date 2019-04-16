@@ -45,6 +45,8 @@
 #include <Common/Widgets/LibraryTableDialog.hpp>
 #include <Common/Widgets/ObjectTableDialog.hpp>
 
+#include <Common/Widgets/OpenGL/Obj8Scene.hpp>
+
 #include "InsertObjectConfirmationDialog.hpp"
 #include "MainWindow.hpp"
 #include "VisualObjectsModel.hpp"
@@ -54,7 +56,7 @@
 MainWindow::MainWindow (QWidget *parent , Qt::WindowFlags flags)
 : QMainWindow (parent, flags)
 , m_definitions (Classification::Definitions::fromFile())
-, m_obj_screen(new OpenGL::Screen())
+, m_obj_screen(new OpenGL::Screen(OpenGL::Obj8ScenePointer(new OpenGL::Obj8Scene)))
 , m_objects()
 , m_object_select(createFormComboBox())
 , m_object_data_model (m_definitions->objectModel ())
@@ -336,31 +338,19 @@ MainWindow::dropEvent (QDropEvent *event)
 void
 MainWindow::setDisplayedVisualObject (int visual_object_index)
 {
-  if (visual_object_index == -1) {
-    if ((0 <= m_current_visual_object_index) and (m_current_visual_object_index < m_objects.size())) {
-      m_object_select->setCurrentIndex (m_current_visual_object_index);
-      return;
-    }
+  Widgets::VisualObjectPointer prev{m_objects.value(m_current_visual_object_index)};
+  if (prev) {
+    OpenGL::ModelPointer(prev->model)->setEnabled(false);
   }
   
+  Widgets::VisualObjectPointer next{m_objects.value(visual_object_index)};
+  if (next) {
+    OpenGL::ModelPointer(next->model)->setEnabled(true);
+    m_object_data_mapper->setCurrentIndex(m_definitions->indexOf(next->data));
+  }
   m_current_visual_object_index = visual_object_index;
   
-
-  Widgets::VisualObjectPointer ptr(m_objects.value(visual_object_index));
-  OpenGL::ModelWeakPointer mdl;
-  Classification::ObjectPointer obj;
-  
-  if (ptr) {
-    obj = ptr->data;
-    mdl = ptr->model;
-    
-    int metadata_index = m_definitions->indexOf(obj);
-    m_object_data_mapper->setCurrentIndex(metadata_index);
-  }
-#warning "!!!!!!"
-  #if 0 
-  //m_obj_screen->setModel(obj, mdl);
-#endif
+  m_obj_screen->update();
 }
 
 
@@ -517,9 +507,10 @@ MainWindow::createForm()
   m_object_data_mapper->addMapping (locale[2], m_object_data_model->column(Classification::Object::TranslationZProperty));
   m_object_data_mapper->setSubmitPolicy (QDataWidgetMapper::AutoSubmit);
   
+  void (QComboBox::*cic)(int) = &QComboBox::currentIndexChanged;
   connect (
-      m_object_select, SIGNAL(currentIndexChanged(int)),
-      this, SLOT(setDisplayedVisualObject(int))
+      m_object_select, cic,
+      this, &MainWindow::setDisplayedVisualObject
   );
   
   connect (

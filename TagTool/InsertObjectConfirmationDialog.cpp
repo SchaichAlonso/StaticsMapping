@@ -3,6 +3,7 @@
 #include <QtWidgets/QVBoxLayout>
 
 #include <Common/Widgets/OpenGL/Screen.hpp>
+#include <Common/Widgets/OpenGL/Obj8Scene.hpp>
 
 #include "InsertObjectConfirmationDialog.hpp"
 
@@ -14,9 +15,8 @@ InsertObjectConfirmationDialog::InsertObjectConfirmationDialog(
 : QDialog(parent, flags)
 , m_vop(vop)
 {
-  OpenGL::Screen *preview(new OpenGL::Screen());
-#warning "!!!!"
-  //preview->setModel(vop->data, vop->model);
+  OpenGL::Screen *preview(new OpenGL::Screen(OpenGL::ScenePointer(new OpenGL::Obj8Scene)));
+  qSharedPointerDynamicCast<OpenGL::Obj8Scene>(preview->scene())->insertModel(vop->model);
   
   QPushButton *accept(new QPushButton("accept"));
   QPushButton *reject(new QPushButton("reject"));
