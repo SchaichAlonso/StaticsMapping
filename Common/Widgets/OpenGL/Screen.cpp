@@ -45,8 +45,14 @@ namespace OpenGL
   
   
   Screen::Screen()
+  : Screen(gridScene())
+  {
+  }
+  
+  
+  Screen::Screen(ScenePointer scene)
   : m_views()
-  , m_scene(gridScene())
+  , m_scene(scene)
   , m_active()
   , m_last_cursor_pos()
   , m_last_frame_completion(QDateTime::currentDateTimeUtc())

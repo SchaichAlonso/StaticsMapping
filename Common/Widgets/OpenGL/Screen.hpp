@@ -29,6 +29,7 @@ namespace OpenGL
   struct Screen : QOpenGLWidget
   {
     Screen();
+    Screen(ScenePointer scene);
     virtual ~Screen();
     
     SceneWeakPointer scene() const;
