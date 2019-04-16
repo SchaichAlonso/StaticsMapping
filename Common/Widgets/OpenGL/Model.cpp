@@ -17,6 +17,7 @@ namespace OpenGL
   , m_mesh(mesh)
   , m_shader()
   , m_flags(flags)
+  , m_enabled(true)
   {
   }
   
@@ -44,6 +45,20 @@ namespace OpenGL
   Model::removeLight(LightPointer light)
   {
     m_lights.remove(light);
+  }
+  
+  
+  void
+  Model::setEnabled(bool enabled)
+  {
+    m_enabled = enabled;
+  }
+  
+  
+  bool
+  Model::enabled() const
+  {
+    return m_enabled;
   }
   
   
@@ -123,18 +138,22 @@ namespace OpenGL
   void
   Model::draw(ScenePointer ctx)
   {
-    draw(ctx, m_flags);
+    if (m_enabled) {
+      draw(ctx, m_flags);
+    }
   }
   
   void
   Model::draw(ScenePointer ctx, int flags)
   {
-    ShaderPointer shader{ctx->bound()};
+    if (m_enabled) {
+      ShaderPointer shader{ctx->bound()};
     
-    shader->setTexturingEnabled(flags & Texturing);
-    shader->setLightingEnabled(flags & Lighting);
+      shader->setTexturingEnabled(flags & Texturing);
+      shader->setLightingEnabled(flags & Lighting);
     
-    State::DepthMask d((flags & DepthMasked) == 0);
-    m_mesh->draw(shader);
+      State::DepthMask d((flags & DepthMasked) == 0);
+      m_mesh->draw(shader);
+    }
   }
 }

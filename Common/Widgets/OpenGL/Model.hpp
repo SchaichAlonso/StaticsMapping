@@ -31,6 +31,9 @@ namespace OpenGL
     void addLight(LightPointer light);
     void removeLight(LightPointer light);
     
+    void setEnabled(bool enabled);
+    bool enabled() const;
+    
     void setMesh(MeshPointer mesh);
     MeshPointer mesh() const;
     
@@ -53,6 +56,7 @@ namespace OpenGL
     MeshPointer m_mesh;
     ShaderPointer m_shader;
     int m_flags;
+    bool m_enabled;
   };
   
   typedef QSharedPointer<Model> ModelPointer;
