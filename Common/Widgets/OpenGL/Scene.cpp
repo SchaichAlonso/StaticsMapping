@@ -152,24 +152,26 @@ namespace OpenGL
     TexturePointer light_tex(new Texture(lightTexture(lights)));
     
     Q_FOREACH(ModelPointer m, m_models + temporaries) {
-      ShaderPointer shader{bind(m->shader())};
+      if (m->enabled()) {
+        ShaderPointer shader{bind(m->shader())};
       
-      shader->setProjectionMatrix(projection);
-      shader->setModelviewMatrix(modelview * m->transform());
-      shader->setLights(lights.toList());
-      shader->setAmbientColor(m_ambient);
-      shader->setTextureUnitEnabled(7, light_tex->bind(7));
+        shader->setProjectionMatrix(projection);
+        shader->setModelviewMatrix(modelview * m->transform());
+        shader->setLights(lights.toList());
+        shader->setAmbientColor(m_ambient);
+        shader->setTextureUnitEnabled(7, light_tex->bind(7));
       
-      m->bind(sharedFromThis());
-      if (camera->wireframe()) {
-        m->draw(sharedFromThis(), 0);
-      } else {
-        m->draw(sharedFromThis());
+        m->bind(sharedFromThis());
+        if (camera->wireframe()) {
+          m->draw(sharedFromThis(), 0);
+        } else {
+          m->draw(sharedFromThis());
+        }
+        
+        m->release(sharedFromThis());
+        
+        shader->setTextureUnitEnabled(7, false);
       }
-        
-      m->release(sharedFromThis());
-        
-      shader->setTextureUnitEnabled(7, false);
     }
   }
   
