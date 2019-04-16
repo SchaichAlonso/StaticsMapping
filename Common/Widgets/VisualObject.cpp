@@ -2,7 +2,7 @@
 #include <Common/Classification/Airline.hpp>
 #include <Common/Classification/Library.hpp>
 
-#include <Common/Widgets/OpenGL/Obj8Visitor.hpp>
+#include <Common/Widgets/OpenGL/Obj8Scene.hpp>
 #include "VisualObject.hpp"
 
 namespace Widgets
@@ -13,7 +13,7 @@ namespace Widgets
     QString path
   )
   : file(new Obj8::File(path, true))
-  , model(scene->insertModel())
+  , model(qSharedPointerDynamicCast<OpenGL::Obj8Scene>(scene)->insertModel(file.get()))
   , data()
   {
     data = definitions->match(file->size(), file->fileHash(), file->textureHash());
@@ -22,9 +22,6 @@ namespace Widgets
       data.reset(new Classification::Object(file->size(), file->fileHash(), file->textureHash()));
       data->setFileName(file->basename());
     }
-    
-    QSharedPointer<OpenGL::Obj8Visitor> visitor(new OpenGL::Obj8Visitor(model, path));
-    file->accept(visitor.data(), false);
   }
   
   
