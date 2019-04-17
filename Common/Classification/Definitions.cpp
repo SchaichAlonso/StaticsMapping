@@ -742,6 +742,14 @@ Classification::Definitions::couldMatch (QString filehash) const
 
 
 
+Classification::ObjectPointer
+Classification::Definitions::match(Obj8::FilePointer file) const
+{
+  return match(file->size(), file->fileHash(), file->textureHash());
+}
+
+
+
 Classification::ObjectPointer 
 Classification::Definitions::match (int size, QString filehash, QString texhash) const
 {

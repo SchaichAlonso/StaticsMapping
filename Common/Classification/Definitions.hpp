@@ -7,8 +7,11 @@
 
 #include <QtCore/QSet>
 
+#include <Common/Obj8/File.hpp>
+
 #include "Classification.hpp"
 #include "Record.hpp"
+
 
 namespace Classification
 {
@@ -115,7 +118,8 @@ namespace Classification
     
     bool couldMatch (int) const;
     bool couldMatch (QString) const;
-    ObjectPointer match (int, QString, QString) const;
+    ObjectPointer match(Obj8::FilePointer file) const;
+    ObjectPointer match(int size, QString filehash, QString texhash) const;
     
     void airportsFromJson (QJsonObject);
     void airportsFromFile (QString);
