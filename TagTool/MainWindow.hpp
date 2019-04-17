@@ -43,8 +43,8 @@ protected Q_SLOTS:
   void showLibraryTableDialog ();
   void showObjectTableDialog ();
   
-  void nonInteractiveInsert(Widgets::VisualObjectPointer obj);
-  void interactiveInsert(Widgets::VisualObjectPointer obj);
+  void nonInteractiveInsert(Obj8::FilePointer obj);
+  void interactiveInsert(Obj8::FilePointer obj);
   
 protected:
   virtual void dragEnterEvent (QDragEnterEvent *) Q_DECL_OVERRIDE;

@@ -8,15 +8,14 @@
 #include "InsertObjectConfirmationDialog.hpp"
 
 InsertObjectConfirmationDialog::InsertObjectConfirmationDialog(
-  Widgets::VisualObjectPointer vop,
+  Obj8::FilePointer file,
   QWidget *parent,
   Qt::WindowFlags flags
 )
 : QDialog(parent, flags)
-, m_vop(vop)
 {
   OpenGL::Screen *preview(new OpenGL::Screen(OpenGL::ScenePointer(new OpenGL::Obj8Scene)));
-  qSharedPointerDynamicCast<OpenGL::Obj8Scene>(preview->scene())->insertModel(vop->model);
+  qSharedPointerDynamicCast<OpenGL::Obj8Scene>(preview->scene())->insertModel(file);
   
   QPushButton *accept(new QPushButton("accept"));
   QPushButton *reject(new QPushButton("reject"));

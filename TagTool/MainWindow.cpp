@@ -86,14 +86,13 @@ void
 MainWindow::loadObjFile (QString path)
 {
   try {
-    Widgets::VisualObjectPointer obj(
-      new Widgets::VisualObject(m_definitions, m_obj_screen->scene(), path)
-    );
+    Obj8::FilePointer file{new Obj8::File{path, true}};
+    Classification::ObjectPointer obj{m_definitions->match(file)};
     
-    if (m_definitions->object(obj->data->primaryKey())) {
-      nonInteractiveInsert(obj);
+    if (obj) {
+      nonInteractiveInsert(file);
     } else {
-      interactiveInsert(obj);
+      interactiveInsert(file);
     }
     
     //m_object_data_mapper->setCurrentIndex (m_objects.size () - 1);
@@ -283,8 +282,9 @@ MainWindow::showSupportedImageFormats ()
 
 
 void
-MainWindow::nonInteractiveInsert(Widgets::VisualObjectPointer obj)
+MainWindow::nonInteractiveInsert(Obj8::FilePointer file)
 {
+  Widgets::VisualObjectPointer obj{new Widgets::VisualObject{m_definitions, file, m_obj_screen->scene()}};
   m_objects.append(obj);
   m_definitions->upsert(obj->data);
 }
@@ -292,11 +292,11 @@ MainWindow::nonInteractiveInsert(Widgets::VisualObjectPointer obj)
 
 
 void
-MainWindow::interactiveInsert(Widgets::VisualObjectPointer obj)
+MainWindow::interactiveInsert(Obj8::FilePointer file)
 {
-  InsertObjectConfirmationDialog dialog(obj, this);
+  InsertObjectConfirmationDialog dialog(file, this);
   if (dialog.exec() == QDialog::Accepted) {
-    nonInteractiveInsert(obj);
+    nonInteractiveInsert(file);
   }
 }
 
