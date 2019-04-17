@@ -1,10 +1,9 @@
 #pragma once
 
-#include <QFile>
-#include <QJsonObject>
-#include <QMap>
-#include <QSharedPointer>
-
+#include <QtCore/QFile>
+#include <QtCore/QJsonObject>
+#include <QtCore/QMap>
+#include <QtCore/QSharedPointer>
 #include <QtCore/QSet>
 
 #include <Common/Obj8/File.hpp>
