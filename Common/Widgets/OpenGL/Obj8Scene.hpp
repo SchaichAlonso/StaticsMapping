@@ -12,6 +12,7 @@ namespace OpenGL
     ~Obj8Scene() Q_DECL_OVERRIDE;
     
     ModelWeakPointer insertModel(Obj8::File *file);
+    ModelWeakPointer insertModel(Obj8::FilePointer file);
     ModelWeakPointer insertModel(QString path);
     using Scene::insertModel;
   };

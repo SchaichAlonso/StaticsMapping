@@ -37,6 +37,11 @@ namespace OpenGL
     return insertModel(model);
   }
   
+  ModelWeakPointer Obj8Scene::insertModel(Obj8::FilePointer file)
+  {
+    return insertModel(file.get());
+  }
+  
   ModelWeakPointer Obj8Scene::insertModel(QString filename)
   {
     QFile f(filename);
