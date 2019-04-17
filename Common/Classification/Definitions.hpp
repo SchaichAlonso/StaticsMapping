@@ -1,6 +1,5 @@
 #pragma once
 
-#include <QtCore/QFile>
 #include <QtCore/QJsonObject>
 #include <QtCore/QMap>
 #include <QtCore/QSharedPointer>

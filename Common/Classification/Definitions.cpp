@@ -1,8 +1,3 @@
-#include <stdexcept>
-
-#include <QtCore/QCoreApplication>
-#include <QtCore/QCryptographicHash>
-#include <QtCore/QDir>
 #include <QtCore/QJsonArray>
 #include <QtCore/QJsonDocument>
 
