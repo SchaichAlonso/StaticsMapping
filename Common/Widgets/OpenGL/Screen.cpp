@@ -65,6 +65,8 @@ namespace OpenGL
     m_views[2].camera()->setYaw(90);
     m_views[3].camera()->setPitch(-90);
 #endif
+    setMinimumSize(QSize(256,256));
+    setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
   }
   
   
