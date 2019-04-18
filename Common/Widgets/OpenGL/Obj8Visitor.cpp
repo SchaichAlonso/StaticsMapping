@@ -73,6 +73,7 @@ namespace OpenGL
     , m_line_vertex_index(-1)
     , m_light_index(-1)
     , m_index_index(-1)
+    , m_load_textures(filename.size() != 0)
   {
     setSatisfied("GLOBAL_LIGHTING", false);
     setSatisfied("GLOBAL_SHADOWS", false);
@@ -82,6 +83,17 @@ namespace OpenGL
      * x-plane 11.10
      */
     setSatisfied("SCENERY_SHADOWS", true);
+  }
+  
+  
+  
+  Obj8Visitor::Obj8Visitor(ModelPointer reload)
+  : Obj8Visitor(reload, QString())
+  {
+    Q_FOREACH(LightPointer light, reload->allLights()) {
+      reload->removeLight(light);
+    }
+    reload->setMesh(MeshPointer(new Mesh()));
   }
   
   
@@ -96,7 +108,7 @@ namespace OpenGL
   Obj8Visitor::reset()
   {
     m_current_state = State();
-    
+        
     m_indices.clear();
     m_groups.clear();
     m_lights.clear();
@@ -316,7 +328,9 @@ namespace OpenGL
   void
   Obj8Visitor::visit(Obj8::Global::Texture *t)
   {
-    m_model->setTexture(0, loadTexture(t->path()));
+    if (m_load_textures) {
+      m_model->setTexture(0, loadTexture(t->path()));
+    }
   }
   
   
@@ -324,7 +338,9 @@ namespace OpenGL
   void
   Obj8Visitor::visit(Obj8::Global::TextureDraped *t)
   {
-    m_model->setTexture(1, loadTexture(t->path()));
+    if (m_load_textures) {
+      m_model->setTexture(1, loadTexture(t->path()));
+    }
   }
   
   
@@ -332,7 +348,9 @@ namespace OpenGL
   void
   Obj8Visitor::visit(Obj8::Global::TextureLit *t)
   {
-    m_model->setTexture(2, loadTexture(t->path()));
+    if (m_load_textures) {
+      m_model->setTexture(2, loadTexture(t->path()));
+    }
   }
   
   
@@ -340,7 +358,9 @@ namespace OpenGL
   void
   Obj8Visitor::visit(Obj8::Global::TextureNormal *t)
   {
-    m_model->setTexture(3, loadTexture(t->path()));
+    if (m_load_textures) {
+      m_model->setTexture(3, loadTexture(t->path()));
+    }
   }
   
   

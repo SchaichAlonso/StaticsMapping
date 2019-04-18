@@ -47,7 +47,8 @@ namespace OpenGL
       int   offset;
     };
     
-    Obj8Visitor(ModelPointer result, QString filename= QString());
+    Obj8Visitor(ModelPointer result, QString filename);
+    Obj8Visitor(ModelPointer reload);
     virtual ~Obj8Visitor();
     
     virtual void visit(Obj8::Command::Geometry::LightNamed *) Q_DECL_OVERRIDE;
@@ -99,5 +100,7 @@ namespace OpenGL
     
     int m_vertex_count, m_line_vertex_count, m_light_count, m_index_count;
     int m_vertex_index, m_line_vertex_index, m_light_index, m_index_index;
+    
+    bool m_load_textures;
   };
 }
