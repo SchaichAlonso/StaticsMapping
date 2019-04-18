@@ -62,7 +62,6 @@ namespace OpenGL
     , m_current_state()
     , m_light_factory()
     , m_model(output)
-    , m_mesh(output->mesh())
     , m_indices()
     , m_groups()
     , m_lights()
@@ -271,7 +270,7 @@ namespace OpenGL
     ++m_line_vertex_count;
     Q_ASSERT(m_line_vertex_index <= m_line_vertex_count);
     
-    m_mesh->setVertex(
+    m_model->mesh()->setVertex(
       m_vertex_count + m_line_vertex_index,
       QVector3D(v->x.toDouble(), v->y.toDouble(), v->z.toDouble()),
       QVector4D(v->r.toDouble(), v->g.toDouble(), v->b.toDouble(), 1)
@@ -286,7 +285,7 @@ namespace OpenGL
     ++m_vertex_index;
     Q_ASSERT(m_vertex_index <= m_vertex_count);
     
-    m_mesh->setVertex(
+    m_model->mesh()->setVertex(
       m_vertex_index,
       QVector3D(v->x.toDouble(), v->y.toDouble(), v->z.toDouble()),
       QVector3D(v->nx.toDouble(), v->ny.toDouble(), v->nz.toDouble()),
@@ -309,7 +308,7 @@ namespace OpenGL
     m_light_count = p->lights();
     m_index_count = p->indices();
     
-    m_mesh->setVertexCount(m_vertex_count + m_line_vertex_count);
+    m_model->mesh()->setVertexCount(m_vertex_count + m_line_vertex_count);
   }
   
   
@@ -389,7 +388,7 @@ namespace OpenGL
       }
       indices.append(m_indices[i]);
     }
-    m_mesh->drawElements(
+    m_model->mesh()->drawElements(
       new OpenGL::DrawElementsObj8(
         indices,
         is_line,

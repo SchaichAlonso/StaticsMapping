@@ -89,7 +89,6 @@ namespace OpenGL
   protected:
     Obj8NamedLightFactory m_light_factory;
     ModelPointer m_model;
-    MeshPointer m_mesh;
     
   protected:
     friend ObjView;
