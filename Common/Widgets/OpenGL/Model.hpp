@@ -23,11 +23,13 @@ namespace OpenGL
       DepthMasked = 1 << 2
     };
     
+    typedef QSet<LightPointer> Lights;
+    
     Model(int flags=Texturing|Lighting);
     Model(MeshPointer mesh, int flags=Texturing|Lighting);
    ~Model();
     
-    QSet<LightPointer> allLights() const;
+    Lights allLights() const;
     void addLight(LightPointer light);
     void removeLight(LightPointer light);
     
@@ -51,7 +53,7 @@ namespace OpenGL
     void draw(ScenePointer ctx, int flags);
     
   protected:
-    QSet<LightPointer> m_lights;
+    Lights m_lights;
     QMap<Texture::Unit, TexturePointer> m_textures;
     MeshPointer m_mesh;
     ShaderPointer m_shader;

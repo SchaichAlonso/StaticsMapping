@@ -27,7 +27,7 @@ namespace OpenGL
   }
   
   
-  QSet<LightPointer>
+  Model::Lights
   Model::allLights() const
   {
     return (m_lights);
