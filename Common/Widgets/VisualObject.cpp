@@ -18,7 +18,7 @@ namespace Widgets
   : VisualObject{
       definitions->match(file->size(), file->fileHash(), file->textureHash()),
       file,
-      qSharedPointerDynamicCast<OpenGL::Obj8Scene>(scene)->insertModel(file.get())
+      qSharedPointerDynamicCast<OpenGL::Obj8Scene>(scene)->insertModel(file)
     }
   {
   }
