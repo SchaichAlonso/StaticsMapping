@@ -27,7 +27,7 @@ namespace OpenGL
   {
   }
   
-  ModelWeakPointer Obj8Scene::insertModel(Obj8::File *file)
+  ModelWeakPointer Obj8Scene::insertModel(Obj8::FilePointer file)
   {
     ModelPointer model(new Model());
     QSharedPointer<OpenGL::Obj8Visitor> visitor(new OpenGL::Obj8Visitor(model, file->filename()));
@@ -35,11 +35,6 @@ namespace OpenGL
     file->accept(visitor.data(), false);
     
     return insertModel(model);
-  }
-  
-  ModelWeakPointer Obj8Scene::insertModel(Obj8::FilePointer file)
-  {
-    return insertModel(file.get());
   }
   
   ModelWeakPointer Obj8Scene::insertModel(QString filename)
@@ -50,7 +45,6 @@ namespace OpenGL
       throw std::runtime_error(QString("Cannot open <%1>").arg(filename).toStdString());
     }
     
-    Obj8::File obj8(f, true);
-    return insertModel(&obj8);
+    return insertModel(Obj8::FilePointer(new Obj8::File(f, true)));
   }
 }
