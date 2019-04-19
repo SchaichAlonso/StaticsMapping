@@ -277,7 +277,7 @@ Classification::Test::Models::object ()
   mdl->setData (mdl->index (0, mdl->column(Object::AircraftProperty)), QVariant("B733"));
   mdl->setData (mdl->index (0, mdl->column(Object::LiveryProperty)), QVariant("AFL"));
   mdl->setData (mdl->index (0, mdl->column(Object::LibraryProperty)), QVariant("otherlib"));
-  mdl->setData (mdl->index (0, mdl->column(Object::CommentProperty)), QVariant("☆★＊★☆"));
+  mdl->setData (mdl->index (0, mdl->column(Object::CommentProperty)), QVariant("The quick brown fox jumps over lazy sheep"));
   mdl->setData (mdl->index (0, mdl->column(Object::IntroductionProperty)), QVariant("123"));
   mdl->setData (mdl->index (0, mdl->column(Object::RetirementProperty)), QVariant("3456"));
   mdl->setData (mdl->index (0, mdl->column(Object::PurposeProperty)), QVariant("MultiPurpose"));
@@ -290,7 +290,7 @@ Classification::Test::Models::object ()
   QVERIFY (mdl->data(mdl->index (0, mdl->column(Object::AircraftProperty))) == "B733");
   QVERIFY (mdl->data(mdl->index (0, mdl->column(Object::LiveryProperty))) == "AFL");
   QVERIFY (mdl->data(mdl->index (0, mdl->column(Object::LibraryProperty))) == "otherlib");
-  QVERIFY (mdl->data(mdl->index (0, mdl->column(Object::CommentProperty))) == "☆★＊★☆");
+  QVERIFY (mdl->data(mdl->index (0, mdl->column(Object::CommentProperty))) == "The quick brown fox jumps over lazy sheep");
   QVERIFY (mdl->data(mdl->index (0, mdl->column(Object::IntroductionProperty))) == "123");
   QVERIFY (mdl->data(mdl->index (0, mdl->column(Object::RetirementProperty))) == "3456");
   QVERIFY (mdl->data(mdl->index (0, mdl->column(Object::PurposeProperty))) == "MultiPurpose");
