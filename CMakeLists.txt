@@ -4,12 +4,12 @@ set (CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 project (StaticsMapping)
 
-if (CMAKE_CXX_COMPILER_ID MATCHES "[Cc][Ll][Aa][Nn][Gg]")
-  set (CMAKE_COMPILER_IS_CLANG)
-  if (CMAKE_BUILD_TYPE MATCHES "[Dd][Ee][Bb][Uu][Gg]")
-    set (CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -fprofile-instr-generate -fcoverage-mapping")
-    find_package (Clang 3.9)
-  endif ()
+enable_testing()
+
+if (CMAKE_CXX_COMPILER_ID MATCHES Clang OR CXX_COMPILER_ID MATCHES AppleClang)
+  set (CMAKE_CXX_FLAGS_COVERAGE "${CMAKE_CXX_FLAGS_RELEASE} -fprofile-instr-generate -fcoverage-mapping")
+elseif (CMAKE_CXX_COMPILER_ID MATCHES GNU)
+  set (CMAKE_CXX_FLAGS_COVERAGE "${CMAKE_CXX_FLAGS_DEBUG} -ftest-coverage")
 endif ()
 
 set (CMAKE_AUTOMOC ON)
