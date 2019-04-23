@@ -10,16 +10,18 @@ namespace OpenGL
   : Scene(ShaderPointer(new Obj8Shader()))
   {
     if (add_grid) {
-      insertPositionIndicator(QColor(Qt::red), QColor(Qt::green), QColor(Qt::blue), 5, false);
+      ModelPointer locale{positionIndicator(QColor(Qt::red), QColor(Qt::green), QColor(Qt::blue), 10, true)};
       ModelPointer squares{grid(QVector3D(0,0,1), QVector3D(1,0,0), 256)};
       ModelPointer ground{plane(QVector3D(0,0,1), QVector3D(1,0,0), 256)};
       
-      squares->setFlags(squares->flags() & ~(Model::Texturing | Model::Lighting));
-      ground->setFlags(squares->flags() & ~Model::Texturing);
+      locale->setFlags(0);
+      squares->setFlags(Model::Lighting | Model::DepthMasked);
+      ground->setFlags(Model::Lighting | Model::DepthMasked);
       ground->setPosition(QVector3D(0,-0.1f,0));
       
       insertModel(ground);
       insertModel(squares);
+      insertModel(locale);
     }
   }
   
