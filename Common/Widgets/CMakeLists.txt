@@ -37,6 +37,7 @@ set (Widgets_SOURCES
   OpenGL/Scene.cpp
   OpenGL/Screen.cpp
   OpenGL/Shader.cpp
+  OpenGL/Std140Blob.cpp
   OpenGL/Texture.cpp
   TableDialog.cpp
   VisualObject.cpp

@@ -1,7 +1,50 @@
 #version 330
 
-uniform mat4 modelview;
-uniform mat4 projection;
+struct Spot {
+  vec3  direction;
+  float cutoffAngle;
+  float exponent;
+};
+
+struct Attenuation {
+  float range;
+  float exponent;
+} attenuation;
+
+struct Light {
+  vec3 color;
+  vec3 position;
+  
+  Spot spot;
+  Attenuation attenuation;
+};
+
+struct Transform
+{
+  mat4 projection;
+  mat4 modelview;
+};
+
+struct Lighting
+{
+  int   count;
+  vec3  ambient;
+  Light light[128];
+};
+
+struct State
+{
+  bool texture_unit_enabled[8];
+  bool texturing_enabled;
+  bool lighting_enabled;
+};
+
+layout (std140) uniform Std140Blob {
+  Transform transform;
+  Lighting  lighting;
+  State     state;
+  int end_indicator;
+};
 
 attribute vec3 a_position;
 attribute vec3 a_normal;
@@ -14,16 +57,13 @@ out vec4 color;
 out vec3 world_vertex;
 out vec3 world_normal;
 
-void lighting()
-{
-  world_normal = vec3(modelview * vec4(a_normal,0));
-  world_vertex = vec3(modelview * vec4(a_position,1));
-}
-
 void main(void)
 {
-  lighting();
+  world_normal = vec3(transform.modelview * vec4(a_normal,0));
+  world_vertex = vec3(transform.modelview * vec4(a_position,1));
+  
   color = a_color;
   tex_coord = a_texcoord.xy;
-  gl_Position = projection * modelview * vec4(a_position,1);
+  
+  gl_Position = transform.projection * transform.modelview * vec4(a_position,1);
 }

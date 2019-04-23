@@ -9,7 +9,9 @@
 #include <QtGui/QVector4D>
 #include <QtGui/QOpenGLShaderProgram>
 
+#include "BufferObject.hpp"
 #include "Light.hpp"
+#include "Std140Blob.hpp"
 
 namespace OpenGL
 {
@@ -26,6 +28,7 @@ namespace OpenGL
     void setModelviewMatrix(const QMatrix4x4& value);
     void setProjectionMatrix(const QMatrix4x4& value);
     
+    void flushUniforms();
     void bind();
     void release();
     
@@ -33,6 +36,7 @@ namespace OpenGL
     void disableAttributeArray(QString name);
     void setAttributeBuffer(QString name, GLenum type, int offset, int tupleSize, int stride);
     
+  public:
     void setUniformValue(QString name, GLfloat value);
     void setUniformValue(QString name, GLint value);
     void setUniformValue(QString name, const QVector2D& value);
@@ -44,6 +48,8 @@ namespace OpenGL
   protected:
     typedef QSharedPointer<QOpenGLShaderProgram> ImplementationPointer;
     ImplementationPointer m_impl;
+    BufferObjectPointer m_ubo;
+    Std140Blob m_std140_blob;
     
     ImplementationPointer createShader() const;
     void setUniforms(ImplementationPointer shader) const;

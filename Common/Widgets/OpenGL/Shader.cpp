@@ -1,9 +1,14 @@
+#include <stdexcept>
+
+#include "API.hpp"
 #include "Shader.hpp"
 
 namespace OpenGL
 {
   Shader::Shader(QString vertex, QString fragment)
   : m_impl()
+  , m_ubo()
+  , m_std140_blob()
   , m_vert_shader_filename(vertex)
   , m_frag_shader_filename(fragment)
   {
@@ -16,41 +21,43 @@ namespace OpenGL
   
   void Shader::setTextureUnitEnabled(int unit, bool enabled)
   {
-    setUniformValue(QString("texture_unit[%1]").arg(unit), unit);
-    setUniformValue(QString("texture_unit_enabled[%1]").arg(unit), enabled);
+    m_std140_blob.setTextureUnitEnabled(unit, enabled);
   }
   
   
   void Shader::setTexturingEnabled(bool enable)
   {
-    setUniformValue("texturing", enable);
+    m_std140_blob.setTexturingEnabled(enable);
   }
   
   
   void Shader::setLightingEnabled(bool enable)
   {
-    setUniformValue("light_enabled", enable);
+    m_std140_blob.setLightingEnabled(enable);
   }
   
   
   void Shader::setLights(QList<LightPointer> lights)
   {
-    setUniformValue("light_count", lights.count());
+    m_std140_blob.setActiveLights(lights.size());
+    for(int i=0; i<m_std140_blob.activeLights(); ++i) {
+      m_std140_blob.setLight(i, lights[i]);
+    }
   }
   
   void Shader::setAmbientColor(QColor ambient)
   {
-    setUniformValue("light_ambient", ambient);
+    m_std140_blob.setAmbient(ambient);
   }
   
   void Shader::setModelviewMatrix(const QMatrix4x4 &value)
   {
-    setUniformValue("modelview", value);
+    m_std140_blob.setModelview(value);
   }
   
   void Shader::setProjectionMatrix(const QMatrix4x4 &value)
   {
-    setUniformValue("projection", value);
+    m_std140_blob.setProjection(value);
   }
   
   
@@ -76,8 +83,7 @@ namespace OpenGL
     if (ok) {
       setUniforms(shader);
     } else {
-      qCritical("Failed to create Shader %s", qUtf8Printable(shader->log()));
-      shader.reset();
+      throw std::runtime_error(QString("Failed to create Shader <%1>").arg(shader->log()).toStdString());
     }
     
     return (shader);
@@ -105,10 +111,23 @@ namespace OpenGL
     SET_UNIFORMS(mat4x4);
   }
   
+  void Shader::flushUniforms()
+  {
+    m_std140_blob.upload(m_ubo);
+  }
+  
   void Shader::bind()
   {
     if (m_impl.isNull()) {
       m_impl = createShader();
+      m_ubo = m_std140_blob.createBufferObject();
+      
+      for (int texture_unit=0; texture_unit<8; ++texture_unit) {
+        setUniformValue(QString("texture_unit[%1]").arg(texture_unit), texture_unit);
+      }
+      
+      GLuint index = OpenGL::api()->glGetUniformBlockIndex(m_impl->programId(), "Std140Blob");
+      OpenGL::api()->glBindBufferBase(GL_UNIFORM_BUFFER, index, m_ubo->bufferId());
     } else {
       m_impl->bind();
     }
