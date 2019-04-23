@@ -157,16 +157,18 @@ namespace OpenGL
   
   ShaderPointer Scene::bind(ShaderPointer shader)
   {
-    if (m_bound_shader != shader) {
-      m_bound_shader->release();
-    }
     if (shader.isNull()) {
-      m_bound_shader = m_default_shader;
-    } else {
-      m_bound_shader = shader;
+      shader = defaultShader();
     }
     
-    m_bound_shader->bind();
+    if (m_bound_shader != shader) {
+      if (m_bound_shader) {
+        m_bound_shader->release();
+      }
+      m_bound_shader = shader;
+      m_bound_shader->bind();
+    }
+    
     return (m_bound_shader);
   }
   
