@@ -20,25 +20,6 @@ namespace OpenGL
   }
   
   
-  RawImage Scene::lightTexture(Lights lights)
-  {
-    RawImage r(QSize(8, lights.size()));
-    int y=0;
-    Q_FOREACH(LightPointer light, lights) {
-      r.setPixel(0, y, light->position());
-      r.setPixel(1, y, light->color());
-      r.setPixel(2, y, light->attenuation());
-      r.setPixel(3, y, QVector2D(light->range(), light->rangeExp()));
-      r.setPixel(4, y, light->spotDirection());
-      r.setPixel(5, y, QVector2D(light->spotCutoffAngle(), light->spotExp()));
-      
-      y++;
-    }
-    
-    return (r);
-  }
-  
-  
   Scene::Lights
   Scene::allLights(QMatrix4x4 modelview) const
   {
@@ -149,8 +130,6 @@ namespace OpenGL
     Models temporaries(lightIndicators(modelview, lights));
     State::PolygonMode pmguard(GL_FRONT_AND_BACK, camera->wireframe()? GL_LINE:GL_FILL);
     
-    TexturePointer light_tex(new Texture(lightTexture(lights)));
-    
     Q_FOREACH(ModelPointer m, m_models + temporaries) {
       if (m->enabled()) {
         ShaderPointer shader{bind(m->shader())};
@@ -159,7 +138,6 @@ namespace OpenGL
         shader->setModelviewMatrix(modelview * m->transform());
         shader->setLights(lights.toList());
         shader->setAmbientColor(m_ambient);
-        shader->setTextureUnitEnabled(7, light_tex->bind(7));
       
         m->bind(sharedFromThis());
         if (camera->wireframe()) {
@@ -167,10 +145,7 @@ namespace OpenGL
         } else {
           m->draw(sharedFromThis());
         }
-        
         m->release(sharedFromThis());
-        
-        shader->setTextureUnitEnabled(7, false);
       }
     }
   }

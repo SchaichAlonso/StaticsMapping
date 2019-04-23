@@ -37,7 +37,6 @@ namespace OpenGL
     ModelWeakPointer insertPositionIndicator(QColor x, QColor y, QColor z, float axis_length=1, bool mirror=true);
     
   protected:
-    RawImage lightTexture(Lights lights);
     Lights allLights(QMatrix4x4 modelview) const;
     Models lightIndicators(QMatrix4x4 modelview, Lights lights);
     
