@@ -19,6 +19,7 @@ set (Widgets_SOURCES
   OpenGL/State/DepthMask.cpp
   OpenGL/State/PolygonMode.cpp
   OpenGL/API.cpp
+  OpenGL/BufferObject.cpp
   OpenGL/Context.cpp
   OpenGL/DrawElementsObj8.cpp
   OpenGL/DrawElements.cpp
