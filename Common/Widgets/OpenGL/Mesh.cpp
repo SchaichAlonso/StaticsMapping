@@ -4,9 +4,6 @@
 #include "Mesh.hpp"
 #include "Obj8Shader.hpp"
 
-#define _off(Type,Member) \
-  reinterpret_cast<ptrdiff_t>(reinterpret_cast<char *>(&reinterpret_cast<Type*>(0)->Member))
-
 namespace OpenGL
 {
   
@@ -104,10 +101,10 @@ namespace OpenGL
       shader->enableAttributeArray("a_texcoord");
       shader->enableAttributeArray("a_color");
       
-      shader->setAttributeBuffer("a_position", GL_FLOAT, _off(Vertex, position), 3, stride);
-      shader->setAttributeBuffer("a_normal",   GL_FLOAT, _off(Vertex, normal),   3, stride);
-      shader->setAttributeBuffer("a_texcoord", GL_FLOAT, _off(Vertex, texcoord), 2, stride);
-      shader->setAttributeBuffer("a_color",    GL_FLOAT, _off(Vertex, color),    4, stride);
+      shader->setAttributeBuffer("a_position", GL_FLOAT, offsetof(Vertex, position), 3, stride);
+      shader->setAttributeBuffer("a_normal",   GL_FLOAT, offsetof(Vertex, normal),   3, stride);
+      shader->setAttributeBuffer("a_texcoord", GL_FLOAT, offsetof(Vertex, texcoord), 2, stride);
+      shader->setAttributeBuffer("a_color",    GL_FLOAT, offsetof(Vertex, color),    4, stride);
     } else {
       throw std::runtime_error{"failed to allocate geometry"};
     }
