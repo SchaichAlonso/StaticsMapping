@@ -17,7 +17,6 @@ namespace OpenGL
       locale->setFlags(0);
       squares->setFlags(Model::Lighting | Model::DepthMasked);
       ground->setFlags(Model::Lighting | Model::DepthMasked);
-      ground->setPosition(QVector3D(0,-0.1f,0));
       
       insertModel(ground);
       insertModel(squares);
