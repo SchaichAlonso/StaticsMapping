@@ -8,8 +8,11 @@ namespace OpenGL
 {
   struct ZoomableCamera : Camera
   {
-    ZoomableCamera(QRect screen, QString name=QString(), Zoom min=1, Zoom max=128, bool logarithmic=true);
+    ZoomableCamera(QRect screen, QString name=QString(), Zoom min=defaultMinimalZoom(), Zoom max=defaultMaximumZoom(), bool logarithmic=true);
     virtual ~ZoomableCamera();
+    
+    static Zoom defaultMinimalZoom();
+    static Zoom defaultMaximumZoom();
     
     Zoom minimalZoom() const;
     void setMinimalZoom(Zoom min);

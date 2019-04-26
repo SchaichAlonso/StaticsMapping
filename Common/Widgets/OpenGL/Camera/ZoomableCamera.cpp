@@ -19,6 +19,16 @@ namespace OpenGL
   {
   }
   
+  ZoomableCamera::Zoom ZoomableCamera::defaultMinimalZoom()
+  {
+    return 1;
+  }
+  
+  ZoomableCamera::Zoom ZoomableCamera::defaultMaximumZoom()
+  {
+    return 512;
+  }
+  
   
   ZoomableCamera::Zoom ZoomableCamera::minimalZoom() const
   {
@@ -50,7 +60,7 @@ namespace OpenGL
     Zoom n;
     
     if (m_logarithmic) {
-      n = qExp(qLn(m_cur) + z);
+      n = qExp(qLn(m_cur) + 0.25*z);
     } else {
       n = m_cur + z;
     }
