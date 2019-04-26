@@ -39,7 +39,7 @@ namespace OpenGL
   
   ModelPointer Scene::positionIndicator(QColor x, QColor y, QColor z, float b, bool mirror)
   {
-    ModelPointer model{new Model(0)};
+    ModelPointer model{new Model(Model::Texturing{false},Model::Lighting{false},Model::DepthMask{true})};
     MeshPointer axis{model->mesh()};
     
     float a{mirror? -b:0};
@@ -68,7 +68,7 @@ namespace OpenGL
   
   ModelPointer Scene::plane(QVector3D u, QVector3D v, int repetitions)
   {
-    ModelPointer model{new Model};
+    ModelPointer model{new Model(Model::Texturing{false}, Model::Lighting{true}, Model::DepthMask{false})};
     MeshPointer mesh{model->mesh()};
     
     QVector3D normal(QVector3D::normal(u, v));
@@ -96,7 +96,7 @@ namespace OpenGL
   
   ModelPointer Scene::grid(QVector3D u, QVector3D v, int repetitions)
   {
-    ModelPointer model{insertModel(Model::Lighting)};
+    ModelPointer model{new Model(Model::Texturing{false}, Model::Lighting{true}, Model::DepthMask{false})};
     MeshPointer mesh{model->mesh()};
     
     QVector3D normal(QVector3D::normal(u, v));
@@ -141,7 +141,7 @@ namespace OpenGL
       
         m->bind(sharedFromThis());
         if (camera->wireframe()) {
-          m->draw(sharedFromThis(), 0);
+          m->draw(sharedFromThis(), Model::Texturing{false}, Model::Lighting{false}, Model::DepthMask{false});
         } else {
           m->draw(sharedFromThis());
         }
@@ -196,12 +196,6 @@ namespace OpenGL
   ModelWeakPointer Scene::insertModel(ModelPointer model)
   {
     return (*m_models.insert(model));
-  }
-  
-  
-  ModelWeakPointer Scene::insertModel(int rendering_attributes)
-  {
-    return insertModel(ModelPointer(new Model(rendering_attributes)));
   }
   
   

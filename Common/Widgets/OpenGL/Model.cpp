@@ -6,18 +6,20 @@
 
 namespace OpenGL
 {
-  Model::Model(int rendering_attributes)
-  : Model(MeshPointer(new Mesh), rendering_attributes)
+  Model::Model(Texturing texturing, Lighting Lighting, DepthMask depth)
+  : Model{MeshPointer{new Mesh}, texturing, Lighting, depth}
   {
   }
   
-  Model::Model(MeshPointer mesh, int flags)
+  Model::Model(MeshPointer mesh, Texturing texture, Lighting light, DepthMask depth)
   : m_lights()
   , m_textures()
   , m_mesh(mesh)
   , m_shader()
-  , m_flags(flags)
   , m_enabled(true)
+  , m_texturing(texture)
+  , m_lighting(light)
+  , m_depth(depth)
   {
   }
   
@@ -62,6 +64,37 @@ namespace OpenGL
   }
   
   
+  void Model::setLighting(bool enabled)
+  {
+    m_lighting = Lighting{enabled};
+  }
+  
+  bool Model::lighting() const
+  {
+    return m_lighting;
+  }
+    
+  void Model::setTexturing(bool enabled)
+  {
+    m_texturing = Texturing{enabled};
+  }
+  
+  bool Model::texturing() const
+  {
+    return m_texturing;
+  }
+    
+  void Model::setDepthMask(bool enabled)
+  {
+    m_depth = DepthMask{enabled};
+  }
+  
+  bool Model::depthMask() const
+  {
+    return m_depth;
+  }
+  
+  
   void 
   Model::setMesh(MeshPointer mesh)
   {
@@ -87,18 +120,6 @@ namespace OpenGL
   Model::shader() const
   {
     return (m_shader);
-  }
-  
-  
-  int Model::flags() const
-  {
-    return (m_flags);
-  }
-  
-  
-  void Model::setFlags(int flags)
-  {
-    m_flags = flags;
   }
   
   
@@ -139,20 +160,20 @@ namespace OpenGL
   Model::draw(ScenePointer ctx)
   {
     if (m_enabled) {
-      draw(ctx, m_flags);
+      draw(ctx,m_texturing, m_lighting, m_depth);
     }
   }
   
   void
-  Model::draw(ScenePointer ctx, int flags)
+  Model::draw(ScenePointer ctx, Texturing texturing, Lighting lighting, DepthMask depth)
   {
     if (m_enabled) {
       ShaderPointer shader{ctx->bound()};
     
-      shader->setTexturingEnabled(flags & Texturing);
-      shader->setLightingEnabled(flags & Lighting);
-    
-      State::DepthMask d((flags & DepthMasked) == 0);
+      shader->setTexturingEnabled(texturing);
+      shader->setLightingEnabled(lighting);
+      
+      State::DepthMask d(depth);
       m_mesh->draw(shader);
     }
   }

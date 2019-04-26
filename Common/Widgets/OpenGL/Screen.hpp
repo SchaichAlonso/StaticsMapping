@@ -33,7 +33,7 @@ namespace OpenGL
     
     SceneWeakPointer scene() const;
     
-    static ScenePointer osdScene(QRect dst, QImage image);
+    ScenePointer osdScene(QRect dst, QImage image);
     
   protected:
     CameraPointer cameraAt(QPoint point) const;
@@ -53,7 +53,7 @@ namespace OpenGL
     QSize clampedViewport(QSize candidate) const;
     
   protected:
-    static ModelPointer osdQuad(ScenePointer scene, QRect dst, QImage content);
+    static ModelPointer osdQuad(QRect dst, QImage content);
     
   protected:
     QList<View> m_views;

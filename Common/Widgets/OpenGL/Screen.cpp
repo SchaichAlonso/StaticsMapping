@@ -315,31 +315,22 @@ namespace OpenGL
   OpenGL::ScenePointer
   Screen::osdScene(QRect target, QImage content)
   {
-    OpenGL::ScenePointer scene{
-      new OpenGL::Scene{
-        OpenGL::ShaderPointer{
-          new OpenGL::Shader{
-            DataPath::existingPath("obj8-vert.glsl"),
-            DataPath::existingPath("obj8-frag.glsl")
-          }
-        }
-      }
-    };
-    osdQuad(scene, target, content);
+    OpenGL::ScenePointer scene{new OpenGL::Scene{m_scene->defaultShader()}};
+    scene->insertModel(osdQuad(target, content));
     return (scene);
   }
   
   
   
   OpenGL::ModelPointer
-  Screen::osdQuad(ScenePointer scene, QRect dst, QImage content)
+  Screen::osdQuad(QRect dst, QImage content)
   {
     /*
      * QRect::right and QRect::bottom return off-by-one values.
      */
     dst.adjust(0, 0, 1, 1);
     
-    ModelPointer model(scene->insertModel(Model::Texturing));
+    ModelPointer model(new Model(Model::Texturing{true},Model::Lighting{false}));
     MeshPointer mesh(model->mesh());
     
     QVector3D normal(0,1,0);
