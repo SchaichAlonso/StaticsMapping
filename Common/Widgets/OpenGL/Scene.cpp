@@ -73,7 +73,7 @@ namespace OpenGL
     
     QVector3D normal(QVector3D::normal(u, v));
     
-    QVector4D floor(1, 1, 1, 1);
+    QVector4D floor(1, 1, 1, 0.25);
     QVector3D offset(-0.01*normal);
     
     mesh->drawElements(
@@ -105,9 +105,9 @@ namespace OpenGL
     for (int i=-repetitions; i<repetitions; ++i) {
       QVector4D color(1, 1, 1, 1);
       if (i%100 != 0)
-        color.setW(0.75);
+        color.setW(color.w() * 0.5);
       if (i%10 != 0)
-        color.setW(0.5);
+        color.setW(color.w() * 0.5);
         
       indices << mesh->addVertex(Vertex(i*u + repetitions*v, color, normal, QVector2D(i, repetitions)));
       indices << mesh->addVertex(Vertex(i*u - repetitions*v, color, normal, QVector2D(i,-repetitions)));
@@ -148,6 +148,9 @@ namespace OpenGL
         m->release(sharedFromThis());
       }
     }
+    
+    
+    
   }
   
   ShaderPointer Scene::defaultShader() const
