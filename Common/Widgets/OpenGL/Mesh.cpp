@@ -68,6 +68,11 @@ namespace OpenGL
     m_data.resize(n);
   }
   
+  int Geometry::vertexCount() const
+  {
+    return m_data.size();
+  }
+  
   template<typename Data>
   void writeToBuffer(QOpenGLBuffer &buffer, const QVector<Data> &vector)
   {
@@ -227,5 +232,12 @@ namespace OpenGL
   Mesh::setVertexCount(int n)
   {
     m_geometry.setVertexCount(n);
+  }
+  
+  
+  int
+  Mesh::vertexCount() const
+  {
+    return m_geometry.vertexCount();
   }
 }

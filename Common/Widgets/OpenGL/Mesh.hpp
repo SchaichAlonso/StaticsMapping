@@ -43,6 +43,7 @@ namespace OpenGL
     int addVertex(const Vertex &v);
     void setVertex(int index, const Vertex &v);
     void setVertexCount(int n);
+    int  vertexCount() const;
     
     void bind(ShaderPointer shader);
     void release(ShaderPointer shader);
@@ -71,6 +72,7 @@ namespace OpenGL
     void setVertex(int index, QVector3D coords, QVector3D normal, QVector2D texcoord);
     void setVertex(int index, QVector3D coords, QVector4D color);
     void setVertexCount(int n);
+    int  vertexCount() const;
     void drawElements(DrawElementsPointer draw);
     void drawElements(DrawElements *draw);
     
