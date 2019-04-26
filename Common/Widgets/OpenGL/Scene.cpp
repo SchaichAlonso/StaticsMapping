@@ -39,7 +39,7 @@ namespace OpenGL
   
   ModelPointer Scene::positionIndicator(QColor x, QColor y, QColor z, float b, bool mirror)
   {
-    ModelPointer model{new Model()};
+    ModelPointer model{new Model(0)};
     MeshPointer axis{model->mesh()};
     
     float a{mirror? -b:0};
