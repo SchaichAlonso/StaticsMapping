@@ -39,13 +39,20 @@ struct State
   bool lighting_enabled;
 };
 
+struct Texturing {
+  int regular;
+  int normal;
+  int lit;
+  int draped;
+};
+
 layout (std140) uniform Std140Blob {
   Transform transform;
   Lighting  lighting;
+  Texturing texturing;
   State     state;
   int end_indicator;
 };
-
 
 uniform sampler2D texture_unit[8];
 
@@ -143,14 +150,14 @@ vec4 colorFromTexture(vec3 light)
 {
   vec4 bright = vec4(light, 1);
   
-  if (state.texture_unit_enabled[0]) {
+  if (texturing.regular >= 0) {
     if (texture_draped_enabled) {
-      bright *= texture(texture_unit[1], tex_coord);
+      bright *= texture(texture_unit[texturing.draped], tex_coord);
     } else {
-      bright *= texture(texture_unit[0], tex_coord);
+      bright *= texture(texture_unit[texturing.regular], tex_coord);
     
-      if (state.texture_unit_enabled[2]) {
-        vec4 dark = texture(texture_unit[2], tex_coord);
+      if (texturing.lit >= 0) {
+        vec4 dark = texture(texture_unit[texturing.lit], tex_coord);
         float brightness = dot(bright.rgb, vec3(0.299, 0.587, 0.114));
         bright = brightness * bright + (1-brightness) * dark;
       }

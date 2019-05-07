@@ -1,3 +1,5 @@
+#pragma once
+
 #include <QtGui/QGenericMatrix>
 #include <QtGui/QVector3D>
 #include <QtGui/QVector4D>
@@ -58,15 +60,23 @@ namespace OpenGL {
       } light_data[128];
     };
     
+    struct Texturing {
+      alignas(4) int regular;
+      alignas(4) int normal;
+      alignas(4) int lit;
+      alignas(4) int draped;
+    };
+    
     struct State {
       struct { alignas(16) int value; } texture_unit_enabled[8];
       alignas(04) int texturing_enabled;
       alignas(04) int lighting_enabled;
     };
     
-    Transform transform;
-    Lighting  lighting;
-    State     state;
+    alignas(16) Transform transform;
+    alignas(16) Lighting  lighting;
+    alignas(04) Texturing texturing;
+    alignas(16) State     state;
     alignas(04) int end_indicator;
     bool dirty;
   };

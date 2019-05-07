@@ -39,9 +39,17 @@ struct State
   bool lighting_enabled;
 };
 
+struct Texturing {
+  int regular;
+  int normal;
+  int lit;
+  int draped;
+};
+
 layout (std140) uniform Std140Blob {
   Transform transform;
   Lighting  lighting;
+  Texturing texturing;
   State     state;
   int end_indicator;
 };

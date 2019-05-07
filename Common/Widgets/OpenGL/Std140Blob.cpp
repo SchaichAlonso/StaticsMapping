@@ -1,3 +1,4 @@
+#include "Model.hpp"
 #include "Std140Blob.hpp"
 
 namespace OpenGL
@@ -82,6 +83,15 @@ namespace OpenGL
   
   void Std140Blob::setTextureUnitEnabled(int unit, bool enabled)
   {
+    if (unit==Model::TextureRegular)
+      write(texturing.regular, enabled? Model::TextureRegular:-1);
+    if (unit==Model::TextureNormal)
+      write(texturing.normal, enabled?  Model::TextureNormal:-1);
+    if (unit==Model::TextureLit)
+      write(texturing.lit, enabled?Model::TextureLit:-1);
+    if (unit==Model::TextureDraped)
+      write(texturing.draped, enabled?Model::TextureDraped:-1);
+    
     write(state.texture_unit_enabled[unit].value, enabled?1:0);
   }
   
