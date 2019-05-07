@@ -347,7 +347,7 @@ namespace OpenGL
       )
     );
     
-    model->setTexture(0, content);
+    model->setTexture(Model::TextureRegular, content);
     
     return (model);
   }

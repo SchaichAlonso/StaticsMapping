@@ -124,9 +124,9 @@ namespace OpenGL
   
   
   void
-  Model::setTexture(Texture::Unit unit, QImage image)
+  Model::setTexture(TexturePurpose purpose, QImage image)
   {
-    m_textures[unit] = TexturePointer(new Texture(image));
+    m_textures[purpose] = TexturePointer(new Texture(image));
   }
   
   
@@ -135,8 +135,9 @@ namespace OpenGL
   {
     ShaderPointer shader{ctx->bind(m_shader)};
     
-    Q_FOREACH(Texture::Unit unit, m_textures.keys()) {
-      shader->setTextureUnitEnabled(unit, m_textures[unit]->bind(unit));
+    Q_FOREACH(TexturePurpose purpose, m_textures.keys()) {
+      Texture::Unit unit(purpose);
+      shader->setTextureUnitEnabled(unit, m_textures[purpose]->bind(unit));
     }
     
     m_mesh->bind(shader);
@@ -149,9 +150,10 @@ namespace OpenGL
     ShaderPointer shader{ctx->bound()};
     m_mesh->release(shader);
     
-    Q_FOREACH(Texture::Unit unit, m_textures.keys()) {
+    Q_FOREACH(TexturePurpose purpose, m_textures.keys()) {
+      Texture::Unit unit(purpose);
       shader->setTextureUnitEnabled(unit, false);
-      m_textures[unit]->release(unit);
+      m_textures[purpose]->release(unit);
     }
   }
   

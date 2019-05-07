@@ -313,9 +313,9 @@ namespace Widgets
       )
     );
     
-    model->setTexture(0, QImage(DataPath::existingPath("Earth.png")));
-    model->setTexture(1, QImage(DataPath::existingPath("EarthSpec.png")));
-    model->setTexture(2, QImage(DataPath::existingPath("EarthNight.jpg")));
+    model->setTexture(OpenGL::Model::TextureRegular, QImage(DataPath::existingPath("Earth.png")));
+    model->setTexture(OpenGL::Model::TextureNormal, QImage(DataPath::existingPath("EarthSpec.png")));
+    model->setTexture(OpenGL::Model::TextureLit, QImage(DataPath::existingPath("EarthNight.jpg")));
     
     return (model);
   }

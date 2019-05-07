@@ -329,7 +329,7 @@ namespace OpenGL
   Obj8Visitor::visit(Obj8::Global::Texture *t)
   {
     if (m_load_textures) {
-      m_model->setTexture(0, loadTexture(t->path()));
+      m_model->setTexture(Model::TextureRegular, loadTexture(t->path()));
     }
   }
   
@@ -339,7 +339,7 @@ namespace OpenGL
   Obj8Visitor::visit(Obj8::Global::TextureDraped *t)
   {
     if (m_load_textures) {
-      m_model->setTexture(1, loadTexture(t->path()));
+      m_model->setTexture(Model::TextureDraped, loadTexture(t->path()));
     }
   }
   
@@ -349,7 +349,7 @@ namespace OpenGL
   Obj8Visitor::visit(Obj8::Global::TextureLit *t)
   {
     if (m_load_textures) {
-      m_model->setTexture(2, loadTexture(t->path()));
+      m_model->setTexture(Model::TextureLit, loadTexture(t->path()));
     }
   }
   
@@ -359,7 +359,7 @@ namespace OpenGL
   Obj8Visitor::visit(Obj8::Global::TextureNormal *t)
   {
     if (m_load_textures) {
-      m_model->setTexture(3, loadTexture(t->path()));
+      m_model->setTexture(Model::TextureNormal, loadTexture(t->path()));
     }
   }
   

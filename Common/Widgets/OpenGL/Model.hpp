@@ -68,6 +68,15 @@ namespace OpenGL
     
     typedef QSet<LightPointer> Lights;
     
+  public:
+    enum TexturePurpose {
+      TextureRegular = 0,
+      TextureNormal = -1,
+      TextureLit = 2,
+      TextureDraped = 1
+    };
+    
+  public:
     Model(Texturing texturing=Texturing{true}, Lighting lighting=Lighting{true}, DepthMask depth=DepthMask{true});
     Model(MeshPointer mesh, Texturing texturing=Texturing{true}, Lighting lighting=Lighting{true}, DepthMask depth=DepthMask{true});
    ~Model();
@@ -97,7 +106,7 @@ namespace OpenGL
     int flags() const;
     void setFlags(int flags);
     
-    void setTexture(Texture::Unit unit, QImage image);
+    void setTexture(TexturePurpose unit, QImage image);
     
     void bind(ScenePointer ctx);
     void release(ScenePointer ctx);
@@ -106,7 +115,7 @@ namespace OpenGL
     
   protected:
     Lights m_lights;
-    QMap<Texture::Unit, TexturePointer> m_textures;
+    QMap<TexturePurpose, TexturePointer> m_textures;
     MeshPointer m_mesh;
     ShaderPointer m_shader;
     bool m_enabled;
