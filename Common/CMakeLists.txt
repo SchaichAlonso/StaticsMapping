@@ -31,18 +31,7 @@ target_compile_options(Common PUBLIC $<$<CXX_COMPILER_ID:MSVC>:-W4>)
 target_include_directories (Common PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(Common Qt5::Core)
 
-set (data_files
-  Data/earthmap1k.jpg
-  Data/data.json
-  Data/obj8-lights.json
-  Data/obj8-frag.glsl
-  Data/obj8-vert.glsl
-)
-
-foreach (f IN LISTS data_files)
-  install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/${f} DESTINATION ${SHARED_DATA_PATH})
-endforeach ()
-
+add_subdirectory (Data)
 add_subdirectory (QImagePlugins/DDS)
 add_subdirectory (Obj8)
 add_subdirectory (Classification)
