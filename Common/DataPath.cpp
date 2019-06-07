@@ -11,8 +11,7 @@ DataPath::path(QString filename)
 {
   QDir path(QCoreApplication::applicationDirPath());
   path.cdUp();
-  path.cd("Data");
-  
+  path.cd(SHARED_DATA_PATH);
   return (path.filePath(filename));
 }
 

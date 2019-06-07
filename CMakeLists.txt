@@ -27,19 +27,6 @@ include_directories (${CMAKE_CURRENT_SOURCE_DIR})
 find_package (Qt5 5.10 COMPONENTS REQUIRED Core Gui Network Widgets Test)
 find_package (Threads)
 
-set (data_files
-  earthmap1k.jpg
-#  earthmap10k.jpg
-  data.json
-)
-
-foreach (f IN LISTS data_files)
-  configure_file (${CMAKE_CURRENT_SOURCE_DIR}/Data/${f}
-    ${CMAKE_CURRENT_BINARY_DIR}/Data/${f}
-    COPYONLY
-  )
-endforeach ()
-
 add_subdirectory (Common)
 
 add_subdirectory (TagTool)
