@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.5)
 
+if(WIN32 AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
+  set(CMAKE_TOOLCHAIN_FILE "${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Vcpkg toolchain file")
+endif()
+
 set (CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 if (NOT WIN32) #MSVC branching is broken
