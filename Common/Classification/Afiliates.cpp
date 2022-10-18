@@ -1,3 +1,5 @@
+#include <stdexcept>
+
 #include "Aircraft.hpp"
 #include "Airline.hpp"
 #include "Airport.hpp"
