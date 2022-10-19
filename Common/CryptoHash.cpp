@@ -1,5 +1,7 @@
 #include <limits.h>
 
+#include <stdexcept>
+
 #include <QtCore/QJsonDocument>
 #include <QtCore/QJsonObject>
 #include <QtCore/QMetaEnum>
