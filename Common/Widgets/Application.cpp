@@ -2,11 +2,16 @@
 
 namespace Widgets
 {
-  Application::Application(int &argc, char **argv, int flags)
-    : QApplication (argc, argv, flags)
+  ApplicationAttributes::ApplicationAttributes()
   {
-    setAttribute(Qt::AA_UseDesktopOpenGL);
-    setQuitOnLastWindowClosed(true);
+    QApplication::setAttribute(Qt::AA_UseDesktopOpenGL);
+    QApplication::setQuitOnLastWindowClosed(true);
+  }
+
+  Application::Application(int &argc, char **argv, int flags)
+    : ApplicationAttributes()
+    , QApplication (argc, argv, flags)
+  {
   }
   
   Application::~Application()
